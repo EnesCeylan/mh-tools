@@ -1,0 +1,215 @@
+#cube-container {
+  max-width: 500px;
+  max-height: 500px;
+  background-color: #222;
+  margin: 125px 125px;
+
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+
+  transform: rotate(-45deg);
+}
+
+.cell-item {
+  box-sizing: border-box;
+  width: 125px;
+  height: 125px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  background-size: cover;
+
+  transform: rotate(90deg);
+}
+
+.cell-item:disabled {
+  cursor: initial;
+}
+
+.red {
+  background-image: url("../../assets/cube/Square_Cube_Icon/Red.png");
+}
+
+.red-semi-active {
+  background-image: url("../../assets/cube/Square_Cube_Icon/Red_Partial.png");
+}
+
+.red-inactive {
+  background-image: url("../../assets/cube/Square_Cube_Icon/Red_Unlit.png");
+}
+
+.green {
+  background-image: url("../../assets/cube/Square_Cube_Icon/Green.png");
+}
+
+.green-semi-active {
+  background-image: url("../../assets/cube/Square_Cube_Icon/Green_Partial.png");
+}
+
+.green-inactive {
+  background-image: url("../../assets/cube/Square_Cube_Icon/Green_Unlit.png");
+}
+
+.blue {
+  background-image: url("../../assets/cube/Square_Cube_Icon/Blue.png");
+}
+
+.blue-semi-active {
+  background-image: url("../../assets/cube/Square_Cube_Icon/Blue_Partial.png");
+}
+
+.blue-inactive {
+  background-image: url("../../assets/cube/Square_Cube_Icon/Blue_Unlit.png");
+}
+
+.white {
+  background-image: url("../../assets/cube/Square_Cube_Icon/White.png");
+}
+
+.white-semi-active {
+  background-image: url("../../assets/cube/Square_Cube_Icon/White_Partial.png");
+}
+
+.white-inactive {
+  background-image: url("../../assets/cube/Square_Cube_Icon/White_Unlit.png");
+}
+
+.yellow {
+  background-image: url("../../assets/cube/Square_Cube_Icon/Yellow.png");
+}
+
+.yellow-semi-active {
+  background-image: url("../../assets/cube/Square_Cube_Icon/Yellow_Partial.png");
+}
+
+.yellow-inactive {
+  background-image: url("../../assets/cube/Square_Cube_Icon/Yellow_Unlit.png");
+}
+
+.orange {
+  background-image: url("../../assets/cube/Square_Cube_Icon/Orange.png");
+}
+
+.orange-semi-active {
+  background-image: url("../../assets/cube/Square_Cube_Icon/Orange_Partial.png");
+}
+
+.orange-inactive {
+  background-image: url("../../assets/cube/Square_Cube_Icon/Orange_Unlit.png");
+}
+
+.cube-selector {
+  box-sizing: border-box;
+  width: 60px;
+  height: 68px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  background-size: cover;
+  margin: 8px 4px;
+  padding: 8px 12px;
+}
+
+.sun-cube {
+  background-image: url("../../assets/cube/Icon_Sun_Cube.png");
+}
+
+.sun-cube.active {
+  background-image: url("../../assets/cube/Icon_Sun_Cube_Active.png");
+}
+
+.moon-cube {
+  background-image: url("../../assets/cube/Icon_Moon_Cube.png");
+}
+
+/* .moon-cube.active {
+    background-image: url("../../assets/cube/Icon_Moon_Cube_Active.png");
+  } */
+
+.star-cube {
+  background-image: url("../../assets/cube/Icon_Star_Cube.png");
+}
+
+/* .star-cube.active {
+    background-image: url("../../assets/cube/Icon_Star_Cube_Active.png");
+  } */
+
+.dream-cube {
+  background-image: url("../../assets/cube/Icon_Dream_Cube.png");
+}
+
+/* .dream-cube.active {
+    background-image: url("../../assets/cube/Icon_Dream_Cube_Active.png");
+  } */
+
+.time-cube {
+  background-image: url("../../assets/cube/Icon_Time_Cube.png");
+}
+
+/* .time-cube.active {
+    background-image: url("../../assets/cube/Icon_Time_Cube_Active.png");
+  } */
+
+.phantom-cube {
+  background-image: url("../../assets/cube/Icon_Phantom_Cube.png");
+}
+
+/* .phantom-cube.active {
+    background-image: url("../../assets/cube/Icon_Phantom_Cube_Active.png");
+  } */
+
+.face-selector-container {
+  padding: 8px;
+}
+
+.face-selector {
+  width: 25px;
+  height: 25px;
+  margin-right: 8px;
+}
+
+.face-selector.active {
+  -webkit-box-shadow: 0px 0px 5px 2px #ffbb38;
+  box-shadow: 0px 0px 5px 2px #ffbb38;
+}
+
+.modal,
+.overlay {
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+}
+
+.overlay {
+  background: rgba(49, 49, 49, 0.8);
+}
+
+.modal-content {
+  width: 300px;
+  height: 150px;
+  background-color: #bea371;
+
+  position: absolute;
+  z-index: 1;
+  top: calc(50% - 75px);
+  left: calc(50% - 150px);
+}
+
+.modal-content .close-modal {
+  width: 30px;
+  position: absolute;
+  top: 4px;
+  left: calc(100% - 34px);
+
+  font-size: 1em;
+  font-weight: bold;
+
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}

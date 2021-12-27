@@ -1,0 +1,25 @@
+@font-face {
+  font-family: 'Cu Yuan';
+  src: url('../../assets/fonts/FZCu-Yuan-M03.ttf');
+}
+
+.skill {
+  font-family: 'Cu Yuan';
+  color: white;
+}
+
+.skill .highlight {
+  color: greenyellow;
+}
+
+.skill .highlight-status {
+  color: orange;
+}
+
+.skill .highlight-warning {
+  color: darkorange;
+}
+
+.skill .highlight-true-damage {
+  color: rgb(182, 100, 0);
+}
