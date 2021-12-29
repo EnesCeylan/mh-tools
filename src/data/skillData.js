@@ -2412,63 +2412,558 @@ const skillData = {
       },
     },
   },
-};
-
-export default skillData;
-
-const dummyData = {
-  heroName: {
+  'Tamamo no Mae': {
     skill1: {
-      type: '',
-      name: '',
+      type: 'Ultimate',
+      name: 'Wrath of Nine-tail',
       description: {
         lv1: [
-          { type: 'text', content: '' },
-          { type: 'value', content: '' },
+          { type: 'text', content: 'Tamamo summons ' },
+          { type: 'value', content: '10' },
+          {
+            type: 'text',
+            content:
+              ' "Fox Fires" around herself, drastically increasing the range and fire rate of all "Fox Fires" while the skill is active.',
+          },
         ],
-        lv2: '',
-        lv3: '',
-        lv4: '',
+        lv2: 'Summons 11 "Fox Fires"',
+        lv3: 'Summons 12 "Fox Fires"',
+        lv4: 'Reset the cooldown of Spirit Fox Fire',
       },
     },
     skill2: {
-      type: '',
-      name: '',
+      type: 'Active',
+      name: 'Spirit Fox Fire',
       description: {
         lv1: [
-          { type: 'text', content: '' },
-          { type: 'value', content: '' },
+          { type: 'text', content: 'Tamamo summons ' },
+          { type: 'value', content: '3' },
+          {
+            type: 'text',
+            content:
+              ' "Fox Fires". They will lock on and travel to a random nearby enemy, dealing ',
+          },
+          { type: 'value', content: '100%' },
+          { type: 'text', content: ' damage.' },
         ],
-        lv2: '',
-        lv3: '',
-        lv4: '',
+        lv2: 'Summon 4 "Fox Fires"',
+        lv3: 'Deals 110% damage',
+        lv4: 'Deals 120% damage',
       },
     },
     skill3: {
-      type: '',
-      name: '',
+      type: 'Active',
+      name: 'Flower Dance',
       description: {
         lv1: [
-          { type: 'text', content: '' },
-          { type: 'value', content: '' },
+          {
+            type: 'text',
+            content:
+              'Tamamo quickly moves behind the furthest enemy target, dealing ',
+          },
+          { type: 'value', content: '100%' },
+          {
+            type: 'text',
+            content: ' damage to them and all enemies on route.',
+          },
         ],
-        lv2: '',
-        lv3: '',
-        lv4: '',
+        lv2: 'Deals 125% damage',
+        lv3: 'Deals 150% damage',
+        lv4: 'Deals 175% damage',
       },
     },
     skill4: {
-      type: '',
-      name: '',
+      type: 'Passive',
+      name: 'Phantom Dash',
       description: {
         lv1: [
-          { type: 'text', content: '' },
-          { type: 'value', content: '' },
+          {
+            type: 'text',
+            content:
+              'Tamamo is immune to the next incoming Attack and teleport to a random position. This effect can be triggered once every ',
+          },
+          { type: 'value', content: '6s' },
+          { type: 'text', content: '.' },
         ],
-        lv2: '',
-        lv3: '',
-        lv4: '',
+        lv2: 'Can be triggered once every 5s',
+        lv3: 'Can be triggered once every 4s',
+        lv4: 'Can be triggered once every 3s',
+      },
+    },
+  },
+  Idun: {
+    skill1: {
+      type: 'Ultimate',
+      name: 'Tree of Life',
+      description: {
+        lv1: [
+          {
+            type: 'text',
+            content:
+              'Idun summons the Tree of Youth. "Golden Apples" drop from the tree, restoring ',
+          },
+          { type: 'value', content: '25' },
+          { type: 'text', content: ' Energy and recovering Health equal to ' },
+          { type: 'value', content: '35%' },
+          {
+            type: 'text',
+            content: " of Idun's Attack every second to all ally Heroes for ",
+          },
+          { type: 'value', content: '6s' },
+          { type: 'text', content: '.' },
+        ],
+        lv2: 'Recovers Health equal to 40% of Attack',
+        lv3: 'Restores 35 Energy every second',
+        lv4: 'Recovers Health equal to 45% of Attack',
+      },
+    },
+    skill2: {
+      type: 'Passive',
+      name: "Idun's Salvation",
+      description: {
+        lv1: [
+          {
+            type: 'text',
+            content:
+              'At the start of the battle, Idun summons 3 "Golden Apples". When an ally Hero has less than ',
+          },
+          { type: 'value', content: '50%' },
+          {
+            type: 'text',
+            content: ' Health, they consume this apple to recover ',
+          },
+          { type: 'value', content: '20%' },
+          {
+            type: 'text',
+            content:
+              ' of their max Health. This effect can only be used once every ',
+          },
+          { type: 'value', content: '6s' },
+          { type: 'text', content: '.' },
+        ],
+        lv2: "Restores 25% of the Hero's max Health",
+        lv3: 'When all the "Golden Apples" are consumed, Idun spends 500 Energy to summon 3 more "Golden Apples"',
+        lv4: "Restores 30% of the Hero's max Health",
+      },
+    },
+    skill3: {
+      type: 'Passive',
+      name: 'Divine Blessing',
+      description: {
+        lv1: [
+          {
+            type: 'text',
+            content:
+              'When any backline ally Hero takes damage equaling more than ',
+          },
+          { type: 'value', content: '10%' },
+          { type: 'text', content: ' of their max Health, Idun spends ' },
+          { type: 'value', content: '80' },
+          {
+            type: 'text',
+            content:
+              ' Energy to block this damage. This effect can only be triggered once every ',
+          },
+          { type: 'value', content: '5s' },
+          { type: 'text', content: '.' },
+        ],
+        lv2: 'Spends 65 Energy to block this damage',
+        lv3: 'Idun recovers 10 Energy every second',
+        lv4: 'Can be triggered every 4s',
+      },
+    },
+    skill4: {
+      type: 'Active',
+      name: 'Spirit Away',
+      description: {
+        lv1: [
+          { type: 'text', content: 'Idun summons a "Spirit Stag" to steal ' },
+          { type: 'value', content: '100' },
+          { type: 'text', content: ' Energy from the target and deal ' },
+          { type: 'value', content: '150%' },
+          { type: 'text', content: ' damage.' },
+        ],
+        lv2: 'Steals 110 Energy',
+        lv3: 'Deals 200% damage',
+        lv4: 'Steals 120 Energy',
+      },
+    },
+  },
+  Gaia: {
+    skill1: {
+      type: 'Ultimate',
+      name: 'Primal Might',
+      description: {
+        lv1: [
+          {
+            type: 'text',
+            content:
+              'Gaia channels the power of the Earth to deal damage equal to ',
+          },
+          { type: 'value', content: '2%' },
+          {
+            type: 'text',
+            content:
+              ' of her max Health 4 times to all enemies and reducing their Attack Speed by ',
+          },
+          { type: 'value', content: '40%' },
+          { type: 'text', content: ' for ' },
+          { type: 'value', content: '3s' },
+          { type: 'text', content: '.' },
+        ],
+        lv2: "Deals damage equal to 2.2% of Gaia's max Health",
+        lv3: 'Reduces Attack Speed by 50%',
+        lv4: "Deals damage equal to 2.4% of Gaia's max Health",
+      },
+    },
+    skill2: {
+      type: 'Active',
+      name: 'Brutal Bludgeon',
+      description: {
+        lv1: [
+          { type: 'text', content: 'Gaia charges briefly and deals ' },
+          { type: 'value', content: '200%' },
+          {
+            type: 'text',
+            content: ' damage to enemies and knocks them into the air.',
+          },
+        ],
+        lv2: 'For every stack of "Earthly Vein", deal 20% extra damage',
+        lv3: 'Deals 250% damage',
+        lv4: 'Additionally, targets are stunned for 1.5s when they land',
+      },
+    },
+    skill3: {
+      type: 'Passive',
+      name: 'Rocky Semblance',
+      description: {
+        lv1: [
+          {
+            type: 'text',
+            content:
+              'At the beginning of the battle, Gaia gainst a "Stone Shield" which increases her Defense by ',
+          },
+          { type: 'value', content: '40%' },
+          {
+            type: 'text',
+            content:
+              '. When Gaia is the target of a control skill while it is active, the shield will be consumed to remove the control (Regenerates ',
+          },
+          { type: 'value', content: '10s' },
+          { type: 'text', content: ' afterwards).' },
+        ],
+        lv2: 'When Gaia removed a control, she recovers 4% Health per second for 5s',
+        lv3: 'Increases Defense by 60% while "Stone Shield" is active',
+        lv4: 'When Gaia removed a control, she recovers 5% Health per second for the duration',
+      },
+    },
+    skill4: {
+      type: 'Passive',
+      name: 'Earthly Vein',
+      description: {
+        lv1: [
+          { type: 'text', content: 'For every ' },
+          { type: 'value', content: '35%' },
+          {
+            type: 'text',
+            content:
+              ' of Health lost, Gaia gains 1 stack of "Earthly Vein", increasing her max Health by ',
+          },
+          { type: 'value', content: '4%' },
+          { type: 'text', content: '. This effect can stack up to ' },
+          { type: 'value', content: '6' },
+          { type: 'text', content: ' times.' },
+        ],
+        lv2: 'Additionally, 50% of the increased Health will be recovered as well',
+        lv3: 'For every 30% of total Health lost, add 1 stack of "Earthly Vein"',
+        lv4: 'For every 25% of total Health lost, add 1 stack of "Earthly Vein"',
+      },
+    },
+  },
+  Oberon: {
+    skill1: {
+      type: 'Ultimate',
+      name: 'Homecoming',
+      description: {
+        lv1: [
+          {
+            type: 'text',
+            content:
+              'Oberon throws his blades at the furthest enemy in the field and disappears. As the twin blades are travelling, they deal ',
+          },
+          { type: 'value', content: '250%' },
+          {
+            type: 'text',
+            content:
+              ' damage to all enemies in their way. When the blades reach their destination, they pause for ',
+          },
+          { type: 'value', content: '1.5s' },
+          { type: 'text', content: ' and then deal ' },
+          { type: 'value', content: '100%' },
+          { type: 'text', content: ' damage every ' },
+          { type: 'value', content: '0.5s' },
+          {
+            type: 'text',
+            content:
+              ' to nearby enemies. After, Oberon appears again and catches the blades, dealing ',
+          },
+          { type: 'value', content: '250%' },
+          { type: 'text', content: ' damage to nearby enemies.' },
+        ],
+        lv2: 'The blades deal 300% damage to enemies in their way',
+        lv3: 'The blades deal 120% damage to enemies near the destination',
+        lv4: 'When Oberon appears and catches the blades, deal 300% damage to nearby enemies',
+      },
+    },
+    skill2: {
+      type: 'Active',
+      name: 'Swirling Blades',
+      description: {
+        lv1: [
+          {
+            type: 'text',
+            content: 'Oberon slashes with his twin blades to deal 4x ',
+          },
+          { type: 'value', content: '60%' },
+          {
+            type: 'text',
+            content: ' damage to the target and increases his Dodge by ',
+          },
+          { type: 'value', content: '35%' },
+          { type: 'text', content: ' for ' },
+          { type: 'value', content: '3s' },
+          { type: 'text', content: '.' },
+        ],
+        lv2: 'Deals 65% damage',
+        lv3: 'Deals 70% damage',
+        lv4: 'Deals 75% damage',
+      },
+    },
+    skill3: {
+      type: 'Active',
+      name: 'Storm of Blades',
+      description: {
+        lv1: [
+          {
+            type: 'text',
+            content:
+              'Oberon spins his blades, blocking all damage and debuffs for ',
+          },
+          { type: 'value', content: '3s' },
+          {
+            type: 'text',
+            content:
+              '. He then releases a wave of energy in front of himself, dealing ',
+          },
+          { type: 'value', content: '120%' },
+          { type: 'text', content: ' damage to targets in range.' },
+        ],
+        lv2: 'Deals additional damage equal to the number of blocked attacks during the skill x 40% (to a maximum of 200%)',
+        lv3: 'Deals 135% damage',
+        lv4: 'Deals 150% damage',
+      },
+    },
+    skill4: {
+      type: 'Passive',
+      name: 'Twin Blades',
+      description: {
+        lv1: [
+          {
+            type: 'text',
+            content:
+              'When Oberon uses auto-attacks, he switches blades to inflict different effects.',
+          },
+          { type: 'line-break', content: '' },
+          { type: 'text', content: 'The left blade removes ' },
+          { type: 'value', content: '20' },
+          {
+            type: 'text',
+            content:
+              ' Energy from the target; the right blade deals an additional ',
+          },
+          { type: 'value', content: '1.5%' },
+          { type: 'text', content: ' of ' },
+          { type: 'true-damage', content: 'True Damage' },
+          { type: 'text', content: '.' },
+          { type: 'line-break', content: '' },
+          {
+            type: 'text',
+            content:
+              "When Oberon uses any skill, both blades' effects will be added.",
+          },
+        ],
+        lv2: 'The right blade deals 1.8% of True Damage',
+        lv3: 'The left blade removes 25 Energy from the target',
+        lv4: 'The right blade deals 2.1% of True Damage',
+      },
+    },
+  },
+  Flora: {
+    skill1: {
+      type: 'Ultimate',
+      name: 'Flowery Implosion',
+      description: {
+        lv1: [
+          {
+            type: 'text',
+            content:
+              'Flora summons petal circles around each enemy. These circles explode after a short delay, dealing ',
+          },
+          { type: 'value', content: '350%' },
+          {
+            type: 'text',
+            content:
+              ' damage to a small area. If an enemy is hit by this skill multiple times, the damage is reduced each time.',
+          },
+        ],
+        lv2: 'Deals 375% damage',
+        lv3: 'Additionally, stuns the target for 2s',
+        lv4: 'Deals 400% damage',
+      },
+    },
+    skill2: {
+      type: 'Active',
+      name: 'Drifting Petals',
+      description: {
+        lv1: [
+          {
+            type: 'text',
+            content:
+              'Flora fires petals at an enemy target. These petals bounce between the nearby enemies up to ',
+          },
+          { type: 'value', content: '4' },
+          { type: 'text', content: ' times, dealing ' },
+          { type: 'value', content: '80%' },
+          { type: 'text', content: ' damage each hit.' },
+        ],
+        lv2: 'Petals bounce up to 5 times',
+        lv3: 'Additionally, damage taken by the target increases by 10% for 10s. This effect can have up to 5 stacks.',
+        lv4: 'Deals 85% damage each hit',
+      },
+    },
+    skill3: {
+      type: 'Active',
+      name: 'Holy Flourescence',
+      description: {
+        lv1: [
+          { type: 'text', content: 'Flora fires a petal orb that deals 2x ' },
+          { type: 'value', content: '150%' },
+          {
+            type: 'text',
+            content: ' damage to target(s) directly in front of her.',
+          },
+        ],
+        lv2: 'If no enemy is hit during this skill, the following auto-attack will trigger "Blooming Magic".',
+        lv3: 'Deals 200% damage',
+        lv4: 'Additionally, increases control effects by 50% for 5s',
+      },
+    },
+    skill4: {
+      type: 'Passive',
+      name: 'Blooming Magic',
+      description: {
+        lv1: [
+          {
+            type: 'text',
+            content:
+              'Whenever Flora uses an active skill 2 time(s), her next auto-attack deals additional damage equal to ',
+          },
+          { type: 'value', content: '25%' },
+          {
+            type: 'text',
+            content: " of the target's current missing Health. ",
+          },
+          {
+            type: 'true-damage',
+            content: 'This damage is treated as True Damage',
+          },
+          { type: 'text', content: '.' },
+        ],
+        lv2: "Auto-attack deals additional damage equal to 27.5% of the target's lost Health",
+        lv3: 'Additionally, stuns the target for 1s',
+        lv4: "Auto-attack deals additional damage equal to 30% of the target's lost Health",
       },
     },
   },
 };
+
+export default skillData;
+
+// const dummyData = {
+//   heroName: {
+//     skill1: {
+//       type: '',
+//       name: '',
+//       description: {
+//         lv1: [
+//           { type: 'text', content: '' },
+//           { type: 'value', content: '' },
+//         ],
+//         lv2: '',
+//         lv3: '',
+//         lv4: '',
+//       },
+//     },
+//     skill2: {
+//       type: '',
+//       name: '',
+//       description: {
+//         lv1: [
+//           { type: 'text', content: '' },
+//           { type: 'value', content: '' },
+//         ],
+//         lv2: '',
+//         lv3: '',
+//         lv4: '',
+//       },
+//     },
+//     skill3: {
+//       type: '',
+//       name: '',
+//       description: {
+//         lv1: [
+//           { type: 'text', content: '' },
+//           { type: 'value', content: '' },
+//         ],
+//         lv2: '',
+//         lv3: '',
+//         lv4: '',
+//       },
+//     },
+//     skill4: {
+//       type: '',
+//       name: '',
+//       description: {
+//         lv1: [
+//           { type: 'text', content: '' },
+//           { type: 'value', content: '' },
+//         ],
+//         lv2: '',
+//         lv3: '',
+//         lv4: '',
+//       },
+//     },
+//   },
+// };
+
+//A skill can be called like this:
+
+// {skillData['Hero Name'].skill1.description.lv1.map((piece, index) => {
+//   if (piece.type === 'value') {
+//     return (
+//       <span className='highlight' key={index}>
+//         {piece.content}
+//       </span>
+//     );
+//   } else if (piece.type === 'line-break') {
+//     return <br key={index} />;
+//   } else if (piece.type === 'text') {
+//     return piece.content;
+//   } else {
+//     return (
+//       <span className={'highlight-' + piece.type} key={index}>
+//         {piece.content}
+//       </span>
+//     );
+//   }
+// })}
