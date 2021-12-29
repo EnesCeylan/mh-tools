@@ -1,12 +1,12 @@
 import './App.css';
 import CubeOfTruth from './components/Cube/CubeOfTruth';
-import HeroList from './components/Hero/HeroList';
+import Hero from './components/Hero/Hero';
 
 function App() {
   return (
     <div className='App'>
       {/* <CubeOfTruth /> */}
-      <HeroList />
+      <Hero />
     </div>
   );
 }

@@ -1,7 +1,7 @@
 const skillData = {
   // ----------------------------------------------- UR -----------------------------------------------
   Lucifer: {
-    skill1: {
+    ultimate: {
       type: 'Ultimate',
       name: 'Holy Chaos',
       description: {
@@ -33,7 +33,7 @@ const skillData = {
         lv4: 'Deals 80% damage',
       },
     },
-    skill2: {
+    'skill two': {
       type: 'Passive',
       name: 'Fallen Flames',
       description: {
@@ -62,7 +62,7 @@ const skillData = {
         lv4: 'Deals 230% damage',
       },
     },
-    skill3: {
+    'skill three': {
       type: 'Passive',
       name: 'Imperious Glance',
       description: {
@@ -80,7 +80,7 @@ const skillData = {
         lv4: 'Increases Dodge by 10%',
       },
     },
-    skill4: {
+    'skill four': {
       type: 'Active',
       name: 'Fallen Stars',
       description: {
@@ -108,7 +108,7 @@ const skillData = {
     },
   },
   Iset: {
-    skill1: {
+    ultimate: {
       type: 'Ultimate',
       name: 'Revival Ritual',
       description: {
@@ -142,7 +142,7 @@ const skillData = {
         lv4: "Increases the amount of Iset's Attack boost to 25%",
       },
     },
-    skill2: {
+    'skill two': {
       type: 'Active',
       name: 'Ode to Sorcery',
       description: {
@@ -166,7 +166,7 @@ const skillData = {
         lv4: "Allies increase their Attack by 15% of Iset's Attack",
       },
     },
-    skill3: {
+    'skill three': {
       type: 'Active',
       name: 'Purifying Incantation',
       description: {
@@ -188,7 +188,7 @@ const skillData = {
         lv4: 'Increases duration of effects to 6s',
       },
     },
-    skill4: {
+    'skill four': {
       type: 'Passive',
       name: 'Balanced Clock',
       description: {
@@ -218,7 +218,7 @@ const skillData = {
     },
   },
   Typhon: {
-    skill1: {
+    ultimate: {
       type: 'Ultimate',
       name: 'Chaos Storm',
       description: {
@@ -249,7 +249,7 @@ const skillData = {
         lv4: 'Increases Attack by 30%',
       },
     },
-    skill2: {
+    'skill two': {
       type: 'Active',
       name: 'Snake Flurry',
       description: {
@@ -299,7 +299,7 @@ const skillData = {
         lv4: 'Reduces Dodge by 10%',
       },
     },
-    skill3: {
+    'skill three': {
       type: 'Passive',
       name: 'Monster King',
       description: {
@@ -332,7 +332,7 @@ const skillData = {
         lv4: 'Additionally, every 3 times it attacks, the snake recovers 8% of its max Health',
       },
     },
-    skill4: {
+    'skill four': {
       type: 'Passive',
       name: 'Titan Shield',
       description: {
@@ -361,7 +361,7 @@ const skillData = {
     },
   },
   Lilith: {
-    skill1: {
+    ultimate: {
       type: 'Ultimate',
       name: 'Dual Shadows',
       description: {
@@ -395,7 +395,7 @@ const skillData = {
         lv4: 'Human mask: Deals 670% damage; Demon Mask: Deals 400% damage',
       },
     },
-    skill2: {
+    'skill two': {
       type: 'Active',
       name: 'Shadow Lightning',
       description: {
@@ -421,7 +421,7 @@ const skillData = {
         lv4: 'With the human mask, deals 120% damage; with the demon mask, deals 170% damage to each target',
       },
     },
-    skill3: {
+    'skill three': {
       type: 'Active',
       name: 'Dark Ritual',
       description: {
@@ -455,7 +455,7 @@ const skillData = {
         lv4: 'With the human mask, absorbs 60 Energy from all allies; with the demon mask, 90 Energy from all allies',
       },
     },
-    skill4: {
+    'skill four': {
       type: 'Passive',
       name: 'Dual Masks',
       description: {
@@ -477,7 +477,7 @@ const skillData = {
     },
   },
   Nuwa: {
-    skill1: {
+    ultimate: {
       type: 'Ultimate',
       name: 'Mend the Sky',
       description: {
@@ -519,7 +519,7 @@ const skillData = {
         lv4: 'This effect lasts for 10s',
       },
     },
-    skill2: {
+    'skill two': {
       type: 'Passive',
       name: 'Five-Colored Stones',
       description: {
@@ -556,7 +556,7 @@ const skillData = {
         lv4: 'Brown: Increases max Health by 35%',
       },
     },
-    skill3: {
+    'skill three': {
       type: 'Active',
       name: 'Pillar of the Sky',
       description: {
@@ -599,7 +599,7 @@ const skillData = {
         lv4: 'Brown: Deals 160% damage',
       },
     },
-    skill4: {
+    'skill four': {
       type: 'Passive',
       name: 'Lustrous Land',
       description: {
@@ -643,7 +643,7 @@ const skillData = {
   // ----------------------------------------------- SSR -----------------------------------------------
   // ------------------------------------- LUMINARCH -------------------------------------
   Zeus: {
-    skill1: {
+    ultimate: {
       type: 'Ultimate',
       name: 'Wrath of god',
       description: {
@@ -661,7 +661,7 @@ const skillData = {
         lv4: 'Increases overall damage by 100% to summons/minions',
       },
     },
-    skill2: {
+    'skill two': {
       type: 'Active',
       name: 'Lightning Chain',
       description: {
@@ -680,7 +680,7 @@ const skillData = {
         lv4: 'Reduces skill cooldown by 1s',
       },
     },
-    skill3: {
+    'skill three': {
       type: 'Active',
       name: 'Voltic Shield',
       description: {
@@ -702,7 +702,7 @@ const skillData = {
         lv4: "Absorbs damage equal to 150% of Zeus' Attack",
       },
     },
-    skill4: {
+    'skill four': {
       type: 'Passive',
       name: 'Static Field',
       description: {
@@ -726,7 +726,7 @@ const skillData = {
     },
   },
   Athena: {
-    skill1: {
+    ultimate: {
       type: 'Ultimate',
       name: 'Aegis of Light',
       description: {
@@ -746,7 +746,7 @@ const skillData = {
         lv4: "Allies recover Health while the shield is active (recover 2% of the target's max Health every second)",
       },
     },
-    skill2: {
+    'skill two': {
       type: 'Active',
       name: 'Victorious Pierce',
       description: {
@@ -766,7 +766,7 @@ const skillData = {
         lv4: 'For every target hit, Athena recovers 12% of her max Health',
       },
     },
-    skill3: {
+    'skill three': {
       type: 'Active',
       name: 'Light of Athens',
       description: {
@@ -789,7 +789,7 @@ const skillData = {
         lv4: 'Beam has 50% chance of targeting an additional enemy',
       },
     },
-    skill4: {
+    'skill four': {
       type: 'Passive',
       name: 'Holy Protection',
       description: {
@@ -818,7 +818,7 @@ const skillData = {
     },
   },
   Susanoo: {
-    skill1: {
+    ultimate: {
       type: 'Ultimate',
       name: 'Phantom Fury',
       description: {
@@ -844,7 +844,7 @@ const skillData = {
         lv4: 'Deals 105% damage',
       },
     },
-    skill2: {
+    'skill two': {
       type: 'Active',
       name: 'Phantom Slash',
       description: {
@@ -864,7 +864,7 @@ const skillData = {
         lv4: 'Deals 400% damage',
       },
     },
-    skill3: {
+    'skill three': {
       type: 'Passive',
       name: 'Precision Strike',
       description: {
@@ -888,7 +888,7 @@ const skillData = {
         lv4: 'Increases Attack Speed by 75% for every Crit',
       },
     },
-    skill4: {
+    'skill four': {
       type: 'Active',
       name: 'Tempest Blade',
       description: {
@@ -907,7 +907,7 @@ const skillData = {
     },
   },
   Artemis: {
-    skill1: {
+    ultimate: {
       type: 'Ultimate',
       name: 'Crescent Arrow',
       description: {
@@ -934,7 +934,7 @@ const skillData = {
         lv4: 'Increases damage to 100%',
       },
     },
-    skill2: {
+    'skill two': {
       type: 'Active',
       name: 'Lunar Strike',
       description: {
@@ -954,7 +954,7 @@ const skillData = {
         lv4: 'Increases damage to 300%',
       },
     },
-    skill3: {
+    'skill three': {
       type: 'Passive',
       name: 'Full Moon',
       description: {
@@ -974,7 +974,7 @@ const skillData = {
         lv4: 'Increases damage dealt to 2.6%',
       },
     },
-    skill4: {
+    'skill four': {
       type: 'Active',
       name: 'Moonlit Arrow',
       description: {
@@ -994,7 +994,7 @@ const skillData = {
     },
   },
   Dionysus: {
-    skill1: {
+    ultimate: {
       type: 'Ultimate',
       name: 'Drunken',
       description: {
@@ -1014,7 +1014,7 @@ const skillData = {
         lv4: "Reduces target's Attack Speed by 90%",
       },
     },
-    skill2: {
+    'skill two': {
       type: 'Active',
       name: 'Mis of Wine',
       description: {
@@ -1040,7 +1040,7 @@ const skillData = {
         lv4: 'Reduces enemy Attack by 15%',
       },
     },
-    skill3: {
+    'skill three': {
       type: 'Active',
       name: 'Chronic Poison',
       description: {
@@ -1066,7 +1066,7 @@ const skillData = {
         lv4: 'Additionally, reduces healing received by the target by 50%',
       },
     },
-    skill4: {
+    'skill four': {
       type: 'Passive',
       name: 'Alcoholic',
       description: {
@@ -1086,7 +1086,7 @@ const skillData = {
     },
   },
   Thor: {
-    skill1: {
+    ultimate: {
       type: 'Ultimate',
       name: 'Divine Descent',
       description: {
@@ -1119,7 +1119,7 @@ const skillData = {
         lv4: 'Additionally, recovers 30% Health',
       },
     },
-    skill2: {
+    'skill two': {
       type: 'Active',
       name: 'Thunder Hammer',
       description: {
@@ -1139,7 +1139,7 @@ const skillData = {
         lv4: 'Deals 200% damage',
       },
     },
-    skill3: {
+    'skill three': {
       type: 'Passive',
       name: 'Static Shield',
       description: {
@@ -1180,7 +1180,7 @@ const skillData = {
         lv4: 'Increases the chance of a lightning bolt to 65%',
       },
     },
-    skill4: {
+    'skill four': {
       type: 'Active',
       name: 'Nordic Squall',
       description: {
@@ -1206,7 +1206,7 @@ const skillData = {
   // ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
   // ------------------------------------- SHADOWARCH -------------------------------------
   Persephone: {
-    skill1: {
+    ultimate: {
       type: 'Ultimate',
       name: 'Bitter Blossoms',
       description: {
@@ -1230,7 +1230,7 @@ const skillData = {
         lv4: 'Deals 300% damage',
       },
     },
-    skill2: {
+    'skill two': {
       type: 'Passive',
       name: 'Nether Flowers',
       description: {
@@ -1273,7 +1273,7 @@ const skillData = {
         lv4: 'At 5 stacks of Nether Flowers: deals 100% damage',
       },
     },
-    skill3: {
+    'skill three': {
       type: 'Active',
       name: 'Nether Butterflies',
       description: {
@@ -1294,7 +1294,7 @@ const skillData = {
         lv4: 'Cannot receive any buff for 10s',
       },
     },
-    skill4: {
+    'skill four': {
       type: 'Passive',
       name: 'Nether Protection',
       description: {
@@ -1314,7 +1314,7 @@ const skillData = {
     },
   },
   Izanami: {
-    skill1: {
+    ultimate: {
       type: 'Ultimate',
       name: 'Breath of the Dead',
       description: {
@@ -1348,7 +1348,7 @@ const skillData = {
         lv4: 'deals damage equal to 70% of Attack + ([number of ghosts released] x 3% of her Attack) per second',
       },
     },
-    skill2: {
+    'skill two': {
       type: 'Active',
       name: 'Specter Impact',
       description: {
@@ -1368,7 +1368,7 @@ const skillData = {
         lv4: 'Izanami has 100% chance to collect 1 Wandering Ghost(s)',
       },
     },
-    skill3: {
+    'skill three': {
       type: 'Active',
       name: 'Life Drain',
       description: {
@@ -1391,7 +1391,7 @@ const skillData = {
         lv4: 'Deals 85% damage',
       },
     },
-    skill4: {
+    'skill four': {
       type: 'Passive',
       name: 'Nether Enchantment',
       description: {
@@ -1419,7 +1419,7 @@ const skillData = {
     },
   },
   Hades: {
-    skill1: {
+    ultimate: {
       type: 'Ultimate',
       name: 'Death Scythe',
       description: {
@@ -1448,7 +1448,7 @@ const skillData = {
         lv4: 'Deals 120% damage',
       },
     },
-    skill2: {
+    'skill two': {
       type: 'Active',
       name: 'Hell Hound',
       description: {
@@ -1464,7 +1464,7 @@ const skillData = {
         lv4: 'The Hellhound takes 60% of the damage taken by Hades upon himself',
       },
     },
-    skill3: {
+    'skill three': {
       type: 'Active',
       name: 'Shadow Shield',
       description: {
@@ -1482,7 +1482,7 @@ const skillData = {
         lv4: 'Additionally, Hellhound gains the shield',
       },
     },
-    skill4: {
+    'skill four': {
       type: 'Passive',
       name: 'Life Tap',
       description: {
@@ -1500,7 +1500,7 @@ const skillData = {
     },
   },
   Medusa: {
-    skill1: {
+    ultimate: {
       type: 'Ultimate',
       name: 'Petrifying Glare',
       description: {
@@ -1518,7 +1518,7 @@ const skillData = {
         lv4: 'Petrification lasts for 5s',
       },
     },
-    skill2: {
+    'skill two': {
       type: 'Passive',
       name: 'Split Shots',
       description: {
@@ -1539,7 +1539,7 @@ const skillData = {
         lv4: 'Deals 230% damage to the primary enemy target; 120% damage to secondary enemies',
       },
     },
-    skill3: {
+    'skill three': {
       type: 'Passive',
       name: 'Arrows of Corruption',
       description: {
@@ -1555,7 +1555,7 @@ const skillData = {
         lv4: 'Increases Lifesteal to 135%',
       },
     },
-    skill4: {
+    'skill four': {
       type: 'Active',
       name: 'Venomous Snake',
       description: {
@@ -1577,7 +1577,7 @@ const skillData = {
     },
   },
   Anubis: {
-    skill1: {
+    ultimate: {
       type: 'Ultimate',
       name: 'Abyss Domination',
       description: {
@@ -1601,7 +1601,7 @@ const skillData = {
         lv4: 'Lasts for 10s',
       },
     },
-    skill2: {
+    'skill two': {
       type: 'Active',
       name: 'Underworld Balance',
       description: {
@@ -1621,7 +1621,7 @@ const skillData = {
         lv4: 'Reduces the Crit Damage of backline enemies by 40%',
       },
     },
-    skill3: {
+    'skill three': {
       type: 'Active',
       name: 'Mummy Commander',
       description: {
@@ -1646,7 +1646,7 @@ const skillData = {
         lv4: 'Every 5 times a mummy attacks, the enemy is stunned for 1s',
       },
     },
-    skill4: {
+    'skill four': {
       type: 'Passive',
       name: 'Mummy Guardian',
       description: {
@@ -1668,7 +1668,7 @@ const skillData = {
     },
   },
   Hela: {
-    skill1: {
+    ultimate: {
       type: 'Ultimate',
       name: 'Dark Synergy',
       description: {
@@ -1690,7 +1690,7 @@ const skillData = {
         lv4: "Increases allies' Health recovery every 2s to 3.5%",
       },
     },
-    skill2: {
+    'skill two': {
       type: 'Active',
       name: 'Dark Cure',
       description: {
@@ -1718,7 +1718,7 @@ const skillData = {
         lv4: 'Increases damage per second to 130%',
       },
     },
-    skill3: {
+    'skill three': {
       type: 'Active',
       name: 'Foul Essence',
       description: {
@@ -1748,7 +1748,7 @@ const skillData = {
         lv4: "Reduces allies' damage taken by 35%",
       },
     },
-    skill4: {
+    'skill four': {
       type: 'Passive',
       name: 'Blood Stained',
       description: {
@@ -1769,7 +1769,7 @@ const skillData = {
   // ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
   // ------------------------------------- GUARDIAN -------------------------------------
   Hercules: {
-    skill1: {
+    ultimate: {
       type: 'Ultimate',
       name: 'Mortal Strike',
       description: {
@@ -1795,7 +1795,7 @@ const skillData = {
         lv4: 'Attack deals 300% damage',
       },
     },
-    skill2: {
+    'skill two': {
       type: 'Passive',
       name: 'Sword Storm',
       description: {
@@ -1821,7 +1821,7 @@ const skillData = {
         lv4: 'Recovers 2% of max Health every second',
       },
     },
-    skill3: {
+    'skill three': {
       type: 'Active',
       name: 'Provoke',
       description: {
@@ -1844,7 +1844,7 @@ const skillData = {
         lv4: '"Provoke" lasts for 5s',
       },
     },
-    skill4: {
+    'skill four': {
       type: 'Active',
       name: 'Brutal Charge',
       description: {
@@ -1868,7 +1868,7 @@ const skillData = {
     },
   },
   'Lu Bu': {
-    skill1: {
+    ultimate: {
       type: 'Ultimate',
       name: 'Fearless Strike',
       description: {
@@ -1886,7 +1886,7 @@ const skillData = {
         lv4: 'Deals 70% damage per strike',
       },
     },
-    skill2: {
+    'skill two': {
       type: 'Passive',
       name: 'Force of Tiger',
       description: {
@@ -1908,7 +1908,7 @@ const skillData = {
         lv4: 'The last strike deals 175% damage',
       },
     },
-    skill3: {
+    'skill three': {
       type: 'Passive',
       name: 'Unbent Heart',
       description: {
@@ -1928,7 +1928,7 @@ const skillData = {
         lv4: 'Gains a maximum of 65% Lifesteal',
       },
     },
-    skill4: {
+    'skill four': {
       type: 'Active',
       name: 'Halfmoon Slash',
       description: {
@@ -1947,7 +1947,7 @@ const skillData = {
     },
   },
   'Ganjiang & Moye': {
-    skill1: {
+    ultimate: {
       type: 'Ultimate',
       name: 'Twin Souls',
       description: {
@@ -1971,7 +1971,7 @@ const skillData = {
         lv4: 'The Ultimate can be used while being controlled. Additionally, disperse all debuffs on Ganjiang',
       },
     },
-    skill2: {
+    'skill two': {
       type: 'Passive',
       name: 'Illusion Blades',
       description: {
@@ -1994,7 +1994,7 @@ const skillData = {
         lv4: 'As Moya, Ganjiang sword deals 75% damage; as Ganjiang, Moye sword deals 150% damage to each',
       },
     },
-    skill3: {
+    'skill three': {
       type: 'Active',
       name: 'Spirit Slash',
       description: {
@@ -2017,7 +2017,7 @@ const skillData = {
         lv4: 'As Moye, deals 90% damage; as Ganjiang, deals 150% damage',
       },
     },
-    skill4: {
+    'skill four': {
       type: 'Passive',
       name: 'Craftsmanship',
       description: {
@@ -2038,7 +2038,7 @@ const skillData = {
     },
   },
   'Joan of Arc': {
-    skill1: {
+    ultimate: {
       type: 'Ultimate',
       name: 'Deus le Volt',
       description: {
@@ -2056,7 +2056,7 @@ const skillData = {
         lv4: 'Lasts for 7s',
       },
     },
-    skill2: {
+    'skill two': {
       type: 'Active',
       name: 'Victorious Sprint',
       description: {
@@ -2083,7 +2083,7 @@ const skillData = {
         lv4: 'Deals 300% damage',
       },
     },
-    skill3: {
+    'skill three': {
       type: 'Active',
       name: 'Sweeping Charge',
       description: {
@@ -2108,7 +2108,7 @@ const skillData = {
         lv4: 'Knocks the enemy down for 2s',
       },
     },
-    skill4: {
+    'skill four': {
       type: 'Active',
       name: 'Banner of Honor',
       description: {
@@ -2132,7 +2132,7 @@ const skillData = {
     },
   },
   Cleopatra: {
-    skill1: {
+    ultimate: {
       type: 'Ultimate',
       name: 'Poisonous Wane',
       description: {
@@ -2152,7 +2152,7 @@ const skillData = {
         lv4: 'Every stack of "Snake Poison" increases damage dealt by 35% for individual units',
       },
     },
-    skill2: {
+    'skill two': {
       type: 'Active',
       name: 'Crpyt Cobra',
       description: {
@@ -2177,7 +2177,7 @@ const skillData = {
         lv4: 'Deals 50% damage',
       },
     },
-    skill3: {
+    'skill three': {
       type: 'Active',
       name: 'Fetid Fumes',
       description: {
@@ -2202,7 +2202,7 @@ const skillData = {
         lv4: 'Deals 75% damage',
       },
     },
-    skill4: {
+    'skill four': {
       type: 'Passive',
       name: 'Toxic Beuty',
       description: {
@@ -2229,7 +2229,7 @@ const skillData = {
     },
   },
   Cassandra: {
-    skill1: {
+    ultimate: {
       type: 'Ultimate',
       name: 'Pious Plea',
       description: {
@@ -2255,7 +2255,7 @@ const skillData = {
         lv4: 'The drain time increases to 8s',
       },
     },
-    skill2: {
+    'skill two': {
       type: 'Active',
       name: 'Holy Illumination',
       description: {
@@ -2277,7 +2277,7 @@ const skillData = {
         lv4: 'Deals 110% damage to enemies',
       },
     },
-    skill3: {
+    'skill three': {
       type: 'Active',
       name: 'Breathless Prayer',
       description: {
@@ -2300,7 +2300,7 @@ const skillData = {
         lv4: 'Recovers 10% of max Health',
       },
     },
-    skill4: {
+    'skill four': {
       type: 'Passive',
       name: 'Guardian Spirit',
       description: {
@@ -2325,7 +2325,7 @@ const skillData = {
   // ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
   // ------------------------------------- VERDIAN -------------------------------------
   Nagakanya: {
-    skill1: {
+    ultimate: {
       type: 'Ultimate',
       name: 'Blessing of Rain',
       description: {
@@ -2345,7 +2345,7 @@ const skillData = {
         lv4: 'Recovers Health to all allies equal to 4% of their max Health',
       },
     },
-    skill2: {
+    'skill two': {
       type: 'Active',
       name: 'Aqua Barrier',
       description: {
@@ -2374,7 +2374,7 @@ const skillData = {
         lv4: 'Absorbs 200% damage',
       },
     },
-    skill3: {
+    'skill three': {
       type: 'Active',
       name: 'Surging Wave',
       description: {
@@ -2394,7 +2394,7 @@ const skillData = {
         lv4: 'Deals 250% damage',
       },
     },
-    skill4: {
+    'skill four': {
       type: 'Passive',
       name: 'Aqua Favor',
       description: {
@@ -2413,7 +2413,7 @@ const skillData = {
     },
   },
   'Tamamo no Mae': {
-    skill1: {
+    ultimate: {
       type: 'Ultimate',
       name: 'Wrath of Nine-tail',
       description: {
@@ -2431,7 +2431,7 @@ const skillData = {
         lv4: 'Reset the cooldown of Spirit Fox Fire',
       },
     },
-    skill2: {
+    'skill two': {
       type: 'Active',
       name: 'Spirit Fox Fire',
       description: {
@@ -2451,7 +2451,7 @@ const skillData = {
         lv4: 'Deals 120% damage',
       },
     },
-    skill3: {
+    'skill three': {
       type: 'Active',
       name: 'Flower Dance',
       description: {
@@ -2472,7 +2472,7 @@ const skillData = {
         lv4: 'Deals 175% damage',
       },
     },
-    skill4: {
+    'skill four': {
       type: 'Passive',
       name: 'Phantom Dash',
       description: {
@@ -2492,7 +2492,7 @@ const skillData = {
     },
   },
   Idun: {
-    skill1: {
+    ultimate: {
       type: 'Ultimate',
       name: 'Tree of Life',
       description: {
@@ -2517,7 +2517,7 @@ const skillData = {
         lv4: 'Recovers Health equal to 45% of Attack',
       },
     },
-    skill2: {
+    'skill two': {
       type: 'Passive',
       name: "Idun's Salvation",
       description: {
@@ -2546,7 +2546,7 @@ const skillData = {
         lv4: "Restores 30% of the Hero's max Health",
       },
     },
-    skill3: {
+    'skill three': {
       type: 'Passive',
       name: 'Divine Blessing',
       description: {
@@ -2572,7 +2572,7 @@ const skillData = {
         lv4: 'Can be triggered every 4s',
       },
     },
-    skill4: {
+    'skill four': {
       type: 'Active',
       name: 'Spirit Away',
       description: {
@@ -2590,7 +2590,7 @@ const skillData = {
     },
   },
   Gaia: {
-    skill1: {
+    ultimate: {
       type: 'Ultimate',
       name: 'Primal Might',
       description: {
@@ -2616,7 +2616,7 @@ const skillData = {
         lv4: "Deals damage equal to 2.4% of Gaia's max Health",
       },
     },
-    skill2: {
+    'skill two': {
       type: 'Active',
       name: 'Brutal Bludgeon',
       description: {
@@ -2633,7 +2633,7 @@ const skillData = {
         lv4: 'Additionally, targets are stunned for 1.5s when they land',
       },
     },
-    skill3: {
+    'skill three': {
       type: 'Passive',
       name: 'Rocky Semblance',
       description: {
@@ -2657,7 +2657,7 @@ const skillData = {
         lv4: 'When Gaia removed a control, she recovers 5% Health per second for the duration',
       },
     },
-    skill4: {
+    'skill four': {
       type: 'Passive',
       name: 'Earthly Vein',
       description: {
@@ -2681,7 +2681,7 @@ const skillData = {
     },
   },
   Oberon: {
-    skill1: {
+    ultimate: {
       type: 'Ultimate',
       name: 'Homecoming',
       description: {
@@ -2715,7 +2715,7 @@ const skillData = {
         lv4: 'When Oberon appears and catches the blades, deal 300% damage to nearby enemies',
       },
     },
-    skill2: {
+    'skill two': {
       type: 'Active',
       name: 'Swirling Blades',
       description: {
@@ -2739,7 +2739,7 @@ const skillData = {
         lv4: 'Deals 75% damage',
       },
     },
-    skill3: {
+    'skill three': {
       type: 'Active',
       name: 'Storm of Blades',
       description: {
@@ -2763,7 +2763,7 @@ const skillData = {
         lv4: 'Deals 150% damage',
       },
     },
-    skill4: {
+    'skill four': {
       type: 'Passive',
       name: 'Twin Blades',
       description: {
@@ -2799,7 +2799,7 @@ const skillData = {
     },
   },
   Flora: {
-    skill1: {
+    ultimate: {
       type: 'Ultimate',
       name: 'Flowery Implosion',
       description: {
@@ -2821,7 +2821,7 @@ const skillData = {
         lv4: 'Deals 400% damage',
       },
     },
-    skill2: {
+    'skill two': {
       type: 'Active',
       name: 'Drifting Petals',
       description: {
@@ -2841,7 +2841,7 @@ const skillData = {
         lv4: 'Deals 85% damage each hit',
       },
     },
-    skill3: {
+    'skill three': {
       type: 'Active',
       name: 'Holy Flourescence',
       description: {
@@ -2858,7 +2858,7 @@ const skillData = {
         lv4: 'Additionally, increases control effects by 50% for 5s',
       },
     },
-    skill4: {
+    'skill four': {
       type: 'Passive',
       name: 'Blooming Magic',
       description: {
@@ -2891,7 +2891,7 @@ export default skillData;
 
 // const dummyData = {
 //   heroName: {
-//     skill1: {
+//     ultimate: {
 //       type: '',
 //       name: '',
 //       description: {
@@ -2904,7 +2904,7 @@ export default skillData;
 //         lv4: '',
 //       },
 //     },
-//     skill2: {
+//     "skill two": {
 //       type: '',
 //       name: '',
 //       description: {
@@ -2917,7 +2917,7 @@ export default skillData;
 //         lv4: '',
 //       },
 //     },
-//     skill3: {
+//     "skill three": {
 //       type: '',
 //       name: '',
 //       description: {
@@ -2930,7 +2930,7 @@ export default skillData;
 //         lv4: '',
 //       },
 //     },
-//     skill4: {
+//     "skill four": {
 //       type: '',
 //       name: '',
 //       description: {
@@ -2948,22 +2948,39 @@ export default skillData;
 
 //A skill can be called like this:
 
-// {skillData['Hero Name'].skill1.description.lv1.map((piece, index) => {
-//   if (piece.type === 'value') {
-//     return (
-//       <span className='highlight' key={index}>
-//         {piece.content}
-//       </span>
-//     );
-//   } else if (piece.type === 'line-break') {
-//     return <br key={index} />;
-//   } else if (piece.type === 'text') {
-//     return piece.content;
-//   } else {
-//     return (
-//       <span className={'highlight-' + piece.type} key={index}>
-//         {piece.content}
-//       </span>
-//     );
+// {Object.keys(skillData['Typhon'][`${skill}`].description).map(
+//   (level, levelIndex) => {
+//     if (level === 'lv1') {
+//       return skillData['Typhon'][`${skill}`].description[
+//         `${level}`
+//       ].map((piece, pieceIndex) => {
+//         if (piece.type === 'value') {
+//           return (
+//             <span className='highlight' key={pieceIndex}>
+//               {piece.content}
+//             </span>
+//           );
+//         } else if (piece.type === 'line-break') {
+//           return <br key={pieceIndex} />;
+//         } else if (piece.type === 'text') {
+//           return piece.content;
+//         } else {
+//           return (
+//             <span
+//               className={'highlight-' + piece.type}
+//               key={pieceIndex}
+//             >
+//               {piece.content}
+//             </span>
+//           );
+//         }
+//       });
+//     } else {
+//       return (
+//         <div className='skill-description' key={levelIndex}>
+//           {skillData['Typhon'][`${skill}`].description[`${level}`]}
+//         </div>
+//       );
+//     }
 //   }
-// })}
+// )}
