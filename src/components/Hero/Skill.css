@@ -1,0 +1,63 @@
+@font-face {
+  font-family: 'Cu Yuan';
+  src: url('../../assets/fonts/FZCu-Yuan-M03.ttf');
+}
+
+.skill {
+  font-family: 'Cu Yuan';
+  color: white;
+
+  max-width: 800px;
+}
+
+.skill:not(:last-child) {
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid yellow;
+}
+
+/* Inside the skill flexbox */
+.skill .skill-icon {
+  width: 128px;
+  height: 128px;
+}
+
+/* Skill header area */
+.skill .skill-header {
+  display: flex;
+  margin-bottom: 0.5rem;
+}
+
+.skill .skill-header .header-texts {
+  width: calc(100% - 128px);
+  text-align: center;
+}
+
+.skill .skill-header span.skill-type {
+  font-size: 0.875rem;
+  color: rgb(184, 184, 184);
+}
+
+/* First skill description */
+.skill .skill-info .first-level {
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid yellow;
+}
+
+/* Skill description first level highlights */
+.first-level .highlight {
+  color: greenyellow;
+}
+
+.first-level .highlight-status {
+  color: orange;
+}
+
+.first-level .highlight-warning {
+  color: darkorange;
+}
+
+.first-level .highlight-true-damage {
+  color: rgb(160, 107, 41);
+}
