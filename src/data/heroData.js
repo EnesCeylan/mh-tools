@@ -3,7 +3,7 @@ const heroData = {
 
   Lucifer: {
     rarity: 'UR',
-    faction: ['Luminarch, Shadowarch'],
+    faction: ['Luminarch', 'Shadowarch'],
     role: 'Fighter',
     runes: [],
     artifacts: [],
@@ -12,7 +12,7 @@ const heroData = {
 
   Iset: {
     rarity: 'UR',
-    faction: ['Luminarch, Verdian'],
+    faction: ['Luminarch', 'Verdian'],
     role: 'Support',
     runes: [],
     artifacts: [],
@@ -20,7 +20,7 @@ const heroData = {
   },
   Typhon: {
     rarity: 'UR',
-    faction: ['Shadowarch, Verdian'],
+    faction: ['Shadowarch', 'Verdian'],
     role: 'Tank',
     runes: [],
     artifacts: [],
@@ -28,7 +28,7 @@ const heroData = {
   },
   Lilith: {
     rarity: 'UR',
-    faction: ['Shadowarch, Guardian'],
+    faction: ['Shadowarch', 'Guardian'],
     role: 'Mage',
     runes: [],
     artifacts: [],
@@ -36,7 +36,7 @@ const heroData = {
   },
   Nuwa: {
     rarity: 'UR',
-    faction: ['Guardian, Verdian'],
+    faction: ['Guardian', 'Verdian'],
     role: 'Support',
     runes: [],
     artifacts: [],
