@@ -1,1 +1,93 @@
+header {
+  --header-height: 5rem;
 
+  background-color: rgba(17, 17, 17, 0.75);
+  width: 100%;
+  min-height: var(--header-height);
+  padding: 0 0.75rem;
+}
+
+.topbar {
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.topbar > a {
+  color: white;
+  text-decoration: none;
+}
+
+.hamburger-menu {
+  height: calc(var(--header-height) / 2);
+  width: calc(var(--header-height) / 2);
+
+  padding: 8px 0 0 8px;
+}
+
+.bar-1,
+.bar-2,
+.bar-3 {
+  width: 80%;
+  height: 10%;
+
+  background-color: white;
+  transition: 0.4s;
+}
+
+.bar-1,
+.bar-2 {
+  margin-bottom: 20%;
+}
+
+.hamburger-menu.active .bar-1 {
+  transform-origin: top left;
+  transform: rotate(45deg) translate(5px, -5px);
+}
+
+.hamburger-menu.active .bar-2 {
+  opacity: 0;
+}
+
+.hamburger-menu.active .bar-3 {
+  transform-origin: bottom left;
+  transform: rotate(-45deg) translate(5px, 3px);
+}
+
+.nav-drawer {
+  width: 100%;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 2.5s ease-out;
+}
+
+.nav-drawer.active {
+  overflow: hidden;
+  max-height: 500px;
+
+  transition: max-height 5s ease-out;
+}
+
+.nav-drawer > a {
+  display: block;
+
+  font-size: 1.25rem;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+footer {
+  height: 6rem;
+  width: 100%;
+  background-color: rgba(17, 17, 17, 0.75);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+footer .disclaimer {
+  margin-bottom: 1rem;
+}

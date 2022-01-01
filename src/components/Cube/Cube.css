@@ -28,75 +28,75 @@
 }
 
 .red {
-  background-image: url("../../assets/cube/Square_Cube_Icon/Red.png");
+  background-image: url('../../assets/cube/Square_Cube_Icon/Red.png');
 }
 
 .red-semi-active {
-  background-image: url("../../assets/cube/Square_Cube_Icon/Red_Partial.png");
+  background-image: url('../../assets/cube/Square_Cube_Icon/Red_Partial.png');
 }
 
 .red-inactive {
-  background-image: url("../../assets/cube/Square_Cube_Icon/Red_Unlit.png");
+  background-image: url('../../assets/cube/Square_Cube_Icon/Red_Unlit.png');
 }
 
 .green {
-  background-image: url("../../assets/cube/Square_Cube_Icon/Green.png");
+  background-image: url('../../assets/cube/Square_Cube_Icon/Green.png');
 }
 
 .green-semi-active {
-  background-image: url("../../assets/cube/Square_Cube_Icon/Green_Partial.png");
+  background-image: url('../../assets/cube/Square_Cube_Icon/Green_Partial.png');
 }
 
 .green-inactive {
-  background-image: url("../../assets/cube/Square_Cube_Icon/Green_Unlit.png");
+  background-image: url('../../assets/cube/Square_Cube_Icon/Green_Unlit.png');
 }
 
 .blue {
-  background-image: url("../../assets/cube/Square_Cube_Icon/Blue.png");
+  background-image: url('../../assets/cube/Square_Cube_Icon/Blue.png');
 }
 
 .blue-semi-active {
-  background-image: url("../../assets/cube/Square_Cube_Icon/Blue_Partial.png");
+  background-image: url('../../assets/cube/Square_Cube_Icon/Blue_Partial.png');
 }
 
 .blue-inactive {
-  background-image: url("../../assets/cube/Square_Cube_Icon/Blue_Unlit.png");
+  background-image: url('../../assets/cube/Square_Cube_Icon/Blue_Unlit.png');
 }
 
 .white {
-  background-image: url("../../assets/cube/Square_Cube_Icon/White.png");
+  background-image: url('../../assets/cube/Square_Cube_Icon/White.png');
 }
 
 .white-semi-active {
-  background-image: url("../../assets/cube/Square_Cube_Icon/White_Partial.png");
+  background-image: url('../../assets/cube/Square_Cube_Icon/White_Partial.png');
 }
 
 .white-inactive {
-  background-image: url("../../assets/cube/Square_Cube_Icon/White_Unlit.png");
+  background-image: url('../../assets/cube/Square_Cube_Icon/White_Unlit.png');
 }
 
 .yellow {
-  background-image: url("../../assets/cube/Square_Cube_Icon/Yellow.png");
+  background-image: url('../../assets/cube/Square_Cube_Icon/Yellow.png');
 }
 
 .yellow-semi-active {
-  background-image: url("../../assets/cube/Square_Cube_Icon/Yellow_Partial.png");
+  background-image: url('../../assets/cube/Square_Cube_Icon/Yellow_Partial.png');
 }
 
 .yellow-inactive {
-  background-image: url("../../assets/cube/Square_Cube_Icon/Yellow_Unlit.png");
+  background-image: url('../../assets/cube/Square_Cube_Icon/Yellow_Unlit.png');
 }
 
 .orange {
-  background-image: url("../../assets/cube/Square_Cube_Icon/Orange.png");
+  background-image: url('../../assets/cube/Square_Cube_Icon/Orange.png');
 }
 
 .orange-semi-active {
-  background-image: url("../../assets/cube/Square_Cube_Icon/Orange_Partial.png");
+  background-image: url('../../assets/cube/Square_Cube_Icon/Orange_Partial.png');
 }
 
 .orange-inactive {
-  background-image: url("../../assets/cube/Square_Cube_Icon/Orange_Unlit.png");
+  background-image: url('../../assets/cube/Square_Cube_Icon/Orange_Unlit.png');
 }
 
 .cube-selector {
@@ -111,53 +111,33 @@
   padding: 8px 12px;
 }
 
-.sun-cube {
-  background-image: url("../../assets/cube/Icon_Sun_Cube.png");
+.cube-selector.active {
+  filter: drop-shadow(0 0 5px #f0d08b);
 }
 
-.sun-cube.active {
-  background-image: url("../../assets/cube/Icon_Sun_Cube_Active.png");
+.sun-cube {
+  background-image: url('../../assets/cube/Icon_Sun_Cube.png');
 }
 
 .moon-cube {
-  background-image: url("../../assets/cube/Icon_Moon_Cube.png");
+  background-image: url('../../assets/cube/Icon_Moon_Cube.png');
 }
-
-/* .moon-cube.active {
-    background-image: url("../../assets/cube/Icon_Moon_Cube_Active.png");
-  } */
 
 .star-cube {
-  background-image: url("../../assets/cube/Icon_Star_Cube.png");
+  background-image: url('../../assets/cube/Icon_Star_Cube.png');
 }
-
-/* .star-cube.active {
-    background-image: url("../../assets/cube/Icon_Star_Cube_Active.png");
-  } */
 
 .dream-cube {
-  background-image: url("../../assets/cube/Icon_Dream_Cube.png");
+  background-image: url('../../assets/cube/Icon_Dream_Cube.png');
 }
-
-/* .dream-cube.active {
-    background-image: url("../../assets/cube/Icon_Dream_Cube_Active.png");
-  } */
 
 .time-cube {
-  background-image: url("../../assets/cube/Icon_Time_Cube.png");
+  background-image: url('../../assets/cube/Icon_Time_Cube.png');
 }
-
-/* .time-cube.active {
-    background-image: url("../../assets/cube/Icon_Time_Cube_Active.png");
-  } */
 
 .phantom-cube {
-  background-image: url("../../assets/cube/Icon_Phantom_Cube.png");
+  background-image: url('../../assets/cube/Icon_Phantom_Cube.png');
 }
-
-/* .phantom-cube.active {
-    background-image: url("../../assets/cube/Icon_Phantom_Cube_Active.png");
-  } */
 
 .face-selector-container {
   padding: 8px;

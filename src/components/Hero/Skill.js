@@ -1,6 +1,6 @@
 import skillData from '../../data/skillData';
 
-function Skill({ skill, skillIndex }) {
+function Skill({ hero, skill, skillIndex }) {
   return (
     <div className='skill'>
       <div className='skill-header'>
@@ -8,29 +8,27 @@ function Skill({ skill, skillIndex }) {
           src={
             process.env.PUBLIC_URL +
             '/assets/hero/skill-icons/' +
-            'Typhon' +
+            hero.replace(/ /g, '_') +
             '_' +
             (skillIndex + 1) +
             '.png'
           }
-          alt={'Typhon ' + skill + ' icon'}
+          alt={hero + ' ' + skill + ' icon'}
           className='skill-icon'
         />
         <div className='header-texts'>
-          <h4 className='skill-name'>{skillData['Typhon'][`${skill}`].name}</h4>
-          <span className='skill-type'>
-            {skillData['Typhon'][`${skill}`].type}
-          </span>
+          <h4 className='skill-name'>{skillData[hero][`${skill}`].name}</h4>
+          <span className='skill-type'>{skillData[hero][`${skill}`].type}</span>
         </div>
       </div>
       {/*------------------------------------------------------------------------------------------------*/}
       <div className='skill-info'>
-        {Object.keys(skillData['Typhon'][`${skill}`].description).map(
+        {Object.keys(skillData[hero][`${skill}`].description).map(
           (level, levelIndex) => {
             if (level === 'lv1') {
               return (
                 <p className='first-level' key={levelIndex}>
-                  {skillData['Typhon'][`${skill}`].description[`${level}`].map(
+                  {skillData[hero][`${skill}`].description[`${level}`].map(
                     (piece, pieceIndex) => {
                       if (piece.type === 'value') {
                         return (
@@ -59,7 +57,7 @@ function Skill({ skill, skillIndex }) {
             } else {
               return (
                 <p key={levelIndex}>
-                  {skillData['Typhon'][`${skill}`].description[`${level}`]}
+                  {skillData[hero][`${skill}`].description[`${level}`]}
                 </p>
               );
             }
