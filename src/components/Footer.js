@@ -1,6 +1,6 @@
-function Footer() {
+function Footer({ setShowMenu }) {
   return (
-    <footer>
+    <footer onClick={() => setShowMenu(false)}>
       <p className='disclaimer'>
         MH-Tools is an unofficial fan site dedicated to Mythic Heroes, it is not
         affiliated with IGG Inc. in any way.

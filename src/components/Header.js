@@ -1,9 +1,6 @@
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-function Header() {
-  const [showMenu, setShowMenu] = useState(false);
-
+function Header({ showMenu, setShowMenu }) {
   return (
     <header>
       <div className='topbar'>
@@ -18,10 +15,22 @@ function Header() {
           <div className='bar-2'></div>
           <div className='bar-3'></div>
         </div>
+        <nav className='navbar'>
+          <Link to='/hero-list' onClick={() => setShowMenu(false)}>
+            Heroes
+          </Link>
+          <Link to='/cube' onClick={() => setShowMenu(false)}>
+            Cube of Truth
+          </Link>
+        </nav>
       </div>
       <nav className={showMenu ? 'nav-drawer active' : 'nav-drawer'}>
-        <Link to='/hero-list'>Heroes</Link>
-        <Link to='/cube'>Cube of Truth</Link>
+        <Link to='/hero-list' onClick={() => setShowMenu(false)}>
+          Heroes
+        </Link>
+        <Link to='/cube' onClick={() => setShowMenu(false)}>
+          Cube of Truth
+        </Link>
       </nav>
     </header>
   );

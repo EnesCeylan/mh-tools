@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 import './Cube.css';
 
@@ -13,7 +13,7 @@ import FaceSelector from './FaceSelector';
 import ResetButtons from './ResetButtons';
 import CubeModal from './CubeModal';
 
-function CubeOfTruth() {
+function CubeOfTruth({ setShowMenu }) {
   const [cube, setCube] = useState(CubeOfTruthData);
   const [cubeIndex, setCubeIndex] = useState(0);
   const [faceIndex, setFaceIndex] = useState(0);
@@ -22,7 +22,7 @@ function CubeOfTruth() {
   const [bonus, setBonus] = useState('');
 
   return (
-    <React.Fragment>
+    <section className='system-container' onClick={() => setShowMenu(false)}>
       <CubeSelector setCubeIndex={setCubeIndex} />
       <CubeContainer
         cube={cube}
@@ -40,7 +40,7 @@ function CubeOfTruth() {
         setCube={setCube}
       />
       {modal && <CubeModal bonus={bonus} setModal={setModal} />}
-    </React.Fragment>
+    </section>
   );
 }
 

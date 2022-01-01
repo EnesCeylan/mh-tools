@@ -1,6 +1,9 @@
-header {
+:root {
   --header-height: 5rem;
+  --footer-height: 10rem;
+}
 
+header {
   background-color: rgba(17, 17, 17, 0.75);
   width: 100%;
   min-height: var(--header-height);
@@ -14,6 +17,11 @@ header {
   align-items: center;
 }
 
+.navbar {
+  display: none;
+}
+
+.navbar > a,
 .topbar > a {
   color: white;
   text-decoration: none;
@@ -59,7 +67,7 @@ header {
   width: 100%;
   overflow: hidden;
   max-height: 0;
-  transition: max-height 2.5s ease-out;
+  transition: max-height 2s ease-out;
 }
 
 .nav-drawer.active {
@@ -78,8 +86,9 @@ header {
 }
 
 footer {
-  height: 6rem;
+  height: var(--footer-height);
   width: 100%;
+  padding: 2rem;
   background-color: rgba(17, 17, 17, 0.75);
 
   display: flex;
@@ -90,4 +99,46 @@ footer {
 
 footer .disclaimer {
   margin-bottom: 1rem;
+}
+
+.error-page {
+  width: 100%;
+  min-height: calc(100vh - var(--header-height) - var(--footer-height));
+}
+
+/* small tablet styles */
+@media screen and (min-width: 620px) {
+  .nav-drawer > a {
+    font-size: 1.35rem;
+    margin-bottom: 0.75rem;
+  }
+}
+
+/* large tablet & laptop styles */
+@media screen and (min-width: 810px) {
+  header {
+    padding: 0 1.5rem;
+  }
+
+  .hamburger-menu {
+    display: none;
+  }
+
+  .navbar {
+    display: flex;
+
+    font-size: 1.375rem;
+  }
+
+  .navbar > a:active {
+    border-bottom: 1px solid white;
+  }
+
+  .navbar > a:not(:last-child) {
+    margin-right: 1rem;
+  }
+}
+
+/* desktop styles */
+@media screen and (min-width: 1200px) {
 }

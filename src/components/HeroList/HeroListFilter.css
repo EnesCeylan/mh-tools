@@ -1,21 +1,35 @@
 .filters-container {
-  --filter-container-height: 2.5rem;
+  box-sizing: content-box;
 
+  min-width: 272px;
   width: 60%;
-  min-width: 350px;
-  margin: 1rem auto;
-  height: var(--filter-container-height);
-  padding: 0 3.25rem;
+  max-width: 1000px;
+  height: fit-content;
+  margin: 0 auto;
+  padding: 2rem 0 1rem 0;
 
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
+  align-items: center;
 }
 
 .rarity-filters,
 .faction-filters,
 .role-filters {
-  height: 100%;
+  height: 2.5rem;
   width: fit-content;
+}
+
+.rarity-filters {
+  display: flex;
+  align-items: center;
+  height: 2rem;
+}
+
+.rarity-filters,
+.role-filters {
+  margin-bottom: 1rem;
 }
 
 .filter {
@@ -23,7 +37,8 @@
 }
 
 .filter.active {
-  border-bottom: 2px solid yellow !important;
+  filter: drop-shadow(0px 0px 4px #83c1ff) drop-shadow(0px 0px 4px #83c1ff)
+    drop-shadow(0px 0px 2px #83c1ff);
 }
 
 .filter:not(:last-child) {
@@ -33,101 +48,160 @@
 .rarity-filters .filter,
 .faction-filters .filter,
 .role-filters .filter {
+  width: 2.5rem;
+  height: 100%;
   background-size: cover;
 
   border: none;
   background-color: transparent;
 }
 
-.faction-filters .filter,
-.role-filters .filter {
-  height: 100%;
-  width: var(--filter-container-height);
-}
-
-.rarity-filters .filter {
-  height: 80%;
-  transform: translateY(10%);
-}
-
 .rarity-filters .ur {
-  width: calc(var(--filter-container-height) * 1.71875 * 0.8); /* 1,71875 */
+  width: calc(2rem * 1.71875); /* 1,71875 value to keep the aspect ratio */
   background-image: url('../../assets/rarity-icons/Rarity_UR.png');
 }
 
 .rarity-filters .ur.active {
-  filter: drop-shadow(0px 0px 7px #95b0e9);
+  filter: drop-shadow(0px 0px 4px #95b0e9) drop-shadow(0px 0px 2px #95b0e9);
 }
 
 .rarity-filters .ssr {
-  width: calc(var(--filter-container-height) * 2.34375 * 0.8); /* 2,34375 */
+  width: calc(2rem * 2.34375); /* 2,34375 value to keep the aspect ratio */
   background-image: url('../../assets/rarity-icons/Rarity_SSR.png');
 }
 
 .rarity-filters .ssr.active {
-  filter: drop-shadow(0px 0px 7px #edd69c);
+  filter: drop-shadow(0px 0px 4px #edd69c) drop-shadow(0px 0px 2px #edd69c);
 }
 
 .faction-filters .luminarch {
   background-image: url('../../assets/faction-icons/Luminarch.png');
 }
 
-.faction-filters .luminarch.active {
-  filter: drop-shadow(0px 0px 7px #fdfc98);
-}
-
 .faction-filters .shadowarch {
   background-image: url('../../assets/faction-icons/Shadowarch.png');
-}
-
-.faction-filters .shadowarch.active {
-  filter: drop-shadow(0px 0px 7px #db4132);
 }
 
 .faction-filters .guardian {
   background-image: url('../../assets/faction-icons/Guardian.png');
 }
 
-.faction-filters .guardian.active {
-  filter: drop-shadow(0px 0px 7px #97cafd);
-}
-
 .faction-filters .verdian {
   background-image: url('../../assets/faction-icons/Verdian.png');
-}
-
-.faction-filters .verdian.active {
-  filter: drop-shadow(0px 0px 7px #c0f572);
 }
 
 .role-filters .mage {
   background-image: url('../../assets/role-icons/Mage.png');
 }
 
-.role-filters .mage.active {
-  filter: drop-shadow(0px 0px 7px #9639aa);
-}
-
 .role-filters .fighter {
   background-image: url('../../assets/role-icons/Fighter.png');
-}
-
-.role-filters .fighter.active {
-  filter: drop-shadow(0px 0px 7px #9f2e25);
 }
 
 .role-filters .tank {
   background-image: url('../../assets/role-icons/Tank.png');
 }
 
-.role-filters .tank.active {
-  filter: drop-shadow(0px 0px 7px #fdfc76);
-}
-
 .role-filters .support {
   background-image: url('../../assets/role-icons/Support.png');
 }
 
-.role-filters .support.active {
-  filter: drop-shadow(0px 0px 7px #c9d45c);
+/* small tablet styles */
+@media screen and (min-width: 620px) {
+  .filters-container {
+    box-sizing: content-box;
+    width: 80%;
+
+    flex-direction: row;
+  }
+
+  .rarity-filters,
+  .faction-filters,
+  .role-filters {
+    height: 2.25rem;
+  }
+
+  .rarity-filters,
+  .role-filters {
+    margin-bottom: 0;
+  }
+
+  .faction-filters .filter,
+  .role-filters .filter {
+    width: 2.25rem;
+  }
+
+  .rarity-filters .filter {
+    height: 1.75rem;
+  }
+
+  .rarity-filters .ur {
+    width: calc(1.75rem * 1.71875); /* 1,71875 value to keep the aspect ratio */
+  }
+
+  .rarity-filters .ssr {
+    width: calc(1.75rem * 2.34375); /* 2,34375 value to keep the aspect ratio */
+  }
+}
+
+/* large tablet & laptop styles */
+@media screen and (min-width: 810px) {
+  .rarity-filters,
+  .faction-filters,
+  .role-filters {
+    height: 2.5rem;
+  }
+
+  .rarity-filters,
+  .role-filters {
+    margin-bottom: 0;
+  }
+
+  .faction-filters .filter,
+  .role-filters .filter {
+    width: 2.5rem;
+  }
+
+  .rarity-filters .filter {
+    height: 2rem;
+  }
+
+  .rarity-filters .ur {
+    width: calc(2rem * 1.71875); /* 1,71875 value to keep the aspect ratio */
+  }
+
+  .rarity-filters .ssr {
+    width: calc(2rem * 2.34375); /* 2,34375 value to keep the aspect ratio */
+  }
+}
+
+/* desktop styles */
+@media screen and (min-width: 1200px) {
+  .rarity-filters,
+  .faction-filters,
+  .role-filters {
+    height: 3rem;
+  }
+
+  .rarity-filters,
+  .role-filters {
+    margin-bottom: 0;
+  }
+
+  .faction-filters .filter,
+  .role-filters .filter {
+    width: 3rem;
+  }
+
+  .rarity-filters .filter {
+    height: 2.5rem;
+  }
+
+  .rarity-filters .ur {
+    width: calc(2.5rem * 1.71875); /* 1,71875 value to keep the aspect ratio */
+  }
+
+  .rarity-filters .ssr {
+    width: calc(2.5rem * 2.34375); /* 2,34375 value to keep the aspect ratio */
+  }
 }

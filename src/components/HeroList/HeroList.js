@@ -5,7 +5,7 @@ import heroData from '../../data/heroData';
 import './HeroList.css';
 import HeroListFilter from './HeroListFilter';
 
-function HeroList() {
+function HeroList({ setShowMenu }) {
   const [selectedFaction, setSelectedFaction] = useState('');
   const [selectedRarity, setSelectedRarity] = useState('');
   const [selectedRole, setSelectedRole] = useState('');
@@ -13,7 +13,7 @@ function HeroList() {
   const heroes = Object.keys(heroData);
 
   return (
-    <div className='hero-list-container'>
+    <div className='hero-list-container' onClick={() => setShowMenu(false)}>
       <HeroListFilter
         setSelectedFaction={setSelectedFaction}
         selectedFaction={selectedFaction}
