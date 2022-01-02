@@ -4,7 +4,7 @@ function Header({ showMenu, setShowMenu }) {
   return (
     <header>
       <div className='topbar'>
-        <Link to='/'>
+        <Link to='/mythic-tools'>
           <h1>Mythic Tools</h1>
         </Link>
         <div
@@ -16,25 +16,31 @@ function Header({ showMenu, setShowMenu }) {
           <div className='bar-3'></div>
         </div>
         <nav className='navbar'>
-          <Link to='/hero-list' onClick={() => setShowMenu(false)}>
+          <Link to='/mythic-tools/hero-list' onClick={() => setShowMenu(false)}>
             Heroes
           </Link>
-          <Link to='/team-builder' onClick={() => setShowMenu(false)}>
+          <Link
+            to='/mythic-tools/team-builder'
+            onClick={() => setShowMenu(false)}
+          >
             Team Builder
           </Link>
-          <Link to='/cube' onClick={() => setShowMenu(false)}>
+          <Link to='/mythic-tools/cube' onClick={() => setShowMenu(false)}>
             Cube of Truth
           </Link>
         </nav>
       </div>
       <nav className={showMenu ? 'nav-drawer active' : 'nav-drawer'}>
-        <Link to='/hero-list' onClick={() => setShowMenu(false)}>
+        <Link to='/mythic-tools/hero-list' onClick={() => setShowMenu(false)}>
           Heroes
         </Link>
-        <Link to='/team-builder' onClick={() => setShowMenu(false)}>
+        <Link
+          to='/mythic-tools/team-builder'
+          onClick={() => setShowMenu(false)}
+        >
           Team Builder
         </Link>
-        <Link to='/cube' onClick={() => setShowMenu(false)}>
+        <Link to='/mythic-tools/cube' onClick={() => setShowMenu(false)}>
           Cube of Truth
         </Link>
       </nav>
