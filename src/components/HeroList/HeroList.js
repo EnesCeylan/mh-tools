@@ -39,7 +39,7 @@ function HeroList({ setShowMenu }) {
                   return (
                     <Link
                       className='hero-link'
-                      to={'/mythic-tools/hero-list/' + hero.replace(/ /g, '-')}
+                      to={'/hero-list/' + hero.replace(/ /g, '-')}
                       key={index}
                     >
                       <div
@@ -82,7 +82,7 @@ function HeroList({ setShowMenu }) {
                   return (
                     <Link
                       className='hero-link'
-                      to={'/mythic-tools/hero-list/' + hero.replace(/ /g, '-')}
+                      to={'/hero-list/' + hero.replace(/ /g, '-')}
                       key={index}
                     >
                       <div
