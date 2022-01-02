@@ -18,25 +18,25 @@ function App() {
     <Router>
       <Header showMenu={showMenu} setShowMenu={setShowMenu} />
       <Routes>
-        <Route path='/' />
+        <Route path='/mythic-tools' />
         <Route
-          path='/hero-list'
+          path='/mythic-tools/hero-list'
           element={<HeroList setShowMenu={setShowMenu} />}
         />
         <Route
-          path='/hero-list/:heroName'
+          path='/mythic-tools/hero-list/:heroName'
           element={<Hero setShowMenu={setShowMenu} />}
         />
         <Route
-          path='/cube'
+          path='/mythic-tools/cube'
           element={<CubeOfTruth setShowMenu={setShowMenu} />}
         />
         <Route
-          path='/team-builder'
+          path='/mythic-tools/team-builder'
           element={<Team setShowMenu={setShowMenu} />}
         />
         <Route
-          path='/team-builder/:builderData'
+          path='/mythic-tools/team-builder/:builderData'
           element={<Team setShowMenu={setShowMenu} />}
         />
         <Route path='*' element={<PageNotFound setShowMenu={setShowMenu} />} />
