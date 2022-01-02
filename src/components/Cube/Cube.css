@@ -3,6 +3,8 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  font-family: 'Roboto', sans-serif;
 }
 
 .cube-wrapper {
@@ -15,25 +17,22 @@
   align-items: center;
 }
 
-.cube-wrapper > button.btn-passive {
+.cube-wrapper > button {
   position: absolute;
 
-  top: 1.5rem;
-  left: 0.5rem;
+  top: 10%;
+  left: calc(50% - (42px * 4));
 
   font-size: 0.625rem;
+}
 
+.cube-wrapper > button.btn-passive {
   transition: all 0.5s ease-out;
 }
 
 .cube-wrapper > button.btn-active {
-  position: absolute;
-  top: 1.5rem;
-  left: 0.5rem;
-
   background-color: white;
 
-  font-size: 0.625rem;
   color: black;
 
   transition: all 0.5s ease-out;
@@ -224,6 +223,8 @@
   font-weight: bold;
   background-color: transparent;
   border: 2px solid white;
+
+  font-family: inherit;
 }
 
 .face-selector > div {
@@ -318,6 +319,13 @@
     width: 57px;
     height: calc(57px * 1.125);
   }
+
+  .cube-wrapper > button {
+    padding: 0.5rem 0.675rem;
+    font-size: 0.75rem;
+
+    left: calc(50% - (48px * 4));
+  }
 }
 
 @media screen and (min-width: 550px) {
@@ -338,6 +346,10 @@
   .cube-selector {
     width: 75px;
     height: calc(75px * 1.125);
+  }
+
+  .cube-wrapper > button {
+    left: calc(50% - (56px * 4));
   }
 }
 

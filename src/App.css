@@ -23,8 +23,15 @@ header {
 
 .navbar > a,
 .topbar > a {
+  position: relative;
+
   color: white;
   text-decoration: none;
+  text-align: center;
+}
+
+.navbar > a {
+  width: 150px;
 }
 
 .hamburger-menu {
@@ -130,8 +137,32 @@ footer .disclaimer {
     font-size: 1.375rem;
   }
 
-  .navbar > a:active {
-    border-bottom: 1px solid white;
+  .navbar > a:hover::after {
+    content: '';
+    width: 2px;
+    height: 1px;
+    background-color: white;
+
+    position: absolute;
+    top: 50px;
+    left: calc(50% - 1px);
+    z-index: 2;
+
+    transform-origin: center;
+    animation-duration: 1s;
+    animation-name: spread;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes spread {
+    from {
+      transform: scaleX(1);
+    }
+
+    to {
+      transform: scaleX(75);
+    }
   }
 
   .navbar > a:not(:last-child) {
