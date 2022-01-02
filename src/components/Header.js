@@ -5,7 +5,7 @@ function Header({ showMenu, setShowMenu }) {
     <header>
       <div className='topbar'>
         <Link to='/'>
-          <h1>MH Tools</h1>
+          <h1>Mythic Tools</h1>
         </Link>
         <div
           className={showMenu ? 'hamburger-menu active' : 'hamburger-menu'}
@@ -19,6 +19,9 @@ function Header({ showMenu, setShowMenu }) {
           <Link to='/hero-list' onClick={() => setShowMenu(false)}>
             Heroes
           </Link>
+          <Link to='/team-builder' onClick={() => setShowMenu(false)}>
+            Team Builder
+          </Link>
           <Link to='/cube' onClick={() => setShowMenu(false)}>
             Cube of Truth
           </Link>
@@ -27,6 +30,9 @@ function Header({ showMenu, setShowMenu }) {
       <nav className={showMenu ? 'nav-drawer active' : 'nav-drawer'}>
         <Link to='/hero-list' onClick={() => setShowMenu(false)}>
           Heroes
+        </Link>
+        <Link to='/team-builder' onClick={() => setShowMenu(false)}>
+          Team Builder
         </Link>
         <Link to='/cube' onClick={() => setShowMenu(false)}>
           Cube of Truth

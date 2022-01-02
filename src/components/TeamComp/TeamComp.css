@@ -1,32 +1,25 @@
-.team-compositor-container {
+.team-builder-container {
   min-height: calc(100vh - var(--header-height) - var(--footer-height));
 }
 
-.composition-container {
+.build-container {
   width: 320px;
   height: fit-content;
   margin: 1rem auto;
-}
-
-.composition-container {
-  border: 1px solid red;
   display: flex;
   justify-content: space-around;
 }
-
 .row {
   width: 150px;
   height: 450px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border: 1px solid green;
 }
 
 .position {
   width: 100%;
   height: 150px;
-  border: 1px solid white;
 
   cursor: pointer;
   background-size: cover;
@@ -37,4 +30,112 @@
   top: calc(var(--header-height) + 1rem);
   width: 100%;
   height: 50vh;
+}
+
+.position.Anubis {
+  background-image: url('../../assets/hero/shard/Anubis.png');
+}
+
+.position.Artemis {
+  background-image: url('../../assets/hero/shard/Artemis.png');
+}
+
+.position.Athena {
+  background-image: url('../../assets/hero/shard/Athena.png');
+}
+
+.position.Cassandra {
+  background-image: url('../../assets/hero/shard/Cassandra.png');
+}
+
+.position.Cleopatra {
+  background-image: url('../../assets/hero/shard/Cleopatra.png');
+}
+
+.position.Dionysus {
+  background-image: url('../../assets/hero/shard/Dionysus.png');
+}
+
+.position.Flora {
+  background-image: url('../../assets/hero/shard/Flora.png');
+}
+
+.position.Gaia {
+  background-image: url('../../assets/hero/shard/Gaia.png');
+}
+
+.position.Ganjiang__Moye {
+  background-image: url('../../assets/hero/shard/Ganjiang_&_Moye.png');
+}
+
+.position.Hades {
+  background-image: url('../../assets/hero/shard/Hades.png');
+}
+
+.position.Hercules {
+  background-image: url('../../assets/hero/shard/Hercules.png');
+}
+
+.position.Idun {
+  background-image: url('../../assets/hero/shard/Idun.png');
+}
+
+.position.Iset {
+  background-image: url('../../assets/hero/shard/Iset.png');
+}
+
+.position.Izanami {
+  background-image: url('../../assets/hero/shard/Izanami.png');
+}
+
+.position.Joan_of_Arc {
+  background-image: url('../../assets/hero/shard/Joan_of_Arc.png');
+}
+
+.position.Lilith {
+  background-image: url('../../assets/hero/shard/Lilith.png');
+}
+
+.position.Lu_Bu {
+  background-image: url('../../assets/hero/shard/Lu_Bu.png');
+}
+
+.position.Lucifer {
+  background-image: url('../../assets/hero/shard/Lucifer.png');
+}
+
+.position.Medusa {
+  background-image: url('../../assets/hero/shard/Medusa.png');
+}
+
+.position.Nagakanya {
+  background-image: url('../../assets/hero/shard/Nagakanya.png');
+}
+
+.position.Nuwa {
+  background-image: url('../../assets/hero/shard/Nuwa.png');
+}
+
+.position.Oberon {
+  background-image: url('../../assets/hero/shard/Oberon.png');
+}
+
+.position.Persephone {
+  background-image: url('../../assets/hero/shard/Persephone.png');
+}
+
+.position.Susanoo {
+  background-image: url('../../assets/hero/shard/Susanoo.png');
+}
+
+.position.Tamamo_no_Mae {
+  background-image: url('../../assets/hero/shard/Tamamo_no_Mae.png');
+}
+
+.position.Thor {
+  background-image: url('../../assets/hero/shard/Thor.png');
+}
+
+.position.Zeus {
+  background-image: url('../../assets/hero/shard/Zeus.png');
 }

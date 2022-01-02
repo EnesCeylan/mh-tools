@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import URLine from '../../assets/rarity-icons/Line_UR.png';
+import SSRLine from '../../assets/rarity-icons/Line_SSR.png';
 
 import heroData from '../../data/heroData';
 import './HeroList.css';
@@ -22,7 +24,10 @@ function HeroList({ setShowMenu }) {
         setSelectedRole={setSelectedRole}
         selectedRole={selectedRole}
       />
-      <div className='hero-list'>
+      {(!selectedRarity || selectedRarity === 'UR') && (
+        <img src={URLine} alt='' className='rarity-line' />
+      )}
+      <div className='hero-list ur'>
         {heroes.map((hero, index) => {
           if (!selectedRarity || heroData[hero].rarity === selectedRarity) {
             if (
@@ -30,30 +35,75 @@ function HeroList({ setShowMenu }) {
               heroData[hero].faction.includes(selectedFaction)
             ) {
               if (!selectedRole || heroData[hero].role === selectedRole) {
-                return (
-                  <Link
-                    className='hero-link'
-                    to={'/hero-list/' + hero.replace(/ /g, '-')}
-                    key={index}
-                  >
-                    <div
-                      className={
-                        'img-shadow-container ' + heroData[hero].rarity
-                      }
+                if (heroData[hero].rarity === 'UR') {
+                  return (
+                    <Link
+                      className='hero-link'
+                      to={'/hero-list/' + hero.replace(/ /g, '-')}
+                      key={index}
                     >
-                      <img
-                        src={
-                          process.env.PUBLIC_URL +
-                          '/assets/hero/hero-cards/' +
-                          hero.replace(/ /g, '_') +
-                          '.png'
+                      <div
+                        className={
+                          'img-shadow-container ' + heroData[hero].rarity
                         }
-                        alt={hero}
-                      />
-                    </div>
-                    <span className='hero-name'>{hero}</span>
-                  </Link>
-                );
+                      >
+                        <img
+                          src={
+                            process.env.PUBLIC_URL +
+                            '/assets/hero/hero-cards/' +
+                            hero.replace(/ /g, '_') +
+                            '.png'
+                          }
+                          alt={hero}
+                        />
+                      </div>
+                      <span className='hero-name'>{hero}</span>
+                    </Link>
+                  );
+                }
+              }
+            }
+          }
+        })}
+      </div>
+
+      {(!selectedRarity || selectedRarity === 'SSR') && (
+        <img src={SSRLine} alt='' className='rarity-line' />
+      )}
+      <div className='hero-list ssr'>
+        {heroes.map((hero, index) => {
+          if (!selectedRarity || heroData[hero].rarity === selectedRarity) {
+            if (
+              !selectedFaction ||
+              heroData[hero].faction.includes(selectedFaction)
+            ) {
+              if (!selectedRole || heroData[hero].role === selectedRole) {
+                if (heroData[hero].rarity === 'SSR') {
+                  return (
+                    <Link
+                      className='hero-link'
+                      to={'/hero-list/' + hero.replace(/ /g, '-')}
+                      key={index}
+                    >
+                      <div
+                        className={
+                          'img-shadow-container ' + heroData[hero].rarity
+                        }
+                      >
+                        <img
+                          src={
+                            process.env.PUBLIC_URL +
+                            '/assets/hero/hero-cards/' +
+                            hero.replace(/ /g, '_') +
+                            '.png'
+                          }
+                          alt={hero}
+                        />
+                      </div>
+                      <span className='hero-name'>{hero}</span>
+                    </Link>
+                  );
+                }
               }
             }
           }
@@ -64,5 +114,3 @@ function HeroList({ setShowMenu }) {
 }
 
 export default HeroList;
-
-// use .replace(/ /g,"_") to replace spaces with underscores.

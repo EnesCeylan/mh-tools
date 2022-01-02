@@ -31,9 +31,12 @@ function App() {
           path='/cube'
           element={<CubeOfTruth setShowMenu={setShowMenu} />}
         />
-        <Route path='/team-comp' element={<Team setShowMenu={setShowMenu} />} />
         <Route
-          path='/team-comp/:compData'
+          path='/team-builder'
+          element={<Team setShowMenu={setShowMenu} />}
+        />
+        <Route
+          path='/team-builder/:builderData'
           element={<Team setShowMenu={setShowMenu} />}
         />
         <Route path='*' element={<PageNotFound setShowMenu={setShowMenu} />} />

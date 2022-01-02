@@ -27,7 +27,7 @@ function FaceSelector({ handleClick }) {
             }}
             key={index}
           >
-            {index + 1}
+            <div>{index + 1}</div>
           </button>
         );
       })}

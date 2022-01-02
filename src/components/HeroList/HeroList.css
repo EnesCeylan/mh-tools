@@ -10,14 +10,16 @@
   margin: 0 auto;
   padding: 1rem 0;
   height: fit-content;
-  display: grid;
 
-  grid-template-columns: repeat(auto-fill, minmax(64px, 128px));
-  gap: 1.5rem 1rem;
+  display: flex;
   justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem 1.5rem;
 }
 
 .hero-list .hero-link {
+  min-width: 128px;
+  max-width: 128px;
   text-decoration: none;
   height: calc(256px + 1rem + 5px);
 }
@@ -28,20 +30,24 @@
 
 .hero-list .hero-link:hover .img-shadow-container.UR,
 .hero-list .hero-link:active .img-shadow-container.UR {
-  -webkit-filter: drop-shadow(0px 0px 5px #4dd8f1)
-    drop-shadow(-4px 1px 5px #afd4f0) drop-shadow(-2px 0px 5px #af9bd3)
-    drop-shadow(3px -1px 5px#8b63bb) drop-shadow(3px 2px 5px#86a5df);
+  -webkit-filter: drop-shadow(0px 0px 4px #4dd8f1)
+    drop-shadow(-4px 1px 4px #afd4f0) drop-shadow(-2px 0px 4px #af9bd3)
+    drop-shadow(3px -1px 4px#8b63bb) drop-shadow(3px 2px 4px#86a5df);
   filter: drop-shadow(0px 0px 4px rgb(77, 216, 241, 0.75))
     drop-shadow(-4px 1px 4px rgb(175, 212, 240, 0.75))
     drop-shadow(-2px 0px 4px rgb(175, 155, 211, 0.75))
     drop-shadow(3px -1px 4px rgb(139, 99, 187, 0.75))
     drop-shadow(3px 2px 4px rgb(134, 165, 223, 0.75));
+
+  transition: filter 0.5s ease-out;
 }
 
 .hero-list .hero-link:hover .img-shadow-container.SSR,
 .hero-list .hero-link:active .img-shadow-container.SSR {
   -webkit-filter: drop-shadow(0px 0px 8px yellow);
   filter: drop-shadow(0px 0px 8px yellow);
+
+  transition: filter 0.5s ease-out;
 }
 
 .hero-list .hero-link img {
@@ -68,18 +74,21 @@
 .hero-link:hover .hero-name,
 .hero-link:active .hero-name {
   font-weight: bold;
-  font-size: 1.25rem;
-  transform: translateY(-0.25rem);
+  font-size: 1.125rem;
+  transform: translateY(-1.25rem);
+}
+
+.rarity-line {
+  min-width: 272px;
+  width: 80%;
+  max-width: 544px;
+
+  margin: 0 10%;
 }
 
 /* small tablet styles */
 @media screen and (min-width: 620px) {
-}
-
-/* large tablet & laptop styles */
-@media screen and (min-width: 810px) {
-}
-
-/* desktop styles */
-@media screen and (min-width: 1200px) {
+  .rarity-line {
+    margin: 0 calc((100% - 544px) / 2);
+  }
 }

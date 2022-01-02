@@ -10,7 +10,7 @@ function Team({ setShowMenu }) {
 
   let validParamExists = false;
   let linkDataObject;
-  const linkParam = document.URL.match(/(?<=team-comp\/).+/g);
+  const linkParam = document.URL.match(/(?<=team-builder\/).+/g);
   try {
     linkDataObject = JSON.parse(atob(linkParam));
     validParamExists = true;
@@ -38,16 +38,13 @@ function Team({ setShowMenu }) {
   };
 
   return (
-    <div
-      className='team-compositor-container'
-      onClick={() => setShowMenu(false)}
-    >
-      <div className='composition-container'>
+    <div className='team-builder-container' onClick={() => setShowMenu(false)}>
+      <div className='build-container'>
         <div className='row back'>
           <div
             className={
               validParamExists
-                ? 'position three ' + positionBG[2]
+                ? 'position three ' + positionBG[2].replace('&', '')
                 : 'position three'
             }
             onClick={() => {
@@ -55,13 +52,21 @@ function Team({ setShowMenu }) {
             }}
           ></div>
           <div
-            className='position four'
+            className={
+              validParamExists
+                ? 'position four ' + positionBG[3].replace('&', '')
+                : 'position four'
+            }
             onClick={() => {
               handleClick(3);
             }}
           ></div>
           <div
-            className='position five'
+            className={
+              validParamExists
+                ? 'position five ' + positionBG[4].replace('&', '')
+                : 'position five'
+            }
             onClick={() => {
               handleClick(4);
             }}
@@ -69,13 +74,21 @@ function Team({ setShowMenu }) {
         </div>
         <div className='row front'>
           <div
-            className='position one'
+            className={
+              validParamExists
+                ? 'position one ' + positionBG[0].replace('&', '')
+                : 'position one'
+            }
             onClick={() => {
               handleClick(0);
             }}
           ></div>
           <div
-            className='position two'
+            className={
+              validParamExists
+                ? 'position two ' + positionBG[1].replace('&', '')
+                : 'position two'
+            }
             onClick={() => {
               handleClick(1);
             }}

@@ -8,6 +8,8 @@ function CubeContainer({
   faceIndex,
   setBonus,
   setModal,
+  disableModal,
+  setDisableModal,
 }) {
   const handleCellClick = (id, row) => {
     const cubeClone = JSON.parse(JSON.stringify(cube));
@@ -29,20 +31,28 @@ function CubeContainer({
   };
 
   return (
-    <div id='cube-container'>
-      {cube[cubeIndex].faces[faceIndex].data.map((row) => {
-        return row.map((item) => {
-          return (
-            <CubeItem
-              item={item}
-              handleClick={handleCellClick}
-              key={item.id}
-              setBonus={setBonus}
-              setModal={setModal}
-            />
-          );
-        });
-      })}
+    <div className='cube-wrapper'>
+      <button
+        className={disableModal ? 'btn-active' : 'btn-passive'}
+        onClick={() => setDisableModal(!disableModal)}
+      >
+        {disableModal ? 'Acivate pop-up' : 'Disable pop-up'}
+      </button>
+      <div id='cube-container'>
+        {cube[cubeIndex].faces[faceIndex].data.map((row) => {
+          return row.map((item) => {
+            return (
+              <CubeItem
+                item={item}
+                handleClick={handleCellClick}
+                key={item.id}
+                setBonus={setBonus}
+                setModal={setModal}
+              />
+            );
+          });
+        })}
+      </div>
     </div>
   );
 }

@@ -20,7 +20,7 @@ const heroData = {
   },
   Typhon: {
     rarity: 'UR',
-    faction: ['Shadowarch', 'Verdian'],
+    faction: ['Guardian', 'Verdian'],
     role: 'Tank',
     runes: [],
     artifacts: [],
