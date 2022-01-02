@@ -1,6 +1,6 @@
 {
   "homepage": "https://enesceylan.github.io/mythic-tools",
-  "name": "mh-tools",
+  "name": "mythic-tools",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

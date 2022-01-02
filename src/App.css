@@ -172,6 +172,4 @@ footer .disclaimer {
 
 /* desktop styles */
 @media screen and (min-width: 1200px) {
-  .navbar {
-  }
 }
