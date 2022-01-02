@@ -8,6 +8,7 @@ import Footer from './components/Footer';
 import CubeOfTruth from './components/Cube/CubeOfTruth';
 import HeroList from './components/HeroList/HeroList';
 import Hero from './components/Hero/Hero';
+import Team from './components/TeamComp/Team';
 import PageNotFound from './components/PageNotFound';
 
 function App() {
@@ -29,6 +30,11 @@ function App() {
         <Route
           path='/cube'
           element={<CubeOfTruth setShowMenu={setShowMenu} />}
+        />
+        <Route path='/team-comp' element={<Team setShowMenu={setShowMenu} />} />
+        <Route
+          path='/team-comp/:compData'
+          element={<Team setShowMenu={setShowMenu} />}
         />
         <Route path='*' element={<PageNotFound setShowMenu={setShowMenu} />} />
       </Routes>

@@ -1,0 +1,40 @@
+.team-compositor-container {
+  min-height: calc(100vh - var(--header-height) - var(--footer-height));
+}
+
+.composition-container {
+  width: 320px;
+  height: fit-content;
+  margin: 1rem auto;
+}
+
+.composition-container {
+  border: 1px solid red;
+  display: flex;
+  justify-content: space-around;
+}
+
+.row {
+  width: 150px;
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid green;
+}
+
+.position {
+  width: 100%;
+  height: 150px;
+  border: 1px solid white;
+
+  cursor: pointer;
+  background-size: cover;
+}
+
+.character-selection-modal {
+  position: absolute;
+  top: calc(var(--header-height) + 1rem);
+  width: 100%;
+  height: 50vh;
+}
