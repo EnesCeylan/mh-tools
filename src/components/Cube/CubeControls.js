@@ -1,0 +1,32 @@
+import handleFaceReset from './functions/reset-functions/handleFaceReset';
+
+function CubeControls({
+  cubeIndex,
+  faceIndex,
+  cube,
+  setCube,
+  disableModal,
+  setDisableModal,
+  isWideScreen,
+}) {
+  return (
+    <div className='reset-container'>
+      <button
+        className='btn-reset'
+        onClick={() => handleFaceReset(cubeIndex, faceIndex, cube, setCube)}
+      >
+        Reset Face
+      </button>
+      {!isWideScreen && (
+        <button
+          className={disableModal ? 'btn-reset active' : 'btn-reset'}
+          onClick={() => setDisableModal(!disableModal)}
+        >
+          {disableModal ? 'Acivate pop-up' : 'Disable pop-up'}
+        </button>
+      )}
+    </div>
+  );
+}
+
+export default CubeControls;

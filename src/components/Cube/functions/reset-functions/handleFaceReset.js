@@ -1,9 +1,8 @@
 import CubeOfTruthData from '../../../../data/cubeData';
 
 const handleFaceReset = (cubeIndex, faceIndex, cube, setCube) => {
-  const cubeClone = JSON.parse(JSON.stringify(cube));
-  cubeClone[cubeIndex].faces[faceIndex] =
-    CubeOfTruthData[cubeIndex].faces[faceIndex];
+  let cubeClone = JSON.parse(JSON.stringify(cube));
+  cubeClone = CubeOfTruthData[cubeIndex].faces[faceIndex].data;
 
   setCube(cubeClone);
 };
