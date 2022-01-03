@@ -75,7 +75,7 @@ function NonSeparatedCube({ setShowMenu }) {
           <section className='cube-interaction-container'>
             <CubeSelector setCubeIndex={setCubeIndex} />
             <div className='cube-bonus'>
-              <p>{cube[rowIndex][cellIndex].bonus}</p>
+              <p>{bonus}</p>
             </div>
             <div className='buttons-container'>
               <FaceSelector handleClick={(index) => setFaceIndex(index)} />
