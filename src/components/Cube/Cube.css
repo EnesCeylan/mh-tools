@@ -263,12 +263,8 @@
 }
 
 .modal-content .close-modal {
-  width: 1.5rem;
-  height: 1.5rem;
+  font-size: 1.5rem;
   margin: 0.5rem 0.5rem 0 0;
-
-  font-size: 1rem;
-  font-weight: bold;
   color: white;
 
   background-color: transparent;

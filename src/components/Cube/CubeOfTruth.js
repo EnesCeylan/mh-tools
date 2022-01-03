@@ -13,7 +13,7 @@ import FaceSelector from './FaceSelector';
 import CubeControls from './CubeControls';
 import CubeModal from '../Modals/CubeModal';
 
-function NonSeparatedCube({ setShowMenu }) {
+function CubeOfTruth({ setShowMenu }) {
   const [cubeIndex, setCubeIndex] = useState(0);
   const [faceIndex, setFaceIndex] = useState(0);
   const [cube, setCube] = useState(
@@ -96,4 +96,4 @@ function NonSeparatedCube({ setShowMenu }) {
   );
 }
 
-export default NonSeparatedCube;
+export default CubeOfTruth;

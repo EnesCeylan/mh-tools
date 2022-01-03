@@ -1,8 +1,9 @@
 import './TeamComp.css';
 
 import { useState, useEffect } from 'react';
+import TeamBuilderModal from '../Modals/TeamBuilderModal/TeamBuilderModal';
 
-function Team({ setShowMenu }) {
+function TeamBuilder({ setShowMenu }) {
   const [positionBG, setPositionBG] = useState(['', '', '', '', '']);
 
   const [selectedElement, setSelectedElement] = useState('');
@@ -11,12 +12,15 @@ function Team({ setShowMenu }) {
   let validParamExists = false;
   let linkDataObject;
   const linkParam = document.URL.match(/(?<=team-builder\/).+/g);
-  try {
-    linkDataObject = JSON.parse(atob(linkParam));
-    validParamExists = true;
-    console.log(linkDataObject);
-  } catch (e) {
-    console.log('invalid json');
+  if (linkParam) {
+    try {
+      linkDataObject = JSON.parse(atob(linkParam));
+      validParamExists = true;
+      console.log(linkDataObject);
+    } catch (e) {
+      validParamExists = false;
+      console.log('Error: Non valid team builder parameter entered.');
+    }
   }
 
   useEffect(() => {
@@ -27,8 +31,6 @@ function Team({ setShowMenu }) {
         deepStateCopy[index] = linkDataObject[index].replace(/ /g, '_');
         setPositionBG(deepStateCopy);
       });
-    } else {
-      console.log('Hi mom!');
     }
   }, []);
 
@@ -95,13 +97,9 @@ function Team({ setShowMenu }) {
           ></div>
         </div>
       </div>
-      {modal && (
-        <div className='overlay' onClick={() => setModal(false)}>
-          <div className='character-selection-modal'></div>
-        </div>
-      )}
+      {modal && <TeamBuilderModal setModal={setModal} />}
     </div>
   );
 }
 
-export default Team;
+export default TeamBuilder;

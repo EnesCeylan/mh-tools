@@ -4,7 +4,7 @@ function CubeModal({ bonus, setModal }) {
       <div className='modal-content'>
         <div className='top'>
           <button className='close-modal' onClick={() => setModal(false)}>
-            X
+            <i className='far fa-times-circle'></i>
           </button>
         </div>
         <div className='bonus'>

@@ -8,7 +8,7 @@ import Footer from './components/Footer';
 import CubeOfTruth from './components/Cube/CubeOfTruth';
 import HeroList from './components/HeroList/HeroList';
 import Hero from './components/Hero/Hero';
-import Team from './components/TeamComp/Team';
+import TeamBuilder from './components/TeamComp/TeamBuilder';
 import PageNotFound from './components/PageNotFound';
 
 function App() {
@@ -33,11 +33,11 @@ function App() {
         />
         <Route
           path='/team-builder'
-          element={<Team setShowMenu={setShowMenu} />}
+          element={<TeamBuilder setShowMenu={setShowMenu} />}
         />
         <Route
           path='/team-builder/:builderData'
-          element={<Team setShowMenu={setShowMenu} />}
+          element={<TeamBuilder setShowMenu={setShowMenu} />}
         />
         <Route path='*' element={<PageNotFound setShowMenu={setShowMenu} />} />
       </Routes>
