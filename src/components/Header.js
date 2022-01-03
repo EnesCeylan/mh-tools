@@ -14,6 +14,7 @@ function Header({ showMenu, setShowMenu }) {
           <div className='bar-1'></div>
           <div className='bar-2'></div>
           <div className='bar-3'></div>
+          <div className='bar-4'></div>
         </div>
         <nav className='navbar'>
           <Link to='/hero-list' onClick={() => setShowMenu(false)}>
@@ -24,6 +25,9 @@ function Header({ showMenu, setShowMenu }) {
           </Link>
           <Link to='/cube' onClick={() => setShowMenu(false)}>
             Cube of Truth
+          </Link>
+          <Link to='/tierlist' onClick={() => setShowMenu(false)}>
+            Tierlist
           </Link>
         </nav>
       </div>
