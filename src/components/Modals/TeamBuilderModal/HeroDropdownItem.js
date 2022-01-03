@@ -1,15 +1,28 @@
-import React from 'react';
+import heroData from '../../../data/heroData';
 
-function HeroDropdownItem({ hero }) {
+function HeroDropdownItem({ heroName }) {
   return (
     <div className='dropdown-list-item'>
       <img
         src={
-          process.env.PUBLIC_URL + '/assets/factions/Luminarch-Shadowarch.png'
+          process.env.PUBLIC_URL +
+          '/assets/factions/' +
+          (heroData[heroName].faction.length > 1
+            ? heroData[heroName].faction[0] +
+              '-' +
+              heroData[heroName].faction[1]
+            : heroData[heroName].faction[0]) +
+          '.png'
         }
-        alt='Luminarch - Shadowarch faction'
+        alt={
+          (heroData[heroName].faction.length > 1
+            ? heroData[heroName].faction[0] +
+              ' - ' +
+              heroData[heroName].faction[1]
+            : heroData[heroName].faction[0]) + ' faction'
+        }
       />
-      <p>Lucifer</p>
+      <p>{heroName}</p>
     </div>
   );
 }

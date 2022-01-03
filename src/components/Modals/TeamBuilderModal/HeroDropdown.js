@@ -3,6 +3,8 @@ import heroData from '../../../data/heroData';
 import HeroDropdownItem from './HeroDropdownItem';
 
 function HeroDropdown({ dropDown, setDropDown }) {
+  const [selectedHero, setselectedHero] = useState('');
+
   const heroes = Object.keys(heroData);
   return (
     <div
@@ -18,7 +20,7 @@ function HeroDropdown({ dropDown, setDropDown }) {
       </div>
       <div className='dropdown-list'>
         {heroes.map((hero, index) => {
-          return <HeroDropdownItem hero={hero} key={index} />;
+          return <HeroDropdownItem heroName={hero} key={index} />;
         })}
       </div>
       {/* <div className='dropdown-list'>
