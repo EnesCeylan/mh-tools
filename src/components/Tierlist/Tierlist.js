@@ -1,7 +1,7 @@
 import { useState } from "react/cjs/react.development";
 import TierListData from "../../data/TierListData";
 import './Tierlist.css';
-
+import TierlistHeroBox from "./TierlistHeroBox";
 const Tierlist = () => {
 
     const [types, setTypes] = useState(["PvP", "Early", "Mid", "Late", "Boss"])
@@ -53,20 +53,11 @@ const Tierlist = () => {
                                 className="grade"
                             />
                             <div className="tierlist-grade-container" key={index}>
-                                {tier.characters.map((hero, indexHero) => {
+                                {tier.characters.map((hero) => {
                                     const heroname = hero.replace(/_/g, " ");
+                                    console.log(tier)
                                     return (
-
-                                        <div className="tierlist-hero-box">
-
-                                            <img alt='' className={"tierlist-hero-image " + hero} src={process.env.PUBLIC_URL + "/assets/hero/hero-cards/" + hero + ".png"} key={indexHero}>
-
-                                            </img>
-                                            <div className="tierlist-hero-name-container">
-                                                <img className="tierlist-hero-name-banner" src={process.env.PUBLIC_URL + "/assets/tierlist-button/Header3.png"} alt="" />
-                                                <div class="tierlist-hero-name">{heroname}</div>
-                                            </div>
-                                        </div>
+                                        <TierlistHeroBox hero={hero} heroname={heroname} />
                                     )
                                 })}
                             </div>
