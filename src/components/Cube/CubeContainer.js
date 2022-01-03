@@ -10,6 +10,9 @@ function CubeContainer({
   setModal,
   disableModal,
   setDisableModal,
+  isWideScreen,
+  setRowIndex,
+  setCellIndex,
 }) {
   const handleCellClick = (id, row) => {
     const cubeClone = JSON.parse(JSON.stringify(cube));
@@ -28,16 +31,20 @@ function CubeContainer({
     );
 
     setCube(cubeClone);
+    setRowIndex(row);
+    setCellIndex(id % 4);
   };
 
   return (
-    <div className='cube-wrapper'>
-      <button
-        className={disableModal ? 'btn-active' : 'btn-passive'}
-        onClick={() => setDisableModal(!disableModal)}
-      >
-        {disableModal ? 'Acivate pop-up' : 'Disable pop-up'}
-      </button>
+    <section className='cube-wrapper'>
+      {!isWideScreen && (
+        <button
+          className={disableModal ? 'btn-active' : 'btn-passive'}
+          onClick={() => setDisableModal(!disableModal)}
+        >
+          {disableModal ? 'Acivate pop-up' : 'Disable pop-up'}
+        </button>
+      )}
       <div id='cube-container'>
         {cube[cubeIndex].faces[faceIndex].data.map((row) => {
           return row.map((item) => {
@@ -48,12 +55,13 @@ function CubeContainer({
                 key={item.id}
                 setBonus={setBonus}
                 setModal={setModal}
+                isWideScreen={isWideScreen}
               />
             );
           });
         })}
       </div>
-    </div>
+    </section>
   );
 }
 

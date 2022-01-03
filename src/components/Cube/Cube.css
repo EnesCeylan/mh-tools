@@ -384,3 +384,90 @@
     border-radius: 1rem;
   }
 }
+
+/* Cube of Truth Layout for notebooks - horizontal view on tablets etc. */
+@media screen and (min-width: 950px) {
+  .system-container {
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+  }
+
+  .cube-wrapper {
+    min-width: 60%;
+    margin-bottom: 0;
+  }
+
+  .cube-interaction-container {
+    min-width: 40%;
+  }
+
+  .cube-interaction-container > .cube-bonus {
+    width: 80%;
+    min-height: 200px;
+
+    margin: 2rem auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cube-interaction-container > .cube-bonus > p {
+    font-size: 1.25rem;
+    text-align: center;
+  }
+
+  .cube-selector-container {
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (min-width: 1018px) {
+  .cube-selector-container {
+    width: 80%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .system-container {
+    margin: 0 auto;
+  }
+
+  .cube-wrapper {
+    width: 50%;
+    min-width: 50%;
+  }
+
+  #cube-container {
+    width: 440px;
+    height: 440px;
+  }
+
+  .cube-interaction-container {
+    width: 50%;
+  }
+
+  .cube-interaction-container > .cube-bonus > p {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .cube-selector-container {
+    width: 100%;
+  }
+
+  .cell-item {
+    width: 110px;
+    height: 110px;
+  }
+
+  .reset-container {
+    gap: 0 1.25rem;
+  }
+
+  .reset-container > button.btn-reset {
+    padding: 0.75rem 1.5rem;
+    border-radius: 2rem;
+  }
+}

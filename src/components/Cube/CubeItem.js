@@ -1,4 +1,4 @@
-function CubeItem({ item, handleClick, setBonus, setModal }) {
+function CubeItem({ item, handleClick, setBonus, setModal, isWideScreen }) {
   const handleBgClass = (cellData) => {
     if (cellData.state === 'inactive') {
       return cellData.bg + '-inactive';
@@ -16,7 +16,7 @@ function CubeItem({ item, handleClick, setBonus, setModal }) {
       onClick={() => {
         handleClick(item.id, item.row);
         setBonus(item.bonus);
-        setModal(true);
+        setModal(!isWideScreen);
       }}
     />
   );
