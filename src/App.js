@@ -10,6 +10,8 @@ import HeroList from './components/HeroList/HeroList';
 import Hero from './components/Hero/Hero';
 import TeamBuilder from './components/TeamComp/TeamBuilder';
 import PageNotFound from './components/PageNotFound';
+import Tierlist from './components/Tierlist/Tierlist';
+
 
 function App() {
   const [showMenu, setShowMenu] = useState(false);
@@ -38,6 +40,10 @@ function App() {
         <Route
           path='/team-builder/:builderData'
           element={<TeamBuilder setShowMenu={setShowMenu} />}
+        />
+        <Route
+          path='/tierlist'
+          element={<Tierlist setShowMenu={setShowMenu} />}
         />
         <Route path='*' element={<PageNotFound setShowMenu={setShowMenu} />} />
       </Routes>

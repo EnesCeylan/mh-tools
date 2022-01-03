@@ -1,0 +1,146 @@
+
+/* {
+  
+  background-color: #ebd6ab;
+  
+  background-color: #0e1315;
+  color: #0e1315;
+}*/
+
+/* html { 
+  background: url(/public/Asset/Paper6.png) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+} */
+
+@font-face {
+  font-family: 'Cu Yuan';
+  src: url('../../assets/fonts/FZCu-Yuan-M03.ttf');
+}
+
+.tierlist-type-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tierlist-type-button {
+  
+  width: 100%;
+  max-width: 10em;
+  height: auto;
+  margin-right: 0.5em;
+}
+
+
+/*.tierlist-type-button {
+  
+  display:inline-block; 
+  padding:0.35em 1.2em; 
+  border:0.2em solid #473529; 
+  margin:0 0.3em 0.3em 0; 
+  border-radius:0.12em; 
+  box-sizing: border-box; 
+  text-decoration:none; 
+  font-family:'FZ Cu Yuan',sans-serif; 
+  font-weight:300; color:#473529; 
+  text-align:center; 
+  transition: all 0.2s;
+  border-radius:2em;
+}
+
+.tierlist-type-button:hover{ 
+  color:#FFFFFF; 
+  background-color:#473529; 
+} 
+
+.tierlist-type-button:focus{ 
+  color:#FFFFFF; 
+  background-color:#473529; 
+} */
+
+
+
+.grade {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  
+}
+
+.tierlist-grade-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  
+}
+.tierlist-hero-box {
+  margin: 0.5rem;
+}
+/* .tierlist-hero-name {
+  display: block;
+}
+
+.tierlist-hero-name-banner {
+  width: 5em;
+  height: auto;
+} */
+
+/* figure {
+  position: relative;
+}
+figure > img { 
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  
+  -webkit-transform:translate(-50%, -50%);
+  -moz-transform:translate(-50%, -50%);
+  -ms-transform:translate(-50%, -50%);
+  -o-transform:translate(-50%, -50%);
+  transform:translate(-50%, -50%);
+  } */
+
+.tierlist-hero-name-banner {
+  width: 8.5em;
+  height: 2em;
+  margin: 0 0 0;
+} 
+/* figcaption {
+  
+  order: -1; 
+  text-align: center;
+  
+} */
+
+.tierlist-hero-name-container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+.tierlist-hero-name {
+  position: absolute;
+  top: 41%;
+  left: 47%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-family: 'Cu Yuan';
+}
+
+
+.tierlist-hero-image {
+  display: block;
+  width: 128px;
+  height: 256px;
+}
+.tierlist-hero-name {
+  text-align: center;
+  line-height: 10px;
+  height: 10px;
+}
+
