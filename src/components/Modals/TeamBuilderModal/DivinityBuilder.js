@@ -1,74 +1,117 @@
 import React, { useState } from 'react';
 import heroDivinityData from '../../../data/heroDivinityData';
+import divinityNotableData from '../../../data/divinityNotableData';
 
 function DivinityBuilder({
   divinityBuilderDropdown,
   setDivinityBuilderDropdown,
+  selectedNodes,
+  setSelectedNodes,
   setDropdown,
   setRuneDropdown,
   setArtifactDropdown,
   selectedHero,
 }) {
   const [selectionMode, setSelectionMode] = useState(false);
+  const [divinityOverload, setDivinityOverload] = useState(false);
+  const [divinityCostTotal, setDivinityCostTotal] = useState(0);
 
-  const [slotOne, setSlotOne] = useState('');
-  const [slotTwo, setSlotTwo] = useState('');
-  const [slotThree, setSlotThree] = useState('');
+  const handleNodeSelect = (selectedNode) => {
+    let totalCost = 0;
+
+    let selectionCopy = JSON.parse(JSON.stringify(selectedNodes));
+    selectionCopy[selectionMode] = selectedNode;
+
+    selectionCopy.forEach((node) => {
+      if (node) {
+        totalCost += divinityNotableData[node].cost;
+      }
+    });
+
+    setDivinityCostTotal(totalCost);
+
+    if (totalCost > 6) {
+      setDivinityOverload(true);
+    } else {
+      setSelectedNodes(selectionCopy);
+      setSelectionMode(false);
+    }
+  };
+
+  const divinityMaxed = () => {
+    setDivinityOverload(true);
+
+    setTimeout(() => {
+      setDivinityOverload(false);
+    }, 3000);
+  };
 
   return (
     <React.Fragment>
       <div className='divinity-slots-container'>
-        <button onClick={() => setSelectionMode(0)}>
+        <button
+          onClick={() => {
+            divinityCostTotal === 6 ? divinityMaxed() : setSelectionMode('0');
+          }}
+        >
           <img
             src={
               process.env.PUBLIC_URL + '/assets/divinity/Divinity_Border.png'
             }
             alt='Divinity border'
           />
-          {slotOne && (
+          {selectedNodes[0] && (
             <img
               src={
                 process.env.PUBLIC_URL +
                 '/assets/divinity/nodes/' +
-                slotOne.replace(/ /g, '_') +
+                selectedNodes[0].replace(/ /g, '_') +
                 '.png'
               }
               alt='Divinity border'
             />
           )}
         </button>
-        <button onClick={() => setSelectionMode(1)}>
+        <button
+          onClick={() => {
+            divinityCostTotal === 6 ? divinityMaxed() : setSelectionMode('1');
+          }}
+        >
           <img
             src={
               process.env.PUBLIC_URL + '/assets/divinity/Divinity_Border.png'
             }
             alt='Divinity border'
           />
-          {slotTwo && (
+          {selectedNodes[1] && (
             <img
               src={
                 process.env.PUBLIC_URL +
                 '/assets/divinity/nodes/' +
-                slotTwo.replace(/ /g, '_') +
+                selectedNodes[1].replace(/ /g, '_') +
                 '.png'
               }
               alt='Divinity border'
             />
           )}
         </button>
-        <button onClick={() => setSelectionMode(2)}>
+        <button
+          onClick={() => {
+            divinityCostTotal === 6 ? divinityMaxed() : setSelectionMode('2');
+          }}
+        >
           <img
             src={
               process.env.PUBLIC_URL + '/assets/divinity/Divinity_Border.png'
             }
             alt='Divinity border'
           />
-          {slotThree && (
+          {selectedNodes[2] && (
             <img
               src={
                 process.env.PUBLIC_URL +
                 '/assets/divinity/nodes/' +
-                slotThree.replace(/ /g, '_') +
+                selectedNodes[2].replace(/ /g, '_') +
                 '.png'
               }
               alt='Divinity border'
@@ -76,6 +119,13 @@ function DivinityBuilder({
           )}
         </button>
       </div>
+      {divinityOverload && (
+        <React.Fragment>
+          <span className='divinity-warning'>
+            Divinity talent cost cannot exceed 6.
+          </span>
+        </React.Fragment>
+      )}
       {selectionMode && (
         <div
           className={divinityBuilderDropdown ? 'dropdown active' : 'dropdown'}
@@ -92,15 +142,19 @@ function DivinityBuilder({
             <i className='fa fa-caret-down icon'></i>
           </div>
           <div className='dropdown-list divinity'>
-            {heroDivinityData[selectedHero].notablesOrdered.map(
-              (notable, index) => {
+            {heroDivinityData[selectedHero].notablesOrdered
+              .filter((node) => !selectedNodes.includes(node))
+              .map((notable, index) => {
                 return (
-                  <div className='dropdown-list-item' key={index}>
+                  <div
+                    className='dropdown-list-item'
+                    key={index}
+                    onClick={() => handleNodeSelect(notable)}
+                  >
                     {notable}
                   </div>
                 );
-              }
-            )}
+              })}
           </div>
         </div>
       )}

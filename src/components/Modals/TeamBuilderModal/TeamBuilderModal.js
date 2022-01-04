@@ -12,7 +12,7 @@ function TeamBuilderModal({ setModal }) {
   const [selectedHero, setSelectedHero] = useState('');
   const [selectedRune, setSelectedRune] = useState('');
   const [selectedArtifact, setSelectedArtifact] = useState('');
-  const [selectedDivinityNodes, setSelectedDivinityNodes] = useState('');
+  const [selectedNodes, setSelectedNodes] = useState(['', '', '']);
 
   // build dropdowns
   const [runeDropdown, setRuneDropdown] = useState(false);
@@ -80,6 +80,8 @@ function TeamBuilderModal({ setModal }) {
                 <DivinityBuilder
                   divinityBuilderDropdown={divinityBuilderDropdown}
                   setDivinityBuilderDropdown={setDivinityBuilderDropdown}
+                  selectedNodes={selectedNodes}
+                  setSelectedNodes={setSelectedNodes}
                   setDropdown={setDropdown}
                   setRuneDropdown={setRuneDropdown}
                   setArtifactDropdown={setArtifactDropdown}

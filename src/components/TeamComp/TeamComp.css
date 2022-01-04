@@ -229,6 +229,30 @@
   width: 15rem;
 }
 
+.build-ui > span {
+  display: block;
+  width: 15rem;
+  margin: 0 auto 1rem;
+
+  font-size: 0.825rem;
+  font-weight: 500;
+  text-align: center;
+
+  color: hsla(0, 100%, 42%, 0.75);
+  animation: 0.5s 1 forwards fadeOut;
+  animation-delay: 2.5s;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
 .build-dropdown.active + .build-ui > .dropdown {
   opacity: 1;
   transition: opacity 0.5s linear;
@@ -246,9 +270,15 @@
 .divinity-slots-container {
   width: 15rem;
   margin: 1.5rem auto;
+  opacity: 0;
 
   display: flex;
   justify-content: space-between;
+}
+
+.build-dropdown.active + .build-ui > .divinity-slots-container {
+  opacity: 1;
+  transition: opacity 0.5s linear;
 }
 
 .divinity-slots-container > button {
