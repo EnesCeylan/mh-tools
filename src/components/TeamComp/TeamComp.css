@@ -72,7 +72,7 @@
 /* ---------------------------------------------------- */
 .dropdown {
   width: 18.75rem;
-  margin: 0 auto;
+  margin: 1.5rem auto;
   color: black;
 
   position: relative;
@@ -82,7 +82,7 @@
   padding: 1.25rem 1.5rem;
   width: 100%;
   border-radius: 0.5rem;
-  background-color: #c3e2ff;
+  background-color: #a3d3ff;
 
   display: flex;
   align-items: center;
@@ -95,6 +95,19 @@
 .dropdown:hover .dropdown-select,
 .dropdown.active .dropdown-select {
   border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.dropdown-select > .group-container {
+  display: flex;
+  align-items: center;
+}
+
+.dropdown-select > .group-container > img {
+  width: 1.5rem;
+}
+
+.dropdown-select > .group-container > span {
+  margin-left: 1rem;
 }
 
 .dropdown-select > i {
@@ -110,9 +123,13 @@
   border-radius: 0 0 0.5rem 0.5rem;
   background-color: #c3e2ff;
   max-height: 250px;
+  border: 1px solid #9eb8cf;
+  border-top: none;
+
   overflow-y: scroll;
 
   position: absolute;
+  z-index: 1;
   top: 100%;
   left: 0;
   right: 0;
@@ -140,6 +157,70 @@
 .dropdown-list-item > img {
   width: 1.5rem;
   margin-right: 1rem;
+}
+
+/* ---------------------------------------------------- */
+
+.builds-container {
+  width: 18.75rem;
+  margin: 0 auto;
+  color: black;
+}
+
+.builds-container > h5 {
+  font-size: 1.125rem;
+  text-align: center;
+
+  margin-bottom: 1.5rem;
+}
+
+.build-category {
+  margin-bottom: 1.5rem;
+}
+
+.build-dropdown {
+  padding: 1.25rem 1.5rem;
+  width: 100%;
+  border-radius: 0.5rem;
+
+  background-color: #a3d3ff;
+
+  display: flex;
+  align-items: center;
+  transition: border-radius 0.2s linear;
+}
+
+.build-dropdown.active {
+  border-radius: 0.5rem 0.5rem 0 0;
+  transition: border-radius 0.2s linear;
+}
+
+.build-dropdown > span {
+  margin-left: 1rem;
+}
+
+.build-dropdown > i {
+  transition: transform 0.2s linear;
+}
+
+.build-dropdown.active > i {
+  transform: rotate(90deg);
+  transition: transform 0.2s linear;
+}
+
+.build-ui {
+  width: 100%;
+  height: 1px;
+
+  transition: height 0.5s linear;
+}
+
+.build-dropdown.active + .build-ui {
+  height: 200px;
+  border: 4px solid #a3d3ff;
+  border-radius: 0 0 0.5rem 0.5rem;
+
+  transition: height 0.5s linear;
 }
 
 /* ---------------------------------------------------- */

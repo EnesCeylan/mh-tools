@@ -1,24 +1,82 @@
 import React, { useState } from 'react';
+import ArtifactDropdown from './ArtifactDropdown';
 import HeroDropdown from './HeroDropdown';
+import RuneDropdown from './RuneDropdown';
 
 function TeamBuilderModal({ setModal }) {
   const [heroSelected, setHeroSelected] = useState(false);
   const [dropDown, setDropDown] = useState(false);
+
+  //selections
+  const [selectedHero, setSelectedHero] = useState('');
+  const [selectedRune, setSelectedRune] = useState('');
+  const [selectedArtifact, setSelectedArtifact] = useState('');
+  const [selectedDivinityNodes, setSelectedDivinityNodes] = useState('');
+
+  // build dropdowns
+  const [runeDropdown, setRuneDropdown] = useState(false);
+  const [artifactDropdown, setArtifactDropdown] = useState(false);
+  const [divinityDropdown, setDivinityDropdown] = useState(false);
 
   return (
     <div
       className='builder overlay'
       onClick={(e) => {
         setDropDown(false);
+        setRuneDropdown(false);
+        setArtifactDropdown(false);
       }}
     >
       <div className='builder-screen'>
         <div className='builder-header'>
-          <h4>Team Builder</h4>
+          <h4>Hero Selector</h4>
         </div>
-        {/* -------------------------------------------------------------------- */}
         {!heroSelected && (
-          <HeroDropdown dropDown={dropDown} setDropDown={setDropDown} />
+          <HeroDropdown
+            dropDown={dropDown}
+            setDropDown={setDropDown}
+            selectedHero={selectedHero}
+            setSelectedHero={setSelectedHero}
+            setRuneDropdown={setRuneDropdown}
+            setArtifactDropdown={setArtifactDropdown}
+          />
+        )}
+        {/* -------------------------------------------------------------------- */}
+        {selectedHero && (
+          <div className='builds-container'>
+            <h5>Hero build</h5>
+            <div className='build-category'>
+              <RuneDropdown
+                runeDropdown={runeDropdown}
+                setRuneDropdown={setRuneDropdown}
+                selectedRune={selectedRune}
+                setSelectedRune={setSelectedRune}
+                setArtifactDropdown={setArtifactDropdown}
+              />
+            </div>
+            <div className='build-category'>
+              <ArtifactDropdown
+                artifactDropdown={artifactDropdown}
+                setArtifactDropdown={setArtifactDropdown}
+                selectedArtifact={selectedArtifact}
+                setSelectedArtifact={setSelectedArtifact}
+                setRuneDropdown={setRuneDropdown}
+              />
+            </div>
+            <div className='build-category'>
+              <div
+                className={
+                  divinityDropdown ? 'build-dropdown active' : 'build-dropdown'
+                }
+                onClick={() => setDivinityDropdown(!divinityDropdown)}
+              >
+                <i className='fas fa-angle-right'></i>
+                <span>Divinity build (optional)</span>
+              </div>
+              {/* --------------------------- Build UI Here --------------------------- */}
+              <div className='build-ui'></div>
+            </div>
+          </div>
         )}
         {/* -------------------------------------------------------------------- */}
         <div className='buttons-container'>

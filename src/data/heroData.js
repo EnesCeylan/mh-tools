@@ -7,7 +7,6 @@ const heroData = {
     role: 'Fighter',
     runes: '',
     artifacts: '',
-    divinityNotables: '',
   },
 
   Iset: {
@@ -16,7 +15,6 @@ const heroData = {
     role: 'Support',
     runes: '',
     artifacts: '',
-    divinityNotables: '',
   },
   Typhon: {
     rarity: 'UR',
@@ -24,7 +22,6 @@ const heroData = {
     role: 'Tank',
     runes: '',
     artifacts: '',
-    divinityNotables: '',
   },
   Lilith: {
     rarity: 'UR',
@@ -32,7 +29,6 @@ const heroData = {
     role: 'Mage',
     runes: '',
     artifacts: '',
-    divinityNotables: '',
   },
   Nuwa: {
     rarity: 'UR',
@@ -40,7 +36,6 @@ const heroData = {
     role: 'Support',
     runes: '',
     artifacts: '',
-    divinityNotables: '',
   },
   // ----------------------------------- SSR -----------------------------------
   // ------------------------- Luminarch -------------------------
@@ -50,7 +45,6 @@ const heroData = {
     role: 'Mage',
     runes: '',
     artifacts: '',
-    divinityNotables: '',
   },
   Athena: {
     rarity: 'SSR',
@@ -58,7 +52,6 @@ const heroData = {
     role: 'Tank',
     runes: '',
     artifacts: '',
-    divinityNotables: '',
   },
   Susanoo: {
     rarity: 'SSR',
@@ -66,7 +59,6 @@ const heroData = {
     role: 'Fighter',
     runes: '',
     artifacts: '',
-    divinityNotables: '',
   },
   Artemis: {
     rarity: 'SSR',
@@ -74,7 +66,6 @@ const heroData = {
     role: 'Fighter',
     runes: '',
     artifacts: '',
-    divinityNotables: '',
   },
   Dionysus: {
     rarity: 'SSR',
@@ -82,7 +73,6 @@ const heroData = {
     role: 'Support',
     runes: '',
     artifacts: '',
-    divinityNotables: '',
   },
   Thor: {
     rarity: 'SSR',
@@ -90,7 +80,6 @@ const heroData = {
     role: 'Tank',
     runes: '',
     artifacts: '',
-    divinityNotables: '',
   },
   // ------------------------- Shadowarch -------------------------
   Persephone: {
@@ -99,7 +88,6 @@ const heroData = {
     role: 'Mage',
     runes: '',
     artifacts: '',
-    divinityNotables: '',
   },
   Izanami: {
     rarity: 'SSR',
@@ -107,7 +95,6 @@ const heroData = {
     role: 'Mage',
     runes: '',
     artifacts: '',
-    divinityNotables: '',
   },
   Hades: {
     rarity: 'SSR',
@@ -115,7 +102,6 @@ const heroData = {
     role: 'Tank',
     runes: '',
     artifacts: '',
-    divinityNotables: '',
   },
   Medusa: {
     rarity: 'SSR',
@@ -123,7 +109,6 @@ const heroData = {
     role: 'Fighter',
     runes: '',
     artifacts: '',
-    divinityNotables: '',
   },
   Anubis: {
     rarity: 'SSR',
@@ -131,7 +116,6 @@ const heroData = {
     role: 'Tank',
     runes: '',
     artifacts: '',
-    divinityNotables: '',
   },
   Hela: {
     rarity: 'SSR',
@@ -139,7 +123,6 @@ const heroData = {
     role: 'Support',
     runes: '',
     artifacts: '',
-    divinityNotables: '',
   },
   // ------------------------- Guardian -------------------------
   Hercules: {
@@ -148,7 +131,6 @@ const heroData = {
     role: 'Tank',
     runes: '',
     artifacts: '',
-    divinityNotables: '',
   },
   'Lu Bu': {
     rarity: 'SSR',
@@ -156,7 +138,6 @@ const heroData = {
     role: 'Fighter',
     runes: '',
     artifacts: '',
-    divinityNotables: '',
   },
   'Ganjiang & Moye': {
     rarity: 'SSR',
@@ -164,7 +145,6 @@ const heroData = {
     role: 'Mage',
     runes: '',
     artifacts: '',
-    divinityNotables: '',
   },
   'Joan of Arc': {
     rarity: 'SSR',
@@ -172,7 +152,6 @@ const heroData = {
     role: 'Support',
     runes: '',
     artifacts: '',
-    divinityNotables: '',
   },
   Cleopatra: {
     rarity: 'SSR',
@@ -180,7 +159,6 @@ const heroData = {
     role: 'Mage',
     runes: '',
     artifacts: '',
-    divinityNotables: '',
   },
   Cassandra: {
     rarity: 'SSR',
@@ -188,7 +166,6 @@ const heroData = {
     role: 'Support',
     runes: '',
     artifacts: '',
-    divinityNotables: '',
   },
   // ------------------------- Verdian -------------------------
   Nagakanya: {
@@ -197,7 +174,6 @@ const heroData = {
     role: 'Support',
     runes: '',
     artifacts: '',
-    divinityNotables: '',
   },
   'Tamamo no Mae': {
     rarity: 'SSR',
@@ -205,7 +181,6 @@ const heroData = {
     role: 'Mage',
     runes: '',
     artifacts: '',
-    divinityNotables: '',
   },
   Idun: {
     rarity: 'SSR',
@@ -213,7 +188,6 @@ const heroData = {
     role: 'Support',
     runes: '',
     artifacts: '',
-    divinityNotables: '',
   },
   Gaia: {
     rarity: 'SSR',
@@ -221,7 +195,6 @@ const heroData = {
     role: 'Tank',
     runes: '',
     artifacts: '',
-    divinityNotables: '',
   },
   Oberon: {
     rarity: 'SSR',
@@ -229,7 +202,6 @@ const heroData = {
     role: 'Fighter',
     runes: '',
     artifacts: '',
-    divinityNotables: '',
   },
   Flora: {
     rarity: 'SSR',
@@ -237,7 +209,6 @@ const heroData = {
     role: 'Mage',
     runes: '',
     artifacts: '',
-    divinityNotables: '',
   },
 };
 

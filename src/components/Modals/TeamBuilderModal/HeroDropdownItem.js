@@ -1,8 +1,11 @@
 import heroData from '../../../data/heroData';
 
-function HeroDropdownItem({ heroName }) {
+function HeroDropdownItem({ heroName, setSelectedHero }) {
   return (
-    <div className='dropdown-list-item'>
+    <div
+      className='dropdown-list-item'
+      onClick={() => setSelectedHero(heroName)}
+    >
       <img
         src={
           process.env.PUBLIC_URL +
