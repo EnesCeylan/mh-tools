@@ -43,7 +43,7 @@ function ArtifactDropdown({
         </div>
         <i className='fa fa-caret-down icon'></i>
       </div>
-      <div className='dropdown-list'>
+      <div className='dropdown-list artifact'>
         {artifacts.map((artifact, index) => {
           return (
             <div

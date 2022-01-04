@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import ArtifactDropdown from './ArtifactDropdown';
+import DivinityBuilder from './DivinityBuilder';
 import HeroDropdown from './HeroDropdown';
 import RuneDropdown from './RuneDropdown';
 
 function TeamBuilderModal({ setModal }) {
   const [heroSelected, setHeroSelected] = useState(false);
-  const [dropDown, setDropDown] = useState(false);
+  const [dropdown, setDropdown] = useState(false);
 
   //selections
   const [selectedHero, setSelectedHero] = useState('');
@@ -17,12 +18,13 @@ function TeamBuilderModal({ setModal }) {
   const [runeDropdown, setRuneDropdown] = useState(false);
   const [artifactDropdown, setArtifactDropdown] = useState(false);
   const [divinityDropdown, setDivinityDropdown] = useState(false);
+  const [divinityBuilderDropdown, setDivinityBuilderDropdown] = useState(false);
 
   return (
     <div
       className='builder overlay'
       onClick={(e) => {
-        setDropDown(false);
+        setDropdown(false);
         setRuneDropdown(false);
         setArtifactDropdown(false);
       }}
@@ -33,8 +35,8 @@ function TeamBuilderModal({ setModal }) {
         </div>
         {!heroSelected && (
           <HeroDropdown
-            dropDown={dropDown}
-            setDropDown={setDropDown}
+            dropdown={dropdown}
+            setDropdown={setDropdown}
             selectedHero={selectedHero}
             setSelectedHero={setSelectedHero}
             setRuneDropdown={setRuneDropdown}
@@ -74,7 +76,16 @@ function TeamBuilderModal({ setModal }) {
                 <span>Divinity build (optional)</span>
               </div>
               {/* --------------------------- Build UI Here --------------------------- */}
-              <div className='build-ui'></div>
+              <div className='build-ui'>
+                <DivinityBuilder
+                  divinityBuilderDropdown={divinityBuilderDropdown}
+                  setDivinityBuilderDropdown={setDivinityBuilderDropdown}
+                  setDropdown={setDropdown}
+                  setRuneDropdown={setRuneDropdown}
+                  setArtifactDropdown={setArtifactDropdown}
+                  selectedHero={selectedHero}
+                />
+              </div>
             </div>
           </div>
         )}

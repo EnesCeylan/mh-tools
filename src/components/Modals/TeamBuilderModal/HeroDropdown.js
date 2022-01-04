@@ -2,8 +2,8 @@ import heroData from '../../../data/heroData';
 import HeroDropdownItem from './HeroDropdownItem';
 
 function HeroDropdown({
-  dropDown,
-  setDropDown,
+  dropdown,
+  setDropdown,
   selectedHero,
   setSelectedHero,
   setRuneDropdown,
@@ -12,10 +12,10 @@ function HeroDropdown({
   const heroes = Object.keys(heroData);
   return (
     <div
-      className={dropDown ? 'dropdown active' : 'dropdown'}
+      className={dropdown ? 'dropdown active' : 'dropdown'}
       onClick={(e) => {
         e.stopPropagation();
-        setDropDown(!dropDown);
+        setDropdown(!dropdown);
         setRuneDropdown(false);
         setArtifactDropdown(false);
       }}

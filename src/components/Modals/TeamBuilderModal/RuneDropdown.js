@@ -44,7 +44,7 @@ function RuneDropdown({
         </div>
         <i className='fa fa-caret-down icon'></i>
       </div>
-      <div className='dropdown-list'>
+      <div className='dropdown-list rune'>
         {runes.map((rune, index) => {
           return (
             <div
