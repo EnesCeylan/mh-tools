@@ -65,7 +65,13 @@ function TeamBuilderModal({ setModal }) {
                 setRuneDropdown={setRuneDropdown}
               />
             </div>
-            <div className='build-category'>
+            <div
+              className={
+                divinityDropdown
+                  ? 'build-category divinity active'
+                  : 'build-category divinity'
+              }
+            >
               <div
                 className={
                   divinityDropdown ? 'build-dropdown active' : 'build-dropdown'

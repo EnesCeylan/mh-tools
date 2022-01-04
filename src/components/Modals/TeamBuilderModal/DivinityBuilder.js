@@ -17,24 +17,25 @@ function DivinityBuilder({
   const [divinityCostTotal, setDivinityCostTotal] = useState(0);
 
   const handleNodeSelect = (selectedNode) => {
-    let totalCost = 0;
+    if (divinityCostTotal <= 6) {
+      let totalCost = 0;
 
-    let selectionCopy = JSON.parse(JSON.stringify(selectedNodes));
-    selectionCopy[selectionMode] = selectedNode;
+      let selectionCopy = JSON.parse(JSON.stringify(selectedNodes));
+      selectionCopy[selectionMode] = selectedNode;
 
-    selectionCopy.forEach((node) => {
-      if (node) {
-        totalCost += divinityNotableData[node].cost;
+      selectionCopy.forEach((node) => {
+        if (node) {
+          totalCost += divinityNotableData[node].cost;
+        }
+      });
+
+      if (divinityNotableData[selectedNode].cost + divinityCostTotal <= 6) {
+        setDivinityCostTotal(totalCost);
+        setSelectedNodes(selectionCopy);
+        setSelectionMode(false);
+      } else {
+        setDivinityOverload(true);
       }
-    });
-
-    setDivinityCostTotal(totalCost);
-
-    if (totalCost > 6) {
-      setDivinityOverload(true);
-    } else {
-      setSelectedNodes(selectionCopy);
-      setSelectionMode(false);
     }
   };
 
@@ -51,7 +52,12 @@ function DivinityBuilder({
       <div className='divinity-slots-container'>
         <button
           onClick={() => {
-            divinityCostTotal === 6 ? divinityMaxed() : setSelectionMode('0');
+            if (divinityCostTotal >= 6) {
+              divinityMaxed();
+              setSelectionMode('0');
+            } else {
+              setSelectionMode('0');
+            }
           }}
         >
           <img
@@ -74,7 +80,12 @@ function DivinityBuilder({
         </button>
         <button
           onClick={() => {
-            divinityCostTotal === 6 ? divinityMaxed() : setSelectionMode('1');
+            if (divinityCostTotal >= 6) {
+              divinityMaxed();
+              setSelectionMode('1');
+            } else {
+              setSelectionMode('1');
+            }
           }}
         >
           <img
@@ -97,7 +108,12 @@ function DivinityBuilder({
         </button>
         <button
           onClick={() => {
-            divinityCostTotal === 6 ? divinityMaxed() : setSelectionMode('2');
+            if (divinityCostTotal >= 6) {
+              divinityMaxed();
+              setSelectionMode('2');
+            } else {
+              setSelectionMode('2');
+            }
           }}
         >
           <img
@@ -121,7 +137,11 @@ function DivinityBuilder({
       </div>
       {divinityOverload && (
         <React.Fragment>
-          <span className='divinity-warning'>
+          <span
+            className={
+              divinityOverload ? 'divinity-warning active' : 'divinity-warning'
+            }
+          >
             Divinity talent cost cannot exceed 6.
           </span>
         </React.Fragment>
@@ -149,7 +169,14 @@ function DivinityBuilder({
                   <div
                     className='dropdown-list-item'
                     key={index}
-                    onClick={() => handleNodeSelect(notable)}
+                    onClick={() => {
+                      if (divinityCostTotal >= 6) {
+                        divinityMaxed();
+                        handleNodeSelect(notable);
+                      } else {
+                        handleNodeSelect(notable);
+                      }
+                    }}
                   >
                     {notable}
                   </div>

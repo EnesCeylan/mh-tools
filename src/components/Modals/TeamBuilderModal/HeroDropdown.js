@@ -12,7 +12,7 @@ function HeroDropdown({
   const heroes = Object.keys(heroData);
   return (
     <div
-      className={dropdown ? 'dropdown active' : 'dropdown'}
+      className={dropdown ? 'dropdown hero active' : 'dropdown hero'}
       onClick={(e) => {
         e.stopPropagation();
         setDropdown(!dropdown);

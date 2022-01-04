@@ -54,8 +54,8 @@
 .builder-screen {
   width: 90%;
   margin: 0 auto;
-  border-radius: 0.5rem;
 
+  border-radius: 0.5rem;
   background-color: white;
 }
 
@@ -76,6 +76,10 @@
   color: black;
 
   position: relative;
+}
+
+.dropdown.hero {
+  margin-bottom: 0.75rem;
 }
 
 .dropdown-select {
@@ -137,15 +141,24 @@
 }
 
 .dropdown-list.rune {
+  display: none;
   max-height: 225px;
 }
 
 .dropdown-list.artifact {
+  display: none;
   max-height: 199px;
 }
 
 .dropdown-list.divinity {
   max-height: 126px;
+  display: none;
+}
+
+.dropdown.active .dropdown-list.artifact,
+.dropdown.active .dropdown-list.rune,
+.dropdown.active .dropdown-list.divinity {
+  display: block;
 }
 
 .dropdown.active .dropdown-list {
@@ -172,6 +185,7 @@
 
 .builds-container {
   width: 18.75rem;
+  min-height: 300px;
   margin: 0 auto;
   color: black;
 }
@@ -180,10 +194,18 @@
   font-size: 1.125rem;
   text-align: center;
 
-  margin-bottom: 1.5rem;
+  margin: 1rem 0 1.5rem;
 }
 
 .build-category {
+  margin-bottom: 1.5rem;
+}
+
+.build-category.divinity {
+  margin-bottom: 0;
+}
+
+.build-category.divinity.active {
   margin-bottom: 1.5rem;
 }
 
@@ -220,8 +242,13 @@
 .build-ui {
   width: 100%;
   height: 1px;
+  display: none;
 
   transition: height 0.5s linear;
+}
+
+.build-dropdown.active + .build-ui {
+  display: block;
 }
 
 .build-ui > .dropdown {
@@ -297,6 +324,14 @@
   position: absolute;
   left: 0.625rem;
   top: 0.5rem;
+}
+
+.divinity-warning {
+  display: none;
+}
+
+.divinity-warning.active {
+  display: block;
 }
 
 /* ---------------------------------------------------- */

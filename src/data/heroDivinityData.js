@@ -79,7 +79,7 @@ const heroDivinityData = {
       'Self-Hypnosis',
       'Full Moon',
       'Sunder',
-      'Mastro',
+      'Maestro',
       'Supernova',
       'Wrath',
       'Panacea',
