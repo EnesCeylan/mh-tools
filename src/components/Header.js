@@ -40,6 +40,9 @@ function Header({ showMenu, setShowMenu }) {
         <Link to='/cube' onClick={() => setShowMenu(false)}>
           Cube of Truth
         </Link>
+        <Link to='/tierlist' onClick={() => setShowMenu(false)}>
+          Tierlist
+        </Link>
       </nav>
     </header>
   );
