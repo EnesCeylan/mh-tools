@@ -1,8 +1,10 @@
 {
   "files": {
-    "main.css": "/mythic-tools/static/css/main.51594045.css",
-    "main.js": "/mythic-tools/static/js/main.11780bc1.js",
+    "main.css": "/mythic-tools/static/css/main.eb3b6302.css",
+    "main.js": "/mythic-tools/static/js/main.39cf6edd.js",
     "static/media/FZCu-Yuan-M03.ttf": "/mythic-tools/static/media/FZCu-Yuan-M03.a21f3c9e1bc5cce7ff28.ttf",
+    "static/media/BG1.png": "/mythic-tools/static/media/BG1.0914c73dc9ad933cdc42.png",
+    "static/media/BG2.png": "/mythic-tools/static/media/BG2.bac568d20ec5fef17b71.png",
     "static/media/Nuwa.png": "/mythic-tools/static/media/Nuwa.c74284e50660753085e2.png",
     "static/media/Lilith.png": "/mythic-tools/static/media/Lilith.5803f095df3120e41658.png",
     "static/media/Verdian.png": "/mythic-tools/static/media/Verdian.729be764569fd14622dc.png",
@@ -51,6 +53,7 @@
     "static/media/Yellow_Partial.png": "/mythic-tools/static/media/Yellow_Partial.8bbfacf23a09988c3e36.png",
     "static/media/Icon_Phantom_Cube.png": "/mythic-tools/static/media/Icon_Phantom_Cube.dcf7ae72248176c5b319.png",
     "static/media/White_Partial.png": "/mythic-tools/static/media/White_Partial.20b2c628c090cef70ec5.png",
+    "static/media/BG3.png": "/mythic-tools/static/media/BG3.374ee542d3116766536c.png",
     "static/media/Icon_Sun_Cube.png": "/mythic-tools/static/media/Icon_Sun_Cube.083df1245d90499b50cd.png",
     "static/media/Icon_Dream_Cube.png": "/mythic-tools/static/media/Icon_Dream_Cube.efa6367b7fc02a6d0f07.png",
     "static/media/Icon_Star_Cube.png": "/mythic-tools/static/media/Icon_Star_Cube.06eb6737c47a492daa99.png",
@@ -68,11 +71,11 @@
     "static/media/Tank.png": "/mythic-tools/static/media/Tank.bf3917e8524419d8f81b.png",
     "static/media/Fighter.png": "/mythic-tools/static/media/Fighter.9e7267720be2abded90a.png",
     "index.html": "/mythic-tools/index.html",
-    "main.51594045.css.map": "/mythic-tools/static/css/main.51594045.css.map",
-    "main.11780bc1.js.map": "/mythic-tools/static/js/main.11780bc1.js.map"
+    "main.eb3b6302.css.map": "/mythic-tools/static/css/main.eb3b6302.css.map",
+    "main.39cf6edd.js.map": "/mythic-tools/static/js/main.39cf6edd.js.map"
   },
   "entrypoints": [
-    "static/css/main.51594045.css",
-    "static/js/main.11780bc1.js"
+    "static/css/main.eb3b6302.css",
+    "static/js/main.39cf6edd.js"
   ]
 }
