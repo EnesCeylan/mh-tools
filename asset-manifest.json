@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/mythic-tools/static/css/main.d62b20bc.css",
-    "main.js": "/mythic-tools/static/js/main.de7d3736.js",
+    "main.css": "/mythic-tools/static/css/main.9cf12ca4.css",
+    "main.js": "/mythic-tools/static/js/main.3a4a11bf.js",
     "static/media/FZCu-Yuan-M03.ttf": "/mythic-tools/static/media/FZCu-Yuan-M03.a21f3c9e1bc5cce7ff28.ttf",
     "static/media/Nuwa.png": "/mythic-tools/static/media/Nuwa.c74284e50660753085e2.png",
     "static/media/Lilith.png": "/mythic-tools/static/media/Lilith.5803f095df3120e41658.png",
@@ -67,11 +67,11 @@
     "static/media/Tank.png": "/mythic-tools/static/media/Tank.bf3917e8524419d8f81b.png",
     "static/media/Fighter.png": "/mythic-tools/static/media/Fighter.9e7267720be2abded90a.png",
     "index.html": "/mythic-tools/index.html",
-    "main.d62b20bc.css.map": "/mythic-tools/static/css/main.d62b20bc.css.map",
-    "main.de7d3736.js.map": "/mythic-tools/static/js/main.de7d3736.js.map"
+    "main.9cf12ca4.css.map": "/mythic-tools/static/css/main.9cf12ca4.css.map",
+    "main.3a4a11bf.js.map": "/mythic-tools/static/js/main.3a4a11bf.js.map"
   },
   "entrypoints": [
-    "static/css/main.d62b20bc.css",
-    "static/js/main.de7d3736.js"
+    "static/css/main.9cf12ca4.css",
+    "static/js/main.3a4a11bf.js"
   ]
 }
