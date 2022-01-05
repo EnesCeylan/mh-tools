@@ -315,6 +315,11 @@
   cursor: pointer;
 }
 
+.divinity-slots-container > button.active > img:nth-child(1) {
+  filter: drop-shadow(0 0 5px #8ef8ff) drop-shadow(0 0 5px #8ef8ff)
+    drop-shadow(0 0 5px #8ef8ff);
+}
+
 .divinity-slots-container > button > img:nth-child(1) {
   width: 4.5rem;
 }
@@ -324,6 +329,19 @@
   position: absolute;
   left: 0.625rem;
   top: 0.5rem;
+}
+
+.divinity-slots-container > button > .cost-container {
+  width: 100%;
+  position: absolute;
+  top: calc(100% - 10px);
+
+  display: flex;
+  justify-content: center;
+}
+
+.divinity-slots-container > button > .cost-container > img {
+  width: 20px;
 }
 
 .divinity-warning {

@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import heroDivinityData from '../../../data/heroDivinityData';
 import divinityNotableData from '../../../data/divinityNotableData';
 
+// COMPLETELY REWORK THIS FUNCTIONALITY, THIS CODE IS LOOKING DISGUSTING!!!!
+
 function DivinityBuilder({
   divinityBuilderDropdown,
   setDivinityBuilderDropdown,
@@ -34,7 +36,15 @@ function DivinityBuilder({
         setSelectedNodes(selectionCopy);
         setSelectionMode(false);
       } else {
-        setDivinityOverload(true);
+        if (selectedNodes[selectionMode] === '') {
+          divinityMaxed();
+        } else {
+          if (totalCost <= 6) {
+            setDivinityCostTotal(totalCost);
+            setSelectedNodes(selectionCopy);
+            setSelectionMode(false);
+          }
+        }
       }
     }
   };
@@ -47,12 +57,23 @@ function DivinityBuilder({
     }, 3000);
   };
 
+  const showCostIcons = (cost) => {
+    let arr = [];
+
+    for (let i = 0; i < cost; i++) {
+      arr.push('');
+    }
+
+    return arr;
+  };
+
   return (
     <React.Fragment>
       <div className='divinity-slots-container'>
         <button
+          className={selectionMode === '0' ? 'active' : 'passive'}
           onClick={() => {
-            if (divinityCostTotal >= 6) {
+            if (divinityCostTotal > 6) {
               divinityMaxed();
               setSelectionMode('0');
             } else {
@@ -67,20 +88,39 @@ function DivinityBuilder({
             alt='Divinity border'
           />
           {selectedNodes[0] && (
-            <img
-              src={
-                process.env.PUBLIC_URL +
-                '/assets/divinity/nodes/' +
-                selectedNodes[0].replace(/ /g, '_') +
-                '.png'
-              }
-              alt='Divinity border'
-            />
+            <React.Fragment>
+              <img
+                src={
+                  process.env.PUBLIC_URL +
+                  '/assets/divinity/nodes/' +
+                  selectedNodes[0].replace(/ /g, '_') +
+                  '.png'
+                }
+                alt={selectedNodes[0]}
+              />
+              <div className='cost-container'>
+                {showCostIcons(divinityNotableData[selectedNodes[0]].cost).map(
+                  (icon, index) => {
+                    return (
+                      <img
+                        src={
+                          process.env.PUBLIC_URL +
+                          '/assets/divinity/Cost_Icon.png'
+                        }
+                        alt='Divinity cost icon'
+                        key={index}
+                      />
+                    );
+                  }
+                )}
+              </div>
+            </React.Fragment>
           )}
         </button>
         <button
+          className={selectionMode === '1' ? 'active' : 'passive'}
           onClick={() => {
-            if (divinityCostTotal >= 6) {
+            if (divinityCostTotal > 6) {
               divinityMaxed();
               setSelectionMode('1');
             } else {
@@ -95,20 +135,39 @@ function DivinityBuilder({
             alt='Divinity border'
           />
           {selectedNodes[1] && (
-            <img
-              src={
-                process.env.PUBLIC_URL +
-                '/assets/divinity/nodes/' +
-                selectedNodes[1].replace(/ /g, '_') +
-                '.png'
-              }
-              alt='Divinity border'
-            />
+            <React.Fragment>
+              <img
+                src={
+                  process.env.PUBLIC_URL +
+                  '/assets/divinity/nodes/' +
+                  selectedNodes[1].replace(/ /g, '_') +
+                  '.png'
+                }
+                alt={selectedNodes[1]}
+              />
+              <div className='cost-container'>
+                {showCostIcons(divinityNotableData[selectedNodes[1]].cost).map(
+                  (icon, index) => {
+                    return (
+                      <img
+                        src={
+                          process.env.PUBLIC_URL +
+                          '/assets/divinity/Cost_Icon.png'
+                        }
+                        alt='Divinity cost icon'
+                        key={index}
+                      />
+                    );
+                  }
+                )}
+              </div>
+            </React.Fragment>
           )}
         </button>
         <button
+          className={selectionMode === '2' ? 'active' : 'passive'}
           onClick={() => {
-            if (divinityCostTotal >= 6) {
+            if (divinityCostTotal > 6) {
               divinityMaxed();
               setSelectionMode('2');
             } else {
@@ -123,15 +182,33 @@ function DivinityBuilder({
             alt='Divinity border'
           />
           {selectedNodes[2] && (
-            <img
-              src={
-                process.env.PUBLIC_URL +
-                '/assets/divinity/nodes/' +
-                selectedNodes[2].replace(/ /g, '_') +
-                '.png'
-              }
-              alt='Divinity border'
-            />
+            <React.Fragment>
+              <img
+                src={
+                  process.env.PUBLIC_URL +
+                  '/assets/divinity/nodes/' +
+                  selectedNodes[2].replace(/ /g, '_') +
+                  '.png'
+                }
+                alt={selectedNodes[2]}
+              />
+              <div className='cost-container'>
+                {showCostIcons(divinityNotableData[selectedNodes[2]].cost).map(
+                  (icon, index) => {
+                    return (
+                      <img
+                        src={
+                          process.env.PUBLIC_URL +
+                          '/assets/divinity/Cost_Icon.png'
+                        }
+                        alt='Divinity cost icon'
+                        key={index}
+                      />
+                    );
+                  }
+                )}
+              </div>
+            </React.Fragment>
           )}
         </button>
       </div>
@@ -158,7 +235,11 @@ function DivinityBuilder({
           }}
         >
           <div className='dropdown-select divinity'>
-            <span className='select'>Choose divinity notable</span>
+            <span className='select'>
+              {selectedNodes[selectionMode]
+                ? selectedNodes[selectionMode]
+                : 'Choose divinity notable'}
+            </span>
             <i className='fa fa-caret-down icon'></i>
           </div>
           <div className='dropdown-list divinity'>
@@ -171,8 +252,11 @@ function DivinityBuilder({
                     key={index}
                     onClick={() => {
                       if (divinityCostTotal >= 6) {
-                        divinityMaxed();
-                        handleNodeSelect(notable);
+                        if (!selectedNodes[selectionMode]) {
+                          divinityMaxed();
+                        } else {
+                          handleNodeSelect(notable);
+                        }
                       } else {
                         handleNodeSelect(notable);
                       }
