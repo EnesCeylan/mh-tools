@@ -115,6 +115,7 @@ footer .disclaimer {
 
 /* small tablet styles */
 @media screen and (min-width: 620px) {
+  
   .nav-drawer > a {
     font-size: 1.35rem;
     margin-bottom: 0.75rem;
@@ -123,6 +124,14 @@ footer .disclaimer {
 
 /* large tablet & laptop styles */
 @media screen and (min-width: 810px) {
+  body {
+    
+    background: url(/public/assets/Background/BG2.png) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  }
   header {
     padding: 0 1.5rem;
   }
@@ -172,4 +181,12 @@ footer .disclaimer {
 
 /* desktop styles */
 @media screen and (min-width: 1200px) {
+  body {
+    
+    background: url(/public/assets/Background/BG1.png) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  }
 }
