@@ -4,6 +4,31 @@
   min-height: calc(100vh - var(--header-height) - var(--footer-height));
 }
 
+.builder-buttons-container {
+  width: 320px;
+
+  display: flex;
+  justify-content: space-around;
+}
+
+.builder-buttons-container > button {
+  width: fit-content;
+
+  font-weight: 700;
+
+  margin: 1.5rem 0 0 calc(1.25rem + 2px);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  background-color: transparent;
+  border: 3px solid white;
+  color: white;
+}
+
+.builder-buttons-container > button:nth-child(2) {
+  background-color: white;
+  color: black;
+}
+
 .build-container {
   width: 320px;
   height: fit-content;
@@ -20,11 +45,6 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border: 1px solid green;
-}
-
-.row.front {
-  gap: 2.5rem 0;
 }
 
 .position {
@@ -34,7 +54,11 @@
 
   cursor: pointer;
   background-size: cover;
-  border: 1px solid red;
+  border: 2px solid #a3d3ff;
+}
+
+.position:not(:last-child) {
+  margin-bottom: 1rem;
 }
 
 .character-selection-modal {
@@ -411,7 +435,7 @@
   background-image: url('../../assets/hero/shard/Gaia.png');
 }
 
-.position.Ganjiang__Moye {
+.position.Ganjiang.Moye {
   background-image: url('../../assets/hero/shard/Ganjiang_&_Moye.png');
 }
 
@@ -435,7 +459,7 @@
   background-image: url('../../assets/hero/shard/Izanami.png');
 }
 
-.position.Joan_of_Arc {
+.position.Joan.of.Arc {
   background-image: url('../../assets/hero/shard/Joan_of_Arc.png');
 }
 
@@ -443,7 +467,7 @@
   background-image: url('../../assets/hero/shard/Lilith.png');
 }
 
-.position.Lu_Bu {
+.position.Lu.Bu {
   background-image: url('../../assets/hero/shard/Lu_Bu.png');
 }
 
@@ -475,12 +499,16 @@
   background-image: url('../../assets/hero/shard/Susanoo.png');
 }
 
-.position.Tamamo_no_Mae {
+.position.Tamamo.no.Mae {
   background-image: url('../../assets/hero/shard/Tamamo_no_Mae.png');
 }
 
 .position.Thor {
   background-image: url('../../assets/hero/shard/Thor.png');
+}
+
+.position.Typhon {
+  background-image: url('../../assets/hero/shard/Typhon.png');
 }
 
 .position.Zeus {

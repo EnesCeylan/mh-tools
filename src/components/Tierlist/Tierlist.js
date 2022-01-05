@@ -1,4 +1,4 @@
-import { useState } from 'react/cjs/react.development';
+import { useState } from 'react';
 import TierListData from '../../data/TierListData';
 import './Tierlist.css';
 import TierlistHeroBox from './TierlistHeroBox';

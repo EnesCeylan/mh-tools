@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
+
 import heroDivinityData from '../../../data/heroDivinityData';
 import divinityNotableData from '../../../data/divinityNotableData';
 
-// COMPLETELY REWORK THIS FUNCTIONALITY, THIS CODE IS LOOKING DISGUSTING!!!!
+import DivinitySlot from './DivinitySlot';
 
 function DivinityBuilder({
   divinityBuilderDropdown,
@@ -14,210 +15,76 @@ function DivinityBuilder({
   setArtifactDropdown,
   selectedHero,
 }) {
+  let warningTimer;
   const [selectionMode, setSelectionMode] = useState(false);
-  const [divinityOverload, setDivinityOverload] = useState(false);
-  const [divinityCostTotal, setDivinityCostTotal] = useState(0);
+  const [warning, setWarning] = useState(false);
 
-  const handleNodeSelect = (selectedNode) => {
-    if (divinityCostTotal <= 6) {
-      let totalCost = 0;
+  const handleSelection = (notable) => {
+    let deepCopy = JSON.parse(JSON.stringify(selectedNodes));
+    deepCopy[selectionMode] = notable;
 
-      let selectionCopy = JSON.parse(JSON.stringify(selectedNodes));
-      selectionCopy[selectionMode] = selectedNode;
+    if (checkTotalCost(notable)) {
+      setSelectedNodes(deepCopy);
+    } else {
+      setWarning(true);
 
-      selectionCopy.forEach((node) => {
-        if (node) {
-          totalCost += divinityNotableData[node].cost;
-        }
-      });
+      warningTimer = setTimeout(() => {
+        setWarning(false);
+      }, 3000);
+      clearTimeout(warningTimer);
+    }
+  };
 
-      if (divinityNotableData[selectedNode].cost + divinityCostTotal <= 6) {
-        setDivinityCostTotal(totalCost);
-        setSelectedNodes(selectionCopy);
-        setSelectionMode(false);
+  const checkTotalCost = (notable) => {
+    let currentTotalCost = 0;
+
+    selectedNodes.forEach((node) => {
+      if (node !== '') {
+        currentTotalCost += divinityNotableData[node].cost;
+      }
+    });
+
+    // If there's no selected node currently, just check if the addition will exceed the cost limit
+    if (selectedNodes[selectionMode] === '') {
+      if (divinityNotableData[notable].cost + currentTotalCost <= 6) {
+        return true;
       } else {
-        if (selectedNodes[selectionMode] === '') {
-          divinityMaxed();
-        } else {
-          if (totalCost <= 6) {
-            setDivinityCostTotal(totalCost);
-            setSelectedNodes(selectionCopy);
-            setSelectionMode(false);
-          }
-        }
+        return false;
+      }
+    } else {
+      //If there currently is a selected node, check if new node costs less than the current one.
+      if (
+        currentTotalCost +
+          divinityNotableData[notable].cost -
+          divinityNotableData[selectedNodes[selectionMode]].cost <=
+        6
+      ) {
+        return true;
+      } else {
+        return false;
       }
     }
-  };
-
-  const divinityMaxed = () => {
-    setDivinityOverload(true);
-
-    setTimeout(() => {
-      setDivinityOverload(false);
-    }, 3000);
-  };
-
-  const showCostIcons = (cost) => {
-    let arr = [];
-
-    for (let i = 0; i < cost; i++) {
-      arr.push('');
-    }
-
-    return arr;
   };
 
   return (
     <React.Fragment>
       <div className='divinity-slots-container'>
-        <button
-          className={selectionMode === '0' ? 'active' : 'passive'}
-          onClick={() => {
-            if (divinityCostTotal > 6) {
-              divinityMaxed();
-              setSelectionMode('0');
-            } else {
-              setSelectionMode('0');
-            }
-          }}
-        >
-          <img
-            src={
-              process.env.PUBLIC_URL + '/assets/divinity/Divinity_Border.png'
-            }
-            alt='Divinity border'
-          />
-          {selectedNodes[0] && (
-            <React.Fragment>
-              <img
-                src={
-                  process.env.PUBLIC_URL +
-                  '/assets/divinity/nodes/' +
-                  selectedNodes[0].replace(/ /g, '_') +
-                  '.png'
-                }
-                alt={selectedNodes[0]}
-              />
-              <div className='cost-container'>
-                {showCostIcons(divinityNotableData[selectedNodes[0]].cost).map(
-                  (icon, index) => {
-                    return (
-                      <img
-                        src={
-                          process.env.PUBLIC_URL +
-                          '/assets/divinity/Cost_Icon.png'
-                        }
-                        alt='Divinity cost icon'
-                        key={index}
-                      />
-                    );
-                  }
-                )}
-              </div>
-            </React.Fragment>
-          )}
-        </button>
-        <button
-          className={selectionMode === '1' ? 'active' : 'passive'}
-          onClick={() => {
-            if (divinityCostTotal > 6) {
-              divinityMaxed();
-              setSelectionMode('1');
-            } else {
-              setSelectionMode('1');
-            }
-          }}
-        >
-          <img
-            src={
-              process.env.PUBLIC_URL + '/assets/divinity/Divinity_Border.png'
-            }
-            alt='Divinity border'
-          />
-          {selectedNodes[1] && (
-            <React.Fragment>
-              <img
-                src={
-                  process.env.PUBLIC_URL +
-                  '/assets/divinity/nodes/' +
-                  selectedNodes[1].replace(/ /g, '_') +
-                  '.png'
-                }
-                alt={selectedNodes[1]}
-              />
-              <div className='cost-container'>
-                {showCostIcons(divinityNotableData[selectedNodes[1]].cost).map(
-                  (icon, index) => {
-                    return (
-                      <img
-                        src={
-                          process.env.PUBLIC_URL +
-                          '/assets/divinity/Cost_Icon.png'
-                        }
-                        alt='Divinity cost icon'
-                        key={index}
-                      />
-                    );
-                  }
-                )}
-              </div>
-            </React.Fragment>
-          )}
-        </button>
-        <button
-          className={selectionMode === '2' ? 'active' : 'passive'}
-          onClick={() => {
-            if (divinityCostTotal > 6) {
-              divinityMaxed();
-              setSelectionMode('2');
-            } else {
-              setSelectionMode('2');
-            }
-          }}
-        >
-          <img
-            src={
-              process.env.PUBLIC_URL + '/assets/divinity/Divinity_Border.png'
-            }
-            alt='Divinity border'
-          />
-          {selectedNodes[2] && (
-            <React.Fragment>
-              <img
-                src={
-                  process.env.PUBLIC_URL +
-                  '/assets/divinity/nodes/' +
-                  selectedNodes[2].replace(/ /g, '_') +
-                  '.png'
-                }
-                alt={selectedNodes[2]}
-              />
-              <div className='cost-container'>
-                {showCostIcons(divinityNotableData[selectedNodes[2]].cost).map(
-                  (icon, index) => {
-                    return (
-                      <img
-                        src={
-                          process.env.PUBLIC_URL +
-                          '/assets/divinity/Cost_Icon.png'
-                        }
-                        alt='Divinity cost icon'
-                        key={index}
-                      />
-                    );
-                  }
-                )}
-              </div>
-            </React.Fragment>
-          )}
-        </button>
+        {selectedNodes.map((node, index) => {
+          return (
+            <DivinitySlot
+              selectionMode={selectionMode}
+              selectedNode={selectedNodes[index]}
+              setSelectionMode={setSelectionMode}
+              index={index}
+              key={index}
+            />
+          );
+        })}
       </div>
-      {divinityOverload && (
+      {warning && (
         <React.Fragment>
           <span
-            className={
-              divinityOverload ? 'divinity-warning active' : 'divinity-warning'
-            }
+            className={warning ? 'divinity-warning active' : 'divinity-warning'}
           >
             Divinity talent cost cannot exceed 6.
           </span>
@@ -249,18 +116,8 @@ function DivinityBuilder({
                 return (
                   <div
                     className='dropdown-list-item'
+                    onClick={() => handleSelection(notable)}
                     key={index}
-                    onClick={() => {
-                      if (divinityCostTotal >= 6) {
-                        if (!selectedNodes[selectionMode]) {
-                          divinityMaxed();
-                        } else {
-                          handleNodeSelect(notable);
-                        }
-                      } else {
-                        handleNodeSelect(notable);
-                      }
-                    }}
                   >
                     {notable}
                   </div>
