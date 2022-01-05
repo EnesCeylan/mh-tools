@@ -25,8 +25,96 @@
 }
 
 .builder-buttons-container > button:nth-child(2) {
+  position: relative;
   background-color: white;
   color: black;
+}
+
+.builder-buttons-container > button:nth-child(2) > .info-popup {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  padding: 0.5rem;
+
+  width: 100%;
+  background-color: #a3d3ff;
+  color: black;
+
+  border-radius: 0.5rem;
+
+  animation: 0.5s 1 forwards fadeOut;
+  animation-delay: 2.5s;
+}
+
+.builder-buttons-container > button:nth-child(2) > .info-popup::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: calc(50% - 8px);
+
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 8px 8px 8px;
+  border-color: transparent transparent #a3d3ff transparent;
+}
+
+.tooltip-container {
+  width: 320px;
+  margin: 1.5rem auto 0.5rem;
+
+  border: 2px solid white;
+  border-radius: 0.75rem;
+}
+
+.tooltip-container > .tooltip-header,
+.tooltip-container > .tooltip-header > .wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.tooltip-container > .tooltip-header {
+  justify-content: space-between;
+
+  background-color: white;
+  color: black;
+
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+.tooltip-container.active > .tooltip-header {
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.tooltip-container > p {
+  display: none;
+  opacity: 0;
+  padding: 1rem;
+  line-height: 22px;
+}
+
+.tooltip-container.active > p {
+  display: block;
+  opacity: 1;
+}
+
+.tooltip-container > .tooltip-header i {
+  font-size: 1.25rem;
+}
+
+.tooltip-container > .tooltip-header > .wrapper > h4 {
+  margin-left: 0.5rem;
+  font-size: 1.25rem;
+}
+
+.tooltip-header > .wrapper > i {
+  transition: transform 0.2s linear;
+}
+
+.tooltip-container.active > .tooltip-header > .wrapper > i {
+  transform: rotate(90deg);
+  transition: transform 0.2s linear;
 }
 
 .build-container {
@@ -55,6 +143,7 @@
   cursor: pointer;
   background-size: cover;
   border: 2px solid #a3d3ff;
+  border-radius: 8px;
 }
 
 .position:not(:last-child) {
@@ -205,6 +294,10 @@
   margin-right: 1rem;
 }
 
+.dropdown-list-item.divinity > img {
+  width: 2rem;
+}
+
 /* ---------------------------------------------------- */
 
 .builds-container {
@@ -292,6 +385,18 @@
   color: hsla(0, 100%, 42%, 0.75);
   animation: 0.5s 1 forwards fadeOut;
   animation-delay: 2.5s;
+}
+
+.build-ui > h4 {
+  width: 15rem;
+  margin: 0 auto 0.5rem;
+  border-bottom: 2px solid #a3d3ff;
+}
+
+.build-ui > p {
+  display: block;
+  width: 15rem;
+  margin: 0 auto 1.5rem;
 }
 
 @keyframes fadeOut {
@@ -387,7 +492,7 @@
   padding: 0.5rem 0;
   border: none;
   border-radius: 0.75rem;
-  background-color: #8bc34a;
+  background-color: hsl(88, 45%, 60%);
 
   font-weight: 700;
   color: white;
@@ -395,11 +500,12 @@
 }
 
 .buttons-container > button:nth-child(1) {
-  background-color: #d50000;
+  background-color: hsl(0, 80%, 55%);
 }
 
-.buttons-container > button:nth-child(1):hover {
-  background-color: hsla(0, 100%, 42%, 0.75);
+.buttons-container > button:nth-child(1):hover,
+.buttons-container > button:nth-child(1):focus {
+  background-color: hsl(0, 80%, 42%);
 }
 /* --------------------------------------------------------------------------------------------------------------------------------- */
 

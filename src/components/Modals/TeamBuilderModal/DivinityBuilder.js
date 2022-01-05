@@ -52,7 +52,7 @@ function DivinityBuilder({
         return false;
       }
     } else {
-      //If there currently is a selected node, check if new node costs less than the current one.
+      //If there currently is a selected node, check if total is still in range of cost limit.
       if (
         currentTotalCost +
           divinityNotableData[notable].cost -
@@ -115,16 +115,36 @@ function DivinityBuilder({
               .map((notable, index) => {
                 return (
                   <div
-                    className='dropdown-list-item'
+                    className='dropdown-list-item divinity'
                     onClick={() => handleSelection(notable)}
                     key={index}
                   >
-                    {notable}
+                    <img
+                      src={
+                        process.env.PUBLIC_URL +
+                        '/assets/divinity/nodes/' +
+                        notable.replace(/ /g, '_') +
+                        '.png'
+                      }
+                      alt={notable}
+                    />
+                    <span>
+                      {notable +
+                        '  (+' +
+                        divinityNotableData[notable].cost +
+                        ')'}
+                    </span>
                   </div>
                 );
               })}
           </div>
         </div>
+      )}
+      {selectionMode && selectedNodes[selectionMode] !== '' && (
+        <React.Fragment>
+          <h4>Bonus:</h4>
+          <p>{divinityNotableData[selectedNodes[selectionMode]].bonus}</p>
+        </React.Fragment>
       )}
     </React.Fragment>
   );

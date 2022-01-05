@@ -6,6 +6,7 @@ import checkParamValidity from './checkParamValidity';
 
 function TeamBuilder({ setShowMenu }) {
   const [reverseFormation, setReverseFormation] = useState(false);
+  const [tooltip, setTooltip] = useState(false);
 
   const [teamData, setTeamData] = useState({
     reverseFormation: false,
@@ -21,6 +22,8 @@ function TeamBuilder({ setShowMenu }) {
   const [selectedElement, setSelectedElement] = useState('');
   const [modal, setModal] = useState(false);
 
+  const [copyToClipboard, setCopyToClipboard] = useState(false);
+
   let validParamExists = false;
   let linkDataObject;
   const linkParam = document.URL.match(/(?<=team-builder\/).+/g);
@@ -30,7 +33,6 @@ function TeamBuilder({ setShowMenu }) {
       if (linkDataObject) {
         validParamExists = true;
       }
-      console.log(linkDataObject);
     } catch (e) {
       validParamExists = false;
       console.log('Error: Non valid team builder parameter entered.');
@@ -62,17 +64,18 @@ function TeamBuilder({ setShowMenu }) {
   };
 
   const exportBuild = () => {
-    // console.log(teamData);
-    // console.log(btoa(JSON.stringify(teamData)));
-    // console.log(
-    //   'localhost:3000/mythic-tools#/team-builder/' +
-    //     btoa(JSON.stringify(teamData))
-    // );
-    console.log(teamData);
     navigator.clipboard.writeText(
       'https://enesceylan.github.io/mythic-tools/#/team-builder/' +
         btoa(JSON.stringify(teamData))
     );
+  };
+
+  const showPopup = () => {
+    setCopyToClipboard(true);
+
+    setTimeout(() => {
+      setCopyToClipboard(false);
+    }, 3000);
   };
 
   const handleFormationSwitch = () => {
@@ -91,9 +94,32 @@ function TeamBuilder({ setShowMenu }) {
         <button onClick={() => handleFormationSwitch()}>
           Switch formation
         </button>
-        <button onClick={() => exportBuild()}>
+        <button
+          onClick={() => {
+            exportBuild();
+            showPopup();
+          }}
+        >
           Export Team <i className='fas fa-link'></i>
+          {copyToClipboard && <div className='info-popup'>Link copied!</div>}
         </button>
+      </div>
+      <div
+        className={tooltip ? 'tooltip-container active' : 'tooltip-container'}
+        onClick={() => setTooltip(!tooltip)}
+      >
+        <div className='tooltip-header'>
+          <div className='wrapper'>
+            <i className='fas fa-chevron-right'></i>
+            <h4>How it works</h4>
+          </div>
+          <i className='far fa-question-circle'></i>
+        </div>
+        <p>
+          Select the slots to open the character selection to select and
+          customize your hero. Clicking on "export" button will automatically
+          copy the build link for you to share!
+        </p>
       </div>
       {!reverseFormation && (
         <div className='build-container'>
