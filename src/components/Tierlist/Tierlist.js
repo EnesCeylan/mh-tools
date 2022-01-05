@@ -3,7 +3,7 @@ import TierListData from '../../data/TierListData';
 import './Tierlist.css';
 import TierlistHeroBox from './TierlistHeroBox';
 const Tierlist = () => {
-  const [types, setTypes] = useState(['PvP', 'Early', 'Mid', 'Late', 'Boss']);
+  const types = ['PvP', 'Early', 'Mid', 'Late', 'Boss'];
   const [currentType, setCurrentType] = useState('PvP');
   const [CurrentIndex, setCurrentIndex] = useState(0);
   function setType(type) {
@@ -39,13 +39,13 @@ const Tierlist = () => {
             src={
               type === currentType
                 ? process.env.PUBLIC_URL +
-                  '/assets/tierlist-button/Button_' +
-                  type +
-                  '_Active.png'
+                '/assets/tierlist-button/Button_' +
+                type +
+                '_Active.png'
                 : process.env.PUBLIC_URL +
-                  '/assets/tierlist-button/Button_' +
-                  type +
-                  '_Inactive.png'
+                '/assets/tierlist-button/Button_' +
+                type +
+                '_Inactive.png'
             }
             key={type}
             className={'tierlist-type-button ' + type}

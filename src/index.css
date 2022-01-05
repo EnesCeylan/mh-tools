@@ -10,14 +10,19 @@ body {
   font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
   background-color: #222;
   min-height: 100vh;
   width: 100%;
   overflow-x: hidden;
-
   color: white;
+    background: url(/public/assets/Background/BG3.png) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
+
+
 
 input,
 textarea,

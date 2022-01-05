@@ -11,7 +11,7 @@ import Hero from './components/Hero/Hero';
 import TeamBuilder from './components/TeamComp/TeamBuilder';
 import PageNotFound from './components/PageNotFound';
 import Tierlist from './components/Tierlist/Tierlist';
-
+import Home from './components/Homepage/Home';
 
 function App() {
   const [showMenu, setShowMenu] = useState(false);
@@ -20,7 +20,10 @@ function App() {
     <HashRouter>
       <Header showMenu={showMenu} setShowMenu={setShowMenu} />
       <Routes>
-        <Route path='/' />
+        <Route
+          path='/'
+          element={<Home setShowMenu={setShowMenu} />}
+        />
         <Route
           path='/hero-list'
           element={<HeroList setShowMenu={setShowMenu} />}

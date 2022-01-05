@@ -67,6 +67,7 @@
   margin-left: auto;
   margin-right: auto;
   width: 50%;
+  padding-top: 0.5em;
 }
 
 .tierlist-grade-container {
@@ -115,16 +116,17 @@ figure > img {
   
 } */
 
+.tierlist-main-container {
+  padding: 1.5rem 0;
+}
+
 .tierlist-hero-name-container {
   position: relative;
   text-align: center;
   color: white;
+  padding-top: 0.5rem;
 }
 .tierlist-hero-name {
-  position: absolute;
-  top: 41%;
-  left: 47%;
-  transform: translate(-50%, -50%);
   color: white;
   font-family: 'Cu Yuan';
 }
