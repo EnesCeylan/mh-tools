@@ -1,12 +1,13 @@
 {
   "files": {
-    "main.css": "/mythic-tools/static/css/main.9cf12ca4.css",
-    "main.js": "/mythic-tools/static/js/main.3a4a11bf.js",
+    "main.css": "/mythic-tools/static/css/main.51594045.css",
+    "main.js": "/mythic-tools/static/js/main.11780bc1.js",
     "static/media/FZCu-Yuan-M03.ttf": "/mythic-tools/static/media/FZCu-Yuan-M03.a21f3c9e1bc5cce7ff28.ttf",
     "static/media/Nuwa.png": "/mythic-tools/static/media/Nuwa.c74284e50660753085e2.png",
     "static/media/Lilith.png": "/mythic-tools/static/media/Lilith.5803f095df3120e41658.png",
     "static/media/Verdian.png": "/mythic-tools/static/media/Verdian.729be764569fd14622dc.png",
     "static/media/Lucifer.png": "/mythic-tools/static/media/Lucifer.45e414e584ee81daa092.png",
+    "static/media/Typhon.png": "/mythic-tools/static/media/Typhon.ea931b210576cab90c84.png",
     "static/media/Iset.png": "/mythic-tools/static/media/Iset.40a4dcb08b77d0ff6b82.png",
     "static/media/Medusa.png": "/mythic-tools/static/media/Medusa.b06817642ced1eeaeb77.png",
     "static/media/Idun.png": "/mythic-tools/static/media/Idun.423d9ec82a583d8e2ad6.png",
@@ -67,11 +68,11 @@
     "static/media/Tank.png": "/mythic-tools/static/media/Tank.bf3917e8524419d8f81b.png",
     "static/media/Fighter.png": "/mythic-tools/static/media/Fighter.9e7267720be2abded90a.png",
     "index.html": "/mythic-tools/index.html",
-    "main.9cf12ca4.css.map": "/mythic-tools/static/css/main.9cf12ca4.css.map",
-    "main.3a4a11bf.js.map": "/mythic-tools/static/js/main.3a4a11bf.js.map"
+    "main.51594045.css.map": "/mythic-tools/static/css/main.51594045.css.map",
+    "main.11780bc1.js.map": "/mythic-tools/static/js/main.11780bc1.js.map"
   },
   "entrypoints": [
-    "static/css/main.9cf12ca4.css",
-    "static/js/main.3a4a11bf.js"
+    "static/css/main.51594045.css",
+    "static/js/main.11780bc1.js"
   ]
 }
