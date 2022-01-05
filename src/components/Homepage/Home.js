@@ -7,7 +7,8 @@ const Home = () => {
             <img
                 src={process.env.PUBLIC_URL + '/assets/Background/Homepage_Banner.png'}
                 alt="homepage banner"
-                className="home-banner" />
+                className="home-banner"
+            />
         </div>
     );
 };
