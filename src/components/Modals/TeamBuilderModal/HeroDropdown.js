@@ -8,11 +8,21 @@ function HeroDropdown({
   setSelectedHero,
   setRuneDropdown,
   setArtifactDropdown,
+  teamData,
 }) {
   const heroes = Object.keys(heroData);
+
+  let addedHeroes = [];
+
+  teamData.forEach((hero) => {
+    if (hero !== '') {
+      addedHeroes.push(hero.name);
+    }
+  });
+
   return (
     <div
-      className={dropdown ? 'dropdown active' : 'dropdown'}
+      className={dropdown ? 'dropdown hero active' : 'dropdown hero'}
       onClick={(e) => {
         e.stopPropagation();
         setDropdown(!dropdown);
@@ -44,15 +54,17 @@ function HeroDropdown({
         <i className='fa fa-caret-down icon'></i>
       </div>
       <div className='dropdown-list'>
-        {heroes.map((hero, index) => {
-          return (
-            <HeroDropdownItem
-              heroName={hero}
-              key={index}
-              setSelectedHero={setSelectedHero}
-            />
-          );
-        })}
+        {heroes
+          .filter((hero) => !addedHeroes.includes(hero))
+          .map((hero, index) => {
+            return (
+              <HeroDropdownItem
+                heroName={hero}
+                key={index}
+                setSelectedHero={setSelectedHero}
+              />
+            );
+          })}
       </div>
     </div>
   );

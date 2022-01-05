@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
+
 import heroDivinityData from '../../../data/heroDivinityData';
 import divinityNotableData from '../../../data/divinityNotableData';
+
+import DivinitySlot from './DivinitySlot';
 
 function DivinityBuilder({
   divinityBuilderDropdown,
@@ -12,116 +15,77 @@ function DivinityBuilder({
   setArtifactDropdown,
   selectedHero,
 }) {
+  let warningTimer;
   const [selectionMode, setSelectionMode] = useState(false);
-  const [divinityOverload, setDivinityOverload] = useState(false);
-  const [divinityCostTotal, setDivinityCostTotal] = useState(0);
+  const [warning, setWarning] = useState(false);
 
-  const handleNodeSelect = (selectedNode) => {
-    let totalCost = 0;
+  const handleSelection = (notable) => {
+    let deepCopy = JSON.parse(JSON.stringify(selectedNodes));
+    deepCopy[selectionMode] = notable;
 
-    let selectionCopy = JSON.parse(JSON.stringify(selectedNodes));
-    selectionCopy[selectionMode] = selectedNode;
-
-    selectionCopy.forEach((node) => {
-      if (node) {
-        totalCost += divinityNotableData[node].cost;
-      }
-    });
-
-    setDivinityCostTotal(totalCost);
-
-    if (totalCost > 6) {
-      setDivinityOverload(true);
+    if (checkTotalCost(notable)) {
+      setSelectedNodes(deepCopy);
     } else {
-      setSelectedNodes(selectionCopy);
-      setSelectionMode(false);
+      setWarning(true);
+
+      warningTimer = setTimeout(() => {
+        setWarning(false);
+      }, 3000);
+      clearTimeout(warningTimer);
     }
   };
 
-  const divinityMaxed = () => {
-    setDivinityOverload(true);
+  const checkTotalCost = (notable) => {
+    let currentTotalCost = 0;
 
-    setTimeout(() => {
-      setDivinityOverload(false);
-    }, 3000);
+    selectedNodes.forEach((node) => {
+      if (node !== '') {
+        currentTotalCost += divinityNotableData[node].cost;
+      }
+    });
+
+    // If there's no selected node currently, just check if the addition will exceed the cost limit
+    if (selectedNodes[selectionMode] === '') {
+      if (divinityNotableData[notable].cost + currentTotalCost <= 6) {
+        return true;
+      } else {
+        return false;
+      }
+    } else {
+      //If there currently is a selected node, check if new node costs less than the current one.
+      if (
+        currentTotalCost +
+          divinityNotableData[notable].cost -
+          divinityNotableData[selectedNodes[selectionMode]].cost <=
+        6
+      ) {
+        return true;
+      } else {
+        return false;
+      }
+    }
   };
 
   return (
     <React.Fragment>
       <div className='divinity-slots-container'>
-        <button
-          onClick={() => {
-            divinityCostTotal === 6 ? divinityMaxed() : setSelectionMode('0');
-          }}
-        >
-          <img
-            src={
-              process.env.PUBLIC_URL + '/assets/divinity/Divinity_Border.png'
-            }
-            alt='Divinity border'
-          />
-          {selectedNodes[0] && (
-            <img
-              src={
-                process.env.PUBLIC_URL +
-                '/assets/divinity/nodes/' +
-                selectedNodes[0].replace(/ /g, '_') +
-                '.png'
-              }
-              alt='Divinity border'
+        {selectedNodes.map((node, index) => {
+          return (
+            <DivinitySlot
+              selectionMode={selectionMode}
+              selectedNode={selectedNodes[index]}
+              setSelectionMode={setSelectionMode}
+              index={index}
+              key={index}
             />
-          )}
-        </button>
-        <button
-          onClick={() => {
-            divinityCostTotal === 6 ? divinityMaxed() : setSelectionMode('1');
-          }}
-        >
-          <img
-            src={
-              process.env.PUBLIC_URL + '/assets/divinity/Divinity_Border.png'
-            }
-            alt='Divinity border'
-          />
-          {selectedNodes[1] && (
-            <img
-              src={
-                process.env.PUBLIC_URL +
-                '/assets/divinity/nodes/' +
-                selectedNodes[1].replace(/ /g, '_') +
-                '.png'
-              }
-              alt='Divinity border'
-            />
-          )}
-        </button>
-        <button
-          onClick={() => {
-            divinityCostTotal === 6 ? divinityMaxed() : setSelectionMode('2');
-          }}
-        >
-          <img
-            src={
-              process.env.PUBLIC_URL + '/assets/divinity/Divinity_Border.png'
-            }
-            alt='Divinity border'
-          />
-          {selectedNodes[2] && (
-            <img
-              src={
-                process.env.PUBLIC_URL +
-                '/assets/divinity/nodes/' +
-                selectedNodes[2].replace(/ /g, '_') +
-                '.png'
-              }
-              alt='Divinity border'
-            />
-          )}
-        </button>
+          );
+        })}
       </div>
-      {divinityOverload && (
+      {warning && (
         <React.Fragment>
-          <span className='divinity-warning'>
+          <span
+            className={warning ? 'divinity-warning active' : 'divinity-warning'}
+          >
             Divinity talent cost cannot exceed 6.
           </span>
         </React.Fragment>
@@ -138,7 +102,11 @@ function DivinityBuilder({
           }}
         >
           <div className='dropdown-select divinity'>
-            <span className='select'>Choose divinity notable</span>
+            <span className='select'>
+              {selectedNodes[selectionMode]
+                ? selectedNodes[selectionMode]
+                : 'Choose divinity notable'}
+            </span>
             <i className='fa fa-caret-down icon'></i>
           </div>
           <div className='dropdown-list divinity'>
@@ -148,8 +116,8 @@ function DivinityBuilder({
                 return (
                   <div
                     className='dropdown-list-item'
+                    onClick={() => handleSelection(notable)}
                     key={index}
-                    onClick={() => handleNodeSelect(notable)}
                   >
                     {notable}
                   </div>

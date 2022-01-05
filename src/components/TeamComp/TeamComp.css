@@ -4,6 +4,31 @@
   min-height: calc(100vh - var(--header-height) - var(--footer-height));
 }
 
+.builder-buttons-container {
+  width: 320px;
+
+  display: flex;
+  justify-content: space-around;
+}
+
+.builder-buttons-container > button {
+  width: fit-content;
+
+  font-weight: 700;
+
+  margin: 1.5rem 0 0 calc(1.25rem + 2px);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  background-color: transparent;
+  border: 3px solid white;
+  color: white;
+}
+
+.builder-buttons-container > button:nth-child(2) {
+  background-color: white;
+  color: black;
+}
+
 .build-container {
   width: 320px;
   height: fit-content;
@@ -20,11 +45,6 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border: 1px solid green;
-}
-
-.row.front {
-  gap: 2.5rem 0;
 }
 
 .position {
@@ -34,7 +54,11 @@
 
   cursor: pointer;
   background-size: cover;
-  border: 1px solid red;
+  border: 2px solid #a3d3ff;
+}
+
+.position:not(:last-child) {
+  margin-bottom: 1rem;
 }
 
 .character-selection-modal {
@@ -54,8 +78,8 @@
 .builder-screen {
   width: 90%;
   margin: 0 auto;
-  border-radius: 0.5rem;
 
+  border-radius: 0.5rem;
   background-color: white;
 }
 
@@ -76,6 +100,10 @@
   color: black;
 
   position: relative;
+}
+
+.dropdown.hero {
+  margin-bottom: 0.75rem;
 }
 
 .dropdown-select {
@@ -137,15 +165,24 @@
 }
 
 .dropdown-list.rune {
+  display: none;
   max-height: 225px;
 }
 
 .dropdown-list.artifact {
+  display: none;
   max-height: 199px;
 }
 
 .dropdown-list.divinity {
   max-height: 126px;
+  display: none;
+}
+
+.dropdown.active .dropdown-list.artifact,
+.dropdown.active .dropdown-list.rune,
+.dropdown.active .dropdown-list.divinity {
+  display: block;
 }
 
 .dropdown.active .dropdown-list {
@@ -172,6 +209,7 @@
 
 .builds-container {
   width: 18.75rem;
+  min-height: 300px;
   margin: 0 auto;
   color: black;
 }
@@ -180,10 +218,18 @@
   font-size: 1.125rem;
   text-align: center;
 
-  margin-bottom: 1.5rem;
+  margin: 1rem 0 1.5rem;
 }
 
 .build-category {
+  margin-bottom: 1.5rem;
+}
+
+.build-category.divinity {
+  margin-bottom: 0;
+}
+
+.build-category.divinity.active {
   margin-bottom: 1.5rem;
 }
 
@@ -220,8 +266,13 @@
 .build-ui {
   width: 100%;
   height: 1px;
+  display: none;
 
   transition: height 0.5s linear;
+}
+
+.build-dropdown.active + .build-ui {
+  display: block;
 }
 
 .build-ui > .dropdown {
@@ -288,6 +339,11 @@
   cursor: pointer;
 }
 
+.divinity-slots-container > button.active > img:nth-child(1) {
+  filter: drop-shadow(0 0 5px #8ef8ff) drop-shadow(0 0 5px #8ef8ff)
+    drop-shadow(0 0 5px #8ef8ff);
+}
+
 .divinity-slots-container > button > img:nth-child(1) {
   width: 4.5rem;
 }
@@ -297,6 +353,27 @@
   position: absolute;
   left: 0.625rem;
   top: 0.5rem;
+}
+
+.divinity-slots-container > button > .cost-container {
+  width: 100%;
+  position: absolute;
+  top: calc(100% - 10px);
+
+  display: flex;
+  justify-content: center;
+}
+
+.divinity-slots-container > button > .cost-container > img {
+  width: 20px;
+}
+
+.divinity-warning {
+  display: none;
+}
+
+.divinity-warning.active {
+  display: block;
 }
 
 /* ---------------------------------------------------- */
@@ -358,7 +435,7 @@
   background-image: url('../../assets/hero/shard/Gaia.png');
 }
 
-.position.Ganjiang__Moye {
+.position.Ganjiang.Moye {
   background-image: url('../../assets/hero/shard/Ganjiang_&_Moye.png');
 }
 
@@ -382,7 +459,7 @@
   background-image: url('../../assets/hero/shard/Izanami.png');
 }
 
-.position.Joan_of_Arc {
+.position.Joan.of.Arc {
   background-image: url('../../assets/hero/shard/Joan_of_Arc.png');
 }
 
@@ -390,7 +467,7 @@
   background-image: url('../../assets/hero/shard/Lilith.png');
 }
 
-.position.Lu_Bu {
+.position.Lu.Bu {
   background-image: url('../../assets/hero/shard/Lu_Bu.png');
 }
 
@@ -422,12 +499,16 @@
   background-image: url('../../assets/hero/shard/Susanoo.png');
 }
 
-.position.Tamamo_no_Mae {
+.position.Tamamo.no.Mae {
   background-image: url('../../assets/hero/shard/Tamamo_no_Mae.png');
 }
 
 .position.Thor {
   background-image: url('../../assets/hero/shard/Thor.png');
+}
+
+.position.Typhon {
+  background-image: url('../../assets/hero/shard/Typhon.png');
 }
 
 .position.Zeus {
