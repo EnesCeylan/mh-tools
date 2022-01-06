@@ -1,6 +1,6 @@
 import './TeamComp.css';
 
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import TeamBuilderModal from '../Modals/TeamBuilderModal/TeamBuilderModal';
 import checkParamValidity from './checkParamValidity';
 
@@ -11,11 +11,41 @@ function TeamBuilder({ setShowMenu }) {
   const [teamData, setTeamData] = useState({
     reverseFormation: false,
     team: [
-      { name: '', rune: '', artifact: '', divinityNodes: ['', '', ''] },
-      { name: '', rune: '', artifact: '', divinityNodes: ['', '', ''] },
-      { name: '', rune: '', artifact: '', divinityNodes: ['', '', ''] },
-      { name: '', rune: '', artifact: '', divinityNodes: ['', '', ''] },
-      { name: '', rune: '', artifact: '', divinityNodes: ['', '', ''] },
+      {
+        name: '',
+        rune: '',
+        artifact: '',
+        divinityNodes: ['', '', ''],
+        weaponLv: '',
+      },
+      {
+        name: '',
+        rune: '',
+        artifact: '',
+        divinityNodes: ['', '', ''],
+        weaponLv: '',
+      },
+      {
+        name: '',
+        rune: '',
+        artifact: '',
+        divinityNodes: ['', '', ''],
+        weaponLv: '',
+      },
+      {
+        name: '',
+        rune: '',
+        artifact: '',
+        divinityNodes: ['', '', ''],
+        weaponLv: '',
+      },
+      {
+        name: '',
+        rune: '',
+        artifact: '',
+        divinityNodes: ['', '', ''],
+        weaponLv: '',
+      },
     ],
   });
 
@@ -29,9 +59,10 @@ function TeamBuilder({ setShowMenu }) {
   const linkParam = document.URL.match(/(?<=team-builder\/).+/g);
   if (linkParam) {
     try {
-      linkDataObject = checkParamValidity(linkParam);
+      linkDataObject = checkParamValidity(linkParam); //semi-shallow validity check for the object type link parameter
       if (linkDataObject) {
         validParamExists = true;
+        // will not break the page load unless a user goes out of their way to import an object that matches all the keys but has non valid values.
       }
     } catch (e) {
       validParamExists = false;
@@ -42,21 +73,34 @@ function TeamBuilder({ setShowMenu }) {
   useEffect(() => {
     if (validParamExists) {
       let teamDataDeepCopy = JSON.parse(JSON.stringify(teamData));
+      //Copy parameter values from the link to cloned data object
+      //Formation type 3-2 or 2-3
+      teamDataDeepCopy.reverseFormation = linkDataObject.reverseFormation;
+      setReverseFormation(linkDataObject.reverseFormation);
       teamData.team.forEach((hero, index) => {
-        setReverseFormation(linkDataObject.reverseFormation);
-
-        teamDataDeepCopy.reverseFormation = linkDataObject.reverseFormation;
+        //Hero name
         teamDataDeepCopy.team[index].name = linkDataObject.team[index].name;
+        //Selected rune for the hero
         teamDataDeepCopy.team[index].rune = linkDataObject.team[index].rune;
+        //Selected artifact for the hero
         teamDataDeepCopy.team[index].artifact =
           linkDataObject.team[index].artifact;
+        //Selected divinity nodes for the hero
         teamDataDeepCopy.team[index].divinityNodes =
           linkDataObject.team[index].divinityNodes;
+        //Selected weapon level for the hero
+        teamDataDeepCopy.team[index].weaponLv =
+          linkDataObject.team[index].weaponLv;
 
+        //Assign the cloned object as state for import all values
         setTeamData(teamDataDeepCopy);
       });
     }
   }, []);
+
+  useEffect(() => {
+    document.body.classList.toggle('modal-open', modal);
+  }, [modal]);
 
   const handleClick = (index) => {
     setSelectedElement(index);
@@ -64,12 +108,20 @@ function TeamBuilder({ setShowMenu }) {
   };
 
   const exportBuild = () => {
-    if (navigator.clipboard) {
-      navigator.clipboard.writeText(
-        'https://enesceylan.github.io/mythic-tools/#/team-builder/' +
-          btoa(JSON.stringify(teamData))
-      );
-    }
+    // can be updated to navigator.clipboard.writeText when more browsers support it.
+    const input = document.createElement('input');
+    input.type = 'url';
+    input.value =
+      'https://enesceylan.github.io/mythic-tools/#/team-builder/' +
+      btoa(JSON.stringify(teamData));
+    input.setAttribute('id', 'copy-url');
+
+    document.getElementsByTagName('body')[0].appendChild(input);
+
+    const url = document.getElementById('copy-url');
+    url.select();
+    document.execCommand('Copy');
+    url.remove();
   };
 
   const showPopup = () => {
@@ -85,7 +137,6 @@ function TeamBuilder({ setShowMenu }) {
 
     let teamDataCopy = JSON.parse(JSON.stringify(teamData));
     teamDataCopy.reverseFormation = !teamData.reverseFormation;
-    console.log(teamDataCopy);
 
     setTeamData(teamDataCopy);
   };

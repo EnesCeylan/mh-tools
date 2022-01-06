@@ -22,6 +22,12 @@ function ArtifactDropdown({
         e.stopPropagation();
         setArtifactDropdown(!artifactDropdown);
         setRuneDropdown(false);
+        setTimeout(() => {
+          document.getElementById('artifact-dropdown').scrollIntoView({
+            behavior: 'smooth',
+            block: 'center',
+          });
+        }, 0);
       }}
     >
       <div className='dropdown-select'>
@@ -38,12 +44,12 @@ function ArtifactDropdown({
             />
           )}
           <span className='select'>
-            {selectedArtifact ? selectedArtifact : 'Choose artifact (optional)'}
+            {selectedArtifact ? selectedArtifact : 'Choose artifact'}
           </span>
         </div>
         <i className='fa fa-caret-down icon'></i>
       </div>
-      <div className='dropdown-list artifact'>
+      <div className='dropdown-list artifact' id='artifact-dropdown'>
         {artifacts.map((artifact, index) => {
           return (
             <div

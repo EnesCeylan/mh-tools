@@ -1,3 +1,6 @@
+:root {
+  --container-size: 90%;
+}
 /* ------------------------------------- General Containers ------------------------------------- */
 
 .team-builder-container {
@@ -5,7 +8,7 @@
 }
 
 .builder-buttons-container {
-  width: 320px;
+  width: var(--container-size);
   margin: 0 auto;
 
   display: flex;
@@ -17,7 +20,7 @@
 
   font-weight: 700;
 
-  margin: 1.5rem 0 0 calc(1.25rem + 2px);
+  margin: 1.5rem 0 0;
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
   background-color: transparent;
@@ -61,7 +64,7 @@
 }
 
 .tooltip-container {
-  width: 320px;
+  width: var(--container-size);
   margin: 1.5rem auto 0.5rem;
 
   border: 2px solid white;
@@ -119,7 +122,7 @@
 }
 
 .build-container {
-  width: 320px;
+  width: var(--container-size);
   height: fit-content;
   margin: 0 auto;
   padding: 2rem 0;
@@ -130,15 +133,14 @@
 .row {
   box-sizing: content-box;
   width: 150px;
-  height: 450px;
+  height: 482px;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
 .position {
-  box-sizing: content-box;
-  width: 100%;
+  width: 150px;
   height: 150px;
 
   cursor: pointer;
@@ -159,33 +161,90 @@
 }
 
 /* ------------------------------------- Builder Overlay ------------------------------------- */
-
-.builder.overlay {
-  display: flex;
-  align-items: center;
-}
-
 .builder-screen {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
   width: 90%;
-  margin: 0 auto;
+  max-height: 92vh;
 
   border-radius: 0.5rem;
   background-color: white;
 }
 
+.builder-screen > .hero-build-header {
+  margin: 1.5rem 0;
+  color: black;
+  text-align: center;
+}
+
+.builder-screen > .hero-build-header > h5 {
+  font-size: 1.125rem;
+  margin-bottom: 0.5rem;
+}
+
+.builder-screen > .hero-build-header > span {
+  font-size: 14px;
+  font-weight: 600;
+}
+
 .builder-header {
   width: 100%;
   text-align: center;
-  margin: 0.75rem 0;
+  margin-bottom: 0.75rem;
+  padding-top: 1.25rem;
 }
 
 .builder-header > h4 {
   color: #222;
   font-size: 1.25rem;
 }
+
+.weapon-builder-header {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+  padding: 1rem;
+}
+
+.weapon-builder-header > .level-selector {
+  display: flex;
+  align-items: center;
+
+  border-left: 3px solid #a3d3ff;
+  padding-left: 0.5rem;
+}
+
+.weapon-builder-header > .level-selector > .level-btn {
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: white;
+  border: 2px solid #a3d3ff;
+  border-radius: 50%;
+  color: white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+}
+
+.weapon-builder-header > .level-selector > .level-btn.active {
+  background-color: #a3d3ff;
+}
+
+.weapon-builder-header > .level-selector > span {
+  margin-left: 0.5rem;
+}
+
 /* ---------------------------------------------------- */
 .dropdown {
-  width: 18.75rem;
+  width: 100%;
   margin: 1.5rem auto;
   color: black;
 
@@ -193,6 +252,7 @@
 }
 
 .dropdown.hero {
+  width: 92.5%;
   margin-bottom: 0.75rem;
 }
 
@@ -265,7 +325,7 @@
 }
 
 .dropdown-list.divinity {
-  max-height: 126px;
+  max-height: calc(57px * 3 + 1px); /* 3 full items */
   display: none;
 }
 
@@ -302,29 +362,32 @@
 /* ---------------------------------------------------- */
 
 .builds-container {
-  width: 18.75rem;
-  min-height: 300px;
+  width: 100%;
+  height: calc(92vh - 307px - 6px);
+  overflow-y: scroll;
   margin: 0 auto;
   color: black;
-}
 
-.builds-container > h5 {
-  font-size: 1.125rem;
-  text-align: center;
-
-  margin: 1rem 0 1.5rem;
+  border-top: 3px solid #a3d3ff;
+  border-bottom: 3px solid #a3d3ff;
 }
 
 .build-category {
-  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  width: 92.5%;
+  margin: 0 auto 1.5rem;
 }
 
-.build-category.divinity {
-  margin-bottom: 0;
+.build-category:first-child {
+  margin-top: 1.5rem;
 }
 
-.build-category.divinity.active {
-  margin-bottom: 1.5rem;
+.build-category .dropdown {
+  padding: 0;
+  margin-top: 0;
 }
 
 .build-dropdown {
@@ -365,6 +428,43 @@
   transition: height 0.5s linear;
 }
 
+.build-ui > .wrapper {
+  display: none;
+  align-items: center;
+
+  padding: 1rem;
+  padding-top: 0;
+}
+
+.build-ui > .wrapper.active {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.build-ui > .wrapper > img {
+  width: 5rem;
+  align-self: baseline;
+
+  margin: 0 auto;
+}
+
+.build-ui > .wrapper > .bonuses {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.build-ui > .wrapper > .bonuses > p {
+  font-size: 14px;
+}
+
+.build-ui > .wrapper > .bonuses > p:not(:last-child) {
+  border-bottom: 2px solid #a3d3ff;
+  padding-bottom: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
 .build-dropdown.active + .build-ui {
   display: block;
 }
@@ -392,6 +492,12 @@
   width: 15rem;
   margin: 0 auto 0.5rem;
   border-bottom: 2px solid #a3d3ff;
+}
+
+.divinity > .build-ui > h4 {
+  font-weight: 400;
+  padding: 0.5rem;
+  text-align: center;
 }
 
 .build-ui > p {

@@ -23,6 +23,12 @@ function RuneDropdown({
         e.stopPropagation();
         setRuneDropdown(!runeDropdown);
         setArtifactDropdown(false);
+        setTimeout(() => {
+          document.getElementById('rune-dropdown').scrollIntoView({
+            behavior: 'smooth',
+            block: 'center',
+          });
+        }, 0);
       }}
     >
       <div className='dropdown-select'>
@@ -39,12 +45,12 @@ function RuneDropdown({
             />
           )}
           <span className='select'>
-            {selectedRune ? selectedRune : 'Choose Rune (optional)'}
+            {selectedRune ? selectedRune : 'Choose Rune'}
           </span>
         </div>
         <i className='fa fa-caret-down icon'></i>
       </div>
-      <div className='dropdown-list rune'>
+      <div className='dropdown-list rune' id='rune-dropdown'>
         {runes.map((rune, index) => {
           return (
             <div

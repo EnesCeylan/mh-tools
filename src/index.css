@@ -14,15 +14,19 @@ body {
   min-height: 100vh;
   width: 100%;
   overflow-x: hidden;
+  overflow-y: auto;
   color: white;
-    background: url(/public/assets/Background/BG3.png) no-repeat center center fixed; 
+  background: url(/public/assets/Background/BG3.png) no-repeat center center
+    fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
 }
 
-
+body.modal-open {
+  overflow-y: hidden;
+}
 
 input,
 textarea,

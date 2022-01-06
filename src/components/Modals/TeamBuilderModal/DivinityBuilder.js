@@ -33,6 +33,13 @@ function DivinityBuilder({
       }, 3000);
       clearTimeout(warningTimer);
     }
+
+    setTimeout(() => {
+      document.getElementById('divinity-build-ui').scrollIntoView({
+        behavior: 'smooth',
+        block: 'center',
+      });
+    }, 0);
   };
 
   const checkTotalCost = (notable) => {
@@ -68,6 +75,7 @@ function DivinityBuilder({
 
   return (
     <React.Fragment>
+      <h4>Click to choose divinities</h4>
       <div className='divinity-slots-container'>
         {selectedNodes.map((node, index) => {
           return (
@@ -99,6 +107,12 @@ function DivinityBuilder({
             setDropdown(false);
             setRuneDropdown(false);
             setArtifactDropdown(false);
+            setTimeout(() => {
+              document.getElementById('divinity-dropdown-list').scrollIntoView({
+                behavior: 'smooth',
+                block: 'center',
+              });
+            }, 0);
           }}
         >
           <div className='dropdown-select divinity'>
@@ -109,7 +123,7 @@ function DivinityBuilder({
             </span>
             <i className='fa fa-caret-down icon'></i>
           </div>
-          <div className='dropdown-list divinity'>
+          <div className='dropdown-list divinity' id='divinity-dropdown-list'>
             {heroDivinityData[selectedHero].notablesOrdered
               .filter((node) => !selectedNodes.includes(node))
               .map((notable, index) => {
