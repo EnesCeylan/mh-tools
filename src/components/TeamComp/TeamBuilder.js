@@ -64,10 +64,12 @@ function TeamBuilder({ setShowMenu }) {
   };
 
   const exportBuild = () => {
-    navigator.clipboard.writeText(
-      'https://enesceylan.github.io/mythic-tools/#/team-builder/' +
-        btoa(JSON.stringify(teamData))
-    );
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(
+        'https://enesceylan.github.io/mythic-tools/#/team-builder/' +
+          btoa(JSON.stringify(teamData))
+      );
+    }
   };
 
   const showPopup = () => {

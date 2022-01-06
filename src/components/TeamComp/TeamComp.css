@@ -6,6 +6,7 @@
 
 .builder-buttons-container {
   width: 320px;
+  margin: 0 auto;
 
   display: flex;
   justify-content: space-around;
