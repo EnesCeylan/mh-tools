@@ -5,6 +5,8 @@ import TeamBuilderModal from '../Modals/TeamBuilderModal/TeamBuilderModal';
 import checkParamValidity from './checkParamValidity';
 
 function TeamBuilder({ setShowMenu }) {
+  const screenSize = window.innerWidth;
+
   const [reverseFormation, setReverseFormation] = useState(false);
   const [tooltip, setTooltip] = useState(false);
 
@@ -99,7 +101,9 @@ function TeamBuilder({ setShowMenu }) {
   }, []);
 
   useEffect(() => {
-    document.body.classList.toggle('modal-open', modal);
+    if (screenSize < 810) {
+      document.body.classList.toggle('modal-open', modal);
+    }
   }, [modal]);
 
   const handleClick = (index) => {
@@ -141,7 +145,7 @@ function TeamBuilder({ setShowMenu }) {
     setTeamData(teamDataCopy);
   };
 
-  return (
+  return screenSize < 810 ? (
     <div className='team-builder-container' onClick={() => setShowMenu(false)}>
       <div className='builder-buttons-container'>
         <button onClick={() => handleFormationSwitch()}>
@@ -299,6 +303,160 @@ function TeamBuilder({ setShowMenu }) {
           reverseFormation={reverseFormation}
         />
       )}
+    </div>
+  ) : (
+    <div className='team-builder-container' onClick={() => setShowMenu(false)}>
+      <div className='wrapper'>
+        <div
+          className={tooltip ? 'tooltip-container active' : 'tooltip-container'}
+          onClick={() => setTooltip(!tooltip)}
+        >
+          <div className='tooltip-header'>
+            <div className='wrapper'>
+              <i className='fas fa-chevron-right'></i>
+              <h4>How it works</h4>
+            </div>
+            <i className='far fa-question-circle'></i>
+          </div>
+          <p>
+            Select the slots to open the character selection to select and
+            customize your hero. Clicking on "export" button will automatically
+            copy the build link for you to share!
+          </p>
+        </div>
+        <div className='builder-buttons-container'>
+          <button onClick={() => handleFormationSwitch()}>
+            Switch formation
+          </button>
+          <button
+            onClick={() => {
+              exportBuild();
+              showPopup();
+            }}
+          >
+            Export Team <i className='fas fa-link'></i>
+            {copyToClipboard && <div className='info-popup'>Link copied!</div>}
+          </button>
+        </div>
+      </div>
+      <div className='wrapper'>
+        {!reverseFormation && (
+          <div className='build-container'>
+            <div className='row back'>
+              <div
+                className={
+                  validParamExists || teamData.team[2].name !== ''
+                    ? 'position three ' + teamData.team[2].name
+                    : 'position three'
+                }
+                onClick={() => {
+                  handleClick(2);
+                }}
+              ></div>
+              <div
+                className={
+                  validParamExists || teamData.team[3].name !== ''
+                    ? 'position four ' + teamData.team[3].name.replace('&', '')
+                    : 'position four'
+                }
+                onClick={() => {
+                  handleClick(3);
+                }}
+              ></div>
+              <div
+                className={
+                  validParamExists || teamData.team[4].name !== ''
+                    ? 'position five ' + teamData.team[4].name.replace('&', '')
+                    : 'position five'
+                }
+                onClick={() => {
+                  handleClick(4);
+                }}
+              ></div>
+            </div>
+            <div className='row front'>
+              <div
+                className={
+                  validParamExists || teamData.team[0].name !== ''
+                    ? 'position one ' + teamData.team[0].name.replace('&', '')
+                    : 'position one'
+                }
+                onClick={() => {
+                  handleClick(0);
+                }}
+              ></div>
+              <div
+                className={
+                  validParamExists || teamData.team[1].name !== ''
+                    ? 'position two ' + teamData.team[1].name.replace('&', '')
+                    : 'position two'
+                }
+                onClick={() => {
+                  handleClick(1);
+                }}
+              ></div>
+            </div>
+          </div>
+        )}
+        {reverseFormation && (
+          <div className='build-container reverse'>
+            <div className='row back'>
+              <div
+                className={
+                  validParamExists || teamData.team[0].name !== ''
+                    ? 'position four ' + teamData.team[0].name.replace('&', '')
+                    : 'position four'
+                }
+                onClick={() => {
+                  handleClick(0);
+                }}
+              ></div>
+              <div
+                className={
+                  validParamExists || teamData.team[1].name !== ''
+                    ? 'position five ' + teamData.team[1].name.replace('&', '')
+                    : 'position five'
+                }
+                onClick={() => {
+                  handleClick(1);
+                }}
+              ></div>
+            </div>
+            <div className='row front'>
+              <div
+                className={
+                  validParamExists || teamData.team[2].name !== ''
+                    ? 'position one ' + teamData.team[2].name.replace('&', '')
+                    : 'position one'
+                }
+                onClick={() => {
+                  handleClick(2);
+                }}
+              ></div>
+              <div
+                className={
+                  validParamExists || teamData.team[3].name !== ''
+                    ? 'position two ' + teamData.team[3].name.replace('&', '')
+                    : 'position two'
+                }
+                onClick={() => {
+                  handleClick(3);
+                }}
+              ></div>
+              <div
+                className={
+                  validParamExists || teamData.team[4].name !== ''
+                    ? 'position three ' + teamData.team[4].name
+                    : 'position three'
+                }
+                onClick={() => {
+                  handleClick(4);
+                }}
+              ></div>
+            </div>
+          </div>
+        )}
+      </div>
     </div>
   );
 }

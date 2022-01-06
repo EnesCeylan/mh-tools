@@ -63,7 +63,11 @@ function TeamBuilderModal({
         handleClick();
       }}
     >
-      <div className='builder-screen'>
+      <div
+        className={
+          selectedHero === '' ? 'builder-screen' : 'builder-screen active'
+        }
+      >
         <div className='builder-header'>
           <h4>Hero Selector</h4>
         </div>

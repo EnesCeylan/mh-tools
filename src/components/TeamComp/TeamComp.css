@@ -1,5 +1,7 @@
 :root {
   --container-size: 90%;
+  --cell-width: 150px;
+  --cell-spacing: 1rem;
 }
 /* ------------------------------------- General Containers ------------------------------------- */
 
@@ -127,13 +129,14 @@
   margin: 0 auto;
   padding: 2rem 0;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  column-gap: 1rem;
 }
 
 .row {
   box-sizing: content-box;
-  width: 150px;
-  height: 482px;
+  width: var(--cell-width);
+  height: calc(var(--cell-width) * 3 + var(--cell-spacing) * 2);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -150,7 +153,7 @@
 }
 
 .position:not(:last-child) {
-  margin-bottom: 1rem;
+  margin-bottom: var(--cell-spacing);
 }
 
 .character-selection-modal {
@@ -726,4 +729,75 @@
 
 .position.Zeus {
   background-image: url('../../assets/hero/shard/Zeus.png');
+}
+
+@media screen and (min-height: 786px) {
+  .builder-screen.active {
+    height: 704px;
+  }
+
+  .builds-container {
+    height: 411px;
+  }
+}
+
+@media screen and (min-width: 560px) {
+  .builder-screen {
+    width: 520px;
+  }
+
+  .divinity > .build-ui > h4 {
+    font-weight: 500;
+    font-size: 1.125rem;
+
+    padding: 0.75rem;
+  }
+
+  .divinity-slots-container,
+  .divinity > .build-ui > h4,
+  .build-dropdown.active + .build-ui > .dropdown,
+  .weapon-builder-header,
+  .build-ui > p,
+  .build-ui > .wrapper > .bonuses > p {
+    width: 20rem;
+  }
+
+  .divinity-slots-container > button > img:nth-child(1) {
+    width: 6rem;
+  }
+
+  .divinity-slots-container > button > img:nth-child(2) {
+    width: 4.3rem;
+    left: 0.8rem;
+    top: 0.625rem;
+  }
+
+  .weapon-builder-header {
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 810px) {
+  :root {
+    --container-size: 40%;
+  }
+
+  .team-builder-container > .wrapper {
+    display: flex;
+  }
+
+  .team-builder-container > .wrapper:nth-child(2) {
+    height: calc(100vh - var(--header-height) - var(--footer-height) - 76px);
+    align-items: center;
+    padding: 0 7.5%;
+  }
+
+  .team-builder-container > .wrapper > .builder-buttons-container > button {
+    width: 145px;
+    height: 52px;
+  }
+
+  .team-builder-container > .wrapper:nth-child(2) > .build-container {
+    margin: 0;
+  }
 }
