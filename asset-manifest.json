@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/mythic-tools/static/css/main.d936569b.css",
+    "main.css": "/mythic-tools/static/css/main.c14f68da.css",
     "main.js": "/mythic-tools/static/js/main.9591bde5.js",
     "static/media/FZCu-Yuan-M03.ttf": "/mythic-tools/static/media/FZCu-Yuan-M03.a21f3c9e1bc5cce7ff28.ttf",
     "static/media/BG1.png": "/mythic-tools/static/media/BG1.0914c73dc9ad933cdc42.png",
@@ -71,11 +71,11 @@
     "static/media/Tank.png": "/mythic-tools/static/media/Tank.bf3917e8524419d8f81b.png",
     "static/media/Fighter.png": "/mythic-tools/static/media/Fighter.9e7267720be2abded90a.png",
     "index.html": "/mythic-tools/index.html",
-    "main.d936569b.css.map": "/mythic-tools/static/css/main.d936569b.css.map",
+    "main.c14f68da.css.map": "/mythic-tools/static/css/main.c14f68da.css.map",
     "main.9591bde5.js.map": "/mythic-tools/static/js/main.9591bde5.js.map"
   },
   "entrypoints": [
-    "static/css/main.d936569b.css",
+    "static/css/main.c14f68da.css",
     "static/js/main.9591bde5.js"
   ]
 }
