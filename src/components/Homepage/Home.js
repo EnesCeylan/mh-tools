@@ -25,6 +25,7 @@ const Home = () => {
             <p className="home-message"> ( OwO)づ︻╦̵̵̿╤── \(UwU)/</p>
             <p className="home-message"> "...It has to be done...UwU-chan..."</p>
             <p className="home-message"> And they all live happily ever after</p>
+<<<<<<< HEAD
             <h1 className='social-media-title'>OFFICIAL MYTHIC HEROES SOCIAL MEDIA</h1>
             <div className="social-media">
                 {socialArr.map((social, index) => (
@@ -45,6 +46,8 @@ const Home = () => {
                 ))}
 
             </div>
+=======
+>>>>>>> 4dc3855b496675da6847fa2ae75f67485a4b7acd
         </div>
 
     );
