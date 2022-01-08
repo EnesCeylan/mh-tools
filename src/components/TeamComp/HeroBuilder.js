@@ -16,25 +16,10 @@ function HeroBuilder({
   const [dropdown, setDropdown] = useState(false);
 
   //selections
-  //   const [selectedHero, setSelectedHero] = useState(
-  //     teamData.team[selectedElement].name
-  //   );
   const [selectedHero, setSelectedHero] = useState('');
-  //   const [selectedRune, setSelectedRune] = useState(
-  //     teamData.team[selectedElement].rune
-  //   );
   const [selectedRune, setSelectedRune] = useState('');
-  //   const [selectedArtifact, setSelectedArtifact] = useState(
-  //     teamData.team[selectedElement].artifact
-  //   );
   const [selectedArtifact, setSelectedArtifact] = useState('');
-  //   const [selectedNodes, setSelectedNodes] = useState(
-  //     teamData.team[selectedElement].divinityNodes
-  //   );
   const [selectedNodes, setSelectedNodes] = useState(['', '', '']);
-  //   const [selectedWeaponBuild, setSelectedWeaponBuild] = useState(
-  //     teamData.team[selectedElement].weaponLv
-  //   );
   const [selectedWeaponBuild, setSelectedWeaponBuild] = useState('');
 
   // build dropdowns

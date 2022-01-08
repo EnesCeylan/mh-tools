@@ -84,24 +84,26 @@ function TeamBuilder({ setShowMenu }) {
       //Formation type 3-2 or 2-3
       teamDataDeepCopy.reverseFormation = linkDataObject.reverseFormation;
       setReverseFormation(linkDataObject.reverseFormation);
-      teamData.team.forEach((hero, index) => {
+      teamDataDeepCopy.team.forEach((hero, index) => {
         //Hero name
-        teamDataDeepCopy.team[index].name = linkDataObject.team[index].name;
+        hero.name = linkDataObject.team[index].name;
         //Selected rune for the hero
-        teamDataDeepCopy.team[index].rune = linkDataObject.team[index].rune;
+        hero.rune = linkDataObject.team[index].rune;
         //Selected artifact for the hero
-        teamDataDeepCopy.team[index].artifact =
-          linkDataObject.team[index].artifact;
+        hero.artifact = linkDataObject.team[index].artifact;
         //Selected divinity nodes for the hero
-        teamDataDeepCopy.team[index].divinityNodes =
-          linkDataObject.team[index].divinityNodes;
+        hero.divinityNodes = linkDataObject.team[index].divinityNodes;
         //Selected weapon level for the hero
-        teamDataDeepCopy.team[index].weaponLv =
-          linkDataObject.team[index].weaponLv;
-
+        hero.weaponLv = linkDataObject.team[index].weaponLv;
         //Assign the cloned object as state for import all values
-        setTeamData(teamDataDeepCopy);
       });
+
+      setTimeout(() => {
+        setTeamData(teamDataDeepCopy);
+      }, 0);
+
+      console.log('teamDataDeepCopy', teamDataDeepCopy);
+      console.log('teamData', teamData);
     }
   }, []);
 
