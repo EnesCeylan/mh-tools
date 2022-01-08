@@ -1,6 +1,6 @@
 {
-  "homepage": "https://enesceylan.github.io/mythic-tools",
-  "name": "mythic-tools",
+  "homepage": "https://enesceylan.github.io/mythic-companion",
+  "name": "mythic-companion",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
