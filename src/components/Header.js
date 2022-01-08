@@ -5,7 +5,11 @@ function Header({ showMenu, setShowMenu }) {
     <header>
       <div className='topbar'>
         <Link to='/'>
-          <h1>Mythic Tools</h1>
+          <img
+            src={process.env.PUBLIC_URL + '/assets/Background/Logo.png'}
+            alt="logo"
+            className="logo"
+          />
         </Link>
         <div
           className={showMenu ? 'hamburger-menu active' : 'hamburger-menu'}

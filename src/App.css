@@ -17,6 +17,15 @@ header {
   align-items: center;
 }
 
+.logo {
+  padding-top: 0px;
+  display: block;
+  width: 7em;
+  max-height: 100%;
+  max-width: 100%;
+  
+}
+
 .navbar {
   display: none;
 }
