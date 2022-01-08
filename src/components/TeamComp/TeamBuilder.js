@@ -101,9 +101,6 @@ function TeamBuilder({ setShowMenu }) {
       setTimeout(() => {
         setTeamData(teamDataDeepCopy);
       }, 0);
-
-      console.log('teamDataDeepCopy', teamDataDeepCopy);
-      console.log('teamData', teamData);
     }
   }, []);
 
