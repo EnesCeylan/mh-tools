@@ -4,6 +4,7 @@ function ArtifactDropdown({
   selectedArtifact,
   setSelectedArtifact,
   setRuneDropdown,
+  width,
 }) {
   const artifacts = [
     'Axe of Pangu',
@@ -22,12 +23,14 @@ function ArtifactDropdown({
         e.stopPropagation();
         setArtifactDropdown(!artifactDropdown);
         setRuneDropdown(false);
-        setTimeout(() => {
-          document.getElementById('artifact-dropdown').scrollIntoView({
-            behavior: 'smooth',
-            block: 'center',
-          });
-        }, 0);
+        if (width < 950) {
+          setTimeout(() => {
+            document.getElementById('artifact-dropdown').scrollIntoView({
+              behavior: 'smooth',
+              block: 'center',
+            });
+          }, 0);
+        }
       }}
     >
       <div className='dropdown-select'>

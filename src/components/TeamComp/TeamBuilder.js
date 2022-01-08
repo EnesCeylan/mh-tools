@@ -327,6 +327,7 @@ function TeamBuilder({ setShowMenu }) {
           teamData={teamData}
           setTeamData={setTeamData}
           reverseFormation={reverseFormation}
+          width={width}
         />
       )}
     </div>
@@ -497,6 +498,7 @@ function TeamBuilder({ setShowMenu }) {
           </div>
         )}
         <HeroBuilder
+          setSelectedElement={setSelectedElement}
           selectedElement={selectedElement}
           teamData={teamData}
           setTeamData={setTeamData}

@@ -10,6 +10,7 @@ function TeamBuilderModal({
   selectedElement,
   teamData,
   setTeamData,
+  width,
 }) {
   const [dropdown, setDropdown] = useState(false);
 
@@ -75,6 +76,7 @@ function TeamBuilderModal({
           setRuneDropdown={setRuneDropdown}
           setArtifactDropdown={setArtifactDropdown}
           teamData={teamData.team}
+          width={width}
         />
         {/* -------------------------------------------------------------------- */}
         {selectedHero && (
@@ -89,6 +91,7 @@ function TeamBuilderModal({
                   selectedRune={selectedRune}
                   setSelectedRune={setSelectedRune}
                   setArtifactDropdown={setArtifactDropdown}
+                  width={width}
                 />
               </div>
               <div className='build-category'>
@@ -98,6 +101,7 @@ function TeamBuilderModal({
                   selectedArtifact={selectedArtifact}
                   setSelectedArtifact={setSelectedArtifact}
                   setRuneDropdown={setRuneDropdown}
+                  width={width}
                 />
               </div>
               <div
@@ -140,6 +144,7 @@ function TeamBuilderModal({
                     setRuneDropdown={setRuneDropdown}
                     setArtifactDropdown={setArtifactDropdown}
                     selectedHero={selectedHero}
+                    width={width}
                   />
                 </div>
               </div>
@@ -178,6 +183,7 @@ function TeamBuilderModal({
                     selectedWeaponBuild={selectedWeaponBuild}
                     setSelectedWeaponBuild={setSelectedWeaponBuild}
                     selectedHero={selectedHero}
+                    width={width}
                   />
                 </div>
               </div>

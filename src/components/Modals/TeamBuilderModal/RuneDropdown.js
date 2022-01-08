@@ -4,6 +4,7 @@ function RuneDropdown({
   selectedRune,
   setSelectedRune,
   setArtifactDropdown,
+  width,
 }) {
   const runes = [
     'Earth',
@@ -23,12 +24,14 @@ function RuneDropdown({
         e.stopPropagation();
         setRuneDropdown(!runeDropdown);
         setArtifactDropdown(false);
-        setTimeout(() => {
-          document.getElementById('rune-dropdown').scrollIntoView({
-            behavior: 'smooth',
-            block: 'center',
-          });
-        }, 0);
+        if (width < 950) {
+          setTimeout(() => {
+            document.getElementById('rune-dropdown').scrollIntoView({
+              behavior: 'smooth',
+              block: 'center',
+            });
+          }, 0);
+        }
       }}
     >
       <div className='dropdown-select'>

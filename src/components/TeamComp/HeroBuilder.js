@@ -6,7 +6,13 @@ import ArtifactDropdown from '../Modals/TeamBuilderModal/ArtifactDropdown';
 import DivinityBuilder from '../Modals/TeamBuilderModal/DivinityBuilder';
 import WeaponBuilder from '../Modals/TeamBuilderModal/WeaponBuilder';
 
-function HeroBuilder({ selectedElement, teamData, setTeamData, screenSize }) {
+function HeroBuilder({
+  setSelectedElement,
+  selectedElement,
+  teamData,
+  setTeamData,
+  width,
+}) {
   const [dropdown, setDropdown] = useState(false);
 
   //selections
@@ -39,7 +45,6 @@ function HeroBuilder({ selectedElement, teamData, setTeamData, screenSize }) {
   const [weaponBuilderDropdown, setWeaponBuilderDropdown] = useState(false);
 
   const addToTeam = () => {
-    console.log(selectedElement);
     const deepCopy = JSON.parse(JSON.stringify(teamData));
 
     deepCopy.team[selectedElement].name = selectedHero;
@@ -49,6 +54,8 @@ function HeroBuilder({ selectedElement, teamData, setTeamData, screenSize }) {
     deepCopy.team[selectedElement].weaponLv = selectedWeaponBuild;
 
     setTeamData(deepCopy);
+    setSelectedElement('');
+    setSelectedHero('');
   };
 
   return (
@@ -72,6 +79,7 @@ function HeroBuilder({ selectedElement, teamData, setTeamData, screenSize }) {
             setRuneDropdown={setRuneDropdown}
             setArtifactDropdown={setArtifactDropdown}
             teamData={teamData.team}
+            width={width}
           />
         </React.Fragment>
       )}
@@ -86,6 +94,7 @@ function HeroBuilder({ selectedElement, teamData, setTeamData, screenSize }) {
               selectedRune={selectedRune}
               setSelectedRune={setSelectedRune}
               setArtifactDropdown={setArtifactDropdown}
+              width={width}
             />
           </div>
           <div className='build-category'>
@@ -95,6 +104,7 @@ function HeroBuilder({ selectedElement, teamData, setTeamData, screenSize }) {
               selectedArtifact={selectedArtifact}
               setSelectedArtifact={setSelectedArtifact}
               setRuneDropdown={setRuneDropdown}
+              width={width}
             />
           </div>
           <div
@@ -133,7 +143,7 @@ function HeroBuilder({ selectedElement, teamData, setTeamData, screenSize }) {
                 setRuneDropdown={setRuneDropdown}
                 setArtifactDropdown={setArtifactDropdown}
                 selectedHero={selectedHero}
-                screenSize={screenSize}
+                width={width}
               />
             </div>
           </div>
@@ -170,7 +180,7 @@ function HeroBuilder({ selectedElement, teamData, setTeamData, screenSize }) {
                 selectedWeaponBuild={selectedWeaponBuild}
                 setSelectedWeaponBuild={setSelectedWeaponBuild}
                 selectedHero={selectedHero}
-                screenSize={screenSize}
+                width={width}
               />
             </div>
           </div>

@@ -107,22 +107,24 @@ function DivinityBuilder({
             setRuneDropdown(false);
             setArtifactDropdown(false);
 
-            if (divinityBuilderDropdown) {
-              setTimeout(() => {
-                document.getElementById('divinity-build-ui').scrollIntoView({
-                  behavior: 'smooth',
-                  block: 'start',
-                });
-              }, 0);
-            } else {
-              setTimeout(() => {
-                document
-                  .getElementById('divinity-dropdown-list')
-                  .scrollIntoView({
+            if (width < 950) {
+              if (divinityBuilderDropdown) {
+                setTimeout(() => {
+                  document.getElementById('divinity-build-ui').scrollIntoView({
                     behavior: 'smooth',
-                    block: 'center',
+                    block: 'start',
                   });
-              }, 0);
+                }, 0);
+              } else {
+                setTimeout(() => {
+                  document
+                    .getElementById('divinity-dropdown-list')
+                    .scrollIntoView({
+                      behavior: 'smooth',
+                      block: 'center',
+                    });
+                }, 0);
+              }
             }
           }}
         >
