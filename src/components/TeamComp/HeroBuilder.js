@@ -1,0 +1,185 @@
+import React, { useState, useEffect } from 'react';
+
+import HeroDropdown from '../Modals/TeamBuilderModal/HeroDropdown';
+import RuneDropdown from '../Modals/TeamBuilderModal/RuneDropdown';
+import ArtifactDropdown from '../Modals/TeamBuilderModal/ArtifactDropdown';
+import DivinityBuilder from '../Modals/TeamBuilderModal/DivinityBuilder';
+import WeaponBuilder from '../Modals/TeamBuilderModal/WeaponBuilder';
+
+function HeroBuilder({ selectedElement, teamData, setTeamData, screenSize }) {
+  const [dropdown, setDropdown] = useState(false);
+
+  //selections
+  //   const [selectedHero, setSelectedHero] = useState(
+  //     teamData.team[selectedElement].name
+  //   );
+  const [selectedHero, setSelectedHero] = useState('');
+  //   const [selectedRune, setSelectedRune] = useState(
+  //     teamData.team[selectedElement].rune
+  //   );
+  const [selectedRune, setSelectedRune] = useState('');
+  //   const [selectedArtifact, setSelectedArtifact] = useState(
+  //     teamData.team[selectedElement].artifact
+  //   );
+  const [selectedArtifact, setSelectedArtifact] = useState('');
+  //   const [selectedNodes, setSelectedNodes] = useState(
+  //     teamData.team[selectedElement].divinityNodes
+  //   );
+  const [selectedNodes, setSelectedNodes] = useState(['', '', '']);
+  //   const [selectedWeaponBuild, setSelectedWeaponBuild] = useState(
+  //     teamData.team[selectedElement].weaponLv
+  //   );
+  const [selectedWeaponBuild, setSelectedWeaponBuild] = useState('');
+
+  // build dropdowns
+  const [runeDropdown, setRuneDropdown] = useState(false);
+  const [artifactDropdown, setArtifactDropdown] = useState(false);
+  const [divinityDropdown, setDivinityDropdown] = useState(false);
+  const [divinityBuilderDropdown, setDivinityBuilderDropdown] = useState(false);
+  const [weaponBuilderDropdown, setWeaponBuilderDropdown] = useState(false);
+
+  const addToTeam = () => {
+    console.log(selectedElement);
+    const deepCopy = JSON.parse(JSON.stringify(teamData));
+
+    deepCopy.team[selectedElement].name = selectedHero;
+    deepCopy.team[selectedElement].rune = selectedRune;
+    deepCopy.team[selectedElement].artifact = selectedArtifact;
+    deepCopy.team[selectedElement].divinityNodes = selectedNodes;
+    deepCopy.team[selectedElement].weaponLv = selectedWeaponBuild;
+
+    setTeamData(deepCopy);
+  };
+
+  return (
+    <div
+      className={
+        selectedElement === ''
+          ? 'build-ui-desktop inactive'
+          : 'build-ui-desktop'
+      }
+    >
+      {selectedElement === '' ? (
+        <h2>Click on any cell to start!</h2>
+      ) : (
+        <React.Fragment>
+          <h4>Hero Selector</h4>
+          <HeroDropdown
+            dropdown={dropdown}
+            setDropdown={setDropdown}
+            selectedHero={selectedHero}
+            setSelectedHero={setSelectedHero}
+            setRuneDropdown={setRuneDropdown}
+            setArtifactDropdown={setArtifactDropdown}
+            teamData={teamData.team}
+          />
+        </React.Fragment>
+      )}
+      {selectedHero !== '' && (
+        <React.Fragment>
+          <h5>Hero build (optional)</h5>
+          <span>(scroll down for more options)</span>
+          <div className='build-category'>
+            <RuneDropdown
+              runeDropdown={runeDropdown}
+              setRuneDropdown={setRuneDropdown}
+              selectedRune={selectedRune}
+              setSelectedRune={setSelectedRune}
+              setArtifactDropdown={setArtifactDropdown}
+            />
+          </div>
+          <div className='build-category'>
+            <ArtifactDropdown
+              artifactDropdown={artifactDropdown}
+              setArtifactDropdown={setArtifactDropdown}
+              selectedArtifact={selectedArtifact}
+              setSelectedArtifact={setSelectedArtifact}
+              setRuneDropdown={setRuneDropdown}
+            />
+          </div>
+          <div
+            className={
+              divinityDropdown
+                ? 'build-category divinity active'
+                : 'build-category divinity'
+            }
+            id='divinity-dropdown'
+          >
+            <div
+              className={
+                divinityDropdown ? 'build-dropdown active' : 'build-dropdown'
+              }
+              onClick={() => {
+                setDivinityDropdown(!divinityDropdown);
+                setTimeout(() => {
+                  document.getElementById('divinity-dropdown').scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'center',
+                  });
+                }, 0);
+              }}
+            >
+              <i className='fas fa-angle-right'></i>
+              <span>Divinity build</span>
+            </div>
+            {/* --------------------------- Build UI Here --------------------------- */}
+            <div className='build-ui' id='divinity-build-ui'>
+              <DivinityBuilder
+                divinityBuilderDropdown={divinityBuilderDropdown}
+                setDivinityBuilderDropdown={setDivinityBuilderDropdown}
+                selectedNodes={selectedNodes}
+                setSelectedNodes={setSelectedNodes}
+                setDropdown={setDropdown}
+                setRuneDropdown={setRuneDropdown}
+                setArtifactDropdown={setArtifactDropdown}
+                selectedHero={selectedHero}
+                screenSize={screenSize}
+              />
+            </div>
+          </div>
+          <div
+            className={
+              weaponBuilderDropdown
+                ? 'build-category weapon active'
+                : 'build-category weapon'
+            }
+            id='weapon-dropdown'
+          >
+            <div
+              className={
+                weaponBuilderDropdown
+                  ? 'build-dropdown active'
+                  : 'build-dropdown'
+              }
+              onClick={() => {
+                setWeaponBuilderDropdown(!weaponBuilderDropdown);
+                setTimeout(() => {
+                  document.getElementById('weapon-dropdown').scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'end',
+                  });
+                }, 0);
+              }}
+            >
+              <i className='fas fa-angle-right' aria-hidden='true'></i>
+              <span>Weapon build</span>
+            </div>
+            {/* --------------------------- Build UI Here --------------------------- */}
+            <div className='build-ui'>
+              <WeaponBuilder
+                selectedWeaponBuild={selectedWeaponBuild}
+                setSelectedWeaponBuild={setSelectedWeaponBuild}
+                selectedHero={selectedHero}
+                screenSize={screenSize}
+              />
+            </div>
+          </div>
+          {/* -------------------------------------------------------------------- */}
+          <button onClick={() => addToTeam()}>Add to team</button>
+        </React.Fragment>
+      )}
+    </div>
+  );
+}
+
+export default HeroBuilder;

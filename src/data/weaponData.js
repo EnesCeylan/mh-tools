@@ -269,6 +269,17 @@ const weaponData = {
         'Increases ally Heroes Attack by 20% when their Health is above 50%.',
     },
   },
+  Archimedes: {
+    firstWeapon: {
+      name: 'Skyfire Launcher',
+      lv100:
+        'Gain 1 Energy after every attack on an enemy with 10 stacks of "Piercing Rounds".',
+      lv200: 'Increase Energy gained after each attack to 2.',
+      lv300: 'Increase Energy gained after each attack to 3.',
+      lv400:
+        'After the first 30s of battle, increase the stack limit of "Piercing Rounds" to 20.',
+    },
+  },
   // ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
   // ------------------------------------- VERDIAN -------------------------------------
   Nagakanya: {

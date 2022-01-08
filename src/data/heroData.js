@@ -16,7 +16,12 @@ const heroData = {
     role: 'Support',
     runes: ['Dark', 'Forest', 'Air'],
     artifacts: ['Excalibur'],
-    divinityNotables: ['Inspiration', 'Death Waiver', 'Excitement', 'Collective Fervor'],
+    divinityNotables: [
+      'Inspiration',
+      'Death Waiver',
+      'Excitement',
+      'Collective Fervor',
+    ],
   },
   Typhon: {
     rarity: 'UR',
@@ -189,6 +194,14 @@ const heroData = {
     runes: ['Water'],
     artifacts: ['Excalibur'],
     divinityNotables: ['Full Moon', 'New Moon', 'Purify', 'Inspiration'],
+  },
+  Archimedes: {
+    rarity: 'SSR',
+    faction: ['Guardian'],
+    role: 'Warrior',
+    runes: ['Fire', 'Thunder'],
+    artifacts: ['Axe of Pangu', 'Staff of Sharur'],
+    divinityNotables: ['Torment', 'Culmination', 'Colossus', 'Panacea'],
   },
   // ------------------------- Verdian -------------------------
   Nagakanya: {

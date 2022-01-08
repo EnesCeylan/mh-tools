@@ -5,7 +5,7 @@ function Header({ showMenu, setShowMenu }) {
     <header>
       <div className='topbar'>
         <Link to='/'>
-          <h1>Mythic Tools</h1>
+          <h1>Mythic Companion</h1>
         </Link>
         <div
           className={showMenu ? 'hamburger-menu active' : 'hamburger-menu'}

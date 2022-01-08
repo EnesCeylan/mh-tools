@@ -2322,6 +2322,113 @@ const skillData = {
       },
     },
   },
+  Archimedes: {
+    ultimate: {
+      type: 'Ultimate',
+      name: 'Power Surge',
+      description: {
+        lv1: [
+          {
+            type: 'text',
+            content:
+              'Typically Archimedes\'s Attack SPeed is fast, causing 75% damage each hit. When "Power Surge" begins, the airship overloads for  ',
+          },
+          { type: 'value', content: '10s' },
+          {
+            type: 'text',
+            content: ', increasing his already fast Attack Speed by ',
+          },
+          { type: 'value', content: '300%' },
+          {
+            type: 'text',
+            content: '. His auto-attack now also targets ',
+          },
+          { type: 'value', content: '2' },
+          { type: 'text', content: ' units to deal ' },
+          { type: 'value', content: '30%' },
+          {
+            type: 'text',
+            content:
+              ' damage each hit. After "Power Surge" ends, Archimedes will need to repair his airship for ',
+          },
+          { type: 'value', content: '5s' },
+          { type: 'text', content: '.' },
+        ],
+        lv2: 'During "Power Surge", increase all damage dealt by Archimedes by 10%',
+        lv3: 'During "Power Surge", increase all damage dealt by Archimedes by 20%',
+        lv4: 'During "Power Surge", increase all damage dealt by Archimedes by 30%',
+      },
+    },
+    'skill two': {
+      type: 'Passive',
+      name: 'Focal Fire',
+      description: {
+        lv1: [
+          {
+            type: 'text',
+            content:
+              'Archimedes fires a line of focused energy directly in front of him, dealing  ',
+          },
+          { type: 'value', content: '140%' },
+          { type: 'text', content: ' damage to enemies in its path.' },
+        ],
+        lv2: 'Deals 160% damage',
+        lv3: 'Additionally, stuns the target(s) for 0.5s',
+        lv4: 'Deals 180% damage',
+      },
+    },
+    'skill three': {
+      type: 'Passive',
+      name: 'Piercing Rounds',
+      description: {
+        lv1: [
+          {
+            type: 'text',
+            content:
+              "When Archimedes deals damage to an enemy, apply an additional penetration effect which decreases target's Defense by ",
+          },
+          { type: 'value', content: '2.5%' },
+          {
+            type: 'text',
+            content: ' for 10. The effect can be stacked up to ',
+          },
+          { type: 'value', content: '10' },
+          {
+            type: 'text',
+            content: ' times.',
+          },
+        ],
+        lv2: "Decreases target's Defense by 3%",
+        lv3: "Decreases target's Defense by 3.5%",
+        lv4: "Decreases target's Defense by 4%",
+      },
+    },
+    'skill four': {
+      type: 'Passive',
+      name: 'Sunder Grenade',
+      description: {
+        lv1: [
+          {
+            type: 'text',
+            content: 'After ',
+          },
+          { type: 'value', content: '20' },
+          {
+            type: 'text',
+            content: ' hits, Archimedes launches a grenade to deal ',
+          },
+          { type: 'value', content: '125%' },
+          {
+            type: 'text',
+            content: ' damage to the target and nearby enemies.',
+          },
+        ],
+        lv2: 'Deals 150% damage',
+        lv3: 'Attack cannot be blocked/dodged',
+        lv4: 'Deals 175% damage',
+      },
+    },
+  },
   // ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
   // ------------------------------------- VERDIAN -------------------------------------
   Nagakanya: {

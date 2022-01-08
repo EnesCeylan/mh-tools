@@ -162,7 +162,7 @@
   background-image: url('../../assets/cube/Icon_Phantom_Cube.png');
 }
 
-.buttons-container {
+.buttons-container:not(.builder-screen > .buttons-container) {
   padding: 1rem;
   width: 100%;
 }

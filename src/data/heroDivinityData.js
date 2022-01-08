@@ -394,6 +394,24 @@ const heroDivinityData = {
       'Pristine',
       'New Moon',
     ],
+
+    Archimedes: {
+      branches: ['Immortality', 'Psyche', 'Primeval'],
+      branchLeft: ['Symbiosis', 'Waterdrop', 'Recovery'],
+      branchMiddle: ['Torment', 'Prevail', 'Panacea'],
+      branchRight: ['Culmination', 'Primal Totem', 'Colossus'],
+      notablesOrdered: [
+        'Symbiosis',
+        'Torment',
+        'Culmination',
+        'Waterdrop',
+        'Prevail',
+        'Primal Totem',
+        'Recovery',
+        'Panacea',
+        'Colossus',
+      ],
+    },
   },
   // -------------------------------- Verdian --------------------------------
   Nagakanya: {

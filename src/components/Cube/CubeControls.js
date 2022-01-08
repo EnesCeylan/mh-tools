@@ -1,4 +1,5 @@
-import handleFaceReset from './functions/reset-functions/handleFaceReset';
+import handleFaceReset from './functions/handleFaceReset';
+import activateFace from './functions/activateFace';
 
 function CubeControls({
   cubeIndex,
@@ -16,6 +17,9 @@ function CubeControls({
         onClick={() => handleFaceReset(cubeIndex, faceIndex, cube, setCube)}
       >
         Reset Face
+      </button>
+      <button className='btn-reset' onClick={() => activateFace(cube, setCube)}>
+        Activate Face
       </button>
       {!isWideScreen && (
         <button

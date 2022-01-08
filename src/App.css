@@ -1,10 +1,23 @@
 :root {
+  --color-main: #222;
+  --color-main-dark: rgba(17, 17, 17, 0.75);
+  --color-main-medium: #444;
+  --color-main-light: #555;
+  --color-main-accent: #777;
+
+  --color-success: #28a745;
+  --color-danger: #dc3545;
+  --color-warning: #ffc107;
+  --color-info: #17a2b8;
+
   --header-height: 5rem;
   --footer-height: 10rem;
+
+  --team-builder-padding: 5%;
 }
 
 header {
-  background-color: rgba(17, 17, 17, 0.75);
+  background-color: var(--color-main-dark);
   width: 100%;
   min-height: var(--header-height);
   padding: 0 0.75rem;
@@ -96,7 +109,7 @@ footer {
   height: var(--footer-height);
   width: 100%;
   padding: 2rem;
-  background-color: rgba(17, 17, 17, 0.75);
+  background-color: var(--color-main-dark);
 
   display: flex;
   flex-direction: column;
@@ -128,7 +141,7 @@ input.copy-url {
 /* large tablet & laptop styles */
 @media screen and (min-width: 810px) {
   body {
-    background: url(/public/assets/Background/BG2.png) no-repeat center center
+    background: url('/public/assets/Background/BG2.png') no-repeat center center
       fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -185,7 +198,7 @@ input.copy-url {
 /* desktop styles */
 @media screen and (min-width: 1200px) {
   body {
-    background: url(/public/assets/Background/BG1.png) no-repeat center center
+    background: url('/public/assets/Background/BG1.png') no-repeat center center
       fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;

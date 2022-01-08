@@ -6,6 +6,7 @@ function WeaponBuilder({
   selectedWeaponBuild,
   setSelectedWeaponBuild,
   selectedHero,
+  width,
 }) {
   const [displayBonuses, setDisplayBonuses] = useState([]);
 
@@ -48,12 +49,16 @@ function WeaponBuilder({
       : setSelectedWeaponBuild(level);
 
     displaySwitch(level);
-    setTimeout(() => {
-      document.getElementById('weapon-dropdown').scrollIntoView({
-        behavior: 'smooth',
-        block: 'end',
-      });
-    }, 0);
+
+    console.log(width);
+    if (width < 950) {
+      setTimeout(() => {
+        document.getElementById('weapon-dropdown').scrollIntoView({
+          behavior: 'smooth',
+          block: 'end',
+        });
+      }, 0);
+    }
   };
 
   useEffect(() => {

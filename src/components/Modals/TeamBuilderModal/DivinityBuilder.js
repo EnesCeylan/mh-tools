@@ -14,8 +14,8 @@ function DivinityBuilder({
   setRuneDropdown,
   setArtifactDropdown,
   selectedHero,
+  width,
 }) {
-  let warningTimer;
   const [selectionMode, setSelectionMode] = useState(false);
   const [warning, setWarning] = useState(false);
 
@@ -28,18 +28,17 @@ function DivinityBuilder({
     } else {
       setWarning(true);
 
-      warningTimer = setTimeout(() => {
-        setWarning(false);
-      }, 3000);
-      clearTimeout(warningTimer);
+      setTimeout(() => setWarning(false), 3000);
     }
 
-    setTimeout(() => {
-      document.getElementById('divinity-build-ui').scrollIntoView({
-        behavior: 'smooth',
-        block: 'center',
-      });
-    }, 0);
+    if (width < 950) {
+      setTimeout(() => {
+        document.getElementById('divinity-build-ui').scrollIntoView({
+          behavior: 'smooth',
+          block: 'center',
+        });
+      }, 0);
+    }
   };
 
   const checkTotalCost = (notable) => {
@@ -107,12 +106,24 @@ function DivinityBuilder({
             setDropdown(false);
             setRuneDropdown(false);
             setArtifactDropdown(false);
-            setTimeout(() => {
-              document.getElementById('divinity-dropdown-list').scrollIntoView({
-                behavior: 'smooth',
-                block: 'center',
-              });
-            }, 0);
+
+            if (divinityBuilderDropdown) {
+              setTimeout(() => {
+                document.getElementById('divinity-build-ui').scrollIntoView({
+                  behavior: 'smooth',
+                  block: 'start',
+                });
+              }, 0);
+            } else {
+              setTimeout(() => {
+                document
+                  .getElementById('divinity-dropdown-list')
+                  .scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'center',
+                  });
+              }, 0);
+            }
           }}
         >
           <div className='dropdown-select divinity'>

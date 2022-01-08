@@ -10,7 +10,6 @@ function TeamBuilderModal({
   selectedElement,
   teamData,
   setTeamData,
-  reverseFormation,
 }) {
   const [dropdown, setDropdown] = useState(false);
 
@@ -45,7 +44,6 @@ function TeamBuilderModal({
     teamDataDeepCopy.team[selectedElement].artifact = selectedArtifact;
     teamDataDeepCopy.team[selectedElement].divinityNodes = selectedNodes;
     teamDataDeepCopy.team[selectedElement].weaponLv = selectedWeaponBuild;
-    teamDataDeepCopy.reverseFormation = reverseFormation;
 
     setTeamData(teamDataDeepCopy);
   };
@@ -68,9 +66,7 @@ function TeamBuilderModal({
           selectedHero === '' ? 'builder-screen' : 'builder-screen active'
         }
       >
-        <div className='builder-header'>
-          <h4>Hero Selector</h4>
-        </div>
+        <h4>Hero Selector</h4>
         <HeroDropdown
           dropdown={dropdown}
           setDropdown={setDropdown}
@@ -83,10 +79,8 @@ function TeamBuilderModal({
         {/* -------------------------------------------------------------------- */}
         {selectedHero && (
           <React.Fragment>
-            <div className='hero-build-header'>
-              <h5>Hero build (optional)</h5>
-              <span>(scroll down for more options)</span>
-            </div>
+            <h5>Hero build (optional)</h5>
+            <span>(scroll down for more options)</span>
             <div className='builds-container'>
               <div className='build-category'>
                 <RuneDropdown
