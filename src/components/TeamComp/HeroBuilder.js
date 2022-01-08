@@ -56,7 +56,21 @@ function HeroBuilder({
     setTeamData(deepCopy);
     setSelectedElement('');
     setSelectedHero('');
+    setSelectedRune('');
+    setSelectedArtifact('');
+    setSelectedNodes(['', '', '']);
+    setSelectedWeaponBuild('');
   };
+
+  useEffect(() => {
+    if (selectedElement !== '') {
+      setSelectedHero(teamData.team[selectedElement].name);
+      setSelectedRune(teamData.team[selectedElement].rune);
+      setSelectedArtifact(teamData.team[selectedElement].artifact);
+      setSelectedNodes(teamData.team[selectedElement].divinityNodes);
+      setSelectedWeaponBuild(teamData.team[selectedElement].weaponLv);
+    }
+  }, [selectedElement]);
 
   return (
     <div
