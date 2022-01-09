@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/mythic-companion/static/css/main.9bd8e2ea.css",
-    "main.js": "/mythic-companion/static/js/main.02572e27.js",
+    "main.js": "/mythic-companion/static/js/main.a30be9f4.js",
     "static/media/FZCu-Yuan-M03.ttf": "/mythic-companion/static/media/FZCu-Yuan-M03.a21f3c9e1bc5cce7ff28.ttf",
     "static/media/Lucifer.png": "/mythic-companion/static/media/Lucifer.cc295184e83ad3d19f3e.png",
     "static/media/Medusa.png": "/mythic-companion/static/media/Medusa.ca5817eed1220e06ac0e.png",
@@ -74,10 +74,10 @@
     "static/media/Fighter.png": "/mythic-companion/static/media/Fighter.9e7267720be2abded90a.png",
     "index.html": "/mythic-companion/index.html",
     "main.9bd8e2ea.css.map": "/mythic-companion/static/css/main.9bd8e2ea.css.map",
-    "main.02572e27.js.map": "/mythic-companion/static/js/main.02572e27.js.map"
+    "main.a30be9f4.js.map": "/mythic-companion/static/js/main.a30be9f4.js.map"
   },
   "entrypoints": [
     "static/css/main.9bd8e2ea.css",
-    "static/js/main.02572e27.js"
+    "static/js/main.a30be9f4.js"
   ]
 }
