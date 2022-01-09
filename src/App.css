@@ -46,10 +46,19 @@ header {
 .navbar > a,
 .topbar > a {
   position: relative;
-
+  
   color: white;
   text-decoration: none;
   text-align: center;
+}
+
+.support-server {
+  display: flex;
+  flex-direction: row;
+}
+
+.support-server-text {
+
 }
 
 .navbar > a {
@@ -71,6 +80,11 @@ header {
 
   background-color: white;
   transition: 0.4s;
+}
+
+.discord-support-server-icon {
+  width: 2em;
+  padding-right: 0.5em;
 }
 
 .bar-1,
@@ -97,21 +111,24 @@ header {
   overflow: hidden;
   max-height: 0;
   transition: max-height 2s ease-out;
+  
 }
 
 .nav-drawer.active {
-  overflow: hidden;
+  
   max-height: 500px;
 
   transition: max-height 5s ease-out;
 }
 
 .nav-drawer > a {
-  display: block;
-
+  display: flex;
+  padding-left: 0.5em;
+  padding-top: 0.4em;
   font-size: 1.25rem;
   color: white;
   margin-bottom: 0.5rem;
+  border-top:    1px solid  #ff0;
 }
 
 footer {
@@ -171,7 +188,7 @@ input.copy-url {
     font-size: 1.375rem;
   }
 
-  .navbar > a:hover::after {
+  .navbar > .page-button:hover::after {
     content: '';
     width: 2px;
     height: 1px;
