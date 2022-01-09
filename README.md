@@ -1,4 +1,4 @@
-# Getting Started with the Project
+# Welcome to Mythic Companion!
 
 ## Available Scripts
 
@@ -11,6 +11,6 @@ Downloads and installs the project dependencies
 ### `npm start`
 
 Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Open [http://localhost:3000/mythic-companion#/](http://localhost:3000/mythic-companion#/) to view it in your browser.
 
-The page will reload when you make changes.\
+The page will reload when you make changes.
