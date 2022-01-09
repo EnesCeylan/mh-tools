@@ -50,7 +50,6 @@ function WeaponBuilder({
 
     displaySwitch(level);
 
-    console.log(width);
     if (width < 950) {
       setTimeout(() => {
         document.getElementById('weapon-dropdown').scrollIntoView({

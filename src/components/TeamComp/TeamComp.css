@@ -144,10 +144,29 @@
   border-radius: 50%;
 
   background-size: cover;
+
+  position: relative;
 }
 
 .build-container > .row > .position.active {
   border: none;
+}
+
+.build-container > .row > .position.active > img {
+  position: absolute;
+  top: -4px;
+  width: 40px;
+  height: 40px;
+}
+
+.build-container > .row > .position.active > i {
+  position: absolute;
+  left: calc(100% - 2rem);
+
+  font-size: 2rem;
+  color: var(--color-danger);
+
+  cursor: pointer;
 }
 /* ---------------------------------------------------------------------------------------------------------------------------------- */
 /* ------------------------------- HERO BUILDER MODAL ------------------------------- */
@@ -424,6 +443,17 @@
   justify-content: center;
 }
 
+.divinity-slots-container > button > i {
+  position: absolute;
+  left: calc(100% - 16px);
+  z-index: 2;
+
+  font-size: 20px;
+  color: var(--color-danger);
+
+  cursor: pointer;
+}
+
 .divinity-slots-container > button > .cost-container > img {
   width: 20px;
 }
@@ -600,6 +630,12 @@
   .divinity-slots-container > button > .cost-container > img {
     width: 28px;
   }
+
+  .divinity-slots-container > button > i {
+    left: calc(100% - 20px);
+
+    font-size: 24px;
+  }
 }
 
 @media screen and (min-width: 520px) {
@@ -652,12 +688,30 @@
     --image-border-size: 104px;
   }
 
+  .divinity-slots-container > button > i {
+    left: calc(100% - 22px);
+
+    font-size: 28px;
+  }
+
   .divinity-slots-container > button > .cost-container > img {
     width: 28px;
   }
 
   .build-ui > .wrapper > .bonuses > p {
     font-size: 1rem;
+  }
+
+  .build-container > .row > .position.active > i {
+    left: calc(100% - 30px);
+
+    font-size: 2.5rem;
+  }
+
+  .build-container > .row > .position.active > img {
+    left: -4px;
+    width: 48px;
+    height: 48px;
   }
 }
 

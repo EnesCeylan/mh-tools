@@ -1,12 +1,29 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import divinityNotableData from '../../../data/divinityNotableData';
 
 function DivinitySlot({
   selectionMode,
   selectedNode,
+  selectedNodes,
+  setSelectedNodes,
   setSelectionMode,
   index,
 }) {
+  const [deleteNode, setDeleteNode] = useState(false);
+
+  useEffect(() => {
+    if (deleteNode === true) {
+      setSelectionMode(index.toString());
+      let copy = JSON.parse(JSON.stringify(selectedNodes));
+      copy[selectionMode] = '';
+
+      setSelectionMode(false);
+      setSelectedNodes(copy);
+    }
+
+    setDeleteNode(false);
+  }, [deleteNode]);
+
   return (
     <button
       className={selectionMode === index.toString() ? 'active' : 'passive'}
@@ -42,6 +59,10 @@ function DivinitySlot({
               }
             )}
           </div>
+          <i
+            className='fas fa-times-circle'
+            onClick={() => setDeleteNode(true)}
+          ></i>
         </React.Fragment>
       )}
     </button>

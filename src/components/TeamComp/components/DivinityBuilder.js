@@ -81,6 +81,8 @@ function DivinityBuilder({
             <DivinitySlot
               selectionMode={selectionMode}
               selectedNode={selectedNodes[index]}
+              selectedNodes={selectedNodes}
+              setSelectedNodes={setSelectedNodes}
               setSelectionMode={setSelectionMode}
               index={index}
               key={index}
@@ -101,11 +103,11 @@ function DivinityBuilder({
         <div
           className={divinityBuilderDropdown ? 'dropdown active' : 'dropdown'}
           onClick={(e) => {
-            e.stopPropagation();
             setDivinityBuilderDropdown(!divinityBuilderDropdown);
             setDropdown(false);
             setRuneDropdown(false);
             setArtifactDropdown(false);
+            e.stopPropagation();
 
             if (width < 950) {
               if (divinityBuilderDropdown) {

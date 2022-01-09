@@ -1,11 +1,15 @@
 import './TeamComp.css';
 
 import React, { useState, useEffect } from 'react';
-import TeamBuilderModal from '../Modals/TeamBuilderModal/TeamBuilderModal';
-import checkParamValidity from './checkParamValidity';
+
+import TeamBuilderModal from '../Modals/TeamBuilderModal';
+import checkParamValidity from './functions/checkParamValidity';
 import HeroBuilder from './HeroBuilder';
 
-import useWindowSize from '../../hooks/useWindowSize';
+import { useWindowSize } from 'react-use';
+import BuildContainer from './components/BuildContainer';
+import BuildContainerReverse from './components/BuildContainerReverse';
+import exportBuild from './functions/exportBuild';
 
 function TeamBuilder({ setShowMenu }) {
   const { width, height } = useWindowSize();
@@ -122,23 +126,6 @@ function TeamBuilder({ setShowMenu }) {
     }
   };
 
-  const exportBuild = () => {
-    // can be updated to navigator.clipboard.writeText when more browsers support it.
-    const input = document.createElement('input');
-    input.type = 'url';
-    input.value =
-      'https://enesceylan.github.io/mythic-companion/#/team-builder/' +
-      btoa(JSON.stringify(teamData));
-    input.setAttribute('id', 'copy-url');
-
-    document.getElementsByTagName('body')[0].appendChild(input);
-
-    const url = document.getElementById('copy-url');
-    url.select();
-    document.execCommand('Copy');
-    url.remove();
-  };
-
   const showPopup = () => {
     setCopyToClipboard(true);
 
@@ -185,7 +172,7 @@ function TeamBuilder({ setShowMenu }) {
         </button>
         <button
           onClick={() => {
-            exportBuild();
+            exportBuild(teamData);
             showPopup();
           }}
         >
@@ -194,130 +181,22 @@ function TeamBuilder({ setShowMenu }) {
         </button>
       </div>
       {!reverseFormation && (
-        <div className='build-container'>
-          <div className='row back'>
-            <div
-              className={
-                validParamExists || teamData.team[2].name !== ''
-                  ? 'position active ' + teamData.team[2].name
-                  : 'position'
-              }
-              onClick={() => {
-                handleClick(2);
-                setSelectedElement(2);
-              }}
-            ></div>
-            <div
-              className={
-                validParamExists || teamData.team[3].name !== ''
-                  ? 'position active ' + teamData.team[3].name.replace('&', '')
-                  : 'position'
-              }
-              onClick={() => {
-                handleClick(3);
-                setSelectedElement(3);
-              }}
-            ></div>
-            <div
-              className={
-                validParamExists || teamData.team[4].name !== ''
-                  ? 'position active ' + teamData.team[4].name.replace('&', '')
-                  : 'position'
-              }
-              onClick={() => {
-                handleClick(4);
-                setSelectedElement(4);
-              }}
-            ></div>
-          </div>
-          <div className='row front'>
-            <div
-              className={
-                validParamExists || teamData.team[0].name !== ''
-                  ? 'position active ' + teamData.team[0].name.replace('&', '')
-                  : 'position'
-              }
-              onClick={() => {
-                handleClick(0);
-                setSelectedElement(0);
-              }}
-            ></div>
-            <div
-              className={
-                validParamExists || teamData.team[1].name !== ''
-                  ? 'position active ' + teamData.team[1].name.replace('&', '')
-                  : 'position'
-              }
-              onClick={() => {
-                handleClick(1);
-                setSelectedElement(1);
-              }}
-            ></div>
-          </div>
-        </div>
+        <BuildContainer
+          validParamExists={validParamExists}
+          teamData={teamData}
+          setTeamData={setTeamData}
+          handleClick={handleClick}
+          setSelectedElement={setSelectedElement}
+        />
       )}
       {reverseFormation && (
-        <div className='build-container reverse'>
-          <div className='row back'>
-            <div
-              className={
-                validParamExists || teamData.team[0].name !== ''
-                  ? 'position active ' + teamData.team[0].name.replace('&', '')
-                  : 'position'
-              }
-              onClick={() => {
-                handleClick(0);
-                setSelectedElement(0);
-              }}
-            ></div>
-            <div
-              className={
-                validParamExists || teamData.team[1].name !== ''
-                  ? 'position active ' + teamData.team[1].name.replace('&', '')
-                  : 'position'
-              }
-              onClick={() => {
-                handleClick(1);
-                setSelectedElement(1);
-              }}
-            ></div>
-          </div>
-          <div className='row front'>
-            <div
-              className={
-                validParamExists || teamData.team[2].name !== ''
-                  ? 'position active ' + teamData.team[2].name.replace('&', '')
-                  : 'position'
-              }
-              onClick={() => {
-                handleClick(2);
-                setSelectedElement(2);
-              }}
-            ></div>
-            <div
-              className={
-                validParamExists || teamData.team[3].name !== ''
-                  ? 'position active ' + teamData.team[3].name.replace('&', '')
-                  : 'position'
-              }
-              onClick={() => {
-                handleClick(3);
-                setSelectedElement(3);
-              }}
-            ></div>
-            <div
-              className={
-                validParamExists || teamData.team[4].name !== ''
-                  ? 'position active ' + teamData.team[4].name
-                  : 'position'
-              }
-              onClick={() => {
-                handleClick(4);
-                setSelectedElement(4);
-              }}
-            ></div>
-          </div>
-        </div>
+        <BuildContainerReverse
+          validParamExists={validParamExists}
+          teamData={teamData}
+          setTeamData={setTeamData}
+          handleClick={handleClick}
+          setSelectedElement={setSelectedElement}
+        />
       )}
       {modal && (
         <TeamBuilderModal
@@ -360,7 +239,7 @@ function TeamBuilder({ setShowMenu }) {
           </button>
           <button
             onClick={() => {
-              exportBuild();
+              exportBuild(teamData);
               showPopup();
             }}
           >
@@ -371,130 +250,22 @@ function TeamBuilder({ setShowMenu }) {
       </div>
       <div className='wrapper'>
         {!reverseFormation && (
-          <div className='build-container'>
-            <div className='row back'>
-              <div
-                className={
-                  validParamExists || teamData.team[2].name !== ''
-                    ? 'position ' + teamData.team[2].name
-                    : 'position'
-                }
-                onClick={() => {
-                  handleClick(2);
-                  setSelectedElement(2);
-                }}
-              ></div>
-              <div
-                className={
-                  validParamExists || teamData.team[3].name !== ''
-                    ? 'position ' + teamData.team[3].name.replace('&', '')
-                    : 'position'
-                }
-                onClick={() => {
-                  handleClick(3);
-                  setSelectedElement(3);
-                }}
-              ></div>
-              <div
-                className={
-                  validParamExists || teamData.team[4].name !== ''
-                    ? 'position ' + teamData.team[4].name.replace('&', '')
-                    : 'position'
-                }
-                onClick={() => {
-                  handleClick(4);
-                  setSelectedElement(4);
-                }}
-              ></div>
-            </div>
-            <div className='row front'>
-              <div
-                className={
-                  validParamExists || teamData.team[0].name !== ''
-                    ? 'position ' + teamData.team[0].name.replace('&', '')
-                    : 'position'
-                }
-                onClick={() => {
-                  handleClick(0);
-                  setSelectedElement(0);
-                }}
-              ></div>
-              <div
-                className={
-                  validParamExists || teamData.team[1].name !== ''
-                    ? 'position ' + teamData.team[1].name.replace('&', '')
-                    : 'position'
-                }
-                onClick={() => {
-                  handleClick(1);
-                  setSelectedElement(1);
-                }}
-              ></div>
-            </div>
-          </div>
+          <BuildContainer
+            validParamExists={validParamExists}
+            teamData={teamData}
+            setTeamData={setTeamData}
+            handleClick={handleClick}
+            setSelectedElement={setSelectedElement}
+          />
         )}
         {reverseFormation && (
-          <div className='build-container reverse'>
-            <div className='row back'>
-              <div
-                className={
-                  validParamExists || teamData.team[0].name !== ''
-                    ? 'position ' + teamData.team[0].name.replace('&', '')
-                    : 'position'
-                }
-                onClick={() => {
-                  handleClick(0);
-                  setSelectedElement(0);
-                }}
-              ></div>
-              <div
-                className={
-                  validParamExists || teamData.team[1].name !== ''
-                    ? 'position ' + teamData.team[1].name.replace('&', '')
-                    : 'position'
-                }
-                onClick={() => {
-                  handleClick(1);
-                  setSelectedElement(1);
-                }}
-              ></div>
-            </div>
-            <div className='row front'>
-              <div
-                className={
-                  validParamExists || teamData.team[2].name !== ''
-                    ? 'position ' + teamData.team[2].name.replace('&', '')
-                    : 'position'
-                }
-                onClick={() => {
-                  handleClick(2);
-                  setSelectedElement(2);
-                }}
-              ></div>
-              <div
-                className={
-                  validParamExists || teamData.team[3].name !== ''
-                    ? 'position ' + teamData.team[3].name.replace('&', '')
-                    : 'position'
-                }
-                onClick={() => {
-                  handleClick(3);
-                  setSelectedElement(3);
-                }}
-              ></div>
-              <div
-                className={
-                  validParamExists || teamData.team[4].name !== ''
-                    ? 'position ' + teamData.team[4].name
-                    : 'position'
-                }
-                onClick={() => {
-                  handleClick(4);
-                  setSelectedElement(4);
-                }}
-              ></div>
-            </div>
-          </div>
+          <BuildContainerReverse
+            validParamExists={validParamExists}
+            teamData={teamData}
+            setTeamData={setTeamData}
+            handleClick={handleClick}
+            setSelectedElement={setSelectedElement}
+          />
         )}
         <HeroBuilder
           setSelectedElement={setSelectedElement}

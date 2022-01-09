@@ -1,10 +1,13 @@
 import heroData from '../../../data/heroData';
 
-function HeroDropdownItem({ heroName, setSelectedHero }) {
+function HeroDropdownItem({ heroName, setSelectedHero, setSelectedNodes }) {
   return (
     <div
       className='dropdown-list-item'
-      onClick={() => setSelectedHero(heroName)}
+      onClick={() => {
+        setSelectedHero(heroName);
+        setSelectedNodes(['', '', '']);
+      }}
     >
       <img
         src={

@@ -9,6 +9,7 @@ function HeroDropdown({
   setRuneDropdown,
   setArtifactDropdown,
   teamData,
+  setSelectedNodes,
 }) {
   const heroes = Object.keys(heroData);
 
@@ -62,6 +63,7 @@ function HeroDropdown({
                 heroName={hero}
                 key={index}
                 setSelectedHero={setSelectedHero}
+                setSelectedNodes={setSelectedNodes}
               />
             );
           })}

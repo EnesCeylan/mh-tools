@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import ArtifactDropdown from './ArtifactDropdown';
-import DivinityBuilder from './DivinityBuilder';
-import HeroDropdown from './HeroDropdown';
-import RuneDropdown from './RuneDropdown';
-import WeaponBuilder from './WeaponBuilder';
+
+import ArtifactDropdown from '../TeamComp/components/ArtifactDropdown';
+import DivinityBuilder from '../TeamComp/components/DivinityBuilder';
+import HeroDropdown from '../TeamComp/components/HeroDropdown';
+import RuneDropdown from '../TeamComp/components/RuneDropdown';
+import WeaponBuilder from '../TeamComp/components/WeaponBuilder';
 
 function TeamBuilderModal({
   setModal,
@@ -77,6 +78,7 @@ function TeamBuilderModal({
           setArtifactDropdown={setArtifactDropdown}
           teamData={teamData.team}
           width={width}
+          setSelectedNodes={setSelectedNodes}
         />
         {/* -------------------------------------------------------------------- */}
         {selectedHero && (

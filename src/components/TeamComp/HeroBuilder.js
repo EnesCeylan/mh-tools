@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 
-import HeroDropdown from '../Modals/TeamBuilderModal/HeroDropdown';
-import RuneDropdown from '../Modals/TeamBuilderModal/RuneDropdown';
-import ArtifactDropdown from '../Modals/TeamBuilderModal/ArtifactDropdown';
-import DivinityBuilder from '../Modals/TeamBuilderModal/DivinityBuilder';
-import WeaponBuilder from '../Modals/TeamBuilderModal/WeaponBuilder';
+import HeroDropdown from './components/HeroDropdown';
+import RuneDropdown from './components/RuneDropdown';
+import ArtifactDropdown from './components/ArtifactDropdown';
+import DivinityBuilder from './components/DivinityBuilder';
+import WeaponBuilder from './components/WeaponBuilder';
 
 function HeroBuilder({
   setSelectedElement,
@@ -39,6 +39,8 @@ function HeroBuilder({
     deepCopy.team[selectedElement].weaponLv = selectedWeaponBuild;
 
     setTeamData(deepCopy);
+
+    // Reset selection and values
     setSelectedElement('');
     setSelectedHero('');
     setSelectedRune('');
@@ -47,6 +49,7 @@ function HeroBuilder({
     setSelectedWeaponBuild('');
   };
 
+  //If a hero already exists in the slot, update the builder UI with it's values
   useEffect(() => {
     if (selectedElement !== '') {
       setSelectedHero(teamData.team[selectedElement].name);
@@ -79,6 +82,7 @@ function HeroBuilder({
             setArtifactDropdown={setArtifactDropdown}
             teamData={teamData.team}
             width={width}
+            setSelectedNodes={setSelectedNodes}
           />
         </React.Fragment>
       )}
