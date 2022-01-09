@@ -1,12 +1,11 @@
 {
   "files": {
-    "main.css": "/mythic-companion/static/css/main.00f1f8d0.css",
-    "main.js": "/mythic-companion/static/js/main.83d60df9.js",
+    "main.css": "/mythic-companion/static/css/main.9bd8e2ea.css",
+    "main.js": "/mythic-companion/static/js/main.02572e27.js",
     "static/media/FZCu-Yuan-M03.ttf": "/mythic-companion/static/media/FZCu-Yuan-M03.a21f3c9e1bc5cce7ff28.ttf",
     "static/media/Lucifer.png": "/mythic-companion/static/media/Lucifer.cc295184e83ad3d19f3e.png",
     "static/media/Medusa.png": "/mythic-companion/static/media/Medusa.ca5817eed1220e06ac0e.png",
-    "static/media/Cleopatra.png": "/mythic-companion/static/media/Cleopatra.619d1f7977329748df48.png",
-    "static/media/Ganjiang_&_Moye.png": "/mythic-companion/static/media/Ganjiang_&_Moye.9b19ec0ef5cd5e924fd8.png",
+    "static/media/Ganjiang_&_Moye.png": "/mythic-companion/static/media/Ganjiang_&_Moye.fe04d7459fff592528ad.png",
     "static/media/Nuwa.png": "/mythic-companion/static/media/Nuwa.4f574b7ad8d0dc14f380.png",
     "static/media/Persephone.png": "/mythic-companion/static/media/Persephone.21f1340969651de52a58.png",
     "static/media/Oberon.png": "/mythic-companion/static/media/Oberon.d74e3ae3716f261a433b.png",
@@ -18,6 +17,7 @@
     "static/media/Izanami.png": "/mythic-companion/static/media/Izanami.8c32c74b7d02ca641870.png",
     "static/media/Dionysus.png": "/mythic-companion/static/media/Dionysus.a2e476cf06b431b91029.png",
     "static/media/Cassandra.png": "/mythic-companion/static/media/Cassandra.6a7207a3522c81651253.png",
+    "static/media/Cleopatra.png": "/mythic-companion/static/media/Cleopatra.15f9b7eb703f57160c51.png",
     "static/media/Hades.png": "/mythic-companion/static/media/Hades.8db1effdf15fda8d7ea4.png",
     "static/media/Thor.png": "/mythic-companion/static/media/Thor.dc5e972a9c441c868fe8.png",
     "static/media/Idun.png": "/mythic-companion/static/media/Idun.2322127a5781cff7e36f.png",
@@ -28,9 +28,10 @@
     "static/media/Gaia.png": "/mythic-companion/static/media/Gaia.b3a361c1a340e459cd9d.png",
     "static/media/Hercules.png": "/mythic-companion/static/media/Hercules.f623cb5204410ab39e91.png",
     "static/media/Flora.png": "/mythic-companion/static/media/Flora.8eaff1789e3748c999ba.png",
+    "static/media/Hela.png": "/mythic-companion/static/media/Hela.c9f99cf53910213583d7.png",
     "static/media/BG1.png": "/mythic-companion/static/media/BG1.0914c73dc9ad933cdc42.png",
-    "static/media/Nagakanya.png": "/mythic-companion/static/media/Nagakanya.529defc0251bf296b96a.png",
     "static/media/Susanoo.png": "/mythic-companion/static/media/Susanoo.d5b3046af29bcb029ee4.png",
+    "static/media/Nagakanya.png": "/mythic-companion/static/media/Nagakanya.01267381547a9b5211ec.png",
     "static/media/Anubis.png": "/mythic-companion/static/media/Anubis.3bc065b4537704288bf7.png",
     "static/media/Joan_of_Arc.png": "/mythic-companion/static/media/Joan_of_Arc.b8083662942114190494.png",
     "static/media/BG2.png": "/mythic-companion/static/media/BG2.bac568d20ec5fef17b71.png",
@@ -72,11 +73,11 @@
     "static/media/Tank.png": "/mythic-companion/static/media/Tank.bf3917e8524419d8f81b.png",
     "static/media/Fighter.png": "/mythic-companion/static/media/Fighter.9e7267720be2abded90a.png",
     "index.html": "/mythic-companion/index.html",
-    "main.00f1f8d0.css.map": "/mythic-companion/static/css/main.00f1f8d0.css.map",
-    "main.83d60df9.js.map": "/mythic-companion/static/js/main.83d60df9.js.map"
+    "main.9bd8e2ea.css.map": "/mythic-companion/static/css/main.9bd8e2ea.css.map",
+    "main.02572e27.js.map": "/mythic-companion/static/js/main.02572e27.js.map"
   },
   "entrypoints": [
-    "static/css/main.00f1f8d0.css",
-    "static/js/main.83d60df9.js"
+    "static/css/main.9bd8e2ea.css",
+    "static/js/main.02572e27.js"
   ]
 }
