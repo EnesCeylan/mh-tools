@@ -166,12 +166,14 @@ function HeroBuilder({
               }
               onClick={() => {
                 setWeaponBuilderDropdown(!weaponBuilderDropdown);
-                setTimeout(() => {
-                  document.getElementById('weapon-dropdown').scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'end',
-                  });
-                }, 0);
+                if (width < 950) {
+                  setTimeout(() => {
+                    document.getElementById('weapon-dropdown').scrollIntoView({
+                      behavior: 'smooth',
+                      block: 'end',
+                    });
+                  }, 0);
+                }
               }}
             >
               <i className='fas fa-angle-right' aria-hidden='true'></i>
