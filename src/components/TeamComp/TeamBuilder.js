@@ -127,7 +127,7 @@ function TeamBuilder({ setShowMenu }) {
     const input = document.createElement('input');
     input.type = 'url';
     input.value =
-      'https://enesceylan.github.io/mythic-tools/#/team-builder/' +
+      'https://enesceylan.github.io/mythic-companion/#/team-builder/' +
       btoa(JSON.stringify(teamData));
     input.setAttribute('id', 'copy-url');
 
