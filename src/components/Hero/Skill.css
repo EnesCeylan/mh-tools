@@ -3,11 +3,41 @@
   src: url('../../assets/fonts/FZCu-Yuan-M03.ttf');
 }
 
+/* centering the whole skill page */
+.hero-page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.illustration {
+  max-width: 100%;
+}
+
 .skill {
   font-family: 'Cu Yuan';
   color: white;
 
   max-width: 800px;
+}
+
+.skills-container {
+  -webkit-box-shadow: 0px 2px 15px 5px #00000075; 
+  box-shadow: 0px 2px 15px 5px #00000075;
+  background-color: var(--color-main-dark-transparent);
+  padding: 0.5em;
+}
+
+.header-texts > *  {
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+}
+
+.skill-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .skill:not(:last-child) {
@@ -17,18 +47,18 @@
 }
 
 /* Inside the skill flexbox */
-.skill .skill-icon {
+.skill-icon {
   width: 128px;
   height: 128px;
 }
 
 /* Skill header area */
-.skill .skill-header {
-  display: flex;
+/* .skill .skill-header {
+  
   margin-bottom: 0.5rem;
-}
+} */
 
-.skill .skill-header .header-texts {
+/* .skill .skill-header .header-texts {
   width: calc(100% - 128px);
   text-align: center;
 }
@@ -36,9 +66,13 @@
 .skill .skill-header span.skill-type {
   font-size: 0.875rem;
   color: rgb(184, 184, 184);
-}
+} */
 
 /* First skill description */
+.skill .skill-info {
+  width: 100%;
+}
+
 .skill .skill-info .first-level {
   padding-bottom: 0.5rem;
   margin-bottom: 0.5rem;
@@ -60,4 +94,12 @@
 
 .first-level .highlight-true-damage {
   color: rgb(160, 107, 41);
+}
+
+
+/* desktop styles */
+@media screen and (min-width: 810px) {
+  .illustration {
+    max-width: 60%;
+  }
 }

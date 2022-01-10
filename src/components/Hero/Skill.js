@@ -4,6 +4,10 @@ function Skill({ hero, skill, skillIndex }) {
   return (
     <div className='skill'>
       <div className='skill-header'>
+        <div className='header-texts'>
+          <h4 className='skill-name'>{skillData[hero][`${skill}`].name}</h4>
+          <span className='skill-type'>{skillData[hero][`${skill}`].type}</span>
+        </div>
         <img
           src={
             process.env.PUBLIC_URL +
@@ -16,10 +20,6 @@ function Skill({ hero, skill, skillIndex }) {
           alt={hero + ' ' + skill + ' icon'}
           className='skill-icon'
         />
-        <div className='header-texts'>
-          <h4 className='skill-name'>{skillData[hero][`${skill}`].name}</h4>
-          <span className='skill-type'>{skillData[hero][`${skill}`].type}</span>
-        </div>
       </div>
       {/*------------------------------------------------------------------------------------------------*/}
       <div className='skill-info'>
