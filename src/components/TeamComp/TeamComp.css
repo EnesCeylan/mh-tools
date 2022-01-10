@@ -168,6 +168,14 @@
 
   cursor: pointer;
 }
+
+.build-container > .row > .position.active > img {
+  height: 55px;
+  left: 0px;
+  top: -10px;
+  width: 55px;
+}
+
 /* ---------------------------------------------------------------------------------------------------------------------------------- */
 /* ------------------------------- HERO BUILDER MODAL ------------------------------- */
 .builder-screen {
@@ -622,6 +630,15 @@
   }
 }
 
+@media screen and (min-width: 350px) {
+  .build-container > .row > .position.active > img {
+    height: 55px;
+    left: -10px;
+    top: -10px;
+    width: 55px;
+  }
+}
+
 @media screen and (min-width: 460px) {
   .divinity-slots-container > button {
     --image-border-size: 96px;
@@ -635,6 +652,14 @@
     left: calc(100% - 20px);
 
     font-size: 24px;
+  }
+
+  .build-container > .row > .position.active > img {
+    
+    height: 55px;
+    left: -10px;
+    top: -10px;
+    width: 55px;
   }
 }
 
@@ -662,6 +687,13 @@
   .build-dropdown.active + .build-ui > .divinity-slots-container {
     justify-content: space-around;
     margin-bottom: 2.5rem;
+  }
+
+  .build-container > .row > .position.active > img {
+    height: 60px;
+    left: -10px;
+    top: -10px;
+    width: 60px;
   }
 }
 
@@ -709,9 +741,10 @@
   }
 
   .build-container > .row > .position.active > img {
-    left: -4px;
-    width: 48px;
-    height: 48px;
+    height: 70px;
+    left: -10px;
+    top: -10px;
+    width: 70px;
   }
 }
 
@@ -813,6 +846,12 @@
     margin: 0;
     padding: 1.5rem;
   }
+  .build-container > .row > .position.active > img {
+    height: 55px;
+    left: -10px;
+    top: -10px;
+    width: 55px;
+  }
 }
 
 @media screen and (min-width: 1200px) {
@@ -844,6 +883,12 @@
 
   .build-ui-desktop > span {
     font-size: 16px;
+  }
+  .build-container > .row > .position.active > img {
+    height: 60px;
+    left: -10px;
+    top: -10px;
+    width: 60px;
   }
 }
 
