@@ -1,6 +1,7 @@
 :root {
   --color-main: #222;
   --color-main-dark: rgba(17, 17, 17, 0.75);
+  --color-main-dark-transparent: rgba(17, 17, 17, 0.5);
   --color-main-medium: #444;
   --color-main-light: #555;
   --color-main-accent: #777;
@@ -17,17 +18,19 @@
 }
 
 header {
-  background-color: var(--color-main-dark);
+  /* background-color: var(--color-main-dark); */
   width: 100%;
   min-height: var(--header-height);
-  padding: 0 0.75rem;
+  /* padding: 0 0.75rem; */
 }
 
 .topbar {
+  /* background-color: var(--color-main-dark); */
   height: var(--header-height);
   display: flex;
   justify-content: space-between;
   align-items: center;
+  
 }
 
 .logo {
@@ -36,7 +39,7 @@ header {
   width: 7em;
   max-height: 100%;
   max-width: 100%;
-  
+  padding: 0 0.75rem;
 }
 
 .navbar {
@@ -54,11 +57,34 @@ header {
 
 .support-server {
   display: flex;
-  flex-direction: row;
+  justify-content: space-between;
+  justify-items: center;
+
+  align-content: center;
+  align-items: center;
+}
+
+.discord-icon-container {
+  /* background-color: #5865F2;
+  border: 2px solid #5865F2;
+  border-radius: 20%; */
+}
+
+.discord-support-server-icon {
+  /* width: 1.3em; */
+  width: 1.8em;
+  margin-right: 1em;
+  /* margin: 0.2em;
+  margin-top: 0.3em;
+  margin-bottom: 0.3em; */
+  /* display: flex;
+  justify-content: center;
+  justify-items: center; */
 }
 
 .support-server-text {
-
+  /* padding-top: 0.25em;
+  padding-right: 0.5em; */
 }
 
 .navbar > a {
@@ -82,10 +108,7 @@ header {
   transition: 0.4s;
 }
 
-.discord-support-server-icon {
-  width: 2em;
-  padding-right: 0.5em;
-}
+
 
 .bar-1,
 .bar-2 {
@@ -111,24 +134,24 @@ header {
   overflow: hidden;
   max-height: 0;
   transition: max-height 2s ease-out;
-  
+  background-color: var(--color-main-dark-transparent);
 }
 
 .nav-drawer.active {
-  
+  overflow: hidden;
   max-height: 500px;
-
-  transition: max-height 5s ease-out;
+  /* background-color: var(--color-main-dark-transparent); */
+  transition: max-height 3s ease-out;
 }
 
 .nav-drawer > a {
   display: flex;
-  padding-left: 0.5em;
+  padding-left: 1em;
   padding-top: 0.4em;
   font-size: 1.25rem;
   color: white;
   margin-bottom: 0.5rem;
-  border-top:    1px solid  #ff0;
+  border-top:    1px solid  rgb(54, 54, 48);
 }
 
 footer {
@@ -156,11 +179,20 @@ input.copy-url {
   display: none;
 }
 
+@media screen and (max-width: 619px) { /* if I set the color without this, it will make the main bar darker than expected*/
+  .topbar {
+    background-color: var(--color-main-dark);
+  }
+}
+
 /* small tablet styles */
 @media screen and (min-width: 620px) {
   .nav-drawer > a {
     font-size: 1.35rem;
     margin-bottom: 0.75rem;
+  }
+  .topbar {
+    background-color: var(--color-main-dark); 
   }
 }
 
@@ -219,6 +251,14 @@ input.copy-url {
   .navbar > a:not(:last-child) {
     margin-right: 1rem;
   }
+
+  header {
+    background-color: var(--color-main-dark);
+    width: 100%;
+    min-height: var(--header-height);
+    /* padding: 0 0.75rem; */
+  }
+
 }
 
 /* desktop styles */

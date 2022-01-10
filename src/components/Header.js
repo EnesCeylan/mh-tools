@@ -58,6 +58,8 @@ function Header({ showMenu, setShowMenu }) {
           Tierlist
         </Link>
         <a href="https://discord.gg/BFBuXrSY54" target="_blank" rel='noreferrer' className='support-server'>
+          <p className="support-server-text">Join us on Discord</p>
+          {/* <div className="discord-icon-container"> */}
           <img
             src={
               process.env.PUBLIC_URL + '/assets/discord-icon/icon_clyde_white_RGB.svg'
@@ -65,7 +67,8 @@ function Header({ showMenu, setShowMenu }) {
             alt="discord support"
             className="discord-support-server-icon"
           />
-          <p className="support-server-text">Join us on Discord</p>
+          {/* </div> */}
+          {/* <p className="support-server-text">Join us on Discord</p> */}
         </a>
 
       </nav>
