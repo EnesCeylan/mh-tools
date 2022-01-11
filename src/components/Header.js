@@ -32,7 +32,10 @@ function Header({ showMenu, setShowMenu }) {
           <Link to='/tierlist' onClick={() => setShowMenu(false)} className='page-button'>
             Tierlist
           </Link>
-          <a href="https://discord.gg/BFBuXrSY54" target="_blank" rel='noreferrer'>
+          <a href="https://discord.gg/ZW9JpnNX8Z" target="_blank" rel='noreferrer'>
+            <div className="join">
+              <p>Join our Discord</p>
+            </div>
             <img
               src={
                 process.env.PUBLIC_URL + '/assets/discord-icon/icon_clyde_white_RGB.svg'
