@@ -1,21 +1,25 @@
 @font-face {
-    font-family: 'Cu Yuan';
-    src: url('../../assets/fonts/FZCu-Yuan-M03.ttf');
-  }
-  
-  /* centering the whole skill page */
-  .hero-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-family: 'Cu Yuan';
-    color: var(--text-color-main);
-  }
-  
+  font-family: 'Cu Yuan';
+  src: url('../../assets/fonts/FZCu-Yuan-M03.ttf');
+}
+
+/* centering the whole skill page */
+.hero-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Cu Yuan';
+  color: var(--text-color-main);
+}
+
+.hero-container.divided {
+  flex-direction: row;
+}
+
 .hero-info-container {
   background-color: var(--color-main-dark-transparent);
   padding: 0.8em;
-  -webkit-box-shadow: 0px 2px 15px 5px #00000075; 
+  -webkit-box-shadow: 0px 2px 15px 5px #00000075;
   box-shadow: 0px 2px 15px 5px #00000075;
   width: 100%;
 }
@@ -26,34 +30,41 @@
   gap: 2em;
 }
 
-.heropage-type-button{ 
+.heropage-type-button {
   background-color: transparent;
-  display:inline-block; 
-  padding:0.35em 1.2em; 
-  border:2px solid white; 
-  margin:0 0.3em 0.3em 0; 
-  border-radius:0.5em; 
-  box-sizing: border-box; 
-  text-decoration:none; 
-  font-family:'Roboto',sans-serif; 
-  font-weight:300; 
-  color:white; 
-  text-align:center; 
-  transition: all 0.2s; 
-} 
+  display: inline-block;
+  padding: 0.35em 1.2em;
+  border: 2px solid white;
+  margin: 0 0.3em 0.3em 0;
+  border-radius: 0.5em;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  color: white;
+  text-align: center;
+  transition: all 0.2s;
+}
 
-.heropage-type-button:hover{ 
-  color:#000000;
-  background-color: white; 
+.heropage-type-button:hover {
+  color: #000000;
+  background-color: white;
 }
 
 .illustration {
   max-width: 100%;
 }
-  
-  /* desktop styles */
+
+/* desktop styles */
 @media screen and (min-width: 810px) {
   .illustration {
-    max-width: 60%;
+    max-width: 800px;
+    object-fit: cover;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .hero-info-container {
+    max-width: 850px;
   }
 }
