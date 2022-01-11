@@ -11,19 +11,20 @@ function HeroInfoContainer({ heroName }) {
 
   return (
     <div className="hero-info-container">
-      {pageType.map((type) => (
-        <div className="heropage-type-button-container" key={type}>
+      <div className="heropage-type-button-container">
+        {pageType.map((type) => (
           <button
             className="heropage-type-button"
             onClick={() => setCurrentType(type)}
+            key={type}
           >
             {type}
           </button>
-        </div>
-      ))}
+        ))}
+      </div>
       <div className="type-container">
         {currentType === 'Skill' && <SkillsContainer heroName={heroName} />}
-        {currentType === 'IW' && <IWContainer heroName={heroName} />}
+        {currentType === 'IW' && <IWContainer hero={heroName.replace(/-/g, '_')} />}
         {currentType === 'Guide' && <HeroGuide hero={heroName.replace(/-/g, ' ')} />}
       </div>
     </div>

@@ -15,17 +15,16 @@
   --footer-height: 10rem;
 
   --team-builder-padding: 5%;
+
+  --text-color-main: rgb(228, 228, 228);
 }
 
 header {
-  /* background-color: var(--color-main-dark); */
   width: 100%;
   min-height: var(--header-height);
-  /* padding: 0 0.75rem; */
 }
 
 .topbar {
-  /* background-color: var(--color-main-dark); */
   height: var(--header-height);
   display: flex;
   justify-content: space-between;
@@ -64,27 +63,9 @@ header {
   align-items: center;
 }
 
-.discord-icon-container {
-  /* background-color: #5865F2;
-  border: 2px solid #5865F2;
-  border-radius: 20%; */
-}
-
 .discord-support-server-icon {
-  /* width: 1.3em; */
   width: 1.8em;
   margin-right: 1em;
-  /* margin: 0.2em;
-  margin-top: 0.3em;
-  margin-bottom: 0.3em; */
-  /* display: flex;
-  justify-content: center;
-  justify-items: center; */
-}
-
-.support-server-text {
-  /* padding-top: 0.25em;
-  padding-right: 0.5em; */
 }
 
 .navbar > a {
@@ -140,7 +121,6 @@ header {
 .nav-drawer.active {
   overflow: hidden;
   max-height: 500px;
-  /* background-color: var(--color-main-dark-transparent); */
   transition: max-height 3s ease-out;
 }
 
@@ -179,7 +159,7 @@ input.copy-url {
   display: none;
 }
 
-@media screen and (max-width: 619px) { /* if I set the color without this, it will make the main bar darker than expected*/
+@media screen and (max-width: 619px) {
   .topbar {
     background-color: var(--color-main-dark);
   }

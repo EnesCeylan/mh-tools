@@ -1,9 +1,25 @@
 .skill .skill-info {
     width: 100%;
   }
-  
-  .hero-skill-icon {
+
+  .hero-skill-icon-container {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    justify-items: center;
+    gap: 1em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+
+  .hero-skill-icon:not(:first-child) {
+    width: 20%;
+    height: 20%;
+  }
+
+  .hero-skill-icon:first-child {
     width: 25%;
+    height: 25%;
   }
 
   .hero-skill-icon:hover, .hero-skill-icon:active, .hero-skill-icon:focus {
@@ -17,15 +33,28 @@
     text-align: center;
     padding-bottom: 0.5rem;
     margin-bottom: 0.5rem;
-    border-bottom: 1px solid yellow;
+    border-bottom: 1px solid rgb(218, 218, 152);
+  }
+
+  .skill-type {
+    color:rgb(207, 161, 104);
+    font-size: 0.85em;
   }
 
   .skill .skill-info .first-level {
     padding-bottom: 0.5rem;
     margin-bottom: 0.5rem;
-    border-bottom: 1px solid yellow;
+    border-bottom: 1px solid rgb(218, 218, 152);
   }
   
+  .skill-lvl234-container {
+    display: flex;
+  }
+
+  .skill-lvl234 > * {
+    color:turquoise;
+  }
+
   /* Skill description first level highlights */
   .first-level .highlight {
     color: greenyellow;
@@ -41,4 +70,55 @@
   
   .first-level .highlight-true-damage {
     color: rgb(160, 107, 41);
+  }
+
+ /* MEDIA QUERIES */
+  
+  @media screen and (min-width: 680px) {
+    .hero-skill-icon:not(:first-child) {
+      width: 10%;
+      height: 10%;
+    }
+  
+    .hero-skill-icon:first-child {
+      width: 15%;
+      height: 15%;
+    }
+    
+    .hero-skill-icon-container {
+      gap: 5em;
+    }
+  }
+  
+  @media screen and (min-width: 950px) {
+    .hero-skill-icon:not(:first-child) {
+      width: 10%;
+      height: 10%;
+    }
+  
+    .hero-skill-icon:first-child {
+      width: 15%;
+      height: 15%;
+    }
+    
+    .hero-skill-icon-container {
+      gap: 5em;
+    }
+  }
+  
+  @media screen and (min-width: 1200px) {
+    .hero-skill-icon:not(:first-child) {
+      width: 7%;
+      height: 7%;
+    }
+  
+    .hero-skill-icon:first-child {
+      width: 10%;
+      height: 10%;
+    }
+    
+    .hero-skill-icon-container {
+      gap: 10em;
+    }
+  
   }

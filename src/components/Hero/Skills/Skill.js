@@ -2,8 +2,6 @@
 import skillData from '../../../data/skillData';
 import './HeroPageSkill.css'
 const Skill = ({ hero, skillVal }) => {
-    console.log(hero);
-    console.log(skillVal);
     var skill = '';
     if (skillVal === '1')
         skill = 'ultimate';
@@ -13,14 +11,12 @@ const Skill = ({ hero, skillVal }) => {
         skill = 'skill three';
     else if (skillVal === '4')
         skill = 'skill four';
-
-    console.log(skill)
     return (
         <div className='skill'>
             <div className='skill-header'>
                 <div className='header-texts'>
-                    <h4 className='skill-name'>{skillData[hero][`${skill}`].name}</h4>
-                    <span className='skill-type'>{skillData[hero][`${skill}`].type}</span>
+                    <p className='skill-name'>{skillData[hero][`${skill}`].name}</p>
+                    <p className='skill-type'>.{skillData[hero][`${skill}`].type}.</p>
                 </div>
             </div>
             {/*------------------------------------------------------------------------------------------------*/}
@@ -58,9 +54,16 @@ const Skill = ({ hero, skillVal }) => {
                             );
                         } else {
                             return (
-                                <p key={levelIndex}>
-                                    {skillData[hero][`${skill}`].description[`${level}`]}
-                                </p>
+                                <div className='skill-lvl234-container'>
+                                    <div className='skill-lvl234'>
+                                        {(level === 'lv2') && <p>Lv.2:&nbsp; </p>}
+                                        {(level === 'lv3') && <p>Lv.3:&nbsp; </p>}
+                                        {(level === 'lv4') && <p>Lv.4:&nbsp; </p>}
+                                    </div>
+                                    <p key={levelIndex}>
+                                        {skillData[hero][`${skill}`].description[`${level}`]}
+                                    </p>
+                                </div>
                             );
                         }
                     }
