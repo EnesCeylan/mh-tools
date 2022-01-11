@@ -44,7 +44,7 @@ const Skill = ({ hero, skillVal }) => {
           } else {
             return (
               <div className='skill-lvl234-container'>
-                <div className='skill-lvl234'>
+                <div className='skill-lvl234' key={levelIndex}>
                   {level === 'lv2' && <p>Lv.2:&nbsp; </p>}
                   {level === 'lv3' && <p>Lv.3:&nbsp; </p>}
                   {level === 'lv4' && <p>Lv.4:&nbsp; </p>}
