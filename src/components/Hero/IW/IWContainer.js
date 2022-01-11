@@ -24,7 +24,10 @@ const IWContainer = ({ hero }) => {
                 src={
                   type === currentType
                     ? process.env.PUBLIC_URL + '/assets/hero/weapon-skill-icons/' + hero.replace(/ /g, '_') + '.png'
-                    : process.env.PUBLIC_URL + '/assets/hero/weapon-skill-icons/inactive/' + hero + '.png'
+                    : process.env.PUBLIC_URL +
+                      '/assets/hero/weapon-skill-icons/inactive/' +
+                      hero.replace(/ /g, '_') +
+                      '.png'
                 }
                 alt={hero + '_IW'}
                 className='IW-button'

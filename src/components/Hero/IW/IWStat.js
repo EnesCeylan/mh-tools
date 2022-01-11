@@ -1,9 +1,5 @@
 const IWStat = () => {
-    return (
-        <div>
-            IW Stat: TBA
-        </div>
-    );
-}
+  return <p>IW Stat: TBA</p>;
+};
 
 export default IWStat;
