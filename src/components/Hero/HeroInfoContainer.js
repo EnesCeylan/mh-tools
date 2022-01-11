@@ -5,7 +5,7 @@ import HeroGuide from './Guide/HeroGuide';
 import SkillsContainer from './Skills/SkillsContainer';
 
 function HeroInfoContainer({ heroName }) {
-  const pageType = ['Skill', 'IW', 'Guide'];
+  const pageType = ['Skill', 'Weapon', 'Guide'];
   const [currentType, setCurrentType] = useState('Skill');
 
   return (
@@ -19,7 +19,7 @@ function HeroInfoContainer({ heroName }) {
       </div>
       <div className='type-container'>
         {currentType === 'Skill' && <SkillsContainer heroName={heroName} />}
-        {currentType === 'IW' && <IWContainer hero={heroName.replace(/-/g, ' ')} />}
+        {currentType === 'Weapon' && <IWContainer hero={heroName.replace(/-/g, ' ')} />}
         {currentType === 'Guide' && <HeroGuide hero={heroName.replace(/-/g, ' ')} />}
       </div>
     </div>

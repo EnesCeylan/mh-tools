@@ -33,14 +33,14 @@
 .heropage-type-button {
   background-color: transparent;
   display: inline-block;
-  padding: 0.35em 1.2em;
+  padding: 0.5em 1.25em;
   border: 2px solid white;
   margin: 0 0.3em 0.3em 0;
   border-radius: 0.5em;
   box-sizing: border-box;
   text-decoration: none;
+  font-weight: 500;
   font-family: 'Roboto', sans-serif;
-  font-weight: 300;
   color: white;
   text-align: center;
   transition: all 0.2s;
@@ -63,8 +63,18 @@
   }
 }
 
+@media screen and (min-width: 920px) {
+  .heropage-type-button {
+    font-size: 15px;
+  }
+}
+
 @media screen and (min-width: 1440px) {
   .hero-info-container {
     max-width: 850px;
+  }
+
+  .heropage-type-button {
+    font-size: 16px;
   }
 }
