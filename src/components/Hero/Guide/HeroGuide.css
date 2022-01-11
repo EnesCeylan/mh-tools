@@ -66,27 +66,7 @@
 
 /* MEDIA QUERIES */
 
-@media screen and (min-width: 680px) and (orientation: portrait) {
-  
-}
-
-@media screen and (min-width: 350px) {
-  
-}
-
-@media screen and (min-width: 460px) {
-  
-}
-
-@media screen and (min-width: 520px) { 
-  
-}
-
-@media screen and (min-width: 680px) {
-  
-}
-
-@media screen and (min-width: 950px) {
+@media screen and (min-width: 810px) {
     .guide-rune {
         width: 4.7em;
     }
