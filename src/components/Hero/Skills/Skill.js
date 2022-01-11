@@ -33,7 +33,7 @@ const Skill = ({ hero, skillVal }) => {
                     return piece.content;
                   } else {
                     return (
-                      <span className={'highlight-' + piece.type} key={pieceIndex}>
+                      <span className={'highlight-' + piece.type} key={pieceIndex + 4 * Math.pow(pieceIndex + 3, 2)}>
                         {piece.content}
                       </span>
                     );
@@ -43,13 +43,15 @@ const Skill = ({ hero, skillVal }) => {
             );
           } else {
             return (
-              <div className='skill-lvl234-container'>
-                <div className='skill-lvl234' key={levelIndex}>
+              <div className='skill-lvl234-container' key={levelIndex + 50}>
+                <div className='skill-lvl234' key={levelIndex + 4 * Math.pow(levelIndex + 6, 2)}>
                   {level === 'lv2' && <p>Lv.2:&nbsp; </p>}
                   {level === 'lv3' && <p>Lv.3:&nbsp; </p>}
                   {level === 'lv4' && <p>Lv.4:&nbsp; </p>}
                 </div>
-                <p key={levelIndex}>{skillData[hero][`${skill}`].description[`${level}`]}</p>
+                <p key={levelIndex + 4 * Math.pow(levelIndex + 7, 2)}>
+                  {skillData[hero][`${skill}`].description[`${level}`]}
+                </p>
               </div>
             );
           }
