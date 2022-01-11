@@ -1,26 +1,22 @@
 import { useParams } from 'react-router-dom';
 import './HeroPage.css';
-//import SkillsContainer from './HeroPageContainer';
-import HeroPageContainer from './HeroPageContainer';
+import HeroInfoContainer from './HeroInfoContainer';
 function Hero({ setShowMenu }) {
   const { heroName } = useParams();
-
+  const hero = heroName.replace(/-/g, ' ')
   return (
-    // <section className='hero-container' onClick={() => setShowMenu(false)}>
-    //   <SkillsContainer hero={heroName.replace(/-/g, ' ')} />
-    // </section>
     <section className='hero-container' onClick={() => setShowMenu(false)}>
       <img
         src={
           process.env.PUBLIC_URL +
           '/assets/illustration/' +
-          heroName +
+          hero +
           '.png'
         }
-        alt={heroName}
+        alt={hero}
         className={"illustration " + heroName}
       />
-      <HeroPageContainer heroName={heroName} />
+      <HeroInfoContainer heroName={heroName} />
     </section>
   );
 }

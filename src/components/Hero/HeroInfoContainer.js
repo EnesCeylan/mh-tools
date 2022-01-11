@@ -5,12 +5,12 @@ import IWContainer from './IW/IWContainer';
 import HeroGuide from './Guide/HeroGuide';
 import SkillsContainer from './Skills/SkillsContainer';
 
-function HeroPageContainer({ heroName }) {
+function HeroInfoContainer({ heroName }) {
   const pageType = ['Skill', 'IW', 'Guide']
   const [currentType, setCurrentType] = useState('Skill')
 
   return (
-    <div className="hero-page-container">
+    <div className="hero-info-container">
       {pageType.map((type) => (
         <div className="heropage-type-button-container" key={type}>
           <button
@@ -30,4 +30,4 @@ function HeroPageContainer({ heroName }) {
   );
 }
 
-export default HeroPageContainer;
+export default HeroInfoContainer;
