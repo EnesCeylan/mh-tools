@@ -15,18 +15,22 @@ const Home = () => {
         'https://www.reddit.com/r/MythicHeroes/'
     ]
     return (
-        <div className='home-container'>
+        <main className='home-container'>
             <img
                 src={process.env.PUBLIC_URL + '/assets/Background/Homepage_Banner.png'}
                 alt="homepage banner"
                 className="home-banner"
             />
-            <p className="home-message"> "You don't have to do this, OwO-kun"</p>
-            <p className="home-message"> ( OwO)づ︻╦̵̵̿╤── \(UwU)/</p>
-            <p className="home-message"> "...It has to be done...UwU-chan..."</p>
-            <p className="home-message"> And they all live happily ever after</p>
-            <h1 className='social-media-title'>OFFICIAL MYTHIC HEROES SOCIAL MEDIA</h1>
-            <div className="social-media">
+            <section className="main-content">
+                <h1>Welcome to Mythic Companion</h1>
+                <article>
+                    <p><strong>Mythic Companion</strong> offers Mythic Heroes Community tools to have easier time to learn more about their favorite heroes, plan their cube progress, and share their team comps with their friends!</p>
+                    <br />
+                    <p>Join our <a href="https://discord.gg/ZW9JpnNX8Z" target="_blank" rel="noreferrer" >Discord Server</a> to be notified about site updates, give us your suggestions and report bugs!</p>
+                </article>
+            </section>
+            <h3>OFFICIAL MYTHIC HEROES SOCIAL MEDIA</h3>
+            <section className="social-media">
                 {socialArr.map((social, index) => (
                     <a href={socialURL[index]} target="_blank" key={index} rel='noreferrer'>
                         <img
@@ -44,8 +48,8 @@ const Home = () => {
                     </a>
                 ))}
 
-            </div>
-        </div>
+            </section>
+        </main>
 
     );
 };
