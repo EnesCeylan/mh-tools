@@ -15,6 +15,8 @@
   --footer-height: 10rem;
 
   --team-builder-padding: 5%;
+
+  --text-color-main: rgb(228, 228, 228);
 }
 
 header {
@@ -176,7 +178,6 @@ header {
 .nav-drawer.active {
   overflow: hidden;
   max-height: 500px;
-  /* background-color: var(--color-main-dark-transparent); */
   transition: max-height 3s ease-out;
 }
 
@@ -215,7 +216,7 @@ input.copy-url {
   display: none;
 }
 
-@media screen and (max-width: 619px) { /* if I set the color without this, it will make the main bar darker than expected*/
+@media screen and (max-width: 619px) {
   .topbar {
     background-color: var(--color-main-dark);
   }

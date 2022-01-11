@@ -7,7 +7,7 @@ import Footer from './components/Footer';
 
 import CubeOfTruth from './components/Cube/CubeOfTruth';
 import HeroList from './components/HeroList/HeroList';
-import Hero from './components/Hero/Hero';
+import Hero from './components/Hero/HeroPage';
 import TeamBuilder from './components/TeamComp/TeamBuilder';
 import PageNotFound from './components/PageNotFound';
 import Tierlist from './components/Tierlist/Tierlist';

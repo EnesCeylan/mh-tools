@@ -168,7 +168,7 @@ const heroData = {
     faction: ['Guardian'],
     role: 'Mage',
     runes: ['Thunder'],
-    artifacts: ['Axe'],
+    artifacts: ['Axe of Pangu'],
     divinityNotables: ['Death Waiver', 'Supernova'],
   },
   'Joan of Arc': {
