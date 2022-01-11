@@ -102,14 +102,14 @@ header {
   width: 160px;
   display: block;
   opacity: 1;
-  transition: width 0.5s linear;
+  transition: width 0.25s linear;
 }
 
 .navbar > a:last-child:hover > .join > p {
   opacity: 1;
   visibility: visible;
   transition: opacity 0.25s linear, visibility 0.25s linear;
-  transition-delay: 0.5s;
+  transition-delay: 0.25s;
 }
 
 .discord-support-server-icon {

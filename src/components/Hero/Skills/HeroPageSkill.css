@@ -90,15 +90,15 @@
     }
   }
   
-  @media screen and (min-width: 950px) {
+  @media screen and (min-width: 810px) {
     .hero-skill-icon:not(:first-child) {
       width: 10%;
       height: 10%;
     }
   
     .hero-skill-icon:first-child {
-      width: 15%;
-      height: 15%;
+      width: 13%;
+      height: 13%;
     }
     
     .hero-skill-icon-container {
@@ -106,19 +106,3 @@
     }
   }
   
-  @media screen and (min-width: 1200px) {
-    .hero-skill-icon:not(:first-child) {
-      width: 7%;
-      height: 7%;
-    }
-  
-    .hero-skill-icon:first-child {
-      width: 10%;
-      height: 10%;
-    }
-    
-    .hero-skill-icon-container {
-      gap: 10em;
-    }
-  
-  }
