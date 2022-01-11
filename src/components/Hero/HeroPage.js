@@ -10,7 +10,16 @@ function Hero({ setShowMenu }) {
     //   <SkillsContainer hero={heroName.replace(/-/g, ' ')} />
     // </section>
     <section className='hero-container' onClick={() => setShowMenu(false)}>
-      <img src={process.env.PUBLIC_URL + '/assets/illustration/' + heroName + '.png'} alt={heroName} className={"illustration " + heroName} />
+      <img
+        src={
+          process.env.PUBLIC_URL +
+          '/assets/illustration/' +
+          heroName +
+          '.png'
+        }
+        alt={heroName}
+        className={"illustration " + heroName}
+      />
       <HeroPageContainer heroName={heroName} />
     </section>
   );

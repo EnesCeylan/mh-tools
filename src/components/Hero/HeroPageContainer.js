@@ -1,10 +1,9 @@
 
 import './HeroPage.css';
 import { useState } from 'react';
-import IWPage from './IW/IW';
+import IWContainer from './IW/IWContainer';
 import HeroGuide from './Guide/HeroGuide';
 import SkillsContainer from './Skills/SkillsContainer';
-import Skill from './Skills/Skill';
 
 function HeroPageContainer({ heroName }) {
   const pageType = ['Skill', 'IW', 'Guide']
@@ -24,8 +23,8 @@ function HeroPageContainer({ heroName }) {
       ))}
       <div className="type-container">
         {currentType === 'Skill' && <SkillsContainer heroName={heroName} />}
-        {currentType === 'IW' && <IWPage />}
-        {currentType === 'Guide' && <HeroGuide />}
+        {currentType === 'IW' && <IWContainer heroName={heroName} />}
+        {currentType === 'Guide' && <HeroGuide hero={heroName.replace(/-/g, ' ')} />}
       </div>
     </div>
   );
