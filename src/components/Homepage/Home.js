@@ -1,7 +1,8 @@
 import './Home.css';
+
 const Home = () => {
 
-    const socialArr = ['Main', 'Google_Play', 'Appstore', 'Discord', 'Facebook', 'Youtube', 'Instagram', 'Twitter', 'Twitch', 'Reddit', 'Fandom']
+    const socialArr = ['Main', 'Google_Play', 'Appstore', 'Discord', 'Facebook', 'Youtube', 'Instagram', 'Twitter', 'Twitch', 'Reddit']
     const socialURL = ['https://www.mythicheroes.com/',
         'https://play.google.com/store/apps/details?id=com.igg.android.mythicheroes&hl=en&gl=US',
         'https://apps.apple.com/US/app/id1580031550/id1580031550?mt=8',
@@ -11,8 +12,7 @@ const Home = () => {
         'https://www.instagram.com/mythic_heroes/',
         'https://twitter.com/Mythic_Heroes',
         'https://www.twitch.tv/mythicheroes',
-        'https://www.reddit.com/r/MythicHeroes/',
-        'https://mythic-heroes.fandom.com/wiki/Mythic_Heroes_Wiki'
+        'https://www.reddit.com/r/MythicHeroes/'
     ]
     return (
         <div className='home-container'>
@@ -28,7 +28,7 @@ const Home = () => {
             <h1 className='social-media-title'>OFFICIAL MYTHIC HEROES SOCIAL MEDIA</h1>
             <div className="social-media">
                 {socialArr.map((social, index) => (
-                    <a href={socialURL[index]}>
+                    <a href={socialURL[index]} target="_blank" key={index} rel='noreferrer'>
                         <img
                             alt={social}
                             src={
@@ -37,7 +37,7 @@ const Home = () => {
                                 social +
                                 '.png'
                             }
-                            key={social}
+                            key={index}
                             className={'social ' + social}
 
                         />
