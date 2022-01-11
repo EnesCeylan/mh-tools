@@ -73,6 +73,15 @@ header {
   align-items: center;
 }
 
+.nav-drawer > .support-server {
+  padding: 0.4em 1em 0;
+}
+
+.nav-drawer > .support-server > .discord-support-server-icon {
+  width: 1.3em;
+  padding: 10px;
+}
+
 .navbar > a:last-child {
   display: flex;
 }

@@ -10,6 +10,8 @@
   align-items: center;
   font-family: 'Cu Yuan';
   color: var(--text-color-main);
+
+  min-height: calc(100vh - var(--header-height) - var(--footer-height));
 }
 
 .hero-container.divided {
@@ -22,6 +24,8 @@
   -webkit-box-shadow: 0px 2px 15px 5px #00000075;
   box-shadow: 0px 2px 15px 5px #00000075;
   width: 100%;
+
+  margin-bottom: 1rem;
 }
 
 .heropage-type-button-container {
@@ -33,14 +37,14 @@
 .heropage-type-button {
   background-color: transparent;
   display: inline-block;
-  padding: 0.35em 1.2em;
+  padding: 0.5em 1.22em;
   border: 2px solid white;
   margin: 0 0.3em 0.3em 0;
   border-radius: 0.5em;
   box-sizing: border-box;
   text-decoration: none;
   font-family: 'Roboto', sans-serif;
-  font-weight: 300;
+  font-weight: 500;
   color: white;
   text-align: center;
   transition: all 0.2s;
@@ -67,15 +71,7 @@
   }
 }
 
-.hero-info-container {
-  max-width: 680px;
-}
-
 @media screen and (min-width: 1440px) {
-  .hero-container.divided {
-    min-height: calc(100vh - var(--header-height) - var(--footer-height));
-  }
-
   .illustration {
     max-width: 600px;
     object-fit: cover;
@@ -87,21 +83,6 @@
 
   .heropage-type-button {
     font-size: 16px;
-  }
-
-  .hero-container.divided {
-    min-height: calc(100vh - var(--header-height) - var(--footer-height));
-  }
-}
-
-@media screen and (min-width: 1600px) {
-  .illustration {
-    max-width: 800px;
-    object-fit: cover;
-  }
-
-  .hero-info-container {
-    max-width: calc(100% - 800px - 10%);
   }
 }
 
