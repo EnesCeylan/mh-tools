@@ -1,0 +1,22 @@
+@font-face {
+    font-family: 'Cu Yuan';
+    src: url('../../assets/fonts/FZCu-Yuan-M03.ttf');
+  }
+  
+  /* centering the whole skill page */
+  .hero-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .illustration {
+    max-width: 100%;
+  }
+  
+  /* desktop styles */
+  @media screen and (min-width: 810px) {
+    .illustration {
+      max-width: 60%;
+    }
+  }

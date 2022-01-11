@@ -1,0 +1,26 @@
+.skill .skill-info {
+    width: 100%;
+  }
+  
+  .skill .skill-info .first-level {
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
+    border-bottom: 1px solid yellow;
+  }
+  
+  /* Skill description first level highlights */
+  .first-level .highlight {
+    color: greenyellow;
+  }
+  
+  .first-level .highlight-status {
+    color: orange;
+  }
+  
+  .first-level .highlight-warning {
+    color: darkorange;
+  }
+  
+  .first-level .highlight-true-damage {
+    color: rgb(160, 107, 41);
+  }
