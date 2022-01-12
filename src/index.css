@@ -18,7 +18,6 @@
   }
 }
 
-
 /* MAIN STYLES */
 * {
   box-sizing: border-box;
@@ -36,10 +35,8 @@ body {
   min-height: 100vh;
   width: 100%;
   overflow-x: hidden;
-  overflow-y: auto;
   color: white;
-  background: url(/public/assets/Background/BG3.png) no-repeat center center
-    fixed;
+  background: url(/public/assets/Background/BG3.png) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -74,6 +71,5 @@ a:visited {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }

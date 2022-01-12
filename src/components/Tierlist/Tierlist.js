@@ -38,14 +38,8 @@ const Tierlist = () => {
             type='image'
             src={
               type === currentType
-                ? process.env.PUBLIC_URL +
-                '/assets/tierlist-button/Button_' +
-                type +
-                '_Active.png'
-                : process.env.PUBLIC_URL +
-                '/assets/tierlist-button/Button_' +
-                type +
-                '_Inactive.png'
+                ? process.env.PUBLIC_URL + '/assets/tierlist-button/Button_' + type + '_Active.png'
+                : process.env.PUBLIC_URL + '/assets/tierlist-button/Button_' + type + '_Inactive.png'
             }
             key={type}
             className={'tierlist-type-button ' + type}
@@ -56,19 +50,9 @@ const Tierlist = () => {
       <div className='type-container'>
         {TierListData[CurrentIndex].content.map((tier, index) => {
           return (
-            <div
-              className={
-                'tierlist-container ' + TierListData[CurrentIndex].name
-              }
-              key={index}
-            >
+            <div className={'tierlist-container ' + TierListData[CurrentIndex].name} key={index}>
               <img
-                src={
-                  process.env.PUBLIC_URL +
-                  '/assets/tierlist-button/' +
-                  tier.tier +
-                  '.png'
-                }
+                src={process.env.PUBLIC_URL + '/assets/tierlist-button/' + tier.tier + '.png'}
                 alt=''
                 className='grade'
               />
@@ -76,11 +60,7 @@ const Tierlist = () => {
                 {tier.characters.map((hero, heroIndex) => {
                   const heroname = hero.replace(/_/g, ' ');
                   return (
-                    <TierlistHeroBox
-                      hero={hero}
-                      heroname={heroname}
-                      key={heroIndex + 4 * Math.pow(index + 1, 2)}
-                    />
+                    <TierlistHeroBox hero={hero} heroname={heroname} key={heroIndex + 4 * Math.pow(index + 1, 2)} />
                   );
                 })}
               </div>

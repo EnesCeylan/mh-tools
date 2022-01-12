@@ -178,14 +178,14 @@ header {
   width: 100%;
   overflow: hidden;
   max-height: 0;
-  transition: max-height 2s ease-out;
+  transition: max-height 0.75s linear;
   background-color: var(--color-main-dark-transparent);
 }
 
 .nav-drawer.active {
   overflow: hidden;
   max-height: 500px;
-  transition: max-height 3s ease-out;
+  transition: max-height 1.5s linear;
 }
 
 .nav-drawer > a {

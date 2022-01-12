@@ -1,15 +1,16 @@
 import './TeamComp.css';
 
-import React, { useState, useEffect } from 'react';
+import React, { lazy, useState, useEffect } from 'react';
 
-import TeamBuilderModal from '../Modals/TeamBuilderModal';
 import checkParamValidity from './functions/checkParamValidity';
 import HeroBuilder from './HeroBuilder';
 
 import { useWindowSize } from 'react-use';
-import BuildContainer from './components/BuildContainer';
-import BuildContainerReverse from './components/BuildContainerReverse';
 import exportBuild from './functions/exportBuild';
+
+const BuildContainer = React.lazy(() => import('./components/BuildContainer'));
+const BuildContainerReverse = React.lazy(() => import('./components/BuildContainerReverse'));
+const TeamBuilderModal = React.lazy(() => import('../Modals/TeamBuilderModal'));
 
 function TeamBuilder({ setShowMenu }) {
   const { width, height } = useWindowSize();

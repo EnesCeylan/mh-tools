@@ -5,16 +5,9 @@ function Header({ showMenu, setShowMenu }) {
     <header>
       <div className='topbar'>
         <Link to='/'>
-          <img
-            src={process.env.PUBLIC_URL + '/assets/Background/Logo.png'}
-            alt="logo"
-            className="logo"
-          />
+          <img src={process.env.PUBLIC_URL + '/assets/Background/Logo.png'} alt='logo' className='logo' />
         </Link>
-        <div
-          className={showMenu ? 'hamburger-menu active' : 'hamburger-menu'}
-          onClick={() => setShowMenu(!showMenu)}
-        >
+        <div className={showMenu ? 'hamburger-menu active' : 'hamburger-menu'} onClick={() => setShowMenu(!showMenu)}>
           <div className='bar-1'></div>
           <div className='bar-2'></div>
           <div className='bar-3'></div>
@@ -32,20 +25,17 @@ function Header({ showMenu, setShowMenu }) {
           <Link to='/tierlist' onClick={() => setShowMenu(false)} className='page-button'>
             Tierlist
           </Link>
-          <a href="https://discord.gg/ZW9JpnNX8Z" target="_blank" rel='noreferrer'>
-            <div className="join">
+          <a href='https://discord.gg/ZW9JpnNX8Z' target='_blank' rel='noreferrer'>
+            <div className='join'>
               <p>Join our Discord</p>
             </div>
             <img
-              src={
-                process.env.PUBLIC_URL + '/assets/discord-icon/icon_clyde_white_RGB.svg'
-              }
-              alt="discord support"
-              className="discord-support-server-icon"
+              src={process.env.PUBLIC_URL + '/assets/discord-icon/icon_clyde_white_RGB.svg'}
+              alt='discord support'
+              className='discord-support-server-icon'
             />
           </a>
         </nav>
-
       </div>
       <nav className={showMenu ? 'nav-drawer active' : 'nav-drawer'}>
         <Link to='/hero-list' onClick={() => setShowMenu(false)}>
@@ -60,20 +50,17 @@ function Header({ showMenu, setShowMenu }) {
         <Link to='/tierlist' onClick={() => setShowMenu(false)}>
           Tierlist
         </Link>
-        <a href="https://discord.gg/BFBuXrSY54" target="_blank" rel='noreferrer' className='support-server'>
-          <p className="support-server-text">Join us on Discord</p>
+        <a href='https://discord.gg/BFBuXrSY54' target='_blank' rel='noreferrer' className='support-server'>
+          <p className='support-server-text'>Join us on Discord</p>
           {/* <div className="discord-icon-container"> */}
           <img
-            src={
-              process.env.PUBLIC_URL + '/assets/discord-icon/icon_clyde_white_RGB.svg'
-            }
-            alt="discord support"
-            className="discord-support-server-icon"
+            src={process.env.PUBLIC_URL + '/assets/discord-icon/icon_clyde_white_RGB.svg'}
+            alt='discord support'
+            className='discord-support-server-icon'
           />
           {/* </div> */}
           {/* <p className="support-server-text">Join us on Discord</p> */}
         </a>
-
       </nav>
     </header>
   );

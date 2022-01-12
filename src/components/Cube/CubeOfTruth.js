@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { lazy, useState, useEffect } from 'react';
 
 import './Cube.css';
 
@@ -11,14 +11,13 @@ import CubeSelector from './CubeSelector';
 import FaceSelector from './FaceSelector';
 
 import CubeControls from './CubeControls';
-import CubeModal from '../Modals/CubeModal';
+
+const CubeModal = React.lazy(() => import('../Modals/CubeModal'));
 
 function CubeOfTruth({ setShowMenu }) {
   const [cubeIndex, setCubeIndex] = useState(0);
   const [faceIndex, setFaceIndex] = useState(0);
-  const [cube, setCube] = useState(
-    CubeOfTruthData[cubeIndex].faces[faceIndex].data
-  );
+  const [cube, setCube] = useState(CubeOfTruthData[cubeIndex].faces[faceIndex].data);
   const [rowIndex, setRowIndex] = useState(0);
   const [cellIndex, setCellIndex] = useState(0);
 
@@ -38,12 +37,7 @@ function CubeOfTruth({ setShowMenu }) {
       {!isWideScreen && (
         <div className='system-container' onClick={() => setShowMenu(false)}>
           <CubeSelector setCubeIndex={setCubeIndex} />
-          <CubeContainer
-            cube={cube}
-            setCube={setCube}
-            setBonus={setBonus}
-            setModal={setModal}
-          />
+          <CubeContainer cube={cube} setCube={setCube} setBonus={setBonus} setModal={setModal} />
           <div className='buttons-container'>
             <FaceSelector handleClick={(index) => setFaceIndex(index)} />
             <CubeControls
@@ -56,9 +50,7 @@ function CubeOfTruth({ setShowMenu }) {
               isWideScreen={isWideScreen}
             />
           </div>
-          {!disableModal && modal && (
-            <CubeModal bonus={bonus} setModal={setModal} />
-          )}
+          {!disableModal && modal && <CubeModal bonus={bonus} setModal={setModal} />}
         </div>
       )}
       {isWideScreen && (

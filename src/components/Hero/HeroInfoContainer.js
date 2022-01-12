@@ -1,8 +1,11 @@
+import React, { lazy, useState } from 'react';
+
 import './HeroPage.css';
-import { useState } from 'react';
-import IWContainer from './IW/IWContainer';
-import HeroGuide from './Guide/HeroGuide';
+
 import SkillsContainer from './Skills/SkillsContainer';
+
+const HeroGuide = React.lazy(() => import('./Guide/HeroGuide'));
+const IWContainer = React.lazy(() => import('./IW/IWContainer'));
 
 function HeroInfoContainer({ heroName }) {
   const pageType = ['Skill', 'Weapon', 'Guide'];

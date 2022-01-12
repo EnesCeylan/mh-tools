@@ -4,9 +4,7 @@ const TierlistHeroBox = ({ hero, heroname }) => {
       <img
         alt=''
         className={'tierlist-hero-image ' + hero}
-        src={
-          process.env.PUBLIC_URL + '/assets/hero/hero-cards/' + hero + '.png'
-        }
+        src={process.env.PUBLIC_URL + '/assets/hero/hero-cards/' + hero + '.png'}
       ></img>
       <div className='tierlist-hero-name-container'>
         <div className='tierlist-hero-name'>{heroname}</div>
