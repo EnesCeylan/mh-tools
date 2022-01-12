@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkmythic_companion=self.webpackChunkmythic_companion||[]).push([[109],{109:function(n,e,r){r.r(e);r(508);var c=r(184);e.default=function(n){var e=n.setShowMenu;return(0,c.jsx)("div",{className:"error-page",onClick:function(){return e(!1)},children:"Error! Page not found."})}}}]);
+//# sourceMappingURL=109.893e185c.chunk.js.map
