@@ -40,8 +40,8 @@ const IWContainer = ({ hero }) => {
               <img
                 src={
                   type === currentType
-                    ? process.env.PUBLIC_URL + '/assets/hero/weapon-skill-icons/IW_stat.png'
-                    : process.env.PUBLIC_URL + '/assets/hero/weapon-skill-icons/inactive/IW_stat.png'
+                    ? process.env.PUBLIC_URL + '/assets/hero/weapon-skill-icons/IW_Stat.png'
+                    : process.env.PUBLIC_URL + '/assets/hero/weapon-skill-icons/inactive/IW_Stat.png'
                 }
                 alt='IW_Stat'
                 className='IW-button'
