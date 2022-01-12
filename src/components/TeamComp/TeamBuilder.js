@@ -65,7 +65,9 @@ function TeamBuilder({ setShowMenu }) {
 
   let validParamExists = false;
   let linkDataObject;
-  const linkParam = document.URL.match(/(?<=team-builder\/).+/g);
+  const urlSplit = document.URL.split('/');
+  const linkParam = urlSplit[urlSplit.findIndex((param) => param === 'team-builder') + 1];
+  console.log(linkParam);
   if (linkParam) {
     try {
       linkDataObject = checkParamValidity(linkParam); //semi-shallow validity check for the object type link parameter
@@ -145,10 +147,7 @@ function TeamBuilder({ setShowMenu }) {
 
   return width < 950 ? (
     <div className='team-builder-container' onClick={() => setShowMenu(false)}>
-      <div
-        className={tooltip ? 'tooltip-container active' : 'tooltip-container'}
-        onClick={() => setTooltip(!tooltip)}
-      >
+      <div className={tooltip ? 'tooltip-container active' : 'tooltip-container'} onClick={() => setTooltip(!tooltip)}>
         <div className='tooltip-header'>
           <div className='wrapper'>
             <i className='fas fa-chevron-right'></i>
@@ -157,19 +156,15 @@ function TeamBuilder({ setShowMenu }) {
           <i className='far fa-question-circle'></i>
         </div>
         <p>
-          Click on a position frame to select and customize your hero. Clicking
-          on "export" button will automatically copy the build link for you to
-          share!
+          Click on a position frame to select and customize your hero. Clicking on "export" button will automatically
+          copy the build link for you to share!
           <br />
           <br />
-          You don't have to fill every option for sharing the build,
-          customization is completely optional!
+          You don't have to fill every option for sharing the build, customization is completely optional!
         </p>
       </div>
       <div className='builder-buttons-container'>
-        <button onClick={() => handleFormationSwitch()}>
-          Switch formation
-        </button>
+        <button onClick={() => handleFormationSwitch()}>Switch formation</button>
         <button
           onClick={() => {
             exportBuild(teamData);
@@ -224,19 +219,15 @@ function TeamBuilder({ setShowMenu }) {
             <i className='far fa-question-circle'></i>
           </div>
           <p>
-            Select the slots to open the character selection to select and
-            customize your hero. Clicking on "export" button will automatically
-            copy the build link for you to share!
+            Select the slots to open the character selection to select and customize your hero. Clicking on "export"
+            button will automatically copy the build link for you to share!
             <br />
             <br />
-            You don't have to fill every option for sharing the build,
-            customization is completely optional!
+            You don't have to fill every option for sharing the build, customization is completely optional!
           </p>
         </div>
         <div className='builder-buttons-container'>
-          <button onClick={() => handleFormationSwitch()}>
-            Switch formation
-          </button>
+          <button onClick={() => handleFormationSwitch()}>Switch formation</button>
           <button
             onClick={() => {
               exportBuild(teamData);
