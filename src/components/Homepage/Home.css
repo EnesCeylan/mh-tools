@@ -69,7 +69,7 @@
   height: 10px;
 }
 .official-links-slides::-webkit-scrollbar-thumb {
-  background: black;
+  background: rgb(214, 214, 214);
   border-radius: 10px;
 }
 .official-links-slides::-webkit-scrollbar-track {
