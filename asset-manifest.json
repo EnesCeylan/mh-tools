@@ -1,9 +1,9 @@
 {
   "files": {
     "main.css": "/mythic-companion/static/css/main.3c309c32.css",
-    "main.js": "/mythic-companion/static/js/main.8416bb7e.js",
-    "static/css/908.8e5d3c7d.chunk.css": "/mythic-companion/static/css/908.8e5d3c7d.chunk.css",
-    "static/js/908.4db43610.chunk.js": "/mythic-companion/static/js/908.4db43610.chunk.js",
+    "main.js": "/mythic-companion/static/js/main.f65cdb51.js",
+    "static/css/908.b1a79b5e.chunk.css": "/mythic-companion/static/css/908.b1a79b5e.chunk.css",
+    "static/js/908.fad8e359.chunk.js": "/mythic-companion/static/js/908.fad8e359.chunk.js",
     "static/css/931.4ab8097d.chunk.css": "/mythic-companion/static/css/931.4ab8097d.chunk.css",
     "static/js/931.cc7003bf.chunk.js": "/mythic-companion/static/js/931.cc7003bf.chunk.js",
     "static/css/56.99d44821.chunk.css": "/mythic-companion/static/css/56.99d44821.chunk.css",
@@ -91,9 +91,9 @@
     "static/media/Yellow_Unlit.png": "/mythic-companion/static/media/Yellow_Unlit.490efd1cb167ef078139.png",
     "index.html": "/mythic-companion/index.html",
     "main.3c309c32.css.map": "/mythic-companion/static/css/main.3c309c32.css.map",
-    "main.8416bb7e.js.map": "/mythic-companion/static/js/main.8416bb7e.js.map",
-    "908.8e5d3c7d.chunk.css.map": "/mythic-companion/static/css/908.8e5d3c7d.chunk.css.map",
-    "908.4db43610.chunk.js.map": "/mythic-companion/static/js/908.4db43610.chunk.js.map",
+    "main.f65cdb51.js.map": "/mythic-companion/static/js/main.f65cdb51.js.map",
+    "908.b1a79b5e.chunk.css.map": "/mythic-companion/static/css/908.b1a79b5e.chunk.css.map",
+    "908.fad8e359.chunk.js.map": "/mythic-companion/static/js/908.fad8e359.chunk.js.map",
     "931.4ab8097d.chunk.css.map": "/mythic-companion/static/css/931.4ab8097d.chunk.css.map",
     "931.cc7003bf.chunk.js.map": "/mythic-companion/static/js/931.cc7003bf.chunk.js.map",
     "56.99d44821.chunk.css.map": "/mythic-companion/static/css/56.99d44821.chunk.css.map",
@@ -117,6 +117,6 @@
   },
   "entrypoints": [
     "static/css/main.3c309c32.css",
-    "static/js/main.8416bb7e.js"
+    "static/js/main.f65cdb51.js"
   ]
 }
