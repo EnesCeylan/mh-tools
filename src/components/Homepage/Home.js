@@ -44,8 +44,8 @@ const Home = () => {
         <h1>Welcome to Mythic Companion</h1>
         <article>
           <p>
-            <strong>Mythic Companion</strong> offers Mythic Heroes Community tools to have easier time to learn more
-            about favorite heroes, plan cube progress, and share their team comps with their friends!
+            <strong>Mythic Companion</strong> offers tools for the Mythic Heroes Community to learn more
+            about their favorite heroes, plan out cube progression, and share their team comps with their friends!
           </p>
           <br />
           <p>
@@ -58,17 +58,19 @@ const Home = () => {
         </article>
       </section>
       <h3>OFFICIAL MYTHIC HEROES SOCIAL MEDIA</h3>
-      <section className='official-links'>
-        {socialArr.map((social, index) => (
-          <a href={socialURL[index]} target='_blank' key={index} rel='noreferrer'>
-            <img
-              alt={social}
-              src={process.env.PUBLIC_URL + '/assets/official-links/' + social + '.png'}
-              key={index}
-              className='social'
-            />
-          </a>
-        ))}
+      <section className="official-links-slider">
+        <div className="official-links-slides">
+          {socialArr.map((social, index) => (
+            <a href={socialURL[index]} target='_blank' key={index} rel='noreferrer' className='official-links'>
+              <img
+                alt={social}
+                src={process.env.PUBLIC_URL + '/assets/official-links/' + social + '.png'}
+                key={index}
+                className='social'
+              />
+            </a>
+          ))}
+        </div>
       </section>
     </main>
   );
