@@ -20,7 +20,14 @@ function App() {
     <HashRouter>
       <Header showMenu={showMenu} setShowMenu={setShowMenu} />
 
-      <React.Suspense fallback={<div>Loading...</div>}>
+      <React.Suspense
+        fallback={
+          <div className='loading-screen'>
+            <div className='ring'></div>
+            <p className='loading-text'>Loading...</p>
+          </div>
+        }
+      >
         <Routes>
           <Route path='/' element={<Home setShowMenu={setShowMenu} />} />
           <Route path='/hero-list' element={<HeroList setShowMenu={setShowMenu} />} />
