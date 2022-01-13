@@ -1,7 +1,11 @@
-import { useState } from 'react';
+import React, { lazy, useState } from 'react';
 import TierListData from '../../data/TierListData';
 import './Tierlist.css';
-import TierlistHeroBox from './TierlistHeroBox';
+
+import { Link } from 'react-router-dom';
+
+const TierlistHeroBox = React.lazy(() => import('./TierlistHeroBox'));
+
 const Tierlist = () => {
   const types = ['PvP', 'Early', 'Mid', 'Late', 'Boss'];
   const [currentType, setCurrentType] = useState('PvP');
@@ -60,7 +64,13 @@ const Tierlist = () => {
                 {tier.characters.map((hero, heroIndex) => {
                   const heroname = hero.replace(/_/g, ' ');
                   return (
-                    <TierlistHeroBox hero={hero} heroname={heroname} key={heroIndex + 4 * Math.pow(index + 1, 2)} />
+                    <Link
+                      className='hero-link'
+                      to={'/hero-list/' + hero.replace(/_/g, '-')}
+                      key={heroIndex + 4 * Math.pow(index + 1, 5)}
+                    >
+                      <TierlistHeroBox hero={hero} heroname={heroname} key={heroIndex + 4 * Math.pow(index + 1, 2)} />
+                    </Link>
                   );
                 })}
               </div>

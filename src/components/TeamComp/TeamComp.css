@@ -12,12 +12,13 @@
 /* --------------------- CONTENT CONTAINERS --------------------- */
 .tooltip-container,
 .builder-buttons-container,
-.build-container {
+.build-container,
+.faction-bonus-container {
   width: calc(100% - (var(--team-builder-padding) * 2));
 }
 
 /* --------------------- TOOLTIP CONTAINER --------------------- */
-.tooltip-container > .tooltip-header {
+.tooltip-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -29,12 +30,12 @@
   border-radius: 8px;
 }
 
-.tooltip-container > .tooltip-header > .wrapper {
+.tooltip-header > .wrapper {
   display: flex;
   align-items: center;
 }
 
-.tooltip-container > .tooltip-header > .wrapper > h4 {
+.tooltip-header > .wrapper > h4 {
   margin-left: 8px;
 }
 
@@ -47,10 +48,18 @@
   border-radius: 8px 8px 0 0;
 }
 
+.tooltip-container.active > .tooltip-header > .wrapper > .web-icon {
+  transform: rotate(90deg);
+}
+
 .tooltip-container.active > p {
   display: block;
   border: 2px solid white;
   border-radius: 0 0 8px 8px;
+}
+
+.web-icon {
+  width: 24px;
 }
 
 /* --------------------- SWITCH AND EXPORT BUTTONS --------------------- */
@@ -61,7 +70,7 @@
 
 .builder-buttons-container > button {
   width: 120px;
-  padding: 4px;
+  padding: 6px;
   border-radius: 8px;
 
   color: white;
@@ -76,6 +85,10 @@
   background-color: white;
 
   font-weight: 500;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .builder-buttons-container > button:nth-child(2) > .info-popup {
@@ -114,6 +127,78 @@
   border-color: transparent transparent var(--color-success) transparent;
 }
 
+/* --------------------- FACTION BONUS UI --------------------- */
+.faction-bonus-container {
+  position: relative;
+  height: fit-content;
+
+  display: flex;
+  flex-direction: column;
+
+  margin-bottom: 25px;
+}
+
+.faction-bonus-header {
+  width: fit-content;
+  padding: 8px;
+  border: 2px solid var(--color-main-accent);
+
+  border-radius: 16px;
+  background-color: var(--color-main-medium);
+
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.faction-bonus-display {
+  background-color: var(--color-main-medium);
+  border: 2px solid var(--color-main-accent);
+  border-radius: 16px;
+  position: relative;
+
+  top: 24px;
+}
+
+.faction {
+  width: 20%;
+  justify-content: space-around;
+  padding-right: 8px;
+}
+
+.faction:not(:last-child) {
+  border-right: 2px solid var(--color-main-accent);
+}
+
+.active-factions,
+.faction {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 24px;
+}
+
+.active-factions {
+  justify-content: space-evenly;
+  padding: 16px 4px 8px;
+  margin-top: 8px;
+}
+
+.active-faction-icon {
+  width: 29px;
+}
+
+.faction-bonus-values {
+  padding: 8px 4px;
+  text-align: center;
+}
+
+.faction-bonus-values > p:first-child {
+  margin-bottom: 8px;
+}
+
 /* --------------------- FORMATION GRID --------------------- */
 .build-container {
   --cell-width: 150px;
@@ -148,38 +233,33 @@
   position: relative;
 }
 
-.build-container > .row > .position.active {
+.position.active {
   border: none;
 }
 
-.build-container > .row > .position.active > img {
+.position.active > img:first-child {
   position: absolute;
   top: -4px;
-  width: 40px;
-  height: 40px;
-}
-
-.build-container > .row > .position.active > i {
-  position: absolute;
-  left: calc(100% - 2rem);
-
-  font-size: 2rem;
-  color: var(--color-danger);
-
-  cursor: pointer;
-}
-
-.build-container > .row > .position.active > img {
   height: 55px;
   left: 0px;
   top: -10px;
   width: 55px;
 }
 
+.position.active > .web-icon {
+  position: absolute;
+  left: calc(100% - 1.75rem);
+
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+}
+
 /* ---------------------------------------------------------------------------------------------------------------------------------- */
 /* ------------------------------- HERO BUILDER MODAL ------------------------------- */
 .builder-screen {
   position: fixed;
+  z-index: 10;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -237,24 +317,25 @@
   border-radius: 0.5rem 0.5rem 0 0;
 }
 
-.dropdown-select > .group-container {
+.group-container {
   display: flex;
   align-items: center;
 }
 
-.dropdown-select > .group-container > img {
+.group-container > img {
   width: 1.5rem;
 }
 
-.dropdown-select > .group-container > span {
+.group-container > span {
   margin-left: 1rem;
 }
 
-.dropdown-select > i {
+.dropdown-select > img {
+  width: 24px;
   transition: transform 0.2s linear;
 }
 
-.dropdown.active .dropdown-select > i {
+.dropdown.active .dropdown-select > img {
   transform: rotate(180deg);
 }
 
@@ -363,11 +444,12 @@
   margin-left: 1rem;
 }
 
-.build-dropdown > i {
+.build-dropdown > img {
+  width: 24px;
   transition: transform 0.2s linear;
 }
 
-.build-dropdown.active > i {
+.build-dropdown.active > img {
   transform: rotate(90deg);
   transition: transform 0.2s linear;
 }
@@ -461,7 +543,7 @@
   cursor: pointer;
 }
 
-.divinity-slots-container > button > .cost-container > img {
+button > .cost-container > img {
   width: 20px;
 }
 
@@ -583,7 +665,7 @@
   font-size: 14px;
 }
 
-.build-ui > .wrapper > .bonuses > p:not(:last-child) {
+.wrapper > .bonuses > p:not(:last-child) {
   border-bottom: 2px solid var(--color-main-accent);
   padding-bottom: 0.25rem;
   margin-bottom: 0.25rem;
@@ -623,14 +705,12 @@
 /* --------------------- MEDIA QUERIES --------------------- */
 @media screen and (min-width: 680px) and (orientation: portrait) {
   .build-container {
-    margin-top: calc(
-      (100% - calc(var(--cell-width) * 3 + var(--cell-spacing) * 2)) / 2
-    );
+    margin-top: calc((100% - calc(var(--cell-width) * 3 + var(--cell-spacing) * 2)) / 2);
   }
 }
 
 @media screen and (min-width: 350px) {
-  .build-container > .row > .position.active > img {
+  .build-container > .row > .position.active > img:first-child {
     height: 55px;
     left: -10px;
     top: -10px;
@@ -653,12 +733,15 @@
     font-size: 24px;
   }
 
-  .build-container > .row > .position.active > img {
-    
+  .build-container > .row > .position.active > img:first-child {
     height: 55px;
     left: -10px;
     top: -10px;
     width: 55px;
+  }
+
+  .active-faction-icon {
+    width: 36px;
   }
 }
 
@@ -668,7 +751,7 @@
     --cell-spacing: 1.25rem;
   }
 
-  .dropdown-select > .group-container > img {
+  .group-container > img {
     width: 2rem;
   }
 
@@ -688,7 +771,7 @@
     margin-bottom: 2.5rem;
   }
 
-  .build-container > .row > .position.active > img {
+  .build-container > .row > .position.active > img:first-child {
     height: 60px;
     left: -10px;
     top: -10px;
@@ -697,6 +780,10 @@
 }
 
 @media screen and (min-width: 680px) {
+  .web-icon {
+    width: 32px;
+  }
+
   .build-container {
     --cell-width: 200px;
     --cell-spacing: 1.5rem;
@@ -735,19 +822,36 @@
 
   .build-container > .row > .position.active > i {
     left: calc(100% - 30px);
-
-    font-size: 2.5rem;
   }
 
-  .build-container > .row > .position.active > img {
+  .build-container > .row > .position.active > img:first-child {
     height: 70px;
     left: -10px;
     top: -10px;
     width: 70px;
   }
+
+  .faction {
+    justify-content: center;
+  }
+
+  .active-faction-icon {
+    width: 48px;
+  }
 }
 
 @media screen and (min-width: 950px) {
+  .formation-wrapper {
+    width: 390px;
+    display: flex;
+    flex-direction: column;
+    gap: 104px;
+  }
+
+  .active-faction-icon {
+    width: 32px;
+  }
+
   .build-container {
     --cell-width: 150px;
     --cell-spacing: 1rem;
@@ -845,7 +949,7 @@
     margin: 0;
     padding: 1.5rem;
   }
-  .build-container > .row > .position.active > img {
+  .build-container > .row > .position.active > img:first-child {
     height: 55px;
     left: -10px;
     top: -10px;
@@ -856,6 +960,14 @@
 @media screen and (min-width: 1200px) {
   .team-builder-container {
     gap: 60px;
+  }
+
+  .active-faction-icon {
+    width: 40px;
+  }
+
+  .faction-bonus-container {
+    width: 390px;
   }
 
   .build-container {
@@ -883,7 +995,7 @@
   .build-ui-desktop > span {
     font-size: 16px;
   }
-  .build-container > .row > .position.active > img {
+  .build-container > .row > .position.active > img:first-child {
     height: 60px;
     left: -10px;
     top: -10px;

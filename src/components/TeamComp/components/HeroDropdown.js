@@ -1,6 +1,8 @@
 import heroData from '../../../data/heroData';
 import HeroDropdownItem from './HeroDropdownItem';
 
+import caret from '../../../assets/web-icons/caret.png';
+
 function HeroDropdown({
   dropdown,
   setDropdown,
@@ -39,20 +41,16 @@ function HeroDropdown({
                 process.env.PUBLIC_URL +
                 '/assets/factions/' +
                 (heroData[selectedHero].faction.length > 1
-                  ? heroData[selectedHero].faction[0] +
-                    '-' +
-                    heroData[selectedHero].faction[1]
+                  ? heroData[selectedHero].faction[0] + '-' + heroData[selectedHero].faction[1]
                   : heroData[selectedHero].faction[0]) +
                 '.png'
               }
               alt={selectedHero}
             />
           )}
-          <span className='select'>
-            {selectedHero ? selectedHero : 'Choose hero'}
-          </span>
+          <span className='select'>{selectedHero ? selectedHero : 'Choose hero'}</span>
         </div>
-        <i className='fa fa-caret-down icon'></i>
+        <img className='web-icon' src={caret} alt='caret' />
       </div>
       <div className='dropdown-list'>
         {heroes

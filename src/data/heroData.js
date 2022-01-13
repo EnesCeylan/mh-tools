@@ -20,7 +20,7 @@ const heroData = {
   },
   Typhon: {
     rarity: 'UR',
-    faction: ['Guardian', 'Verdian'],
+    faction: ['Shadowarch', 'Verdian'],
     role: 'Tank',
     runes: ['Earth', 'Air'],
     artifacts: ['Aegis Shield'],
@@ -193,7 +193,7 @@ const heroData = {
   Archimedes: {
     rarity: 'SSR',
     faction: ['Guardian'],
-    role: 'Warrior',
+    role: 'Fighter',
     runes: ['Fire', 'Thunder'],
     artifacts: ['Axe of Pangu', 'Staff of Sharur'],
     divinityNotables: ['Torment', 'Culmination', 'Colossus', 'Panacea'],

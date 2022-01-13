@@ -34,11 +34,8 @@ header {
 }
 
 .logo {
-  padding-top: 0px;
   display: block;
   width: 7rem;
-  max-height: 100%;
-  max-width: 100%;
   padding: 0 0.75rem;
 }
 
@@ -178,14 +175,14 @@ header {
   width: 100%;
   overflow: hidden;
   max-height: 0;
-  transition: max-height 0.75s linear;
+  transition: max-height 0.5s linear;
   background-color: var(--color-main-dark-transparent);
 }
 
 .nav-drawer.active {
   overflow: hidden;
   max-height: 500px;
-  transition: max-height 1.5s linear;
+  transition: max-height 1s linear;
 }
 
 .nav-drawer > a {
@@ -217,10 +214,64 @@ footer .disclaimer {
 .error-page {
   width: 100%;
   min-height: calc(100vh - var(--header-height) - var(--footer-height));
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.error-page-img {
+  width: 100%;
+  max-width: 500px;
 }
 
 input.copy-url {
   display: none;
+}
+
+.loading-screen {
+  min-height: calc(100vh - var(--header-height) - var(--footer-height));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+}
+
+.ring {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  box-shadow: 0 4px 0 white;
+  background: transparent;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-text {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  line-height: 300px;
+  font-size: 2rem;
+  background: transparent;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
 @media screen and (max-width: 619px) {

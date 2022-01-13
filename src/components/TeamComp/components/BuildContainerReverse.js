@@ -1,17 +1,10 @@
 import FormationPosition from './FormationPosition';
 
-function BuildContainerReverse({
-  validParamExists,
-  teamData,
-  setTeamData,
-  handleClick,
-  setSelectedElement,
-}) {
+function BuildContainerReverse({ teamData, setTeamData, handleClick, setSelectedElement }) {
   return (
     <div className='build-container reverse'>
       <div className='row back'>
         <FormationPosition
-          validParamExists={validParamExists}
           teamData={teamData}
           setTeamData={setTeamData}
           handleClick={handleClick}
@@ -19,7 +12,6 @@ function BuildContainerReverse({
           position={0}
         />
         <FormationPosition
-          validParamExists={validParamExists}
           teamData={teamData}
           setTeamData={setTeamData}
           handleClick={handleClick}
@@ -29,7 +21,6 @@ function BuildContainerReverse({
       </div>
       <div className='row front'>
         <FormationPosition
-          validParamExists={validParamExists}
           teamData={teamData}
           setTeamData={setTeamData}
           handleClick={handleClick}
@@ -37,7 +28,6 @@ function BuildContainerReverse({
           position={2}
         />
         <FormationPosition
-          validParamExists={validParamExists}
           teamData={teamData}
           setTeamData={setTeamData}
           handleClick={handleClick}
@@ -45,7 +35,6 @@ function BuildContainerReverse({
           position={3}
         />
         <FormationPosition
-          validParamExists={validParamExists}
           teamData={teamData}
           setTeamData={setTeamData}
           handleClick={handleClick}

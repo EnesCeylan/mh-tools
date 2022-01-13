@@ -37,6 +37,7 @@ function HeroList({ setShowMenu }) {
                         <img
                           src={process.env.PUBLIC_URL + '/assets/hero/hero-cards/' + hero.replace(/ /g, '_') + '.png'}
                           alt={hero}
+                          loading='lazy'
                         />
                       </div>
                       <span className='hero-name'>{hero}</span>
@@ -62,6 +63,7 @@ function HeroList({ setShowMenu }) {
                         <img
                           src={process.env.PUBLIC_URL + '/assets/hero/hero-cards/' + hero.replace(/ /g, '_') + '.png'}
                           alt={hero}
+                          loading='lazy'
                         />
                       </div>
                       <span className='hero-name'>{hero}</span>

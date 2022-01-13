@@ -3,18 +3,13 @@ import heroData from '../../../data/heroData';
 
 import removeHero from '../functions/removeHero';
 
-function FormationPosition({
-  validParamExists,
-  teamData,
-  setTeamData,
-  handleClick,
-  setSelectedElement,
-  position,
-}) {
+import circleDelete from '../../../assets/web-icons/circle-delete.png';
+
+function FormationPosition({ teamData, setTeamData, handleClick, setSelectedElement, position }) {
   return (
     <div
       className={
-        validParamExists || teamData.team[position].name !== ''
+        teamData.team[position].name !== ''
           ? 'position active ' + teamData.team[position].name.replace('&', '')
           : 'position'
       }
@@ -50,19 +45,18 @@ function FormationPosition({
                 heroData[teamData.team[position].name].faction.join('-') +
                 '.png'
               }
-              alt={
-                heroData[teamData.team[position].name].faction.join(' and ') +
-                ' faction icon'
-              }
+              alt={heroData[teamData.team[position].name].faction.join(' and ') + ' faction icon'}
             />
           )}
-          <i
-            className='fas fa-times-circle'
+          <img
+            className='web-icon'
+            src={circleDelete}
+            alt='delete'
             onClick={(e) => {
               removeHero(teamData, setTeamData, position);
               e.stopPropagation();
             }}
-          ></i>
+          ></img>
         </React.Fragment>
       )}
     </div>

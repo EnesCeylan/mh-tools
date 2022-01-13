@@ -12,7 +12,7 @@ function Hero({ setShowMenu }) {
   return (
     <section className={width < 1280 ? 'hero-container' : 'hero-container divided'} onClick={() => setShowMenu(false)}>
       <img
-        src={process.env.PUBLIC_URL + '/assets/hero/illustration/' + hero + (width < 600 ? '_480.png' : '_800.png')}
+        src={process.env.PUBLIC_URL + '/assets/hero/illustration/' + hero + '_800.png'}
         alt={hero}
         className={'illustration ' + heroName}
       />
