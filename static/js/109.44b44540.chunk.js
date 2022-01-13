@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkmythic_companion=self.webpackChunkmythic_companion||[]).push([[109],{109:function(e,n,a){a.r(n);a(508);var c=a(184);n.default=function(e){var n=e.setShowMenu;return(0,c.jsx)("div",{className:"error-page",onClick:function(){return n(!1)},children:(0,c.jsx)("img",{className:"error-page-img",src:"/mythic-companion/assets/Hecate404.png",alt:"Hecate looking sad"})})}}}]);
+//# sourceMappingURL=109.44b44540.chunk.js.map
