@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'Cu Yuan';
+  src: url('../../assets/fonts/FZCu-Yuan-M03.ttf');
+}
+
 .hero-list-container {
   min-height: calc(100vh - var(--header-height) - var(--footer-height));
 }
@@ -60,7 +65,8 @@
 .hero-name {
   display: block;
   width: 100%;
-  color: white;
+  font-family: 'Cu Yuan';
+  color: var(--text-color-main);
   text-align: center;
 
   cursor: default;
