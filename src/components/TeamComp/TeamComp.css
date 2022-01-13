@@ -18,7 +18,7 @@
 }
 
 /* --------------------- TOOLTIP CONTAINER --------------------- */
-.tooltip-container > .tooltip-header {
+.tooltip-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -30,12 +30,12 @@
   border-radius: 8px;
 }
 
-.tooltip-container > .tooltip-header > .wrapper {
+.tooltip-header > .wrapper {
   display: flex;
   align-items: center;
 }
 
-.tooltip-container > .tooltip-header > .wrapper > h4 {
+.tooltip-header > .wrapper > h4 {
   margin-left: 8px;
 }
 
@@ -221,18 +221,18 @@
   position: relative;
 }
 
-.build-container > .row > .position.active {
+.position.active {
   border: none;
 }
 
-.build-container > .row > .position.active > img {
+.position.active > img {
   position: absolute;
   top: -4px;
   width: 40px;
   height: 40px;
 }
 
-.build-container > .row > .position.active > i {
+.position.active > i {
   position: absolute;
   left: calc(100% - 2rem);
 
@@ -242,7 +242,7 @@
   cursor: pointer;
 }
 
-.build-container > .row > .position.active > img {
+.position.active > img {
   height: 55px;
   left: 0px;
   top: -10px;
@@ -311,16 +311,16 @@
   border-radius: 0.5rem 0.5rem 0 0;
 }
 
-.dropdown-select > .group-container {
+.group-container {
   display: flex;
   align-items: center;
 }
 
-.dropdown-select > .group-container > img {
+.group-container > img {
   width: 1.5rem;
 }
 
-.dropdown-select > .group-container > span {
+.group-container > span {
   margin-left: 1rem;
 }
 
@@ -535,7 +535,7 @@
   cursor: pointer;
 }
 
-.divinity-slots-container > button > .cost-container > img {
+button > .cost-container > img {
   width: 20px;
 }
 
@@ -657,7 +657,7 @@
   font-size: 14px;
 }
 
-.build-ui > .wrapper > .bonuses > p:not(:last-child) {
+.wrapper > .bonuses > p:not(:last-child) {
   border-bottom: 2px solid var(--color-main-accent);
   padding-bottom: 0.25rem;
   margin-bottom: 0.25rem;
@@ -743,7 +743,7 @@
     --cell-spacing: 1.25rem;
   }
 
-  .dropdown-select > .group-container > img {
+  .group-container > img {
     width: 2rem;
   }
 
