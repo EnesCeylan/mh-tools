@@ -1,17 +1,10 @@
 import FormationPosition from './FormationPosition';
 
-function BuildContainer({
-  validParamExists,
-  teamData,
-  setTeamData,
-  handleClick,
-  setSelectedElement,
-}) {
+function BuildContainer({ teamData, setTeamData, handleClick, setSelectedElement }) {
   return (
     <div className='build-container'>
       <div className='row back'>
         <FormationPosition
-          validParamExists={validParamExists}
           teamData={teamData}
           setTeamData={setTeamData}
           handleClick={handleClick}
@@ -19,7 +12,6 @@ function BuildContainer({
           position={2}
         />
         <FormationPosition
-          validParamExists={validParamExists}
           teamData={teamData}
           setTeamData={setTeamData}
           handleClick={handleClick}
@@ -27,7 +19,6 @@ function BuildContainer({
           position={3}
         />
         <FormationPosition
-          validParamExists={validParamExists}
           teamData={teamData}
           setTeamData={setTeamData}
           handleClick={handleClick}
@@ -37,7 +28,6 @@ function BuildContainer({
       </div>
       <div className='row front'>
         <FormationPosition
-          validParamExists={validParamExists}
           teamData={teamData}
           setTeamData={setTeamData}
           handleClick={handleClick}
@@ -45,7 +35,6 @@ function BuildContainer({
           position={0}
         />
         <FormationPosition
-          validParamExists={validParamExists}
           teamData={teamData}
           setTeamData={setTeamData}
           handleClick={handleClick}

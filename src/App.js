@@ -1,5 +1,5 @@
 import React, { useState, Suspense, lazy } from 'react';
-import { Routes, Route, HashRouter } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
 import './App.css';
 import Header from './components/Header';
@@ -17,7 +17,7 @@ function App() {
   const [showMenu, setShowMenu] = useState(false);
 
   return (
-    <HashRouter>
+    <React.Fragment>
       <Header showMenu={showMenu} setShowMenu={setShowMenu} />
 
       <React.Suspense
@@ -40,7 +40,7 @@ function App() {
         </Routes>
       </React.Suspense>
       <Footer setShowMenu={setShowMenu} />
-    </HashRouter>
+    </React.Fragment>
   );
 }
 

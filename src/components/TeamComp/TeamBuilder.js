@@ -7,6 +7,7 @@ import HeroBuilder from './HeroBuilder';
 
 import { useWindowSize } from 'react-use';
 import exportBuild from './functions/exportBuild';
+import calculateFactionBonus from './functions/calculateFactionBonus';
 
 const BuildContainer = React.lazy(() => import('./components/BuildContainer'));
 const BuildContainerReverse = React.lazy(() => import('./components/BuildContainerReverse'));
@@ -17,6 +18,12 @@ function TeamBuilder({ setShowMenu }) {
 
   const [reverseFormation, setReverseFormation] = useState(false);
   const [tooltip, setTooltip] = useState(false);
+
+  const [factionShadowarch, setFactionShadowarch] = useState(0);
+  const [factionLuminarch, setFactionLuminarch] = useState(0);
+  const [factionGuardian, setFactionGuardian] = useState(0);
+  const [factionVerdian, setFactionVerdian] = useState(0);
+  const [factionBonus, setFactionBonus] = useState('');
 
   const [teamData, setTeamData] = useState({
     reverseFormation: false,
@@ -68,7 +75,6 @@ function TeamBuilder({ setShowMenu }) {
   let linkDataObject;
   const urlSplit = document.URL.split('/');
   const linkParam = urlSplit[urlSplit.findIndex((param) => param === 'team-builder') + 1];
-  console.log(linkParam);
   if (linkParam) {
     try {
       linkDataObject = checkParamValidity(linkParam); //semi-shallow validity check for the object type link parameter
@@ -110,6 +116,17 @@ function TeamBuilder({ setShowMenu }) {
       }, 0);
     }
   }, []);
+
+  useEffect(() => {
+    calculateFactionBonus(
+      teamData,
+      setFactionShadowarch,
+      setFactionLuminarch,
+      setFactionGuardian,
+      setFactionVerdian,
+      setFactionBonus
+    );
+  }, [teamData.team]);
 
   useEffect(() => {
     if (width < 950) {
@@ -176,9 +193,55 @@ function TeamBuilder({ setShowMenu }) {
           {copyToClipboard && <div className='info-popup'>Link copied!</div>}
         </button>
       </div>
+      <div className='faction-bonus-container'>
+        <div className='faction-bonus-header'>
+          <h3>Faction Bonus</h3>
+        </div>
+        <div className='faction-bonus-display'>
+          <div className='active-factions'>
+            <div className='faction'>
+              <img
+                src={process.env.PUBLIC_URL + '/assets/factions/Shadowarch.png'}
+                alt='Shadowarch Faction'
+                className='active-faction-icon'
+              />
+              <p className='count'>{factionShadowarch}</p>
+            </div>
+            <div className='faction'>
+              <img
+                src={process.env.PUBLIC_URL + '/assets/factions/Luminarch.png'}
+                alt='Luminarch Faction'
+                className='active-faction-icon'
+              />
+              <p className='count'>{factionLuminarch}</p>
+            </div>
+            <div className='faction'>
+              <img
+                src={process.env.PUBLIC_URL + '/assets/factions/Guardian.png'}
+                alt='Guardian Faction'
+                className='active-faction-icon'
+              />
+              <p className='count'>{factionGuardian}</p>
+            </div>
+            <div className='faction'>
+              <img
+                src={process.env.PUBLIC_URL + '/assets/factions/Verdian.png'}
+                alt='Verdian Faction'
+                className='active-faction-icon'
+              />
+              <p className='count'>{factionVerdian}</p>
+            </div>
+          </div>
+          {factionBonus !== '' && (
+            <div className='faction-bonus-values'>
+              <p>{factionBonus.majorityVigor}</p>
+              <p>{factionBonus.minorityVigor}</p>
+            </div>
+          )}
+        </div>
+      </div>
       {!reverseFormation && (
         <BuildContainer
-          validParamExists={validParamExists}
           teamData={teamData}
           setTeamData={setTeamData}
           handleClick={handleClick}
@@ -187,7 +250,6 @@ function TeamBuilder({ setShowMenu }) {
       )}
       {reverseFormation && (
         <BuildContainerReverse
-          validParamExists={validParamExists}
           teamData={teamData}
           setTeamData={setTeamData}
           handleClick={handleClick}
@@ -241,24 +303,71 @@ function TeamBuilder({ setShowMenu }) {
         </div>
       </div>
       <div className='wrapper'>
-        {!reverseFormation && (
-          <BuildContainer
-            validParamExists={validParamExists}
-            teamData={teamData}
-            setTeamData={setTeamData}
-            handleClick={handleClick}
-            setSelectedElement={setSelectedElement}
-          />
-        )}
-        {reverseFormation && (
-          <BuildContainerReverse
-            validParamExists={validParamExists}
-            teamData={teamData}
-            setTeamData={setTeamData}
-            handleClick={handleClick}
-            setSelectedElement={setSelectedElement}
-          />
-        )}
+        <div className='formation-wrapper'>
+          <div className='faction-bonus-container'>
+            <div className='faction-bonus-header'>
+              <h3>Faction Bonus</h3>
+            </div>
+            <div className='faction-bonus-display'>
+              <div className='active-factions'>
+                <div className='faction'>
+                  <img
+                    src={process.env.PUBLIC_URL + '/assets/factions/Shadowarch.png'}
+                    alt='Shadowarch Faction'
+                    className='active-faction-icon'
+                  />
+                  <p className='count'>{factionShadowarch}</p>
+                </div>
+                <div className='faction'>
+                  <img
+                    src={process.env.PUBLIC_URL + '/assets/factions/Luminarch.png'}
+                    alt='Luminarch Faction'
+                    className='active-faction-icon'
+                  />
+                  <p className='count'>{factionLuminarch}</p>
+                </div>
+                <div className='faction'>
+                  <img
+                    src={process.env.PUBLIC_URL + '/assets/factions/Guardian.png'}
+                    alt='Guardian Faction'
+                    className='active-faction-icon'
+                  />
+                  <p className='count'>{factionGuardian}</p>
+                </div>
+                <div className='faction'>
+                  <img
+                    src={process.env.PUBLIC_URL + '/assets/factions/Verdian.png'}
+                    alt='Verdian Faction'
+                    className='active-faction-icon'
+                  />
+                  <p className='count'>{factionVerdian}</p>
+                </div>
+              </div>
+              {factionBonus !== '' && (
+                <div className='faction-bonus-values'>
+                  <p>{factionBonus.majorityVigor}</p>
+                  <p>{factionBonus.minorityVigor}</p>
+                </div>
+              )}
+            </div>
+          </div>
+          {!reverseFormation && (
+            <BuildContainer
+              teamData={teamData}
+              setTeamData={setTeamData}
+              handleClick={handleClick}
+              setSelectedElement={setSelectedElement}
+            />
+          )}
+          {reverseFormation && (
+            <BuildContainerReverse
+              teamData={teamData}
+              setTeamData={setTeamData}
+              handleClick={handleClick}
+              setSelectedElement={setSelectedElement}
+            />
+          )}
+        </div>
         <HeroBuilder
           setSelectedElement={setSelectedElement}
           selectedElement={selectedElement}

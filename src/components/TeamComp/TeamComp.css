@@ -12,7 +12,8 @@
 /* --------------------- CONTENT CONTAINERS --------------------- */
 .tooltip-container,
 .builder-buttons-container,
-.build-container {
+.build-container,
+.faction-bonus-container {
   width: calc(100% - (var(--team-builder-padding) * 2));
 }
 
@@ -61,7 +62,7 @@
 
 .builder-buttons-container > button {
   width: 120px;
-  padding: 4px;
+  padding: 6px;
   border-radius: 8px;
 
   color: white;
@@ -112,6 +113,78 @@
   border-style: solid;
   border-width: 0 8px 16px 8px;
   border-color: transparent transparent var(--color-success) transparent;
+}
+
+/* --------------------- FACTION BONUS UI --------------------- */
+.faction-bonus-container {
+  position: relative;
+  height: fit-content;
+
+  display: flex;
+  flex-direction: column;
+
+  margin-bottom: 25px;
+}
+
+.faction-bonus-header {
+  width: fit-content;
+  padding: 8px;
+  border: 2px solid var(--color-main-accent);
+
+  border-radius: 16px;
+  background-color: var(--color-main-medium);
+
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.faction-bonus-display {
+  background-color: var(--color-main-medium);
+  border: 2px solid var(--color-main-accent);
+  border-radius: 16px;
+  position: relative;
+
+  top: 24px;
+}
+
+.faction {
+  width: 20%;
+  justify-content: space-around;
+  padding-right: 8px;
+}
+
+.faction:not(:last-child) {
+  border-right: 2px solid var(--color-main-accent);
+}
+
+.active-factions,
+.faction {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 24px;
+}
+
+.active-factions {
+  justify-content: space-evenly;
+  padding: 16px 4px 8px;
+  margin-top: 8px;
+}
+
+.active-faction-icon {
+  width: 29px;
+}
+
+.faction-bonus-values {
+  padding: 8px 4px;
+  text-align: center;
+}
+
+.faction-bonus-values > p:first-child {
+  margin-bottom: 8px;
 }
 
 /* --------------------- FORMATION GRID --------------------- */
@@ -180,6 +253,7 @@
 /* ------------------------------- HERO BUILDER MODAL ------------------------------- */
 .builder-screen {
   position: fixed;
+  z-index: 10;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -623,9 +697,7 @@
 /* --------------------- MEDIA QUERIES --------------------- */
 @media screen and (min-width: 680px) and (orientation: portrait) {
   .build-container {
-    margin-top: calc(
-      (100% - calc(var(--cell-width) * 3 + var(--cell-spacing) * 2)) / 2
-    );
+    margin-top: calc((100% - calc(var(--cell-width) * 3 + var(--cell-spacing) * 2)) / 2);
   }
 }
 
@@ -654,11 +726,14 @@
   }
 
   .build-container > .row > .position.active > img {
-    
     height: 55px;
     left: -10px;
     top: -10px;
     width: 55px;
+  }
+
+  .active-faction-icon {
+    width: 36px;
   }
 }
 
@@ -745,9 +820,28 @@
     top: -10px;
     width: 70px;
   }
+
+  .faction {
+    justify-content: center;
+  }
+
+  .active-faction-icon {
+    width: 48px;
+  }
 }
 
 @media screen and (min-width: 950px) {
+  .formation-wrapper {
+    width: 390px;
+    display: flex;
+    flex-direction: column;
+    gap: 104px;
+  }
+
+  .active-faction-icon {
+    width: 32px;
+  }
+
   .build-container {
     --cell-width: 150px;
     --cell-spacing: 1rem;
@@ -856,6 +950,14 @@
 @media screen and (min-width: 1200px) {
   .team-builder-container {
     gap: 60px;
+  }
+
+  .active-faction-icon {
+    width: 40px;
+  }
+
+  .faction-bonus-container {
+    width: 390px;
   }
 
   .build-container {
