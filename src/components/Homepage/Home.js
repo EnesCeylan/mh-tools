@@ -34,7 +34,7 @@ const Home = () => {
         src={
           process.env.PUBLIC_URL +
           '/assets/Background/' +
-          (width <= 384 ? 'Banner_384' : width <= 640 ? 'Banner_640' : width <= 1280 ? 'Banner_1280' : 'Banner_1920') +
+          (width <= 640 ? 'Banner_640' : width <= 1280 ? 'Banner_1280' : 'Banner_1920') +
           '.png'
         }
         alt='homepage banner'

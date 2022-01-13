@@ -15,12 +15,14 @@ export const calculateFactionBonus = (
 
   const bonuses = {
     majorityVigor: [
+      '',
       'increases 4% ATK and DEF',
       'increases 8% ATK and DEF',
       'increases 12% ATK and DEF',
       'increases 16% ATK and DEF',
     ],
     minorityVigor: [
+      '',
       'increases 8% Final Damage',
       'increases 12% Final Damage',
       'increases 16% Final Damage',
@@ -45,7 +47,7 @@ export const calculateFactionBonus = (
 
     const bonusArr = [shadowarch, luminarch, guardian, verdian].sort((a, b) => b - a);
     setFactionBonus({
-      majorityVigor: bonuses.majorityVigor[bonusArr[0] - 1 === 4 ? 3 : bonusArr[0] - 1],
+      majorityVigor: bonuses.majorityVigor[bonusArr[0] - 1],
       minorityVigor: bonuses.minorityVigor[bonusArr[1] - 1],
     });
   }

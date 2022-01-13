@@ -1,9 +1,10 @@
-import { useState } from 'react';
+import React, { lazy, useState } from 'react';
 import TierListData from '../../data/TierListData';
 import './Tierlist.css';
-import TierlistHeroBox from './TierlistHeroBox';
 
 import { Link } from 'react-router-dom';
+
+const TierlistHeroBox = React.lazy(() => import('./TierlistHeroBox'));
 
 const Tierlist = () => {
   const types = ['PvP', 'Early', 'Mid', 'Late', 'Boss'];
