@@ -1,3 +1,5 @@
+import caret from '../../../assets/web-icons/caret.png';
+
 function ArtifactDropdown({
   artifactDropdown,
   setArtifactDropdown,
@@ -37,36 +39,20 @@ function ArtifactDropdown({
         <div className='group-container'>
           {selectedArtifact && (
             <img
-              src={
-                process.env.PUBLIC_URL +
-                '/assets/artifacts/' +
-                selectedArtifact.replace(/ /g, '_') +
-                '.png'
-              }
+              src={process.env.PUBLIC_URL + '/assets/artifacts/' + selectedArtifact.replace(/ /g, '_') + '.png'}
               alt={selectedArtifact}
             />
           )}
-          <span className='select'>
-            {selectedArtifact ? selectedArtifact : 'Choose artifact'}
-          </span>
+          <span className='select'>{selectedArtifact ? selectedArtifact : 'Choose artifact'}</span>
         </div>
-        <i className='fa fa-caret-down icon'></i>
+        <img className='web-icon' src={caret} alt='caret' />
       </div>
       <div className='dropdown-list artifact' id='artifact-dropdown'>
         {artifacts.map((artifact, index) => {
           return (
-            <div
-              className='dropdown-list-item'
-              key={index}
-              onClick={() => setSelectedArtifact(artifact)}
-            >
+            <div className='dropdown-list-item' key={index} onClick={() => setSelectedArtifact(artifact)}>
               <img
-                src={
-                  process.env.PUBLIC_URL +
-                  '/assets/artifacts/' +
-                  artifact.replace(/ /g, '_') +
-                  '.png'
-                }
+                src={process.env.PUBLIC_URL + '/assets/artifacts/' + artifact.replace(/ /g, '_') + '.png'}
                 alt={artifact}
               />
               <span>{artifact}</span>

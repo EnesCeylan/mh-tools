@@ -1,21 +1,7 @@
-function RuneDropdown({
-  runeDropdown,
-  setRuneDropdown,
-  selectedRune,
-  setSelectedRune,
-  setArtifactDropdown,
-  width,
-}) {
-  const runes = [
-    'Earth',
-    'Fire',
-    'Thunder',
-    'Air',
-    'Water',
-    'Light',
-    'Forest',
-    'Dark',
-  ];
+import caret from '../../../assets/web-icons/caret.png';
+
+function RuneDropdown({ runeDropdown, setRuneDropdown, selectedRune, setSelectedRune, setArtifactDropdown, width }) {
+  const runes = ['Earth', 'Fire', 'Thunder', 'Air', 'Water', 'Light', 'Forest', 'Dark'];
 
   return (
     <div
@@ -37,35 +23,17 @@ function RuneDropdown({
       <div className='dropdown-select'>
         <div className='group-container'>
           {selectedRune && (
-            <img
-              src={
-                process.env.PUBLIC_URL +
-                '/assets/runes/' +
-                selectedRune +
-                '.png'
-              }
-              alt={selectedRune}
-            />
+            <img src={process.env.PUBLIC_URL + '/assets/runes/' + selectedRune + '.png'} alt={selectedRune} />
           )}
-          <span className='select'>
-            {selectedRune ? selectedRune : 'Choose Rune'}
-          </span>
+          <span className='select'>{selectedRune ? selectedRune : 'Choose Rune'}</span>
         </div>
-        <i className='fa fa-caret-down icon'></i>
+        <img className='web-icon' src={caret} alt='caret' />
       </div>
       <div className='dropdown-list rune' id='rune-dropdown'>
         {runes.map((rune, index) => {
           return (
-            <div
-              className='dropdown-list-item'
-              key={index}
-              onClick={() => setSelectedRune(rune)}
-            >
-              <img
-                className='rune-icon'
-                src={process.env.PUBLIC_URL + '/assets/runes/' + rune + '.png'}
-                alt={rune}
-              />
+            <div className='dropdown-list-item' key={index} onClick={() => setSelectedRune(rune)}>
+              <img className='rune-icon' src={process.env.PUBLIC_URL + '/assets/runes/' + rune + '.png'} alt={rune} />
               <span>{rune}</span>
             </div>
           );

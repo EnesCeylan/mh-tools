@@ -48,10 +48,18 @@
   border-radius: 8px 8px 0 0;
 }
 
+.tooltip-container.active > .tooltip-header > .wrapper > .web-icon {
+  transform: rotate(90deg);
+}
+
 .tooltip-container.active > p {
   display: block;
   border: 2px solid white;
   border-radius: 0 0 8px 8px;
+}
+
+.web-icon {
+  width: 24px;
 }
 
 /* --------------------- SWITCH AND EXPORT BUTTONS --------------------- */
@@ -77,6 +85,10 @@
   background-color: white;
 
   font-weight: 500;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .builder-buttons-container > button:nth-child(2) > .info-popup {
@@ -225,28 +237,22 @@
   border: none;
 }
 
-.position.active > img {
+.position.active > img:first-child {
   position: absolute;
   top: -4px;
-  width: 40px;
-  height: 40px;
-}
-
-.position.active > i {
-  position: absolute;
-  left: calc(100% - 2rem);
-
-  font-size: 2rem;
-  color: var(--color-danger);
-
-  cursor: pointer;
-}
-
-.position.active > img {
   height: 55px;
   left: 0px;
   top: -10px;
   width: 55px;
+}
+
+.position.active > .web-icon {
+  position: absolute;
+  left: calc(100% - 1.75rem);
+
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
 }
 
 /* ---------------------------------------------------------------------------------------------------------------------------------- */
@@ -324,11 +330,12 @@
   margin-left: 1rem;
 }
 
-.dropdown-select > i {
+.dropdown-select > img {
+  width: 24px;
   transition: transform 0.2s linear;
 }
 
-.dropdown.active .dropdown-select > i {
+.dropdown.active .dropdown-select > img {
   transform: rotate(180deg);
 }
 
@@ -437,11 +444,12 @@
   margin-left: 1rem;
 }
 
-.build-dropdown > i {
+.build-dropdown > img {
+  width: 24px;
   transition: transform 0.2s linear;
 }
 
-.build-dropdown.active > i {
+.build-dropdown.active > img {
   transform: rotate(90deg);
   transition: transform 0.2s linear;
 }
@@ -702,7 +710,7 @@ button > .cost-container > img {
 }
 
 @media screen and (min-width: 350px) {
-  .build-container > .row > .position.active > img {
+  .build-container > .row > .position.active > img:first-child {
     height: 55px;
     left: -10px;
     top: -10px;
@@ -725,7 +733,7 @@ button > .cost-container > img {
     font-size: 24px;
   }
 
-  .build-container > .row > .position.active > img {
+  .build-container > .row > .position.active > img:first-child {
     height: 55px;
     left: -10px;
     top: -10px;
@@ -763,7 +771,7 @@ button > .cost-container > img {
     margin-bottom: 2.5rem;
   }
 
-  .build-container > .row > .position.active > img {
+  .build-container > .row > .position.active > img:first-child {
     height: 60px;
     left: -10px;
     top: -10px;
@@ -772,6 +780,10 @@ button > .cost-container > img {
 }
 
 @media screen and (min-width: 680px) {
+  .web-icon {
+    width: 32px;
+  }
+
   .build-container {
     --cell-width: 200px;
     --cell-spacing: 1.5rem;
@@ -810,11 +822,9 @@ button > .cost-container > img {
 
   .build-container > .row > .position.active > i {
     left: calc(100% - 30px);
-
-    font-size: 2.5rem;
   }
 
-  .build-container > .row > .position.active > img {
+  .build-container > .row > .position.active > img:first-child {
     height: 70px;
     left: -10px;
     top: -10px;
@@ -939,7 +949,7 @@ button > .cost-container > img {
     margin: 0;
     padding: 1.5rem;
   }
-  .build-container > .row > .position.active > img {
+  .build-container > .row > .position.active > img:first-child {
     height: 55px;
     left: -10px;
     top: -10px;
@@ -985,7 +995,7 @@ button > .cost-container > img {
   .build-ui-desktop > span {
     font-size: 16px;
   }
-  .build-container > .row > .position.active > img {
+  .build-container > .row > .position.active > img:first-child {
     height: 60px;
     left: -10px;
     top: -10px;

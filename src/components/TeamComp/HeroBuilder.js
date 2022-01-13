@@ -6,13 +6,9 @@ import ArtifactDropdown from './components/ArtifactDropdown';
 import DivinityBuilder from './components/DivinityBuilder';
 import WeaponBuilder from './components/WeaponBuilder';
 
-function HeroBuilder({
-  setSelectedElement,
-  selectedElement,
-  teamData,
-  setTeamData,
-  width,
-}) {
+import chevron from '../../assets/web-icons/chevron.png';
+
+function HeroBuilder({ setSelectedElement, selectedElement, teamData, setTeamData, width }) {
   const [dropdown, setDropdown] = useState(false);
 
   //selections
@@ -61,13 +57,7 @@ function HeroBuilder({
   }, [selectedElement]);
 
   return (
-    <div
-      className={
-        selectedElement === ''
-          ? 'build-ui-desktop inactive'
-          : 'build-ui-desktop'
-      }
-    >
+    <div className={selectedElement === '' ? 'build-ui-desktop inactive' : 'build-ui-desktop'}>
       {selectedElement === '' ? (
         <h2>Click on any cell to start!</h2>
       ) : (
@@ -111,17 +101,11 @@ function HeroBuilder({
             />
           </div>
           <div
-            className={
-              divinityDropdown
-                ? 'build-category divinity active'
-                : 'build-category divinity'
-            }
+            className={divinityDropdown ? 'build-category divinity active' : 'build-category divinity'}
             id='divinity-dropdown'
           >
             <div
-              className={
-                divinityDropdown ? 'build-dropdown active' : 'build-dropdown'
-              }
+              className={divinityDropdown ? 'build-dropdown active' : 'build-dropdown'}
               onClick={() => {
                 setDivinityDropdown(!divinityDropdown);
                 setTimeout(() => {
@@ -132,7 +116,7 @@ function HeroBuilder({
                 }, 0);
               }}
             >
-              <i className='fas fa-angle-right'></i>
+              <img className='web-icon' src={chevron} alt='chevron' />
               <span>Divinity build</span>
             </div>
             {/* --------------------------- Build UI Here --------------------------- */}
@@ -151,19 +135,11 @@ function HeroBuilder({
             </div>
           </div>
           <div
-            className={
-              weaponBuilderDropdown
-                ? 'build-category weapon active'
-                : 'build-category weapon'
-            }
+            className={weaponBuilderDropdown ? 'build-category weapon active' : 'build-category weapon'}
             id='weapon-dropdown'
           >
             <div
-              className={
-                weaponBuilderDropdown
-                  ? 'build-dropdown active'
-                  : 'build-dropdown'
-              }
+              className={weaponBuilderDropdown ? 'build-dropdown active' : 'build-dropdown'}
               onClick={() => {
                 setWeaponBuilderDropdown(!weaponBuilderDropdown);
                 if (width < 950) {
@@ -176,7 +152,7 @@ function HeroBuilder({
                 }
               }}
             >
-              <i className='fas fa-angle-right' aria-hidden='true'></i>
+              <img className='web-icon' src={chevron} alt='chevron' />
               <span>Weapon build</span>
             </div>
             {/* --------------------------- Build UI Here --------------------------- */}

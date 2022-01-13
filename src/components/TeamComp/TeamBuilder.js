@@ -9,6 +9,10 @@ import { useWindowSize } from 'react-use';
 import exportBuild from './functions/exportBuild';
 import calculateFactionBonus from './functions/calculateFactionBonus';
 
+import exportIcon from '../../assets/web-icons/export.png';
+import chevron from '../../assets/web-icons/chevron.png';
+import questionMark from '../../assets/web-icons/circle-question.png';
+
 const BuildContainer = React.lazy(() => import('./components/BuildContainer'));
 const BuildContainerReverse = React.lazy(() => import('./components/BuildContainerReverse'));
 const TeamBuilderModal = React.lazy(() => import('../Modals/TeamBuilderModal'));
@@ -168,10 +172,10 @@ function TeamBuilder({ setShowMenu }) {
       <div className={tooltip ? 'tooltip-container active' : 'tooltip-container'} onClick={() => setTooltip(!tooltip)}>
         <div className='tooltip-header'>
           <div className='wrapper'>
-            <i className='fas fa-chevron-right'></i>
+            <img className='web-icon' src={chevron} alt='chevron' />
             <h4>How it works</h4>
           </div>
-          <i className='far fa-question-circle'></i>
+          <img className='web-icon' src={questionMark} alt='question mark' />
         </div>
         <p>
           Click on a position frame to select and customize your hero. Clicking on "export" button will automatically
@@ -189,7 +193,7 @@ function TeamBuilder({ setShowMenu }) {
             showPopup();
           }}
         >
-          Export Team <i className='fas fa-link'></i>
+          Export Team <img className='web-icon' src={exportIcon} alt='export' />
           {copyToClipboard && <div className='info-popup'>Link copied!</div>}
         </button>
       </div>
@@ -276,10 +280,10 @@ function TeamBuilder({ setShowMenu }) {
         >
           <div className='tooltip-header'>
             <div className='wrapper'>
-              <i className='fas fa-chevron-right'></i>
+              <img className='web-icon' src={chevron} alt='chevron' />
               <h4>How it works</h4>
             </div>
-            <i className='far fa-question-circle'></i>
+            <img className='web-icon' src={questionMark} alt='question mark' />
           </div>
           <p>
             Select the slots to open the character selection to select and customize your hero. Clicking on "export"
@@ -297,7 +301,7 @@ function TeamBuilder({ setShowMenu }) {
               showPopup();
             }}
           >
-            Export Team <i className='fas fa-link'></i>
+            Export Team <img className='web-icon' src={exportIcon} alt='export' />
             {copyToClipboard && <div className='info-popup'>Link copied!</div>}
           </button>
         </div>
