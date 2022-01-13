@@ -53,6 +53,7 @@
 .heropage-type-button:hover {
   color: #000000;
   background-color: white;
+  transition: all 0.2s linear 0.1s;
 }
 
 .illustration {

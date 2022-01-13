@@ -69,7 +69,7 @@
   height: 10px;
 }
 .official-links-slides::-webkit-scrollbar-thumb {
-  background: black;
+  background: rgb(214, 214, 214);
   border-radius: 10px;
 }
 .official-links-slides::-webkit-scrollbar-track {
@@ -97,7 +97,9 @@
 
 .social  {
   border-radius: 30px;
-  width: 100%;
+  width: 17em;
+  max-width: 100%;
+  height: auto;
 }
 
 @media screen and (min-width: 520px) {
@@ -113,6 +115,10 @@
 
   .home-container > h3 {
     font-size: 24px;
+  }
+
+  .social {
+    width: 25em;
   }
 }
 
@@ -135,4 +141,5 @@
     padding: 1.5rem 0;
     margin: 1.5rem 0;
   }
+  
 }

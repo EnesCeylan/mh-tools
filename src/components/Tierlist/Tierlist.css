@@ -21,6 +21,13 @@
   height: auto;
 }
 
+.tierlist-type-button:hover {
+  -webkit-filter: drop-shadow(0px 0px 8px rgb(115, 239, 255));
+  filter: drop-shadow(0px 0px 8px rgb(115, 239, 255));
+
+  transition: all 0.2s linear 0.1s;
+}
+
 .tierlist-grade-container {
   display: flex;
   flex-direction: row;
@@ -62,6 +69,8 @@
   text-align: center;
   line-height: 10px;
   height: 10px;
+
+  transition: all 0.2s linear 0.1s;
 }
 
 .grade {
@@ -70,6 +79,25 @@
   margin-right: auto;
   width: 100%;
   padding-top: 0.5em;
+}
+
+.tierlist-hero-box:hover .tierlist-hero-image:hover,
+.tierlist-hero-box:active .tierlist-hero-image:active {
+  -webkit-filter: drop-shadow(0px 0px 8px yellow);
+  filter: drop-shadow(0px 0px 8px yellow);
+
+  transition: all 0.2s linear 0.1s;
+}
+
+.tierlist-hero-box:hover .tierlist-hero-image {
+  transform: translateY(-1rem);
+  transition: transform 0.2s linear 0.1s;
+}
+
+.tierlist-hero-box:hover:hover .tierlist-hero-name,
+.tierlist-hero-box:hover:active .tierlist-hero-name {
+  font-weight: bold;
+  transform: translateY(-1.25rem);
 }
 
 /* small tablet styles */

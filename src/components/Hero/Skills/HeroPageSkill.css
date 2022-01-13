@@ -24,6 +24,7 @@
 
   .hero-skill-icon:hover, .hero-skill-icon:active, .hero-skill-icon:focus {
     filter: drop-shadow(0px 0px 5px #00eeff);
+    transition: all 0.2s linear 0.1s;
   }
 
   .skill-header {
