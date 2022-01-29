@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/mythic-companion/static/css/main.3c309c32.css",
-    "main.js": "/mythic-companion/static/js/main.c119b0df.js",
+    "main.js": "/mythic-companion/static/js/main.feaa61c9.js",
     "static/css/908.9b59291b.chunk.css": "/mythic-companion/static/css/908.9b59291b.chunk.css",
     "static/js/908.fad8e359.chunk.js": "/mythic-companion/static/js/908.fad8e359.chunk.js",
     "static/css/931.4ab8097d.chunk.css": "/mythic-companion/static/css/931.4ab8097d.chunk.css",
@@ -9,9 +9,9 @@
     "static/css/56.fbe77d5f.chunk.css": "/mythic-companion/static/css/56.fbe77d5f.chunk.css",
     "static/js/56.13f4f194.chunk.js": "/mythic-companion/static/js/56.13f4f194.chunk.js",
     "static/css/354.3bd25607.chunk.css": "/mythic-companion/static/css/354.3bd25607.chunk.css",
-    "static/js/354.fe8bb0a4.chunk.js": "/mythic-companion/static/js/354.fe8bb0a4.chunk.js",
+    "static/js/354.0dcc2da8.chunk.js": "/mythic-companion/static/js/354.0dcc2da8.chunk.js",
     "static/css/342.f7f69e81.chunk.css": "/mythic-companion/static/css/342.f7f69e81.chunk.css",
-    "static/js/342.ed3179d1.chunk.js": "/mythic-companion/static/js/342.ed3179d1.chunk.js",
+    "static/js/342.ad510d13.chunk.js": "/mythic-companion/static/js/342.ad510d13.chunk.js",
     "static/js/109.44b44540.chunk.js": "/mythic-companion/static/js/109.44b44540.chunk.js",
     "static/css/94.628fda31.chunk.css": "/mythic-companion/static/css/94.628fda31.chunk.css",
     "static/js/94.8298531d.chunk.js": "/mythic-companion/static/js/94.8298531d.chunk.js",
@@ -19,7 +19,7 @@
     "static/css/498.0ed5984c.chunk.css": "/mythic-companion/static/css/498.0ed5984c.chunk.css",
     "static/js/498.3daa60b0.chunk.js": "/mythic-companion/static/js/498.3daa60b0.chunk.js",
     "static/css/71.47d00d43.chunk.css": "/mythic-companion/static/css/71.47d00d43.chunk.css",
-    "static/js/71.92dafec9.chunk.js": "/mythic-companion/static/js/71.92dafec9.chunk.js",
+    "static/js/71.07b61a5a.chunk.js": "/mythic-companion/static/js/71.07b61a5a.chunk.js",
     "static/js/820.6e83bbb7.chunk.js": "/mythic-companion/static/js/820.6e83bbb7.chunk.js",
     "static/js/821.7b17dc6d.chunk.js": "/mythic-companion/static/js/821.7b17dc6d.chunk.js",
     "static/js/905.9fcbba03.chunk.js": "/mythic-companion/static/js/905.9fcbba03.chunk.js",
@@ -91,7 +91,7 @@
     "static/media/Yellow_Unlit.png": "/mythic-companion/static/media/Yellow_Unlit.490efd1cb167ef078139.png",
     "index.html": "/mythic-companion/index.html",
     "main.3c309c32.css.map": "/mythic-companion/static/css/main.3c309c32.css.map",
-    "main.c119b0df.js.map": "/mythic-companion/static/js/main.c119b0df.js.map",
+    "main.feaa61c9.js.map": "/mythic-companion/static/js/main.feaa61c9.js.map",
     "908.9b59291b.chunk.css.map": "/mythic-companion/static/css/908.9b59291b.chunk.css.map",
     "908.fad8e359.chunk.js.map": "/mythic-companion/static/js/908.fad8e359.chunk.js.map",
     "931.4ab8097d.chunk.css.map": "/mythic-companion/static/css/931.4ab8097d.chunk.css.map",
@@ -99,9 +99,9 @@
     "56.fbe77d5f.chunk.css.map": "/mythic-companion/static/css/56.fbe77d5f.chunk.css.map",
     "56.13f4f194.chunk.js.map": "/mythic-companion/static/js/56.13f4f194.chunk.js.map",
     "354.3bd25607.chunk.css.map": "/mythic-companion/static/css/354.3bd25607.chunk.css.map",
-    "354.fe8bb0a4.chunk.js.map": "/mythic-companion/static/js/354.fe8bb0a4.chunk.js.map",
+    "354.0dcc2da8.chunk.js.map": "/mythic-companion/static/js/354.0dcc2da8.chunk.js.map",
     "342.f7f69e81.chunk.css.map": "/mythic-companion/static/css/342.f7f69e81.chunk.css.map",
-    "342.ed3179d1.chunk.js.map": "/mythic-companion/static/js/342.ed3179d1.chunk.js.map",
+    "342.ad510d13.chunk.js.map": "/mythic-companion/static/js/342.ad510d13.chunk.js.map",
     "109.44b44540.chunk.js.map": "/mythic-companion/static/js/109.44b44540.chunk.js.map",
     "94.628fda31.chunk.css.map": "/mythic-companion/static/css/94.628fda31.chunk.css.map",
     "94.8298531d.chunk.js.map": "/mythic-companion/static/js/94.8298531d.chunk.js.map",
@@ -109,7 +109,7 @@
     "498.0ed5984c.chunk.css.map": "/mythic-companion/static/css/498.0ed5984c.chunk.css.map",
     "498.3daa60b0.chunk.js.map": "/mythic-companion/static/js/498.3daa60b0.chunk.js.map",
     "71.47d00d43.chunk.css.map": "/mythic-companion/static/css/71.47d00d43.chunk.css.map",
-    "71.92dafec9.chunk.js.map": "/mythic-companion/static/js/71.92dafec9.chunk.js.map",
+    "71.07b61a5a.chunk.js.map": "/mythic-companion/static/js/71.07b61a5a.chunk.js.map",
     "820.6e83bbb7.chunk.js.map": "/mythic-companion/static/js/820.6e83bbb7.chunk.js.map",
     "821.7b17dc6d.chunk.js.map": "/mythic-companion/static/js/821.7b17dc6d.chunk.js.map",
     "905.9fcbba03.chunk.js.map": "/mythic-companion/static/js/905.9fcbba03.chunk.js.map",
@@ -117,6 +117,6 @@
   },
   "entrypoints": [
     "static/css/main.3c309c32.css",
-    "static/js/main.c119b0df.js"
+    "static/js/main.feaa61c9.js"
   ]
 }
