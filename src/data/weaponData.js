@@ -266,7 +266,7 @@ const weaponData = {
       lv200: "Increases target's healing received by 50%.",
       lv300: "Reduces target's healing received by 50%.",
       lv400:
-        'Increases ally Heroes Attack by 20% when their Health is above 50%.',
+        'Increases ally Heroes Attack by 10% when their Health is above 50%.',
     },
   },
   Archimedes: {
@@ -339,6 +339,19 @@ const weaponData = {
       lv200: 'Increases bounces by 2 when using "Drifting Petals".',
       lv300: 'Increases the duration of "Holy Fluorescence" to 10s.',
       lv400: 'Increases bounces by 3 when using "Drifting Petals".',
+    },
+  },
+  Poseidon: {
+    firstWeapon: {
+      name: 'Oceansoul Trident',
+      lv100:
+        'Recovers 0.4% of max Health every time "Tidal Wall" shield is hit.',
+      lv200:
+        'Recovers 0.8% of max Health every time "Tidal Wall" shield is hit.',
+      lv300:
+        'Recovers 1.2% of max Health every time "Tidal Wall" shield is hit.',
+      lv400:
+        'When an enemy unit is hit by "Whirlpool of Wrath", decrease their Attack Speed by 50% for 5s.',
     },
   },
 };

@@ -62,7 +62,9 @@ function DivinityBuilder({
     } else {
       //If there currently is a selected node, check if total is still in range of cost limit.
       if (
-        currentTotalCost + divinityNotableData[notable].cost - divinityNotableData[selectedNodes[selectionMode]].cost <=
+        currentTotalCost +
+          divinityNotableData[notable].cost -
+          divinityNotableData[selectedNodes[selectionMode]].cost <=
         6
       ) {
         return true;
@@ -92,7 +94,9 @@ function DivinityBuilder({
       </div>
       {warning && (
         <React.Fragment>
-          <span className={warning ? 'divinity-warning active' : 'divinity-warning'}>
+          <span
+            className={warning ? 'divinity-warning active' : 'divinity-warning'}
+          >
             Divinity talent cost cannot exceed 6.
           </span>
         </React.Fragment>
@@ -117,10 +121,12 @@ function DivinityBuilder({
                 }, 0);
               } else {
                 setTimeout(() => {
-                  document.getElementById('divinity-dropdown-list').scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'center',
-                  });
+                  document
+                    .getElementById('divinity-dropdown-list')
+                    .scrollIntoView({
+                      behavior: 'smooth',
+                      block: 'center',
+                    });
                 }, 0);
               }
             }
@@ -128,7 +134,9 @@ function DivinityBuilder({
         >
           <div className='dropdown-select divinity'>
             <span className='select'>
-              {selectedNodes[selectionMode] ? selectedNodes[selectionMode] : 'Choose divinity notable'}
+              {selectedNodes[selectionMode]
+                ? selectedNodes[selectionMode]
+                : 'Choose divinity notable'}
             </span>
             <img className='web-icon' src={caret} alt='caret' />
           </div>
@@ -137,12 +145,26 @@ function DivinityBuilder({
               .filter((node) => !selectedNodes.includes(node))
               .map((notable, index) => {
                 return (
-                  <div className='dropdown-list-item divinity' onClick={() => handleSelection(notable)} key={index}>
+                  <div
+                    className='dropdown-list-item divinity'
+                    onClick={() => handleSelection(notable)}
+                    key={index}
+                  >
                     <img
-                      src={process.env.PUBLIC_URL + '/assets/divinity/nodes/' + notable.replace(/ /g, '_') + '.png'}
+                      src={
+                        process.env.PUBLIC_URL +
+                        '/assets/divinity/nodes/' +
+                        notable.replace(/ /g, '_') +
+                        '.png'
+                      }
                       alt={notable}
                     />
-                    <span>{notable + '  (+' + divinityNotableData[notable].cost + ')'}</span>
+                    <span>
+                      {notable +
+                        '  (+' +
+                        divinityNotableData[notable].cost +
+                        ')'}
+                    </span>
                   </div>
                 );
               })}

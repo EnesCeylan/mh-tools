@@ -1,6 +1,5 @@
 const heroData = {
   // ----------------------------------- UR -----------------------------------
-
   Lucifer: {
     rarity: 'UR',
     faction: ['Luminarch', 'Shadowarch'],
@@ -16,7 +15,12 @@ const heroData = {
     role: 'Support',
     runes: ['Dark', 'Forest', 'Air'],
     artifacts: ['Excalibur'],
-    divinityNotables: ['Inspiration', 'Death Waiver', 'Excitement', 'Collective Fervor'],
+    divinityNotables: [
+      'Inspiration',
+      'Death Waiver',
+      'Excitement',
+      'Collective Fervor',
+    ],
   },
   Typhon: {
     rarity: 'UR',
@@ -246,6 +250,14 @@ const heroData = {
     runes: ['Fire', 'Forest'],
     artifacts: ['Yasakani Magatama', 'Sudarshana Chakra'],
     divinityNotables: ['Spotlight', 'Maestro', 'Aurora', 'Torment'],
+  },
+  Poseidon: {
+    rarity: 'SSR',
+    faction: ['Verdian'],
+    role: 'Tank',
+    runes: ['Earth'],
+    artifacts: ['Aegis Shield'],
+    divinityNotables: ['Recovery', 'Colossus', 'Spotlight'],
   },
 };
 

@@ -351,7 +351,7 @@ const skillData = {
           { type: 'value', content: '15%' },
           {
             type: 'text',
-            content: " of Typhon's max Health as True Damage to all enemies.",
+            content: " enemys' Max Health as True Damage to themselves.",
           },
         ],
         lv2: "Additionally, increase Typhon's Defense by 100%",
@@ -1508,8 +1508,10 @@ const skillData = {
           {
             type: 'text',
             content:
-              'Medusa uses her eyes, petrifying all enemies (facing in her direction) for ',
+              'Medusa uses her eyes, petrifying all enemies (facing in her direction) and increasing their damage taken by ',
           },
+          { type: 'value', content: '30%' },
+          { type: 'text', content: ' for ' },
           { type: 'value', content: '3s' },
           { type: 'text', content: '.' },
         ],
@@ -1633,7 +1635,7 @@ const skillData = {
           },
           { type: 'value', content: '100%' },
           { type: 'text', content: " of Anubis' attributes but only " },
-          { type: 'value', content: '30%' },
+          { type: 'value', content: '50%' },
           {
             type: 'text',
             content: ' of his Health. There can be a maximum of ',
@@ -1916,7 +1918,7 @@ const skillData = {
           {
             type: 'text',
             content:
-              'When Lu Bu loses a certain amount of Health, he gains a buff of Physical Resistance up to ',
+              'When Lu Bu loses a certain amount of Health, he gains a buff of Physical and Magical Resistance up to ',
           },
           { type: 'value', content: '50%' },
           { type: 'text', content: ', and Lifesteal up to ' },
@@ -1924,7 +1926,7 @@ const skillData = {
           { type: 'text', content: '.' },
         ],
         lv2: 'Gains a maximum of 60% Lifesteal',
-        lv3: 'Gains a maximum of 60% Physical Resistance',
+        lv3: 'Gains a maximum of 60% Physical and Magical Resistance',
         lv4: 'Gains a maximum of 65% Lifesteal',
       },
     },
@@ -2992,6 +2994,115 @@ const skillData = {
       },
     },
   },
+  Poseidon: {
+    ultimate: {
+      type: 'Ultimate',
+      name: 'Whirlpool of Wrath',
+      description: {
+        lv1: [
+          {
+            type: 'text',
+            content:
+              'Poseidon creates a whirlpool in the area with the most enemies for ',
+          },
+          { type: 'value', content: '5s' },
+          {
+            type: 'text',
+            content:
+              '. The whirlpool pulls enemies into the center of it, dealing ',
+          },
+          { type: 'value', content: '50%' },
+          {
+            type: 'text',
+            content:
+              ' damage every second. At the end, a giant fish is summoned to deal 2x ',
+          },
+          { type: 'value', content: '50%' },
+          {
+            type: 'text',
+            content: ' damage and knock all targets into the air.',
+          },
+        ],
+        lv2: 'Deals 55% damage every second',
+        lv3: "Increases the fish's damage dealt to 60%",
+        lv4: 'Deals 60% damage every second',
+      },
+    },
+    'skill two': {
+      type: 'Active',
+      name: 'Undercurrent',
+      description: {
+        lv1: [
+          {
+            type: 'text',
+            content:
+              'Poseidon releases an undercurrent to the area where the enemies are most dense, dealing ',
+          },
+          { type: 'value', content: '150%' },
+          { type: 'text', content: ' damage after ' },
+          { type: 'value', content: '1s' },
+          {
+            type: 'text',
+            content:
+              ' of delay. Additionally, targets are knocked into the air and stunned for ',
+          },
+          { type: 'value', content: '1s' },
+          { type: 'text', content: '.' },
+        ],
+        lv2: 'Deals 160% damage',
+        lv3: 'Stuns the targets for 1.5s',
+        lv4: 'Deals 170% damage',
+      },
+    },
+    'skill three': {
+      type: 'Passive',
+      name: 'Tidal Wall',
+      description: {
+        lv1: [
+          {
+            type: 'text',
+            content:
+              'Poseidon protects himself with the tides. If he takes damage exceeding ',
+          },
+          { type: 'value', content: '10%' },
+          {
+            type: 'text',
+            content: ' of his current Health, the excess will be reduced by ',
+          },
+          { type: 'value', content: '40%' },
+          { type: 'text', content: '.' },
+        ],
+        lv2: 'The excess is reduced by 50%',
+        lv3: 'The protecting is activated when the damage inflicted is higher than 8% of his current Health',
+        lv4: 'The excess is reduced by 60%',
+      },
+    },
+    'skill four': {
+      type: 'Passive',
+      name: 'Bringer of Tides',
+      description: {
+        lv1: [
+          { type: 'text', content: 'Every ' },
+          { type: 'value', content: '8s' },
+          {
+            type: 'text',
+            content: ", Poseidon's auto-attack will deal an additional ",
+          },
+          { type: 'value', content: '100%' },
+          {
+            type: 'text',
+            content:
+              ' damage to the target and nearby enemies. Additionally, Hit/Attack Energy Restoration for the target(s) is lost for ',
+          },
+          { type: 'value', content: '3s' },
+          { type: 'text', content: '.' },
+        ],
+        lv2: 'Hit/Attack Energy Restoration for the target(s) is lost for 3.5s',
+        lv3: 'Increases additional damage to 120%',
+        lv4: 'Hit/Attack Energy Restoration for the target(s) is lost for 4s',
+      },
+    },
+  },
 };
 
 export default skillData;
@@ -3011,7 +3122,7 @@ export default skillData;
 //         lv4: '',
 //       },
 //     },
-//     "skill two": {
+//     'skill two': {
 //       type: '',
 //       name: '',
 //       description: {
@@ -3024,7 +3135,7 @@ export default skillData;
 //         lv4: '',
 //       },
 //     },
-//     "skill three": {
+//     'skill three': {
 //       type: '',
 //       name: '',
 //       description: {
@@ -3037,7 +3148,7 @@ export default skillData;
 //         lv4: '',
 //       },
 //     },
-//     "skill four": {
+//     'skill four': {
 //       type: '',
 //       name: '',
 //       description: {
