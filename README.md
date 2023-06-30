@@ -8,7 +8,6 @@ Your best companion on your journey into realm of Ascended Legends.
   - [Screenshot](#screenshot)
   - [Links](#links)
   - [Built with](#built-with)
-  - [Tooling](#tooling)
 
 ## Overview
 
@@ -35,8 +34,3 @@ Your best companion on your journey into realm of Ascended Legends.
 - Mobile-first workflow
 - Flexbox
 - Base64 JSON conversion for shorter links
-
-#### Tooling
-
-- https://react-icons.github.io/react-icons/
-- https://github.com/rstacruz/nprogress
